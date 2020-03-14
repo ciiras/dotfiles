@@ -160,7 +160,11 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 call plug#end()
+
+" vim-tmux-focus-events
+au FocusGained, BufEnter * :checktime
 
 " vim-commentary
 map <leader>c gcc<esc>
