@@ -211,6 +211,7 @@ inoremap <leader><tab> <esc>:call emmet#expandAbbr(0,"")<cr>
 nnoremap <leader><tab> :call emmet#expandAbbr(0,"")<cr>
 
 " Git Gutter
+autocmd BufWritePost * GitGutter
 let g:gitgutter_enabled = 1
 let g:gitgutter_eager = 1
 set signcolumn=yes
