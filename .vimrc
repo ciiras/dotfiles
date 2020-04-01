@@ -182,7 +182,10 @@ let g:ale_linters_explicit=1
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 highlight clear SignColumn
+
 map <silent> <leader>lf :ALEFix<cr>
+map <silent> <leader>ln :ALENext<cr>
+map <silent> <leader>lp :ALEPrevious<cr>
 
 " Airline (status line)
 let g:airline_powerline_fonts = 1
