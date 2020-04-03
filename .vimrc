@@ -70,12 +70,11 @@ set shiftwidth=4
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
-" Highlight tailing whitespace
-" See issue: https://github.com/Integralist/ProVim/issues/4
-set list listchars=tab:\ \ ,trail:·
+" Highlight whitespace
+set list
+set listchars=tab:›\ ,eol:¬,trail:⋅
 
 " Get rid of the delay when pressing O (for example)
-" http://stackoverflow.com/questions/2158516/vim-delay-before-o-opens-a-new-line
 set timeout timeoutlen=1000 ttimeoutlen=100
 
 " Always show status bar
@@ -161,6 +160,16 @@ Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 call plug#end()
+
+" indentLine
+let g:indentLine_enabled=0
+let g:indentLine_char='·'
+let g:indentLine_color_term=239
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_leadingSpaceChar = '·'
+
+au FileType fzf :LeadingSpaceToggle
+au FileType nerdtree :LeadingSpaceToggle
 
 " vim-tmux-focus-events
 au FocusGained, BufEnter * :checktime
