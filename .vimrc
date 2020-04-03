@@ -159,6 +159,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " indentLine
@@ -170,6 +171,10 @@ let g:indentLine_leadingSpaceChar = '·'
 
 au FileType fzf :LeadingSpaceToggle
 au FileType nerdtree :LeadingSpaceToggle
+au Filetype json :IndentLinesToggle
+
+" coc
+let g:coc_global_extensions = ['coc-json', 'coc-eslint']
 
 " vim-tmux-focus-events
 au FocusGained, BufEnter * :checktime
