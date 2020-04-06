@@ -1,0 +1,33 @@
+[core]
+    excludesfile = /Users/griffithc/.gitignore_global
+    pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
+[difftool "sourcetree"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path =
+[mergetool "sourcetree"]
+    cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
+[user]
+    name = Christopher Griffith
+    email = christopher.griffith@taillight.com
+[init]
+    templatedir = ~/.git-templates
+[fetch]
+    prune = true
+[alias]
+[merge]
+    conflictstyle = diff3
+[color]
+    ui = always
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+[color "diff"]
+    commit = green
+    meta = yellow
+    frag = cyan
+    old = red
+    new = green
+    whitespace = red reverse
