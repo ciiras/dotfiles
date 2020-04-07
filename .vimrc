@@ -159,8 +159,27 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 call plug#end()
+
+" LanguageClient-neovim
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['tcp://127.0.0.1:2089']
+    \ }
+
+autocmd FileType * call LanguageClientMaps()
+
+function! LanguageClientMaps()
+    if has_key(g:LanguageClient_serverCommands, &filetype)
+        nnoremap <buffer> <silent> gd :call LanguageClient#textDocument_definition()<CR>
+        nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+    endif
+endfunction
 
 " indentLine
 let g:indentLine_enabled=0
@@ -172,9 +191,6 @@ let g:indentLine_leadingSpaceChar = '·'
 au FileType fzf :LeadingSpaceToggle
 au FileType nerdtree :LeadingSpaceToggle
 au Filetype json :IndentLinesToggle
-
-" coc
-let g:coc_global_extensions = ['coc-json', 'coc-eslint']
 
 " vim-tmux-focus-events
 au FocusGained, BufEnter * :checktime
