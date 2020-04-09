@@ -7,7 +7,7 @@ export ZSH=/Users/griffithc/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="alien"
+ZSH_THEME="alien-custom"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -65,18 +65,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-# Antigen
-source ~/.oh-my-zsh/plugins/managers/antigen.zsh
-
-antigen bundle git
-
-# export USE_NERD_FONT=1
-export ALIEN_THEME="blue"
-# antigen theme eendroroy/alien alien
-
-antigen apply
-
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
