@@ -169,7 +169,8 @@ call plug#end()
 set hidden
 
 let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['tcp://127.0.0.1:2089']
+    \ 'javascript': ['tcp://127.0.0.1:2089'],
+    \ 'typescript': ['tcp://127.0.0.1:2089']
     \ }
 
 autocmd FileType * call LanguageClientMaps()
