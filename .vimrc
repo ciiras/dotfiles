@@ -163,6 +163,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+Plug 'doums/coBra'
 call plug#end()
 
 " LanguageClient-neovim
