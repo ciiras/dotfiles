@@ -270,6 +270,9 @@ let vim_markdown_preview_github=1
 
 " Mappings {{{
 
+" Reload .vimrc
+nnoremap <silent> <leader>r :source $MYVIMRC<cr> :echo '---.vimrc reloaded---'<cr>
+
 " Clear search highlight w/ esc key press
 nnoremap <silent> <esc> :nohlsearch<cr>
 
