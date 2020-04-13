@@ -7,7 +7,22 @@ export ZSH=/Users/griffithc/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="alien-custom"
+ZSH_THEME="alien"
+
+export ALIEN_SECTIONS_LEFT=(
+  exit
+  path
+  vcs_branch:async
+  vcs_status:async
+  vcs_dirty:async
+  newline
+  ssh
+  venv
+  versions
+  prompt
+)
+
+export ALIEN_SECTION_PATH_COMPONENTS=2
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
