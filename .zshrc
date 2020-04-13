@@ -24,8 +24,8 @@ export ALIEN_SECTIONS_LEFT=(
 export ALIEN_SECTIONS_RIGHT=(
   time
 )
-
 export ALIEN_SECTION_PATH_COMPONENTS=2
+export ALIEN_VERSIONS_PROMPT='NODE'
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
