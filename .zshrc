@@ -21,6 +21,9 @@ export ALIEN_SECTIONS_LEFT=(
   versions
   prompt
 )
+export ALIEN_SECTIONS_RIGHT=(
+  time
+)
 
 export ALIEN_SECTION_PATH_COMPONENTS=2
 
