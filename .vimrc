@@ -302,10 +302,6 @@ map <leader>v <C-W>v
 map <leader>gn ]c " next hunk
 map <leader>gp [c " previous hunk
 
-" <C-N>/<C-P> Context Menu
-inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
-
 " Ex Mode Disable
 :map Q <Nop>
 
