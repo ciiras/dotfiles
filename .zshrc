@@ -169,11 +169,11 @@ function dpw() {
 alias k="kubectl"
 # }}}
 
-# Auto Correct {{{
+# Auto Correct Disable {{{
 alias rg="nocorrect rg"
 # }}}
 
-# Auto Complete {{{
+# Auto Complete Fuzzy {{{
 # 0 -- vanilla completion (abc => abc)
 # 1 -- smart case completion (abc => Abc)
 # 2 -- word flex completion (abc => A-big-Car)
