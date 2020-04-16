@@ -7,26 +7,7 @@ export ZSH=/Users/griffithc/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="alien"
-
-export ALIEN_SECTIONS_LEFT=(
-  exit
-  path
-  vcs_branch:async
-  vcs_status:async
-  vcs_dirty:async
-  newline
-  ssh
-  venv
-  versions
-  prompt
-)
-export ALIEN_SECTIONS_RIGHT=(
-  time
-)
-export ALIEN_SECTION_PATH_COMPONENTS=2
-export ALIEN_VERSIONS_PROMPT='NODE'
-export ALIEN_SECTION_TIME_BG=NONE
+# ZSH_THEME="alien"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -247,5 +228,26 @@ MODE_CURSOR_VICMD="#00ff00 blinking block"
 MODE_CURSOR_SEARCH="#ff00ff steady underline"
 MODE_CURSOR_VISUAL="$MODE_CURSOR_VICMD steady block"
 MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #00ffff"
+
+# alien Theme Settings
+export ALIEN_SECTIONS_LEFT=(
+  exit
+  path
+  vcs_branch:async
+  vcs_status:async
+  vcs_dirty:async
+  newline
+  ssh
+  venv
+  versions
+  prompt
+)
+export ALIEN_SECTIONS_RIGHT=(
+  time
+)
+export ALIEN_SECTION_PATH_COMPONENTS=2
+export ALIEN_VERSIONS_PROMPT='NODE'
+export ALIEN_SECTION_TIME_BG=NONE
+
 
 # }}}
