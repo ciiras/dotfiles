@@ -75,7 +75,7 @@ set list
 set listchars=tab:›\ ,eol:¬,trail:⋅
 
 " Get rid of the delay when pressing O (for example)
-set timeout timeoutlen=1000 ttimeoutlen=100
+set timeout timeoutlen=1000 ttimeoutlen=0
 
 " Always show status bar
 set laststatus=2

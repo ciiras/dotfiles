@@ -181,12 +181,14 @@ unset LSCOLORS
 # }}}
 
 # Key Bindings {{{
+
 bindkey -v #vim style
 
 bindkey "^r" history-incremental-search-backward
 bindkey "^s" history-incremental-search-forward
 
 export KEYTIMEOUT=1
+
 # }}}
 
 # Envrionment Management {{{
