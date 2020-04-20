@@ -105,18 +105,23 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 
 # Alias and Functions' {{{
 
+alias r="source ~/.zshrc"
+
 alias ls="ls -a"
 alias ll="ls -lha"
+
+alias t="tmux"
 alias vi="nvim"
 alias code="code-insiders"
-alias r="source ~/.zshrc"
+
 alias dka="killall Docker && open /Applications/Docker.app"
 alias rc="~/projects/od-env/build-node-docker/render-consul-template.sh"
 alias vc="code config/consul.json"
 alias cl="clear"
 alias nrl="npm run lint"
-alias t="tmux"
 alias uh="dc ps | rg unhealthy"
+
+function rgf() { rg -g $@ --files }
 
 alias gr="git reset"
 alias grs="git reset --soft"
