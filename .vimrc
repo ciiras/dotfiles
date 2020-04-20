@@ -169,8 +169,7 @@ call plug#end()
 set hidden
 
 let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['tcp://127.0.0.1:2089'],
-    \ 'typescript': ['tcp://127.0.0.1:2089']
+    \ 'javascript': ['tcp://127.0.0.1:2089']
     \ }
 
 autocmd FileType * call LanguageClientMaps()
@@ -205,8 +204,8 @@ map <silent> <leader>fl :BLines<cr>
 map <silent> <leader>fg :GFiles?<cr>
 
 " Ale
-let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['tslint']}
-let g:ale_fixers = {'javascript': ['eslint'], 'typescript': ['tslint']}
+let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_fixers = {'javascript': ['eslint']}
 let g:ale_javascript_eslint_executable = 'eslint_d'
 let g:ale_javascript_eslint_options = "--ignore-pattern '!node_modules/*'"
 let g:ale_linters_explicit=1
