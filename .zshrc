@@ -184,6 +184,8 @@ unset LSCOLORS
 
 bindkey -v #vim style
 
+bindkey "^P" up-history
+bindkey "^N" down-history
 bindkey "^r" history-incremental-search-backward
 bindkey "^s" history-incremental-search-forward
 
