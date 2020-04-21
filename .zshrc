@@ -190,12 +190,10 @@ unset LSCOLORS
 
 bindkey -v #vim style
 
-bindkey "^P" up-history
-bindkey "^N" down-history
 bindkey "^r" history-incremental-search-backward
 bindkey "^s" history-incremental-search-forward
 
-export KEYTIMEOUT=1
+# export KEYTIMEOUT=1 # softmoth/zsh-vim-mode plugin has this value set to 30
 
 # }}}
 
@@ -228,14 +226,13 @@ zinit light-mode for \
 
 ### End of Zinit's installer chunk
 
-
-# zplugin light softmoth/zsh-vim-mode
-# MODE_CURSOR_VIINS="#00ff00 blinking bar"
-# MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #ff0000"
-# MODE_CURSOR_VICMD="#00ff00 blinking block"
-# MODE_CURSOR_SEARCH="#ff00ff steady underline"
-# MODE_CURSOR_VISUAL="$MODE_CURSOR_VICMD steady block"
-# MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #00ffff"
+zplugin light softmoth/zsh-vim-mode
+MODE_CURSOR_VIINS="#00ff00 blinking bar"
+MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #ff0000"
+MODE_CURSOR_VICMD="#00ff00 blinking block"
+MODE_CURSOR_SEARCH="#ff00ff steady underline"
+MODE_CURSOR_VISUAL="$MODE_CURSOR_VICMD steady block"
+MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #00ffff"
 
 zplugin light eendroroy/alien
 export ALIEN_SECTIONS_LEFT=(
