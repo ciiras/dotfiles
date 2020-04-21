@@ -297,10 +297,11 @@ vnoremap // y/<C-R>"<CR>
 map <silent> <leader>bl :ls<cr>
 map <silent> <leader>bp :bp<cr>
 map <silent> <leader>bn :bn<cr>
-map <silent> <leader>bd :q<cr>
+map <silent> <leader>bd :bd<cr>
+map <silent> <leader>bc :q<cr>
 map <silent> <leader>bo <C-W>o
 
-" Make handling vertical/linear Vim windows easier
+" Split Resizing
 map <M-h> 5<C-W>>
 map <M-l> 5<C-W><
 map <M-j> 5<C-W>-
