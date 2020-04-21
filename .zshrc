@@ -132,6 +132,7 @@ alias glrbd="git pull --rebase origin develop"
 alias gstapa="git stash save -p"
 alias gstau="git stash -u"
 alias gpu="git push -u origin HEAD"
+alias gmv="git mv"
 
 alias d="docker"
 alias dc="~/projects/od-env/docker-compose"
