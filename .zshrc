@@ -161,12 +161,6 @@ alias rg="nocorrect rg"
 zstyle ':completion:*' matcher-list '' 'r:|?=** m:{a-z\-}={A-Z\_}'
 # }}}
 
-# NVM {{{
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# }}}
-
 # Colours {{{
 autoload colors; colors
 
@@ -198,8 +192,11 @@ bindkey "^s" history-incremental-search-forward
 # }}}
 
 # Envrionment Management {{{
-eval "$(rbenv init -)"
-eval "$(jenv init -)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # }}}
 
 # ZPlugin {{{
