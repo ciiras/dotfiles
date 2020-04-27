@@ -175,7 +175,8 @@ augroup ObsessionGroup
   " that's why we check if v:this_session is empty.
   autocmd VimEnter * nested
       \ if !&modified && empty(v:this_session) |
-      \   :silent !Obsession |
+      \   Obsession |
+      \   echo "Recording new session" |
       \ endif
 augroup END
 
