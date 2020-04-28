@@ -1,9 +1,6 @@
 " Leader
 :let mapleader = ","
 
-" Maps fzf so the fzf.vim plugin
-set rtp+=/usr/local/opt/fzf
-
 " Settings {{{
 " Switch syntax highlighting on, when the terminal has colors
 syntax on
@@ -164,6 +161,9 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 call plug#end()
+
+" fzf
+set rtp+=/usr/local/opt/fzf " Maps fzf so the fzf.vim plugin
 
 " vim-obsession
 augroup ObsessionGroup
