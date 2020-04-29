@@ -251,4 +251,8 @@ export ALIEN_SECTION_PATH_COMPONENTS=3
 export ALIEN_VERSIONS_PROMPT='NODE'
 export ALIEN_SECTION_TIME_BG=NONE
 
+zplugin light zsh-users/zsh-autosuggestions
+export ZSH_AUTOSUGGEST_USE_ASYNC=1
+bindkey '^ ' autosuggest-accept
+
 # }}}
