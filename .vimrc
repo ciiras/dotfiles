@@ -267,8 +267,10 @@ let g:gitgutter_eager = 1
 set signcolumn=yes
 highlight clear SignColumn
 
-" NERDTree
+" NERDTree {{{
+
 map <silent> <leader>. :NERDTreeToggle<cr>
+
 let g:NERDTreeShowHidden=1
 let g:NERDTreeSortOrder=[]
 let g:NERDTreeShowLineNumbers=1
@@ -278,6 +280,8 @@ let g:NERDTreeExactMatchHighlightFullName=1
 let g:NERDTreePatternMatchHighlightFullName=1
 let g:NERDTreeHighlightFoldersFullName=1
 let g:NERDTreeLimitedSyntax = 1
+
+" }}}
 
 " Markdown Preview
 let vim_markdown_preview_github=1
