@@ -18,7 +18,7 @@
 [merge]
     conflictstyle = diff3
 [color]
-	ui = auto
+    ui = always
 [color "diff-highlight"]
     oldNormal = red bold
     oldHighlight = red bold 52
