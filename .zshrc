@@ -119,7 +119,6 @@ alias rc="~/projects/od-env/build-node-docker/render-consul-template.sh"
 alias vc="code config/consul.json"
 alias cl="clear"
 alias nrl="npm run lint"
-alias uh="dc ps | rg unhealthy"
 
 function rgf() { rg -g $@ --files }
 
@@ -139,6 +138,7 @@ alias gmv="git mv"
 alias d="docker"
 alias dc="~/projects/od-env/docker-compose"
 alias dcd="dc down"
+alias du="dc ps | rg unhealthy"
 function dcu() { ~/projects/od-env/docker-compose up -d $@ && ~/projects/od-env/docker-compose logs -f $@ }
 function dcr() { ~/projects/od-env/docker-compose restart $@ && ~/projects/od-env/docker-compose logs -f $@ }
 function dcl() { ~/projects/od-env/docker-compose logs -f $@ }
