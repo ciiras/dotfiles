@@ -137,29 +137,28 @@ set undofile
 " Plugins {{{
 
 call plug#begin()
-Plug 'tomtom/tcomment_vim'
-Plug 'dense-analysis/ale'
-Plug 'mattn/emmet-vim'
-Plug 'junegunn/fzf.vim'
-Plug 'yggdroot/indentline'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'luochen1990/rainbow'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ap/vim-css-color'
 Plug 'airblade/vim-gitgutter'
+Plug 'ap/vim-css-color'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+Plug 'dense-analysis/ale'
+Plug 'junegunn/fzf.vim'
+Plug 'luochen1990/rainbow'
+Plug 'mattn/emmet-vim'
 Plug 'moll/vim-node'
-Plug 'tpope/vim-obsession'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
 Plug 'sheerun/vim-polyglot'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'yggdroot/indentline'
+
 call plug#end()
 
 " fzf
