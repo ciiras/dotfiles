@@ -255,20 +255,9 @@ let g:github_token = $GITHUB_TOKEN
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 
-" emmet-vim {{{
+" emmet-vim
+let g:user_emmet_leader_key='<leader>e'
 
-" <C-y,> Expand; <C-y,n> Next Tag (Default)
-let g:user_emmet_leader_key='<leader>'
-
-"<SelfClosingTag />
-inoremap <leader>ee <esc>:call emmet#expandAbbr(0,"")<cr>h:call emmet#splitJoinTag()<cr>wwi
-nnoremap <leader>ee :call emmet#expandAbbr(0,"")<cr>h:call emmet#splitJoinTag()<cr>ww
-
-"<Tag></Tag>
-inoremap <leader>e<tab> <esc>:call emmet#expandAbbr(0,"")<cr>
-nnoremap <leader>e<tab> :call emmet#expandAbbr(0,"")<cr>
-
-" }}}
 
 " Git Gutter
 autocmd BufWritePost * GitGutter
