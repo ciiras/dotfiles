@@ -158,7 +158,6 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-css-color'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf.vim'
 Plug 'luochen1990/rainbow'
 Plug 'mattn/emmet-vim'
@@ -349,20 +348,6 @@ map <leader>c gcc<esc>
 map <silent> <leader>ff :Files<cr>
 map <silent> <leader>fl :BLines<cr>
 map <silent> <leader>fg :GFiles?<cr>
-
-" Ale
-let g:ale_linters = {'javascript': ['eslint']}
-let g:ale_fixers = {'javascript': ['eslint']}
-let g:ale_javascript_eslint_executable = 'eslint_d'
-let g:ale_javascript_eslint_options = "--ignore-pattern '!node_modules/*'"
-let g:ale_linters_explicit=1
-highlight clear ALEErrorSign
-highlight clear ALEWarningSign
-highlight clear SignColumn
-
-map <silent> <leader>lf :ALEFix<cr>
-map <silent> <leader>ln :ALENext<cr>
-map <silent> <leader>lp :ALEPrevious<cr>
 
 " Airline (status line)
 let g:airline_powerline_fonts = 1
