@@ -137,10 +137,10 @@ set undofile
 " Plugins {{{
 
 call plug#begin()
+
 Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-css-color'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf.vim'
 Plug 'luochen1990/rainbow'
@@ -179,22 +179,6 @@ augroup ObsessionGroup
       \   echo "Recording new session" |
       \ endif
 augroup END
-
-" LanguageClient-neovim
-set hidden
-
-let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['tcp://127.0.0.1:2089']
-    \ }
-
-autocmd FileType * call LanguageClientMaps()
-
-function! LanguageClientMaps()
-    if has_key(g:LanguageClient_serverCommands, &filetype)
-        nnoremap <buffer> <silent> gd :call LanguageClient#textDocument_definition()<CR>
-        nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
-    endif
-endfunction
 
 " indentLine
 let g:indentLine_enabled=0
