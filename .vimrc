@@ -317,8 +317,14 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " }}}
 
-" fzf
+" fzf {{{
 set rtp+=/usr/local/opt/fzf " Maps fzf so the fzf.vim plugin
+
+map <silent> <leader>ff :Files<cr>
+map <silent> <leader>fl :BLines<cr>
+map <silent> <leader>fg :GFiles?<cr>
+
+" }}}
 
 " vim-obsession
 augroup ObsessionGroup
@@ -348,14 +354,6 @@ au Filetype json :IndentLinesToggle
 
 " vim-tmux-focus-events
 au FocusGained, BufEnter * :checktime
-
-" vim-commentary
-map <leader>c gcc<esc>
-
-"fzf
-map <silent> <leader>ff :Files<cr>
-map <silent> <leader>fl :BLines<cr>
-map <silent> <leader>fg :GFiles?<cr>
 
 " Airline (status line)
 let g:airline_powerline_fonts = 1
