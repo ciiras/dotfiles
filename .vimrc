@@ -333,7 +333,7 @@ map <silent> <leader>fg :GFiles?<cr>
 " }}}
 
 " vim-devicons
-set guifont=DroidSansMono_Nerd_Font:h14
+set guifont=DroidSansMono_Nerd_Font:h13
 
 " vim-obsession
 augroup ObsessionGroup
