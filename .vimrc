@@ -3,8 +3,10 @@
 
 " Settings {{{
 
-" python
+" mouse
+set mouse=a
 
+" python
 set pyxversion=2
 
 " Switch syntax highlighting on, when the terminal has colors
