@@ -97,7 +97,7 @@ set statusline=%f\ %=L:%l/%L\ %c\ (%p%%)
 set guioptions-=T
 
 " UTF encoding
-set encoding=utf-8
+set encoding=UTF-8
 
 " Autoload files that have changed outside of vim
 set autoread
@@ -185,6 +185,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'yggdroot/indentline'
+
+" Has to be loaded at the end
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -328,6 +331,9 @@ map <silent> <leader>fl :BLines<cr>
 map <silent> <leader>fg :GFiles?<cr>
 
 " }}}
+
+" vim-devicons
+set guifont=DroidSansMono_Nerd_Font:h14
 
 " vim-obsession
 augroup ObsessionGroup
