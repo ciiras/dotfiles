@@ -87,6 +87,7 @@ alias rc="~/projects/od-env/build-node-docker/render-consul-template.sh"
 alias vc="code config/consul.json"
 alias cl="clear"
 alias nrl="npm run lint"
+alias ne="nodenv"
 
 function rgf() { rg -g $@ --files }
 
@@ -167,9 +168,11 @@ bindkey "^s" history-incremental-search-forward
 
 # Envrionment Management {{{
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval "$(nodenv init -)"
 
 # }}}
 
