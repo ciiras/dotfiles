@@ -137,8 +137,6 @@ set showmatch
 let g:netrw_liststyle=3
 
 " Always highlight column 80 so it's easier to see where
-" cutoff appears on longer screens
-autocmd BufWinEnter * highlight ColorColumn ctermbg=236
 set colorcolumn=80
 
 " Persistent undo
