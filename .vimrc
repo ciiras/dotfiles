@@ -110,9 +110,6 @@ set shortmess+=c
 set splitbelow
 set splitright
 
-" Highlight the current line
-set cursorline
-
 " Ensure Vim doesn't beep at you every time you make a mistype
 set visualbell
 
