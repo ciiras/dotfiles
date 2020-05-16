@@ -381,10 +381,6 @@ let g:github_token = $GITHUB_TOKEN
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 
-" emmet-vim
-let g:user_emmet_leader_key='<leader>e'
-
-
 " Git Gutter
 au BufWritePost * GitGutter
 let g:gitgutter_enabled = 1
