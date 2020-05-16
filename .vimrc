@@ -147,7 +147,7 @@ set signcolumn=yes
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  au VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin()
@@ -239,7 +239,7 @@ function! s:show_documentation()
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+au CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
@@ -249,11 +249,11 @@ xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
-  autocmd!
+  au!
   " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  au FileType typescript,json setl formatexpr=CocAction('formatSelected')
   " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " Applying codeAction to the selected region.
@@ -327,13 +327,13 @@ set guifont=DroidSansMono_Nerd_Font:h13
 
 " vim-obsession
 augroup ObsessionGroup
-  autocmd!
+  au!
   " When opening a file, make sure we record the Vim session with its tabs and splits.
   " Checking 'modified' avoids recording a session when reading from stdin.
   " From https://github.com/tpope/vim-obsession/issues/17
   " Calling Obsession when the session is being recorded would pause the recording,
   " that's why we check if v:this_session is empty.
-  autocmd VimEnter * nested
+  au VimEnter * nested
       \ if !&modified && empty(v:this_session) |
       \   Obsession |
       \   echo "Recording new session" |
@@ -386,7 +386,7 @@ let g:user_emmet_leader_key='<leader>e'
 
 
 " Git Gutter
-autocmd BufWritePost * GitGutter
+au BufWritePost * GitGutter
 let g:gitgutter_enabled = 1
 let g:gitgutter_eager = 1
 highlight clear SignColumn
@@ -473,24 +473,24 @@ fun! StripTrailingWhitespace()
   endif
   %s/\s\+$//e
 endfun
-autocmd BufWritePre * call StripTrailingWhitespace()
+au BufWritePre * call StripTrailingWhitespace()
 
 " file formats
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-autocmd Filetype gitcommit setlocal spell textwidth=72
-autocmd Filetype markdown setlocal wrap linebreak nolist textwidth=0 wrapmargin=0 " http://vim.wikia.com/wiki/Word_wrap_without_line_breaks
-autocmd FileType sh,cucumber,ruby,zsh,vim,json setlocal shiftwidth=4 tabstop=4 expandtab
-autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-autocmd FileType json syntax match Comment +\/\/.\+$+
+au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+au Filetype gitcommit setlocal spell textwidth=72
+au Filetype markdown setlocal wrap linebreak nolist textwidth=0 wrapmargin=0 " http://vim.wikia.com/wiki/Word_wrap_without_line_breaks
+au FileType sh,cucumber,ruby,zsh,vim,json setlocal shiftwidth=4 tabstop=4 expandtab
+au FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+au FileType json syntax match Comment +\/\/.\+$+
 
 
 " specify syntax highlighting for specific files
-autocmd Bufread,BufNewFile *.spv set filetype=php
-autocmd Bufread,BufNewFile *.md set filetype=markdown " Vim interprets .md as 'modula2' otherwise, see :set filetype?
+au Bufread,BufNewFile *.spv set filetype=php
+au Bufread,BufNewFile *.md set filetype=markdown " Vim interprets .md as 'modula2' otherwise, see :set filetype?
 
 " Close all folds when opening a new buffer
-autocmd BufRead * setlocal foldmethod=marker
-autocmd BufRead * normal zM
+au BufRead * setlocal foldmethod=marker
+au BufRead * normal zM
 
 " Rainbow
 let g:rainbow_active = 1
