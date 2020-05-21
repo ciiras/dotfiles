@@ -181,6 +181,35 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
+" Rainbow {{{
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+\   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+\   'ctermfgs': ['red', 'lightblue', 'green', '142'],
+\   'operators': '_,_',
+\   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\   'separately': {
+\      '*': {},
+\      'tex': {
+\      	'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+\      },
+\      'lisp': {
+\      	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+\      },
+\      'vim': {
+\      	'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+\      },
+\       'html': {
+\           'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+\       },
+\      'css': 0,
+\      'nerdtree': 0,
+\      'vimwiki': 0,
+\   }
+\}
+
+" }}}
+
 " coc {{{
 
 let g:coc_global_extensions = [
@@ -487,29 +516,6 @@ au Bufread,BufNewFile *.md set filetype=markdown " Vim interprets .md as 'modula
 " Close all folds when opening a new buffer
 au BufRead * setlocal foldmethod=marker
 au BufRead * normal zM
-
-" Rainbow
-let g:rainbow_active = 1
-let g:rainbow_conf = {
-\   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-\   'ctermfgs': ['red', 'lightblue', 'green', '142'],
-\   'operators': '_,_',
-\   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-\   'separately': {
-\      '*': {},
-\      'tex': {
-\      	'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-\      },
-\      'lisp': {
-\      	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-\      },
-\      'vim': {
-\      	'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-\      },
-\      'css': 0,
-\       'nerdtree': 0,
-\   }
-\}
 
 " }}}
 
