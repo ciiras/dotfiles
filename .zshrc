@@ -71,53 +71,51 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 
 # }}}
 
-# Alias and Functions' {{{
+# Alias {{{
 
-alias r="source ~/.zshrc"
-
-alias ls="ls -a"
-alias ll="ls -lha"
-
-alias t="tmux"
-alias vi="nvim"
-alias code="code-insiders"
-
-alias dka="killall Docker && open /Applications/Docker.app"
-alias rc="~/projects/od-env/build-node-docker/render-consul-template.sh"
-alias vc="code config/consul.json"
 alias cl="clear"
-alias nrl="npm run lint"
+alias code="code-insiders"
+alias d="docker"
+alias dc="~/projects/od-env/docker-compose"
+alias dcd="dc down"
+alias dka="killall Docker && open /Applications/Docker.app"
+alias du="dc ps | rg unhealthy"
+alias k="kubectl"
+alias ll="ls -lha"
+alias ls="ls -a"
 alias ne="nodenv"
-
-function rgf() { rg -g $@ --files }
-
-alias gr="git reset"
-alias grs="git reset --soft"
-alias grh="git reset --hard"
-alias gshno="git show --name-only"
-alias glrbm="git pull --rebase origin master"
+alias nrl="npm run lint"
+alias r="source ~/.zshrc"
+alias rc="~/projects/od-env/build-node-docker/render-consul-template.sh"
+alias t="tmux"
+alias vc="code config/consul.json"
+alias vi="nvim"
 alias glrbd="git pull --rebase origin develop"
+alias glrbm="git pull --rebase origin master"
+alias gmv="git mv"
+alias gpu="git push -u origin HEAD"
+alias gr="git reset"
+alias grh="git reset --hard"
+alias grs="git reset --soft"
+alias gshno="git show --name-only"
 alias gsta="git stash save"
 alias gstap="git stash push"
 alias gstapa="git stash save -p"
 alias gstau="git stash -u"
-alias gpu="git push -u origin HEAD"
-alias gmv="git mv"
 
-alias d="docker"
-alias dc="~/projects/od-env/docker-compose"
-alias dcd="dc down"
-alias du="dc ps | rg unhealthy"
+# }}}
+
+# Functions {{{
+
 function dcu() { ~/projects/od-env/docker-compose up -d $@ && ~/projects/od-env/docker-compose logs -f $@ }
 function dcr() { ~/projects/od-env/docker-compose restart $@ && ~/projects/od-env/docker-compose logs -f $@ }
 function dcl() { ~/projects/od-env/docker-compose logs -f $@ }
 function dcs() { ~/projects/od-env/docker-compose stop $@ && ~/projects/od-env/docker-compose rm $@ }
-
 function dpw() {
     displayplacer "id:E4E6B386-B893-9D5B-A207-BA495AE1FC4E res:2560x1440 color_depth:4 scaling:off origin:(0,0) degree:0" "id:F466F621-B5FA-04A0-0800-CFA6C258DECD res:1680x1050 color_depth:4 scaling:on origin:(2560,358) degree:0" "id:9F831D7A-8A6E-816B-80CC-9043E3313BEC res:2560x1440 color_depth:4 scaling:off origin:(-2560,0) degree:0"
 }
+function rgf() { rg -g $@ --files }
 
-alias k="kubectl"
 # }}}
 
 # Auto Correct Disable {{{
