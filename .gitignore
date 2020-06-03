@@ -1,1 +1,6 @@
+*~
+.DS_Store
+.git/
+.vim/
+.zcomp*
 Session.vim
