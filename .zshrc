@@ -60,7 +60,7 @@ JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home
 export ANDROID_SDK=~/Library/Android/sdk
 export CLICOLOR=1
 export EDITOR='nvim'
-export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse-list --border'
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
