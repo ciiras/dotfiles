@@ -87,6 +87,10 @@ alias d="docker"
 alias dc="~/projects/od-env/docker-compose"
 alias dcd="dc down"
 alias dcps="dc ps"
+alias dcl="docker_compose_logs"
+alias dcr="docker_compose_restart"
+alias dcs="docker_compose_stop"
+alias dcu="docker_compose_up"
 alias dka="killall Docker && open /Applications/Docker.app"
 alias du="dc ps | rg unhealthy"
 alias glrbd="git pull --rebase origin develop"
@@ -109,6 +113,8 @@ alias nrl="npm run lint"
 alias r="source ~/.zshrc"
 alias rc="~/projects/od-env/build-node-docker/render-consul-template.sh"
 alias rg="nocorrect rg"
+alias rgf="ripgrep_files"
+alias rgl="ripgrep_file_names_only"
 alias t="tmux"
 alias vc="code config/consul.json"
 alias vi="nvim"
@@ -117,15 +123,15 @@ alias vi="nvim"
 
 # Functions {{{
 
-function dcu() { ~/projects/od-env/docker-compose up -d $@ && ~/projects/od-env/docker-compose logs -f $@ }
-function dcr() { ~/projects/od-env/docker-compose restart $@ && ~/projects/od-env/docker-compose logs -f $@ }
-function dcl() { ~/projects/od-env/docker-compose logs -f $@ }
-function dcs() { ~/projects/od-env/docker-compose stop $@ && ~/projects/od-env/docker-compose rm $@ }
-function dpw() {
+function docker_compose_up() { ~/projects/od-env/docker-compose up -d $@ && ~/projects/od-env/docker-compose logs -f $@ }
+function docker_compose_restart() { ~/projects/od-env/docker-compose restart $@ && ~/projects/od-env/docker-compose logs -f $@ }
+function docker_compose_logs() { ~/projects/od-env/docker-compose logs -f $@ }
+function docker_compose_stop() { ~/projects/od-env/docker-compose stop $@ && ~/projects/od-env/docker-compose rm $@ }
+function display_placer_set() {
     displayplacer "id:E4E6B386-B893-9D5B-A207-BA495AE1FC4E res:2560x1440 color_depth:4 scaling:off origin:(0,0) degree:0" "id:F466F621-B5FA-04A0-0800-CFA6C258DECD res:1680x1050 color_depth:4 scaling:on origin:(2560,358) degree:0" "id:9F831D7A-8A6E-816B-80CC-9043E3313BEC res:2560x1440 color_depth:4 scaling:off origin:(-2560,0) degree:0"
 }
-function rgf() { rg -g $@ --files }
-function rgl() { rg $@ -l }
+function ripgrep_files() { rg -g $@ --files }
+function ripgrep_file_names_only() { rg $@ -l }
 
 # }}}
 
