@@ -206,6 +206,7 @@ let g:rainbow_conf = {
 \      'scss': 0,
 \      'nerdtree': 0,
 \      'vimwiki': 0,
+\      'fzf': 0,
 \   }
 \}
 
