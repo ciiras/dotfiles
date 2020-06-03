@@ -56,18 +56,26 @@ source $ZSH/oh-my-zsh.sh
 
 MONO=/Library/Frameworks/Mono.framework/Versions/Current/bin/
 JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home
+
 export ANDROID_SDK=~/Library/Android/sdk
-export PATH=$ANDROID_SDK/platoform-tools:$JAVA_HOME:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$MONO
+export CLICOLOR=1
+export EDITOR='nvim'
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
-export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
-export EDITOR="nvim"
-export TERM="screen-256color"
-export CLICOLOR=1
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export LS_COLORS=Gxfxcxdxbxegedabagacad
-export FZF_DEFAULT_OPTS="--height 40% --reverse --border"
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!/node_modules/*" --glob "!dist/*"'
+export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
+export PATH=$ANDROID_SDK/platoform-tools:$JAVA_HOME:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$MONO
+export TERM="screen-256color"
 
 # }}}
 
