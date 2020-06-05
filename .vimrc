@@ -154,11 +154,14 @@ call plug#begin()
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-css-color'
+Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'justinmk/vim-sneak'
 Plug 'luochen1990/rainbow'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-user'
 Plug 'mattn/emmet-vim'
 Plug 'moll/vim-node'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
