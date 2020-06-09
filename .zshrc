@@ -64,6 +64,7 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse-list --border'
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 export GREP_OPTIONS='--color=auto'
 export GREP_COLOR='1;32'
+export KEYTIMEOUT=5
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
 export LESS_TERMCAP_me=$'\e[0m'
@@ -168,12 +169,9 @@ unset LSCOLORS
 
 # Key Bindings {{{
 
-bindkey -v #vim style
 
 bindkey "^r" history-incremental-search-backward
 bindkey "^s" history-incremental-search-forward
-
-# export KEYTIMEOUT=1 # softmoth/zsh-vim-mode plugin has this value set to 30
 
 # }}}
 
@@ -184,6 +182,36 @@ bindkey "^s" history-incremental-search-forward
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(nodenv init -)"
+
+# }}}
+
+# Vi mode {{{
+
+bindkey -v #vim style
+
+bindkey -M menuselect '^h' vi-backward-char
+bindkey -M menuselect '^k' vi-up-line-or-history
+bindkey -M menuselect '^l' vi-forward-char
+bindkey -M menuselect '^j' vi-down-line-or-history
+
+CURSOR_BLOCK='\e[1 q'
+CURSOR_BEAM='\e[5 q'
+
+function zle-keymap-select { # Change cursor shape for different vi modes.
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne $CURSOR_BLOCK
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne $CURSOR_BEAM
+  fi
+}
+zle -N zle-keymap-select
+
+preexec() { zle-keymap-select ;}
+precmd_functions+=(zle-keymap-select)
 
 # }}}
 
