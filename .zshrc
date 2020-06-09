@@ -263,4 +263,6 @@ zplugin light zsh-users/zsh-autosuggestions
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 bindkey '^ ' autosuggest-accept
 
+zplugin light zsh-users/zsh-syntax-highlighting
+
 # }}}
