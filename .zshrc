@@ -169,7 +169,6 @@ unset LSCOLORS
 
 # Key Bindings {{{
 
-
 bindkey "^r" history-incremental-search-backward
 bindkey "^s" history-incremental-search-forward
 
@@ -189,6 +188,9 @@ eval "$(nodenv init -)"
 
 bindkey -v #vim style
 
+bindkey -M viins '^P' up-line-or-history
+bindkey -M viins '^N' down-line-or-history
+
 bindkey -M menuselect '^h' vi-backward-char
 bindkey -M menuselect '^k' vi-up-line-or-history
 bindkey -M menuselect '^l' vi-forward-char
@@ -197,7 +199,7 @@ bindkey -M menuselect '^j' vi-down-line-or-history
 CURSOR_BLOCK='\e[1 q'
 CURSOR_BEAM='\e[5 q'
 
-function zle-keymap-select { # Change cursor shape for different vi modes.
+function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] ||
      [[ $1 = 'block' ]]; then
     echo -ne $CURSOR_BLOCK
