@@ -2,5 +2,6 @@
     "eslint.filetypes": [
         "javascript",
         "javascriptreact"
-    ]
+    ],
+    "javascript.suggestionActions.enabled": false
 }
