@@ -220,6 +220,7 @@ let g:rainbow_conf = {
 let g:coc_global_extensions = [
   \ 'coc-tsserver',
   \ 'coc-tslint-plugin',
+  \ 'coc-angular',
   \ 'coc-eslint',
   \ 'coc-flow',
   \ 'coc-json',
