@@ -1,9 +1,11 @@
-ls -s ~/.vim/ ~/.config/nvim/
+curDir=$(pwd)
 
-ln -s ~/projects/dotfiles/.config/nvim/coc-settings.json ~/.vim/coc-settings.json
-ln -s ~/projects/dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/projects/dotfiles/.gitignore ~/.gitignore
-ln -s ~/projects/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/projects/dotfiles/.vimrc ~/.vimrc
-ln -s ~/projects/dotfiles/.vimrc ~/.config/nvim/init.vim
-ln -s ~/projects/dotfiles/.zshrc ~/.zshrc
+ls -s ~/.vim/ ~/.config/nvim/
+ln -s ${curDir}/.vimrc ~/.config/nvim/init.vim
+ln -s ${curDir}/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+
+ln -s ${curDir}/.gitconfig ~/.gitconfig
+ln -s ${curDir}/.gitignore ~/.gitignore
+ln -s ${curDir}/.tmux.conf ~/.tmux.conf
+ln -s ${curDir}/.vimrc ~/.vimrc
+ln -s ${curDir}/.zshrc ~/.zshrc
