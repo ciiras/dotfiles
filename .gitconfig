@@ -1,5 +1,5 @@
 [core]
-    excludesfile = /Users/griffithc/.gitignore_global
+	excludesfile = /Users/griffithc/.gitignore
     pager = /usr/local/share/git-core/contrib/diff-highlight/diff-highlight | less
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
