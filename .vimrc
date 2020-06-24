@@ -184,6 +184,9 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
+" vim-sort-motion
+let g:sort_motion_flags = "ui"
+
 " Rainbow {{{
 let g:rainbow_active = 1
 let g:rainbow_conf = {
