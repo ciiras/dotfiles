@@ -189,8 +189,17 @@ eval "$(nodenv init -)"
 
 bindkey -v #vim style
 
-bindkey -M viins '^P' up-line-or-history
-bindkey -M viins '^N' down-line-or-history
+bindkey -M vicmd '^P' up-line-or-search
+bindkey -M vicmd '^N' down-line-or-search
+
+bindkey -M viins '^P' up-line-or-search
+bindkey -M viins '^N' down-line-or-search
+
+bindkey -M viins '^R' history-incremental-search-backward
+bindkey -M viins '^F' history-incremental-search-forward
+
+bindkey -M vicmd '/' history-incremental-search-backward
+bindkey -M viins '?' history-incremental-search-forward
 
 bindkey -M menuselect '^h' vi-backward-char
 bindkey -M menuselect '^k' vi-up-line-or-history
