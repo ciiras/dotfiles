@@ -264,12 +264,8 @@ export ALIEN_SECTIONS_LEFT=(
   versions
   prompt
 )
-# export ALIEN_SECTIONS_RIGHT=(
-#   time
-# )
-export ALIEN_SECTION_PATH_COMPONENTS=3
+export ALIEN_SECTION_PATH_COMPONENTS=2
 export ALIEN_VERSIONS_PROMPT='NODE'
-# export ALIEN_SECTION_TIME_BG=NONE
 
 zplugin light zsh-users/zsh-autosuggestions
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
