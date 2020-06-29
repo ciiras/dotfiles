@@ -3,5 +3,26 @@
         "javascript",
         "javascriptreact"
     ],
-    "javascript.suggestionActions.enabled": false
+    "javascript.suggestionActions.enabled": false,
+    "cSpell.userWords": [
+      "acctapi",
+      "agendash",
+      "ardproc",
+      "commerceapi",
+      "danlaw",
+      "danlawapi",
+      "devops",
+      "distproc",
+      "healthcheck",
+      "liveweb",
+      "localdev",
+      "makerapi",
+      "middlewares",
+      "offsiteapi",
+      "showcaseapi",
+      "trekweb",
+      "vindy",
+      "vindyapi",
+      "zulgwapi"
+    ]
 }
