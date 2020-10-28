@@ -358,6 +358,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
 " fzf {{{
 set rtp+=/usr/local/opt/fzf " Maps fzf so the fzf.vim plugin
+let g:fzf_layout = { 'down': '~40%' }
 
 map <silent> <leader>ff :Files<cr>
 map <silent> <leader>fl :BLines<cr>
