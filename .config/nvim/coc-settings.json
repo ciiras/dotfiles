@@ -4,6 +4,7 @@
         "javascriptreact"
     ],
     "javascript.suggestionActions.enabled": false,
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
     "cSpell.userWords": [
       "acctapi",
       "agendash",
