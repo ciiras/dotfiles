@@ -535,6 +535,7 @@ au BufRead * normal zM
 " }}}
 
 " Theme {{{
+
 set background=dark
 set t_Co=256
 colorscheme solarized8
@@ -551,10 +552,6 @@ hi Normal ctermbg=0
 function FocusGainedFunc()
     hi ActiveWindow ctermbg=0 | hi InactiveWindow ctermbg=236
     set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
-
-    hi CursorLine ctermbg=235
-    hi LineNr ctermbg=0 ctermfg=60
-    hi CursorLineNr ctermbg=238 ctermfg=39
 endfunction
 
 augroup FocusGainedGroup
@@ -565,14 +562,11 @@ augroup END
 function FocusLostFunc()
     hi ActiveWindow ctermbg=236 | hi InactiveWindow ctermbg=236
     set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
-
-    hi CursorLine ctermbg=236
-    hi LineNr ctermbg=236 ctermfg=60
-    hi CursorLineNr ctermbg=236 ctermfg=39
 endfunction
 
 augroup FocusLostGroup
     au!
     au FocusLost * call FocusLostFunc()
 augroup END
+
 " }}}
