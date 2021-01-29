@@ -32,4 +32,4 @@
     new = green
     whitespace = red reverse
 [pull]
-	ff = only
+    ff = only
