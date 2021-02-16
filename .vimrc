@@ -75,8 +75,8 @@ set shiftwidth=4
 :set number
 
 " Highlight whitespace
-set list
-set listchars=tab:›\ ,eol:¬,trail:⋅
+set listchars=tab:›\ ,eol:¬,space:⋅
+set nolist
 
 " Get rid of the delay when pressing O (for example)
 set timeout timeoutlen=1000 ttimeoutlen=0
@@ -156,7 +156,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-css-color'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'cohama/lexima.vim'
+Plug 'cohama/lexima.vim' " Auto close parentheses
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'justinmk/vim-sneak'
@@ -178,10 +178,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'yggdroot/indentline'
 
-" Has to be loaded at the end
-Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons' " Has to be loaded at the end
 
 call plug#end()
 
@@ -377,17 +375,6 @@ augroup ObsessionGroup
       \   echo "Recording new session" |
       \ endif
 augroup END
-
-" indentLine
-let g:indentLine_enabled=0
-let g:indentLine_char='·'
-let g:indentLine_color_term=239
-let g:indentLine_leadingSpaceEnabled = 1
-let g:indentLine_leadingSpaceChar = '·'
-
-au FileType fzf :LeadingSpaceToggle
-au FileType nerdtree :LeadingSpaceToggle
-au Filetype json :IndentLinesToggle
 
 " vim-tmux-focus-events
 au FocusGained, BufEnter * :checktime
