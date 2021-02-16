@@ -158,6 +158,7 @@ Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'cohama/lexima.vim' " Auto close parentheses
 Plug 'fcpg/vim-shore' " Autojump to 1st non-blank when j/k into leading spaces
+Plug 'idanarye/vim-merginal' "fugitive git branch extension
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'justinmk/vim-sneak'
