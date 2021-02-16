@@ -163,9 +163,11 @@ Plug 'justinmk/vim-sneak'
 Plug 'luochen1990/rainbow'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-user'
+Plug 'karthikv/vim-typescript'
 Plug 'mattn/emmet-vim'
 Plug 'moll/vim-node'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'pangloss/vim-javascript'
 Plug 'preservim/nerdtree'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tomtom/tcomment_vim'
@@ -432,6 +434,22 @@ let vim_markdown_preview_github=1
 
 " vim-session
 :let g:session_autosave = 'no'
+
+" vim-javascript/vim-typescript {{{
+
+set conceallevel=1
+let g:javascript_conceal_function             = "ƒ"
+" let g:javascript_conceal_null                 = "ø"
+" let g:javascript_conceal_this                 = "@"
+" let g:javascript_conceal_return               = "⇚"
+" let g:javascript_conceal_undefined            = "¿"
+" let g:javascript_conceal_NaN                  = "ℕ"
+" let g:javascript_conceal_prototype            = "¶"
+" let g:javascript_conceal_static               = "•"
+" let g:javascript_conceal_super                = "Ω"
+let g:javascript_conceal_arrow_function       = "⇒"
+
+" }}}
 
 " }}}
 
