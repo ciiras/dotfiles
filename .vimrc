@@ -167,6 +167,7 @@ Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-user'
 Plug 'karthikv/vim-typescript'
 Plug 'mattn/emmet-vim'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'moll/vim-node'
 Plug 'nelstrom/vim-visual-star-search' " Visual mode */# search
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
