@@ -158,7 +158,7 @@ Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'cohama/lexima.vim' " Auto close parentheses
 Plug 'fcpg/vim-shore' " Autojump to 1st non-blank when j/k into leading spaces
-Plug 'idanarye/vim-merginal' "fugitive git branch extension
+Plug 'idanarye/vim-merginal' " Fugitive git branch extension
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'justinmk/vim-sneak'
@@ -168,6 +168,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'karthikv/vim-typescript'
 Plug 'mattn/emmet-vim'
 Plug 'moll/vim-node'
+Plug 'nelstrom/vim-visual-star-search' " Visual mode */# search
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
 Plug 'preservim/nerdtree'
@@ -462,12 +463,6 @@ nnoremap <silent> <leader>r :source $MYVIMRC<cr> :echo '---.vimrc reloaded---'<c
 
 " Clear search highlight w/ esc key press
 nnoremap <silent> <esc> :nohlsearch<cr>
-
-" Command to use sudo when needed
-" cmap w!! %!sudo tee > /dev/null %
-
-" Visual Mode Searching
-vnoremap // y/<C-R>"<CR>
 
 " Buffers
 map <silent> <leader>bl :ls<cr>
