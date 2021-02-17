@@ -85,7 +85,7 @@ export TERM="screen-256color"
 alias cl="clear"
 alias code="code-insiders"
 alias d="docker"
-alias dc="~/projects/od-env/docker-compose"
+alias dc="docker-compose"
 alias dcd="dc down"
 alias dcps="dc ps"
 alias dcl="docker_compose_logs"
@@ -124,10 +124,10 @@ alias vi="nvim"
 
 # Functions {{{
 
-function docker_compose_up() { ~/projects/od-env/docker-compose up -d $@ && ~/projects/od-env/docker-compose logs -f $@ }
-function docker_compose_restart() { ~/projects/od-env/docker-compose restart $@ && ~/projects/od-env/docker-compose logs -f $@ }
-function docker_compose_logs() { ~/projects/od-env/docker-compose logs -f $@ }
-function docker_compose_stop() { ~/projects/od-env/docker-compose stop $@ && ~/projects/od-env/docker-compose rm -f $@ }
+function docker_compose_up() { docker-compose up -d $@ && docker-compose logs -f $@ }
+function docker_compose_restart() { docker-compose restart $@ && docker-compose logs -f $@ }
+function docker_compose_logs() { docker-compose logs -f $@ }
+function docker_compose_stop() { docker-compose stop $@ && docker-compose rm -f $@ }
 function display_placer_set() {
     displayplacer "id:E4E6B386-B893-9D5B-A207-BA495AE1FC4E res:2560x1440 color_depth:4 scaling:off origin:(0,0) degree:0" "id:F466F621-B5FA-04A0-0800-CFA6C258DECD res:1680x1050 color_depth:4 scaling:on origin:(2560,358) degree:0" "id:9F831D7A-8A6E-816B-80CC-9043E3313BEC res:2560x1440 color_depth:4 scaling:off origin:(-2560,0) degree:0"
 }
