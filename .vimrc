@@ -162,6 +162,7 @@ Plug 'idanarye/vim-merginal' " Fugitive git branch extension
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'justinmk/vim-sneak'
+Plug 'leafgarland/typescript-vim'
 Plug 'luochen1990/rainbow'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-user'
