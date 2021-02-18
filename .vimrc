@@ -174,6 +174,7 @@ Plug 'nelstrom/vim-visual-star-search' " Visual mode */# search
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
 Plug 'preservim/nerdtree'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
