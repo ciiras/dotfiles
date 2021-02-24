@@ -174,7 +174,6 @@ Plug 'nelstrom/vim-visual-star-search' " Visual mode */# search
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
 Plug 'preservim/nerdtree'
-Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-fugitive'
@@ -520,6 +519,7 @@ au Filetype markdown setlocal wrap linebreak nolist textwidth=0 wrapmargin=0 " h
 au FileType sh,cucumber,ruby,zsh,vim,json setlocal shiftwidth=4 tabstop=4 expandtab
 au FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 au FileType json syntax match Comment +\/\/.\+$+
+au FileType json setlocal conceallevel=0
 
 
 " specify syntax highlighting for specific files
