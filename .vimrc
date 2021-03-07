@@ -493,7 +493,7 @@ inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
 
 " Ex Mode Disable
-:map Q <Nop>
+nnoremap Q <Nop>
 
 " JSON Format
 map <leader>jf <Esc>:%!python -c "import json, sys, collections; print(json.dumps(json.loads(sys.stdin.read(), object_pairs_hook=collections.OrderedDict), indent=4))"<CR>
