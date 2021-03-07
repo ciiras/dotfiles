@@ -361,7 +361,7 @@ let g:fzf_layout = { 'down': '~40%' }
 
 map <silent> <leader>ff :Files<cr>
 map <silent> <leader>fl :BLines<cr>
-map <silent> <leader>fg :GFiles?<cr>
+map <silent> <leader>fg :Rg<cr>
 
 " }}}
 
