@@ -157,16 +157,13 @@ Plug 'ap/vim-css-color'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'cohama/lexima.vim' " Auto close parentheses
-Plug 'fcpg/vim-shore' " Autojump to 1st non-blank when j/k into leading spaces
-Plug 'idanarye/vim-merginal' " Fugitive git branch extension
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'justinmk/vim-sneak'
-Plug 'leafgarland/typescript-vim'
 Plug 'luochen1990/rainbow'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-user'
-Plug 'karthikv/vim-typescript'
 Plug 'mattn/emmet-vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'moll/vim-node'
