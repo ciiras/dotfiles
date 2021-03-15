@@ -157,6 +157,7 @@ Plug 'ap/vim-css-color'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'cohama/lexima.vim' " Auto close parentheses
+Plug 'easymotion/vim-easymotion'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
@@ -447,6 +448,10 @@ let g:javascript_conceal_function             = "ƒ"
 let g:javascript_conceal_arrow_function       = "⇒"
 
 " }}}
+
+" easymotion
+autocmd User EasyMotionPromptBegin silent! CocDisable
+autocmd User EasyMotionPromptEnd silent! CocEnable
 
 " }}}
 
