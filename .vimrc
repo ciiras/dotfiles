@@ -228,10 +228,10 @@ let g:coc_global_extensions = [
   \ 'coc-tslint-plugin',
   \ 'coc-angular',
   \ 'coc-eslint',
-  \ 'coc-flow',
   \ 'coc-json',
   \ 'coc-spell-checker',
   \ 'coc-actions',
+  \ 'coc-prettier',
   \ ]
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -344,6 +344,13 @@ nnoremap <silent> <space>y  :<C-u>CocList -I symbols<cr> " Search workspace symb
 nnoremap <silent> <space>j  :<C-u>CocNext<CR> " Do default action for next item.
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR> " Do default action for previous item.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR> " Resume latest coc list.
+
+" Prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+vmap <leader>lf  :Prettier<cr>
+nmap <leader>lf  :Prettier<cr>
+vmap <leader>ls  <Plug>(coc-format-selected)
+nmap <leader>ls  <Plug>(coc-format-selected)
 
 " }}}
 
