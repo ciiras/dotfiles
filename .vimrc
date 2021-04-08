@@ -479,11 +479,13 @@ map <silent> <leader>bd :bd<cr>
 map <silent> <leader>bc :q<cr>
 map <silent> <leader>bo <C-W>o
 
-" Split Resizing
+" Split resizing
 map <M-h> 5<C-W>>
 map <M-l> 5<C-W><
 map <M-j> 5<C-W>-
 map <M-k> 5<C-W>+
+
+map <M-=> <C-W>= " Equalize split size
 
 " Make splitting Vim windows easier
 map <leader>s <C-W>s
