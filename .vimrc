@@ -509,6 +509,9 @@ nnoremap Q <Nop>
 " JSON Format
 map <leader>jf <Esc>:%!python -c "import json, sys, collections; print(json.dumps(json.loads(sys.stdin.read(), object_pairs_hook=collections.OrderedDict), indent=4))"<CR>
 
+" Always have the same thing in the clipboard
+xnoremap p pgvy
+
 " }}}
 
 " Commands {{{
