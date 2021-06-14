@@ -169,6 +169,7 @@ Plug 'markstory/vim-zoomwin'
 Plug 'mattn/emmet-vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'moll/vim-node'
+Plug 'nacro90/numb.nvim'
 Plug 'nelstrom/vim-visual-star-search' " Visual mode */# search
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript'
@@ -460,6 +461,9 @@ let g:javascript_conceal_arrow_function       = "⇒"
 " easymotion
 autocmd User EasyMotionPromptBegin silent! CocDisable
 autocmd User EasyMotionPromptEnd silent! CocEnable
+
+" numb
+:lua require('numb').setup()
 
 " }}}
 
