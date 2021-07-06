@@ -75,7 +75,7 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export LS_COLORS=Gxfxcxdxbxegedabagacad
 export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
-export PATH=$ANDROID_SDK/platoform-tools:$JAVA_HOME:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$MONO:/usr/local/share/dotnet
+export PATH=/Users/griffithc/.local/bin:$ANDROID_SDK/platoform-tools:$JAVA_HOME:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$MONO:/usr/local/share/dotnet
 export TERM="screen-256color"
 
 # }}}
