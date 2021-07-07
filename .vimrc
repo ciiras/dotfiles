@@ -496,13 +496,11 @@ map <M-=> <C-W>= " Equalize split size
 map <leader>s <C-W>s
 map <leader>v <C-W>v
 
-" Git Gutter
-map <leader>gn ]c " next hunk
-map <leader>gp [c " previous hunk
-
 " Git Fugitive
-map <leader>gb :Gblame<cr>
+map <leader>gb :G blame<cr>
 map <leader>gd :Gdiff<cr>
+map <leader>gD :G diff<cr>
+map <leader>gs :Gstatus<cr>
 
 " <C-N>/<C-P> Vim Pop Up Menu Navigation
 inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
