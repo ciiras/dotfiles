@@ -1,5 +1,5 @@
 (defcfg
-    input (iokit-name "Apple Internal Keyboard / Trackpad")
+    input (iokit-name "Keychron K2")
     output (kext)
 
     fallthrough true
@@ -12,7 +12,7 @@
     tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret
     caps a    s    d    f    g    h    j    k    l    ;    '    \
     lsft grv  z    x    c    v    b    n    m    ,    .    /    rsft
-    fn   lctl lalt lmet           spc       rmet ralt left down up   rght
+    lctl lalt lmet           spc       rmet fn   left down up   rght
 )
 
 (defalias esc (tap-hold 200 esc lctl))
@@ -23,7 +23,7 @@
     _    _    _    _    _    _    _    _    _    _    _    _    _    _
     @esc _    _    _    _    _    _    _    _    _    _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _
-    @fn  _    _    _              _         bspc _    _    _    _    _
+    _    _    _              _         bspc fn   _    _    _    _
 )
 
 (defalias fn (around (layer-toggle function) fn))
@@ -33,5 +33,5 @@
     _    _    _    _    _    _    _    _    _    _    _    _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _
-    _    _    _    _              _         _    _    _    _    _    _
+    _    _    _              _         _    _    _    _    _    _
 )
