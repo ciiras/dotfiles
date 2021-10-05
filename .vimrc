@@ -290,10 +290,6 @@ au CursorHold * silent call CocActionAsync('highlight')
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
-
 augroup mygroup
   au!
   " Setup formatexpr specified filetype(s).
@@ -347,6 +343,7 @@ nnoremap <silent> <space>y  :<C-u>CocList -I symbols<cr> " Search workspace symb
 nnoremap <silent> <space>j  :<C-u>CocNext<CR> " Do default action for next item.
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR> " Do default action for previous item.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR> " Resume latest coc list.
+nnoremap <silent> <space>t  :CocToggle<CR>
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -354,6 +351,17 @@ vmap <leader>lf  :Prettier<cr>
 nmap <leader>lf  :Prettier<cr>
 vmap <leader>ls  <Plug>(coc-format-selected)
 nmap <leader>ls  <Plug>(coc-format-selected)
+xmap <leader>ls  <Plug>(coc-format-selected)
+
+" Toggle Coc
+function! CocToggle()
+    if g:coc_enabled
+        CocDisable
+    else
+        CocEnable
+    endif
+endfunction
+command! CocToggle :call CocToggle()
 
 " }}}
 
