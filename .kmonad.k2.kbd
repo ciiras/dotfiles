@@ -7,7 +7,7 @@
 )
 
 (defsrc
-    esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+    esc  brdn brup lp   mctl bldn blup prev pp   next mute vold volu
          1    2    3    4    5    6    7    8    9    0    -    =    bspc
     tab  q    w    e    r    t    y    u    i    o    p    [    ]    ret
     caps a    s    d    f    g    h    j    k    l    ;    '    \
@@ -18,7 +18,7 @@
 (defalias esc (tap-hold 200 esc lctl))
 
 (deflayer default
-    _    brdn brup lp   mctl bldn blup prev pp   next mute vold volu
+    _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
          _    _    _    _    _    _    _    _    _    _    _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _    _
     @esc _    _    _    _    _    _    _    _    _    _    _    _
@@ -28,7 +28,7 @@
 
 (defalias fn (around (layer-toggle function) fn))
 (deflayer function
-    _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+    _    brdn brup lp   mctl bldn blup prev pp   next mute vold volu
          _    _    _    _    _    _    _    _    _    _    _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _    _
     _    _    _    _    _    _    _    _    _    _    _    _    _
