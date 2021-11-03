@@ -1,11 +1,11 @@
 curDir=$(pwd)
 
-ls -s ~/.vim/ ~/.config/nvim/
-ln -s ${curDir}/.vimrc ~/.config/nvim/init.vim
-ln -s ${curDir}/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+ls -sF ~/.vim/ ~/.config/nvim/
+ln -sF ${curDir}/.vimrc ~/.config/nvim/init.vim
+ln -sF ${curDir}/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 
-ln -s ${curDir}/.gitconfig ~/.gitconfig
-ln -s ${curDir}/.gitignore ~/.gitignore
-ln -s ${curDir}/.tmux.conf ~/.tmux.conf
-ln -s ${curDir}/.vimrc ~/.vimrc
-ln -s ${curDir}/.zshrc ~/.zshrc
+ln -sF ${curDir}/.gitconfig ~/.gitconfig
+ln -sF ${curDir}/.gitignore ~/.gitignore
+ln -sF ${curDir}/.tmux.conf ~/.tmux.conf
+ln -sF ${curDir}/.vimrc ~/.vimrc
+ln -sF ${curDir}/.zshrc ~/.zshrc
