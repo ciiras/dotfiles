@@ -158,6 +158,7 @@ Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'cohama/lexima.vim' " Auto close parentheses
 Plug 'easymotion/vim-easymotion'
+Plug 'fladson/vim-kitty'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
