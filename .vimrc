@@ -162,6 +162,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'justinmk/vim-sneak'
+Plug 'lifepillar/vim-solarized8', { 'dir': '~/.vim/colors/solarized8' }
 Plug 'luochen1990/rainbow'
 Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-user'
