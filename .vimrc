@@ -472,6 +472,9 @@ let g:javascript_conceal_arrow_function       = "⇒"
 autocmd User EasyMotionPromptBegin silent! CocDisable
 autocmd User EasyMotionPromptEnd silent! CocEnable
 
+" vimwiki
+let g:vimwiki_list = [{'path': '~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/vimwiki'}]
+
 " }}}
 
 " Mappings {{{
