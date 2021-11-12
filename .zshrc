@@ -54,10 +54,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Exports {{{
 
-MONO=/Library/Frameworks/Mono.framework/Versions/Current/bin/
-JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home
-
-export ANDROID_SDK=~/Library/Android/sdk
 export CLICOLOR=1
 export EDITOR='nvim'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse-list --border'
@@ -75,7 +71,7 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export LS_COLORS=Gxfxcxdxbxegedabagacad
 export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
-export PATH=/Users/griffithc/.local/bin:$ANDROID_SDK/platoform-tools:$JAVA_HOME:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$MONO:/usr/local/share/dotnet
+export PATH=./:/Users/griffithc/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export TERM="screen-256color"
 
 # }}}
