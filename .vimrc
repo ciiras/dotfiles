@@ -259,9 +259,9 @@ inoremap <silent><expr> <c-space> coc#refresh()
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<cr>"
 else
-  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<cr>"
 endif
 
 " Use `[g` and `]g` to navigate diagnostics
@@ -275,7 +275,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call <SID>show_documentation()<cr>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -341,10 +341,10 @@ nnoremap <silent> <space>c  :<C-u>CocList commands<cr> " Show commands.
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr> " Find symbol of current document.
 nnoremap <space>s :CocSearch<Space>
 nnoremap <silent> <space>y  :<C-u>CocList -I symbols<cr> " Search workspace symbols.
-nnoremap <silent> <space>j  :<C-u>CocNext<CR> " Do default action for next item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<CR> " Do default action for previous item.
-nnoremap <silent> <space>p  :<C-u>CocListResume<CR> " Resume latest coc list.
-nnoremap <silent> <space>t  :CocToggle<CR>
+nnoremap <silent> <space>j  :<C-u>CocNext<cr> " Do default action for next item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<cr> " Do default action for previous item.
+nnoremap <silent> <space>p  :<C-u>CocListResume<cr> " Resume latest coc list.
+nnoremap <silent> <space>t  :CocToggle<cr>
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -519,8 +519,11 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
 " Ex Mode Disable
 nnoremap Q <Nop>
 
-" JSON Format
-map <leader>jf <Esc>:%!python -c "import json, sys, collections; print(json.dumps(json.loads(sys.stdin.read(), object_pairs_hook=collections.OrderedDict), indent=4))"<CR>
+" JSON Formating
+map <leader>jf <Esc>:%!python3 -c "import json, sys, collections; print(json.dumps(json.loads(sys.stdin.read(), object_pairs_hook=collections.OrderedDict), indent=4))"<cr>
+
+" XML Formatting
+map <leader>xf <Esc>:%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"<cr>
 
 " Always have the same thing in the clipboard
 xnoremap p pgvy
