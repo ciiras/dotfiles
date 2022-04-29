@@ -486,13 +486,13 @@ nnoremap <silent> <leader>r :source $MYVIMRC<cr> :echo '---.vimrc reloaded---'<c
 nnoremap <silent> <esc> :nohlsearch<cr>
 
 " Buffers
-map <silent> <leader>bl :ls<cr> " List
-map <silent> <leader>bp :bp<cr> " Previous
-map <silent> <leader>bn :bn<cr> " Next
-map <silent> <leader>bd :bd<cr> " Delete
-map <silent> <leader>bo <C-W>o  " Only
-map <silent> <leader>bs :new<cr> " Create Vertical
-
+map <silent> <leader>bl :ls<cr>                 " List
+map <silent> <leader>bp :bp<cr>                 " Previous
+map <silent> <leader>bn :bn<cr>                 " Next
+map <silent> <leader>bd :bd<cr>                 " Delete
+map <silent> <leader>bD :%bd<cr>                " Delete All
+map <silent> <leader>bo <C-W>o                  " Only
+map <silent> <leader>bs :new<cr>                " Create Vertical
 
 " Split resizing
 map <M-h> 5<C-W>>
