@@ -489,8 +489,8 @@ nnoremap <silent> <esc> :nohlsearch<cr>
 map <silent> <leader>bl :ls<cr>                 " List
 map <silent> <leader>bp :bp<cr>                 " Previous
 map <silent> <leader>bn :bn<cr>                 " Next
-map <silent> <leader>bd :bd<cr>                 " Delete
-map <silent> <leader>bD :%bd<cr>                " Delete All
+map <silent> <leader>bd :bd<cr>                 " Close
+map <silent> <leader>bD :%bd<cr>                " Close All
 map <silent> <leader>bo <C-W>o                  " Only
 map <silent> <leader>bs :new<cr>                " Create Vertical
 
