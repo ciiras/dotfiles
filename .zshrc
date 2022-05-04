@@ -187,7 +187,6 @@ bindkey -M viins '^R' history-incremental-search-backward
 bindkey -M viins '^F' history-incremental-search-forward
 
 bindkey -M vicmd '/' history-incremental-search-backward
-bindkey -M viins '?' history-incremental-search-forward
 
 bindkey -M menuselect '^h' vi-backward-char
 bindkey -M menuselect '^k' vi-up-line-or-history
