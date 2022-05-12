@@ -152,41 +152,40 @@ endif
 
 call plug#begin()
 
-Plug 'airblade/vim-gitgutter'
-Plug 'ap/vim-css-color'
-Plug 'christoomey/vim-sort-motion'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'cohama/lexima.vim' " Auto close parentheses
-Plug 'easymotion/vim-easymotion'
+Plug 'airblade/vim-gitgutter'                                                       " Git diff line indicator
+Plug 'ap/vim-css-color'                                                             " Color highlighter
+Plug 'christoomey/vim-sort-motion'                                                  " Sort items in text objects
+Plug 'christoomey/vim-tmux-navigator'                                               " Navigation between tmux and vim
+Plug 'cohama/lexima.vim'                                                            " Auto close parentheses
+Plug 'easymotion/vim-easymotion'                                                    " Enhanced char and word search
 Plug 'fladson/vim-kitty'
-Plug 'HerringtonDarkholme/yats.vim'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-peekaboo'
-Plug 'justinmk/vim-sneak'
-Plug 'lifepillar/vim-solarized8', { 'dir': '~/.vim/colors/solarized8' }
-Plug 'luochen1990/rainbow'
-Plug 'kana/vim-textobj-line'
-Plug 'kana/vim-textobj-user'
-Plug 'kmonad/kmonad-vim'
-Plug 'markstory/vim-zoomwin'
-Plug 'mattn/emmet-vim'
-Plug 'MaxMEllon/vim-jsx-pretty'
-Plug 'moll/vim-node'
-Plug 'nelstrom/vim-visual-star-search' " Visual mode */# search
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'pangloss/vim-javascript'
-Plug 'preservim/nerdtree'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vimwiki/vimwiki'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'HerringtonDarkholme/yats.vim'                                                 " Yet Another TypeScript Syntax
+Plug 'junegunn/fzf.vim'                                                             " ripgrep fuzzy search
+Plug 'junegunn/vim-peekaboo'                                                        " Show clipboard/macro registers
+Plug 'justinmk/vim-sneak'                                                           " Search by two chars
+Plug 'lifepillar/vim-solarized8', { 'dir': '~/.vim/colors/solarized8' }             " Theme
+Plug 'luochen1990/rainbow'                                                          " Rainbow paranthesis
+Plug 'kana/vim-textobj-line'                                                        " Create own text objects
+Plug 'kana/vim-textobj-user'                                                        " Create own text objects
+Plug 'markstory/vim-zoomwin'                                                        " Toggle show current split only
+Plug 'mattn/emmet-vim'                                                              " Markup expansion
+Plug 'MaxMEllon/vim-jsx-pretty'                                                     " Syntax highlighting
+Plug 'moll/vim-node'                                                                " Allow file navigation with require('...')
+Plug 'nelstrom/vim-visual-star-search'                                              " Visual mode */# search
+Plug 'neoclide/coc.nvim', {'branch': 'release'}                                     " Intellisense
+Plug 'pangloss/vim-javascript'                                                      " Syntax highlighting
+Plug 'preservim/nerdtree'                                                           " Directory side panel
+Plug 'tmux-plugins/vim-tmux-focus-events'                                           " Adds FocusGained/FocusLost events back for other plugins
+Plug 'tomtom/tcomment_vim'                                                          " Comments
+Plug 'tpope/vim-fugitive'                                                           " Exposes git commands
+Plug 'tpope/vim-obsession'                                                          " Session.vim reload
+Plug 'tpope/vim-repeat'                                                             " Expands repeat support to plugins
+Plug 'tpope/vim-surround'                                                           " Surround tool
+Plug 'tpope/vim-unimpaired'                                                         " Adds utility key bindings
+Plug 'vim-airline/vim-airline'                                                      " Status bar and tabs
+Plug 'vim-airline/vim-airline-themes'                                               " Airline themes
+Plug 'vimwiki/vimwiki'                                                              " Vimwiki
+Plug 'Xuyuanp/nerdtree-git-plugin'                                                  " Adds git information to directory side panel
 
 Plug 'ryanoasis/vim-devicons' " Has to be loaded at the end
 
