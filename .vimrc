@@ -158,7 +158,8 @@ Plug 'christoomey/vim-sort-motion'                                              
 Plug 'christoomey/vim-tmux-navigator'                                               " Navigation between tmux and vim
 Plug 'cohama/lexima.vim'                                                            " Auto close parentheses
 Plug 'easymotion/vim-easymotion'                                                    " Enhanced char and word search
-Plug 'fladson/vim-kitty'
+Plug 'fladson/vim-kitty'                                                            " Kitty config syntax highlighting
+Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do': 'make fsautocomplete' }          " F#
 Plug 'HerringtonDarkholme/yats.vim'                                                 " Yet Another TypeScript Syntax
 Plug 'junegunn/fzf.vim'                                                             " ripgrep fuzzy search
 Plug 'junegunn/vim-peekaboo'                                                        " Show clipboard/macro registers
