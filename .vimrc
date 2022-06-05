@@ -474,6 +474,7 @@ autocmd User EasyMotionPromptEnd silent! CocEnable
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/vimwiki'}]
+let g:vimwiki_url_maxsave = 0
 
 " }}}
 
