@@ -161,6 +161,7 @@ Plug 'easymotion/vim-easymotion'                                                
 Plug 'fladson/vim-kitty'                                                            " Kitty config syntax highlighting
 Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do': 'make fsautocomplete' }          " F#
 Plug 'HerringtonDarkholme/yats.vim'                                                 " Yet Another TypeScript Syntax
+Plug 'ianding1/leetcode.vim'                                                        " leetcode
 Plug 'junegunn/fzf.vim'                                                             " ripgrep fuzzy search
 Plug 'junegunn/vim-peekaboo'                                                        " Show clipboard/macro registers
 Plug 'justinmk/vim-sneak'                                                           " Search by two chars
@@ -475,6 +476,9 @@ autocmd User EasyMotionPromptEnd silent! CocEnable
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/vimwiki'}]
 let g:vimwiki_url_maxsave = 0
+
+" leetcode
+let g:leetcode_browser = 'firefox'
 
 " }}}
 
