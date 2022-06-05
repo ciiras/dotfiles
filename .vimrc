@@ -479,6 +479,12 @@ let g:vimwiki_url_maxsave = 0
 
 " leetcode
 let g:leetcode_browser = 'firefox'
+let g:leetcode_solution_filetype = 'javascript'
+
+nnoremap <leader>lcl :LeetCodeList<cr>
+nnoremap <leader>lct :LeetCodeTest<cr>
+nnoremap <leader>lcs :LeetCodeSubmit<cr>
+nnoremap <leader>lci :LeetCodeSignIn<cr>
 
 " }}}
 
