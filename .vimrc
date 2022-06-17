@@ -506,10 +506,10 @@ map <silent> <leader>bo <C-W>o                  " Only
 map <silent> <leader>bs :new<cr>                " Create Vertical
 
 " Split resizing
-map <M-h> 5<C-W>>
-map <M-l> 5<C-W><
-map <M-j> 5<C-W>-
-map <M-k> 5<C-W>+
+map <M-h> <C-W>>
+map <M-l> <C-W><
+map <M-j> <C-W>-
+map <M-k> <C-W>+
 
 map <M-=> <C-W>= " Equalize split size
 
