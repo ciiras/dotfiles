@@ -112,6 +112,7 @@ alias rgn="ripgrep_file_names_only"
 alias t="tmux"
 alias vc="code config/consul.json"
 alias vi="nvim"
+alias v="nvim"
 
 # }}}
 
