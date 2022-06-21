@@ -135,7 +135,7 @@ set undodir=~/.vim/undodir
 set undofile
 
 " Cursor
-:set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
 
 " Always show the signcolumn
 set signcolumn=yes
@@ -451,7 +451,7 @@ let g:NERDTreeLimitedSyntax = 1
 let vim_markdown_preview_github=1
 
 " vim-session
-:let g:session_autosave = 'no'
+let g:session_autosave = 'no'
 
 " vim-javascript/vim-typescript {{{
 
