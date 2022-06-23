@@ -153,6 +153,7 @@ endif
 call plug#begin()
 
 Plug 'airblade/vim-gitgutter'                                                       " Git diff line indicator
+Plug 'airblade/vim-tag-closer'                                                      " Close tags - ctrl+g/
 Plug 'ap/vim-css-color'                                                             " Color highlighter
 Plug 'christoomey/vim-sort-motion'                                                  " Sort items in text objects
 Plug 'christoomey/vim-tmux-navigator'                                               " Navigation between tmux and vim
