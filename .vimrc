@@ -395,7 +395,8 @@ au FocusGained, BufEnter * :checktime
 " Airline {{{
 
 let g:airline_powerline_fonts = 1
-let g:airline_section_b = ''
+let g:airline_section_b = '%-0.100{getcwd()}'                                    " Current directory limited to 100 characters
+let g:airline_section_c = '%t'                                                   " Filename
 let g:airline_theme = 'light'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
