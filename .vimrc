@@ -121,7 +121,7 @@ set showmatch
 " Set built-in file system explorer to use layout similar to the NERDTree plugin
 let g:netrw_liststyle=3
 
-" Always highlight column 80 so it's easier to see where
+" Always highlight column 80
 set colorcolumn=80
 
 " Persistent undo
