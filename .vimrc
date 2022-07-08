@@ -362,8 +362,9 @@ command! CocToggle :call CocToggle()
 set rtp+=/usr/local/opt/fzf " Maps fzf so the fzf.vim plugin
 
 map <silent> <leader>ff :Files<cr>
-map <silent> <leader>fl :BLines<cr>
 map <silent> <leader>fg :GitFiles?<cr>
+map <silent> <leader>fh :History<cr>
+map <silent> <leader>fl :BLines<cr>
 map <silent> <leader>fr :Rg<cr>
 
 " }}}
