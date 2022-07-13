@@ -72,6 +72,14 @@ set shiftwidth=4
 set number
 set relativenumber
 
+" Current line highlighting
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+
+" Current column highlighting
+autocmd WinEnter * setlocal cursorcolumn
+autocmd WinLeave * setlocal nocursorcolumn
+
 " Highlight whitespace
 set listchars=tab:›\ ,eol:¬,space:⋅
 set nolist
