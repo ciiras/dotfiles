@@ -69,7 +69,8 @@ set tabstop=4
 set shiftwidth=4
 
 " Turn on line numbers
-:set number
+set number
+set relativenumber
 
 " Highlight whitespace
 set listchars=tab:›\ ,eol:¬,space:⋅
