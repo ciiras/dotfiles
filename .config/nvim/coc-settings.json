@@ -567,6 +567,7 @@
       "reporttypeid",
       "reporttypes",
       "requestinguser",
+      "require'nvim",
       "requiredvin",
       "Rerate",
       "resetaccounts",
