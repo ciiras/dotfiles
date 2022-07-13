@@ -491,7 +491,7 @@ nnoremap <leader>lci :LeetCodeSignIn<cr>
 
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "html", "javascript", "lua", "rust", "tsx", "typescript" },
+  ensure_installed = { "c", "c_sharp", "dockerfile", "html", "javascript", "lua", "make", "markdown", "rust", "scss", "tsx", "typescript", "vim", "yaml" },
   sync_install = false,
   auto_install = true,
   ignore_install = {},
