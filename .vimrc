@@ -167,12 +167,10 @@ Plug 'kana/vim-textobj-line'                                                    
 Plug 'kana/vim-textobj-user'                                                        " Create own text objects
 Plug 'markstory/vim-zoomwin'                                                        " Toggle show current split only
 Plug 'mattn/emmet-vim'                                                              " Markup expansion
-Plug 'MaxMEllon/vim-jsx-pretty'                                                     " Syntax highlighting
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}                                 " Multiple Cursors
 Plug 'moll/vim-node'                                                                " Allow file navigation with require('...')
 Plug 'nelstrom/vim-visual-star-search'                                              " Visual mode */# search
 Plug 'neoclide/coc.nvim', {'branch': 'release'}                                     " Intellisense
-Plug 'pangloss/vim-javascript'                                                      " Syntax highlighting
 Plug 'preservim/nerdtree'                                                           " Directory side panel
 Plug 'tmux-plugins/vim-tmux-focus-events'                                           " Adds FocusGained/FocusLost events back for other plugins
 Plug 'tomtom/tcomment_vim'                                                          " Comments
