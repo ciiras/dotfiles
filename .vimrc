@@ -171,6 +171,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}                             
 Plug 'moll/vim-node'                                                                " Allow file navigation with require('...')
 Plug 'nelstrom/vim-visual-star-search'                                              " Visual mode */# search
 Plug 'neoclide/coc.nvim', {'branch': 'release'}                                     " Intellisense
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}                         " Treesitter
 Plug 'preservim/nerdtree'                                                           " Directory side panel
 Plug 'tmux-plugins/vim-tmux-focus-events'                                           " Adds FocusGained/FocusLost events back for other plugins
 Plug 'tomtom/tcomment_vim'                                                          " Comments
@@ -485,6 +486,23 @@ nnoremap <leader>lcl :LeetCodeList<cr>
 nnoremap <leader>lct :LeetCodeTest<cr>
 nnoremap <leader>lcs :LeetCodeSubmit<cr>
 nnoremap <leader>lci :LeetCodeSignIn<cr>
+
+" nvim-treesitter {{{
+
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "c", "html", "javascript", "lua", "rust", "tsx", "typescript" },
+  sync_install = false,
+  auto_install = true,
+  ignore_install = {},
+  highlight = {
+    enable = true,
+    disable = {},
+    additional_vim_regex_highlighting = false,
+  },
+}
+EOF
+" }}}
 
 " }}}
 
