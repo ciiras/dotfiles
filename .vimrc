@@ -525,6 +525,8 @@ require('gitsigns').setup{
           vim.schedule(function() gs.prev_hunk() end)
           return '<Ignore>'
         end, {expr=true})
+
+        map('n', '<leader>hp', gs.preview_hunk)
     end
 }
 EOF
