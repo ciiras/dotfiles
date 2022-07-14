@@ -151,7 +151,6 @@ endif
 
 call plug#begin()
 
-Plug 'airblade/vim-gitgutter'                                                       " Git diff line indicator
 Plug 'airblade/vim-tag-closer'                                                      " Close tags - ctrl+g/
 Plug 'ap/vim-css-color'                                                             " Color highlighter
 Plug 'christoomey/vim-sort-motion'                                                  " Sort items in text objects
@@ -165,6 +164,7 @@ Plug 'ianding1/leetcode.vim'                                                    
 Plug 'junegunn/fzf.vim'                                                             " ripgrep fuzzy search
 Plug 'junegunn/vim-peekaboo'                                                        " Show clipboard/macro registers
 Plug 'justinmk/vim-sneak'                                                           " Search by two chars
+Plug 'lewis6991/gitsigns.nvim'                                                      " Git diff line indicator
 Plug 'lifepillar/vim-solarized8', { 'dir': '~/.vim/colors/solarized8' }             " Theme
 Plug 'luochen1990/rainbow'                                                          " Rainbow paranthesis
 Plug 'kana/vim-textobj-line'                                                        " Create own text objects
@@ -430,12 +430,6 @@ let g:github_token = $GITHUB_TOKEN
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 
-" Git Gutter
-au BufWritePost * GitGutter
-let g:gitgutter_enabled = 1
-let g:gitgutter_eager = 1
-highlight clear SignColumn
-
 " NERDTree {{{
 
 map <silent> <leader>. :NERDTreeToggle<cr>
@@ -504,6 +498,34 @@ require'nvim-treesitter.configs'.setup {
     disable = {},
     additional_vim_regex_highlighting = false,
   },
+}
+EOF
+" }}}
+
+" gitsigns.nvim {{{
+lua << EOF
+require('gitsigns').setup{
+    on_attach = function(bufnr)
+        local gs = package.loaded.gitsigns
+
+        local function map(mode, l, r, opts)
+          opts = opts or {}
+          opts.buffer = bufnr
+          vim.keymap.set(mode, l, r, opts)
+        end
+
+        map('n', ']c', function()
+          if vim.wo.diff then return ']c' end
+          vim.schedule(function() gs.next_hunk() end)
+          return '<Ignore>'
+        end, {expr=true})
+
+        map('n', '[c', function()
+          if vim.wo.diff then return '[c' end
+          vim.schedule(function() gs.prev_hunk() end)
+          return '<Ignore>'
+        end, {expr=true})
+    end
 }
 EOF
 " }}}
