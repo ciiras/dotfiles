@@ -159,7 +159,6 @@ Plug 'cohama/lexima.vim'                                                        
 Plug 'easymotion/vim-easymotion'                                                    " Enhanced char and word search
 Plug 'fladson/vim-kitty'                                                            " Kitty config syntax highlighting
 Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do': 'make fsautocomplete' }          " F#
-Plug 'HerringtonDarkholme/yats.vim'                                                 " Yet Another TypeScript Syntax
 Plug 'ianding1/leetcode.vim'                                                        " leetcode
 Plug 'junegunn/fzf.vim'                                                             " ripgrep fuzzy search
 Plug 'junegunn/vim-peekaboo'                                                        " Show clipboard/macro registers
