@@ -473,7 +473,7 @@ require("nvim-treesitter.configs").setup {
         disable = {},
         enable = true,
         extended_mode = true,
-        termcolors = { "Cyan", "Red", "White", "Magenta", "Yellow", "Green", "Blue" }
+        termcolors = { "Cyan", "Magenta", "White", "Red", "Yellow", "Green", "Blue" }
     }
 }
 EOF
