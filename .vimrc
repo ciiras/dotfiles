@@ -165,7 +165,6 @@ Plug 'junegunn/vim-peekaboo'                                                    
 Plug 'justinmk/vim-sneak'                                                           " Search by two chars
 Plug 'lewis6991/gitsigns.nvim'                                                      " Git diff line indicator
 Plug 'lifepillar/vim-solarized8', { 'dir': '~/.vim/colors/solarized8' }             " Theme
-Plug 'luochen1990/rainbow'                                                          " Rainbow paranthesis
 Plug 'kana/vim-textobj-line'                                                        " Create own text objects
 Plug 'kana/vim-textobj-user'                                                        " Create own text objects
 Plug 'markstory/vim-zoomwin'                                                        " Toggle show current split only
@@ -175,6 +174,7 @@ Plug 'moll/vim-node'                                                            
 Plug 'nelstrom/vim-visual-star-search'                                              " Visual mode */# search
 Plug 'neoclide/coc.nvim', {'branch': 'release'}                                     " Intellisense
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}                         " Treesitter
+Plug 'p00f/nvim-ts-rainbow'                                                         " Rainbow parentheses
 Plug 'preservim/nerdtree'                                                           " Directory side panel
 Plug 'tmux-plugins/vim-tmux-focus-events'                                           " Adds FocusGained/FocusLost events back for other plugins
 Plug 'tomtom/tcomment_vim'                                                          " Comments
@@ -194,34 +194,6 @@ call plug#end()
 
 " vim-sort-motion
 let g:sort_motion_flags = "ui"
-
-" Rainbow {{{
-let g:rainbow_active = 1
-let g:rainbow_conf = {
-\   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-\   'ctermfgs': ['red', 'lightblue', 'green', '142'],
-\   'operators': '_,_',
-\   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-\   'separately': {
-\      '*': {},
-\      'tex': {
-\      	'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-\      },
-\      'lisp': {
-\      	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-\      },
-\      'vim': {
-\      	'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-\      },
-\      'html': 0,
-\      'css': 0,
-\      'scss': 0,
-\      'nerdtree': 0,
-\      'vimwiki': 0,
-\      'fzf': 0,
-\      'ts': 0,
-\   }
-\}
 
 " }}}
 
@@ -487,16 +459,22 @@ nnoremap <leader>lci :LeetCodeSignIn<cr>
 " nvim-treesitter {{{
 
 lua << EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "c", "c_sharp", "dockerfile", "html", "javascript", "lua", "make", "markdown", "rust", "scss", "tsx", "typescript", "vim", "yaml" },
-  sync_install = false,
-  auto_install = true,
-  ignore_install = {},
-  highlight = {
-    enable = true,
-    disable = {},
-    additional_vim_regex_highlighting = false,
-  },
+require("nvim-treesitter.configs").setup {
+    ensure_installed = { "c", "c_sharp", "dockerfile", "html", "javascript", "lua", "make", "markdown", "rust", "scss", "tsx", "typescript", "vim", "yaml" },
+    sync_install = false,
+    auto_install = true,
+    ignore_install = {},
+    highlight = {
+        enable = true,
+        disable = {},
+        additional_vim_regex_highlighting = true,
+    },
+    rainbow = {
+        disable = {},
+        enable = true,
+        extended_mode = true,
+        termcolors = { "Cyan", "Red", "White", "Magenta", "Yellow", "Green", "Blue" }
+    }
 }
 EOF
 " }}}
