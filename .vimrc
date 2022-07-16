@@ -457,55 +457,64 @@ nnoremap <leader>lcs :LeetCodeSubmit<cr>
 nnoremap <leader>lci :LeetCodeSignIn<cr>
 
 " nvim-treesitter {{{
-
 lua << EOF
-require("nvim-treesitter.configs").setup {
-    ensure_installed = { "c", "c_sharp", "dockerfile", "html", "javascript", "lua", "make", "markdown", "rust", "scss", "tsx", "typescript", "vim", "yaml" },
-    sync_install = false,
-    auto_install = true,
-    ignore_install = {},
-    highlight = {
-        enable = true,
-        disable = {},
-        additional_vim_regex_highlighting = true,
-    },
-    rainbow = {
-        disable = {},
-        enable = true,
-        extended_mode = true,
-        termcolors = { "Cyan", "Magenta", "White", "Red", "Yellow", "Green", "Blue" }
+
+    local cyan = "51"
+    local gold = "142"
+    local white = "15"
+    local red = "9"
+    local yellow = "11"
+    local lime = "10"
+    local blue = "12"
+
+
+    require("nvim-treesitter.configs").setup {
+        ensure_installed = { "c", "c_sharp", "dockerfile", "html", "javascript", "lua", "make", "markdown", "rust", "scss", "tsx", "typescript", "vim", "yaml" },
+        sync_install = false,
+        auto_install = true,
+        ignore_install = {},
+        highlight = {
+            enable = true,
+            disable = {},
+            additional_vim_regex_highlighting = true,
+        },
+        rainbow = {
+            disable = {},
+            enable = true,
+            extended_mode = true,
+            termcolors = { cyan, gold, white, red, yellow, lime, blue }
+        }
     }
-}
 EOF
 " }}}
 
 " gitsigns.nvim {{{
 lua << EOF
-require('gitsigns').setup{
-    on_attach = function(bufnr)
-        local gs = package.loaded.gitsigns
+    require('gitsigns').setup{
+        on_attach = function(bufnr)
+            local gs = package.loaded.gitsigns
 
-        local function map(mode, l, r, opts)
-          opts = opts or {}
-          opts.buffer = bufnr
-          vim.keymap.set(mode, l, r, opts)
+            local function map(mode, l, r, opts)
+              opts = opts or {}
+              opts.buffer = bufnr
+              vim.keymap.set(mode, l, r, opts)
+            end
+
+            map('n', ']c', function()
+              if vim.wo.diff then return ']c' end
+              vim.schedule(function() gs.next_hunk() end)
+              return '<Ignore>'
+            end, {expr=true})
+
+            map('n', '[c', function()
+              if vim.wo.diff then return '[c' end
+              vim.schedule(function() gs.prev_hunk() end)
+              return '<Ignore>'
+            end, {expr=true})
+
+            map('n', '<leader>hp', gs.preview_hunk)
         end
-
-        map('n', ']c', function()
-          if vim.wo.diff then return ']c' end
-          vim.schedule(function() gs.next_hunk() end)
-          return '<Ignore>'
-        end, {expr=true})
-
-        map('n', '[c', function()
-          if vim.wo.diff then return '[c' end
-          vim.schedule(function() gs.prev_hunk() end)
-          return '<Ignore>'
-        end, {expr=true})
-
-        map('n', '<leader>hp', gs.preview_hunk)
-    end
-}
+    }
 EOF
 " }}}
 
