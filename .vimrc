@@ -196,8 +196,6 @@ call plug#end()
 " vim-sort-motion
 let g:sort_motion_flags = "ui"
 
-" }}}
-
 " coc {{{
 
 let g:coc_global_extensions = [
@@ -519,6 +517,17 @@ lua << EOF
 EOF
 " }}}
 
+" Nightfox color scheme
+lua << EOF
+    require('nightfox').setup({
+        options = {
+            dim_inactive = true
+        },
+    })
+
+    vim.cmd("colorscheme nightfox")
+EOF
+
 " }}}
 
 " Mappings {{{
@@ -603,45 +612,5 @@ au Bufread,BufNewFile *.md set filetype=markdown " Vim interprets .md as 'modula
 " Close all folds when opening a new buffer
 au BufRead * setlocal foldmethod=marker
 au BufRead * normal zM
-
-" }}}
-
-" Theme {{{
-
-set background=dark
-set t_Co=256
-
-lua << EOF
-    vim.cmd("colorscheme nightfox")
-EOF
-
-hi Comment ctermfg=101
-hi Folded ctermbg=240 ctermfg=39
-hi CursorLine ctermbg=235
-hi LineNr ctermbg=0 ctermfg=60
-hi CursorLineNr ctermbg=238 ctermfg=39
-hi ActiveWindow ctermbg=0
-hi InactiveWindow ctermbg=236
-hi Normal ctermbg=0
-
-function FocusGainedFunc()
-    hi ActiveWindow ctermbg=0 | hi InactiveWindow ctermbg=236
-    set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
-endfunction
-
-augroup FocusGainedGroup
-    au!
-    au FocusGained * call FocusGainedFunc()
-augroup END
-
-function FocusLostFunc()
-    hi ActiveWindow ctermbg=236 | hi InactiveWindow ctermbg=236
-    set winhighlight=Normal:ActiveWindow,NormalNC:InactiveWindow
-endfunction
-
-augroup FocusLostGroup
-    au!
-    au FocusLost * call FocusLostFunc()
-augroup END
 
 " }}}
