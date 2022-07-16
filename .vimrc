@@ -174,6 +174,7 @@ Plug 'moll/vim-node'                                                            
 Plug 'nelstrom/vim-visual-star-search'                                              " Visual mode */# search
 Plug 'neoclide/coc.nvim', {'branch': 'release'}                                     " Intellisense
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}                         " Treesitter
+Plug 'pineapplegiant/spaceduck', { 'branch': 'main' }                               " Color scheme
 Plug 'p00f/nvim-ts-rainbow'                                                         " Rainbow parentheses
 Plug 'preservim/nerdtree'                                                           " Directory side panel
 Plug 'tmux-plugins/vim-tmux-focus-events'                                           " Adds FocusGained/FocusLost events back for other plugins
@@ -607,9 +608,16 @@ au BufRead * normal zM
 
 " Theme {{{
 
-set background=dark
+set background=light
 set t_Co=256
-colorscheme solarized8
+
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  set termguicolors
+endif
+
+colorscheme spaceduck
 
 hi Comment ctermfg=101
 hi Folded ctermbg=240 ctermfg=39
