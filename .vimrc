@@ -517,7 +517,7 @@ require('gitsigns').setup({
 EOF
 " }}}
 
-" Nightfox color scheme
+" Nightfox color scheme {{{
 lua << EOF
 require('nightfox').setup({
     options = {
@@ -540,6 +540,7 @@ require('nightfox').setup({
 
 vim.cmd("colorscheme nightfox")
 EOF
+" }}}
 
 " }}}
 
