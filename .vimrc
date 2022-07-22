@@ -519,13 +519,26 @@ EOF
 
 " Nightfox color scheme
 lua << EOF
-    require('nightfox').setup({
-        options = {
-            dim_inactive = true
+require('nightfox').setup({
+    options = {
+        transparent = true,
+        dim_inactive = true,
+        styles = {
+            keywords = 'bold',
         },
-    })
+        inverse = {
+            visual = true,
+            search = true,
+        },
+    },
+    groups = {
+        all = {
+            NormalNC = { bg = "#303030" },
+        },
+    },
+})
 
-    vim.cmd("colorscheme nightfox")
+vim.cmd("colorscheme nightfox")
 EOF
 
 " }}}
