@@ -156,6 +156,7 @@ Plug 'ap/vim-css-color'                                                         
 Plug 'christoomey/vim-sort-motion'                                                  " Sort items in text objects
 Plug 'christoomey/vim-tmux-navigator'                                               " Navigation between tmux and vim
 Plug 'cohama/lexima.vim'                                                            " Auto close parentheses
+Plug 'dstein64/vim-startuptime'                                                     " Startup time monitor
 Plug 'easymotion/vim-easymotion'                                                    " Enhanced char and word search
 Plug 'EdenEast/nightfox.nvim'                                                       " Color scheme
 Plug 'fladson/vim-kitty'                                                            " Kitty config syntax highlighting
