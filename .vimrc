@@ -1,4 +1,3 @@
-" Leader
 :let mapleader = ","
 
 " Settings {{{
@@ -169,12 +168,14 @@ Plug 'lewis6991/gitsigns.nvim'                                                  
 Plug 'lifepillar/vim-solarized8', { 'dir': '~/.vim/colors/solarized8' }             " Theme
 Plug 'kana/vim-textobj-line'                                                        " Create own text objects
 Plug 'kana/vim-textobj-user'                                                        " Create own text objects
+Plug 'kyazdani42/nvim-web-devicons'                                                 " Icons
 Plug 'markstory/vim-zoomwin'                                                        " Toggle show current split only
 Plug 'mattn/emmet-vim'                                                              " Markup expansion
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}                                 " Multiple Cursors
 Plug 'moll/vim-node'                                                                " Allow file navigation with require('...')
 Plug 'nelstrom/vim-visual-star-search'                                              " Visual mode */# search
 Plug 'neoclide/coc.nvim', {'branch': 'release'}                                     " Intellisense
+Plug 'nvim-lualine/lualine.nvim'                                                    " Status bar and tabs
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}                         " Treesitter
 Plug 'p00f/nvim-ts-rainbow'                                                         " Rainbow parentheses
 Plug 'preservim/nerdtree'                                                           " Directory side panel
@@ -185,12 +186,10 @@ Plug 'tpope/vim-obsession'                                                      
 Plug 'tpope/vim-repeat'                                                             " Expands repeat support to plugins
 Plug 'tpope/vim-surround'                                                           " Surround tool
 Plug 'tpope/vim-unimpaired'                                                         " Adds utility key bindings
-Plug 'vim-airline/vim-airline'                                                      " Status bar and tabs
-Plug 'vim-airline/vim-airline-themes'                                               " Airline themes
 Plug 'vimwiki/vimwiki'                                                              " Vimwiki
 Plug 'Xuyuanp/nerdtree-git-plugin'                                                  " Adds git information to directory side panel
 
-Plug 'ryanoasis/vim-devicons' " Has to be loaded at the end
+Plug 'ryanoasis/vim-devicons'                                                       " Icons (Has to be loaded at the end)
 
 call plug#end()
 
@@ -375,26 +374,6 @@ augroup END
 " vim-tmux-focus-events
 au FocusGained, BufEnter * :checktime
 
-" Airline {{{
-
-let g:airline_powerline_fonts = 1
-let g:airline_section_b = ''                                    " Current directory limited to 100 characters
-let g:airline_theme = 'light'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_idx_mode = 1
-
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
-
-" }}}
-
 " Gist authorization settings
 let g:github_user = $GITHUB_USER
 let g:github_token = $GITHUB_TOKEN
@@ -541,6 +520,47 @@ require('nightfox').setup({
 
 vim.cmd("colorscheme nightfox")
 EOF
+" }}}
+
+" Lualine {{{
+lua << END
+require('lualine').setup({
+    sections = {
+        lualine_b = {},
+        lualine_c = {
+            {
+                'filename',
+                path =  3,
+                shorting_target = 10,
+            },
+        },
+    },
+    tabline = {
+        lualine_a = {
+            {
+                'buffers',
+                mode = 2,
+            },
+        },
+        lualine_b = {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {}
+    }
+})
+END
+
+nmap <leader>1 :LualineBuffersJump 1<cr>
+nmap <leader>2 :LualineBuffersJump 2<cr>
+nmap <leader>3 :LualineBuffersJump 3<cr>
+nmap <leader>4 :LualineBuffersJump 4<cr>
+nmap <leader>5 :LualineBuffersJump 5<cr>
+nmap <leader>6 :LualineBuffersJump 6<cr>
+nmap <leader>7 :LualineBuffersJump 7<cr>
+nmap <leader>8 :LualineBuffersJump 8<cr>
+nmap <leader>9 :LualineBuffersJump 9<cr>
+
 " }}}
 
 " }}}
