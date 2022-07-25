@@ -367,7 +367,7 @@ augroup ObsessionGroup
   au VimEnter * nested
       \ if !&modified && empty(v:this_session) |
       \   Obsession |
-      \   echo "Recording new session" |
+      \   echo "" |
       \ endif
 augroup END
 
