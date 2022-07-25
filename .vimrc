@@ -165,7 +165,6 @@ Plug 'junegunn/fzf.vim'                                                         
 Plug 'junegunn/vim-peekaboo'                                                        " Show clipboard/macro registers
 Plug 'justinmk/vim-sneak'                                                           " Search by two chars
 Plug 'lewis6991/gitsigns.nvim'                                                      " Git diff line indicator
-Plug 'lifepillar/vim-solarized8', { 'dir': '~/.vim/colors/solarized8' }             " Theme
 Plug 'kana/vim-textobj-line'                                                        " Create own text objects
 Plug 'kana/vim-textobj-user'                                                        " Create own text objects
 Plug 'kyazdani42/nvim-web-devicons'                                                 " Icons
