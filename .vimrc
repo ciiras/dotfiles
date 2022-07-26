@@ -511,10 +511,10 @@ require('nightfox').setup({
     },
     groups = {
         all = {
-            NormalNC = { bg = "#303030" },
-            IncSearch = { fg ="#000000", bg = "#ffff00" },
-            CurSearch = { fg ="#000000", bg = "#ffff00" },
-            Search = { fg ="#000000", bg = "#ffff00" },
+            NormalNC = { bg = '#303030' },
+            IncSearch = { fg ='#000000', bg = '#ffff00' },
+            CurSearch = { fg ='#000000', bg = '#ffff00' },
+            Search = { fg ='#000000', bg = '#ffff00' },
         },
     },
 })
