@@ -164,6 +164,8 @@ Plug 'ianding1/leetcode.vim'                                                    
 Plug 'junegunn/fzf.vim'                                                             " ripgrep fuzzy search
 Plug 'junegunn/vim-peekaboo'                                                        " Show clipboard/macro registers
 Plug 'justinmk/vim-sneak'                                                           " Search by two chars
+Plug 'kyazdani42/nvim-web-devicons'                                                 " Dev icons
+Plug 'kyazdani42/nvim-tree.lua'                                                     " File explorer
 Plug 'lewis6991/gitsigns.nvim'                                                      " Git diff line indicator
 Plug 'kana/vim-textobj-line'                                                        " Create own text objects
 Plug 'kana/vim-textobj-user'                                                        " Create own text objects
@@ -177,7 +179,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}                                 
 Plug 'nvim-lualine/lualine.nvim'                                                    " Status bar and tabs
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}                         " Treesitter
 Plug 'p00f/nvim-ts-rainbow'                                                         " Rainbow parentheses
-Plug 'preservim/nerdtree'                                                           " Directory side panel
 Plug 'tmux-plugins/vim-tmux-focus-events'                                           " Adds FocusGained/FocusLost events back for other plugins
 Plug 'tomtom/tcomment_vim'                                                          " Comments
 Plug 'tpope/vim-fugitive'                                                           " Exposes git commands
@@ -186,9 +187,6 @@ Plug 'tpope/vim-repeat'                                                         
 Plug 'tpope/vim-surround'                                                           " Surround tool
 Plug 'tpope/vim-unimpaired'                                                         " Adds utility key bindings
 Plug 'vimwiki/vimwiki'                                                              " Vimwiki
-Plug 'Xuyuanp/nerdtree-git-plugin'                                                  " Adds git information to directory side panel
-
-Plug 'ryanoasis/vim-devicons'                                                       " Icons (Has to be loaded at the end)
 
 call plug#end()
 
@@ -379,22 +377,6 @@ let g:github_token = $GITHUB_TOKEN
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 
-" NERDTree {{{
-
-map <silent> <leader>. :NERDTreeToggle<cr>
-
-let g:NERDTreeShowHidden=1
-let g:NERDTreeSortOrder=[]
-let g:NERDTreeShowLineNumbers=1
-let g:NERDTreeWinSize=40
-let g:NERDTreeFileExtensionHighlightFullName=1
-let g:NERDTreeExactMatchHighlightFullName=1
-let g:NERDTreePatternMatchHighlightFullName=1
-let g:NERDTreeHighlightFoldersFullName=1
-let g:NERDTreeLimitedSyntax = 1
-
-" }}}
-
 " Markdown Preview
 let vim_markdown_preview_github=1
 
@@ -435,7 +417,7 @@ nnoremap <leader>lcs :LeetCodeSubmit<cr>
 nnoremap <leader>lci :LeetCodeSignIn<cr>
 
 " nvim-treesitter {{{
-lua << EOF
+lua << END
 
     local cyan = "51"
     local gold = "142"
@@ -463,11 +445,11 @@ lua << EOF
             termcolors = { cyan, gold, white, red, yellow, lime, blue }
         }
     }
-EOF
+END
 " }}}
 
 " gitsigns.nvim {{{
-lua << EOF
+lua << END
 require('gitsigns').setup({
     on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
@@ -493,11 +475,11 @@ require('gitsigns').setup({
         map('n', '<leader>hp', gs.preview_hunk)
     end
 })
-EOF
+END
 " }}}
 
 " Nightfox color scheme {{{
-lua << EOF
+lua << END
 require('nightfox').setup({
     options = {
         transparent = true,
@@ -520,12 +502,15 @@ require('nightfox').setup({
 })
 
 vim.cmd("colorscheme nightfox")
-EOF
+END
 " }}}
 
 " Lualine {{{
 lua << END
 require('lualine').setup({
+    options = {
+        disabled_filetypes = { 'NvimTree' },
+    },
     sections = {
         lualine_b = {},
         lualine_c = {
@@ -563,6 +548,19 @@ nmap <silent> <leader>8 :LualineBuffersJump 8<cr>
 nmap <silent> <leader>9 :LualineBuffersJump 9<cr>
 
 " }}}
+
+" nvim-tree
+lua << END
+require("nvim-tree").setup({
+    view = {
+        adaptive_size = true,
+    },
+})
+END
+
+map <silent> <leader>. :NvimTreeFindFileToggle<cr>
+
+"}}}
 
 " }}}
 
