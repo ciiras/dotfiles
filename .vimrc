@@ -549,7 +549,7 @@ nmap <silent> <leader>9 :LualineBuffersJump 9<cr>
 
 " }}}
 
-" nvim-tree
+" nvim-tree {{{
 lua << END
 require("nvim-tree").setup({
     view = {
@@ -560,7 +560,7 @@ END
 
 map <silent> <leader>. :NvimTreeFindFileToggle<cr>
 
-"}}}
+" }}}
 
 " }}}
 
