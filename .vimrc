@@ -493,10 +493,9 @@ require('nightfox').setup({
     groups = {
         all = {
             NormalNC = { bg = '#303030' },
-            IncSearch = { fg ='#000000', bg = '#ffff00' },
-            CurSearch = { fg ='#000000', bg = '#ffff00' },
             Search = { fg ='#000000', bg = '#ffff00' },
             CursorLine = { bg = '#1c1c1c' },
+            Substitute = { fg ='#FFFFFF' },
         },
     },
 })
