@@ -163,7 +163,6 @@ Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do': 'make fsautocomplete' }      
 Plug 'ianding1/leetcode.vim'                                                        " leetcode
 Plug 'junegunn/fzf.vim'                                                             " ripgrep fuzzy search
 Plug 'junegunn/vim-peekaboo'                                                        " Show clipboard/macro registers
-Plug 'justinmk/vim-sneak'                                                           " Search by two chars
 Plug 'kyazdani42/nvim-web-devicons'                                                 " Dev icons
 Plug 'kyazdani42/nvim-tree.lua'                                                     " File explorer
 Plug 'lewis6991/gitsigns.nvim'                                                      " Git diff line indicator
@@ -561,6 +560,10 @@ END
 
 map <silent> <leader>. :NvimTreeFindFileToggle<cr>
 
+" }}}
+
+" vim-easymotion {{{
+map f <Plug>(easymotion-bd-f)
 " }}}
 
 " }}}
