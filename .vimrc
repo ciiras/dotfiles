@@ -516,6 +516,13 @@ require('lualine').setup({
                 shorting_target = 10,
             },
         },
+        lualine_x = {
+            {
+              'filetype',
+              icon_only = true,
+            },
+        },
+        lualine_y = {},
     },
     tabline = {
         lualine_a = {
