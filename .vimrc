@@ -568,6 +568,7 @@ map <silent> <leader>. :NvimTreeFindFileToggle<cr>
 " vim-easymotion {{{
 map f <Plug>(easymotion-bd-f)
 map F <Plug>(easymotion-bd-f)
+map t <Plug>(easymotion-bd-t)
 map W <Plug>(easymotion-bd-w)
 " }}}
 
