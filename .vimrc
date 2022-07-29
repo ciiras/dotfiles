@@ -486,9 +486,6 @@ require('nightfox').setup({
         styles = {
             keywords = 'bold',
         },
-        inverse = {
-            visual = true,
-        },
     },
     groups = {
         all = {
