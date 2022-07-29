@@ -414,6 +414,10 @@ nnoremap <leader>lcl :LeetCodeList<cr>
 nnoremap <leader>lct :LeetCodeTest<cr>
 nnoremap <leader>lcs :LeetCodeSubmit<cr>
 nnoremap <leader>lci :LeetCodeSignIn<cr>
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
 
 " nvim-treesitter {{{
 lua << END
