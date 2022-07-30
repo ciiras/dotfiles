@@ -398,15 +398,12 @@ let g:javascript_conceal_arrow_function       = "⇒"
 
 " }}}
 
-" easymotion
-autocmd User EasyMotionPromptBegin silent! CocDisable
-autocmd User EasyMotionPromptEnd silent! CocEnable
-
-" vimwiki
+" vimwiki {{{
 let g:vimwiki_list = [{'path': '~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/vimwiki'}]
 let g:vimwiki_url_maxsave = 0
+" }}}
 
-" leetcode
+" leetcode {{{
 let g:leetcode_browser = 'firefox'
 let g:leetcode_solution_filetype = 'javascript'
 
@@ -414,10 +411,7 @@ nnoremap <leader>lcl :LeetCodeList<cr>
 nnoremap <leader>lct :LeetCodeTest<cr>
 nnoremap <leader>lcs :LeetCodeSubmit<cr>
 nnoremap <leader>lci :LeetCodeSignIn<cr>
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
+" }}}
 
 " nvim-treesitter {{{
 lua << END
@@ -481,7 +475,7 @@ require('gitsigns').setup({
 END
 " }}}
 
-" Nightfox color scheme {{{
+" nightfox {{{
 lua << END
 require('nightfox').setup({
     options = {
@@ -570,10 +564,22 @@ map <silent> <leader>. :NvimTreeFindFileToggle<cr>
 " }}}
 
 " vim-easymotion {{{
+
+let g:EasyMotion_smartcase = 1
+
+autocmd User EasyMotionPromptBegin silent! CocDisable
+autocmd User EasyMotionPromptEnd silent! CocEnable
+
 map f <Plug>(easymotion-bd-f)
 map F <Plug>(easymotion-bd-f)
 map t <Plug>(easymotion-bd-t)
 map W <Plug>(easymotion-bd-w)
+
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
 " }}}
 
 " }}}
