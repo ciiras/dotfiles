@@ -564,7 +564,6 @@ map <silent> <leader>. :NvimTreeFindFileToggle<cr>
 " }}}
 
 " vim-easymotion {{{
-
 let g:EasyMotion_smartcase = 1
 
 autocmd User EasyMotionPromptBegin silent! CocDisable
@@ -577,9 +576,6 @@ map W <Plug>(easymotion-bd-w)
 
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
-
 " }}}
 
 " }}}
