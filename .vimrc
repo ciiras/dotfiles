@@ -509,6 +509,10 @@ END
 
 " Lualine {{{
 lua << END
+local modifiedColors = function(section)
+   return { fg = '#dfdfe0', bg = vim.bo.modified and '#c94f6d' or nil }
+end
+
 require('lualine').setup({
     options = {
         disabled_filetypes = { 'NvimTree' },
@@ -518,6 +522,7 @@ require('lualine').setup({
         lualine_c = {
             {
                 'filename',
+                color = modifiedColors,
                 path =  3,
                 shorting_target = 10,
             },
