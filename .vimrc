@@ -586,9 +586,6 @@ map f <Plug>(easymotion-bd-f)
 map F <Plug>(easymotion-bd-f)
 map t <Plug>(easymotion-bd-t)
 map W <Plug>(easymotion-bd-w)
-
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
 " }}}
 
 " }}}
