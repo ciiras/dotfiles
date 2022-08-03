@@ -510,7 +510,7 @@ END
 " Lualine {{{
 lua << END
 local modifiedColors = function(section)
-   return { fg = '#dfdfe0', bg = vim.bo.modified and '#c94f6d' or nil }
+   return { fg = '#dfdfe0', bg = vim.bo.modified and '#c94f6d' or '#39506d' }
 end
 
 require('lualine').setup({
