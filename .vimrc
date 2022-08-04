@@ -564,7 +564,7 @@ xnoremap p pgvy
 
 " }}}
 
-" Commands {{{
+" Auto Commands {{{
 " jump to last cursor
 
 fun! StripTrailingWhitespace()
