@@ -1,6 +1,5 @@
 curDir=$(pwd)
 
-ln -sfF ~/.vim/ ~/.config/nvim/
 ln -sfF ${curDir}/.vimrc ~/.config/nvim/init.vim
 ln -sfF ${curDir}/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 
