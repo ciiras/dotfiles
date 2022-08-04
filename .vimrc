@@ -1,16 +1,12 @@
-let mapleader = ","
-
-" Current line highlighting
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
-
-" Set built-in file system explorer to use layout similar to the NERDTree plugin
-let g:netrw_liststyle=3
 
 " Settings {{{
 
 lua << END
 vim.cmd([[
+let g:netrw_liststyle=3
+let g:session_autosave = 'no'
+let mapleader = ","
+
 set autoread
 set backspace=indent,eol,start
 set clipboard+=unnamed
@@ -71,7 +67,6 @@ endif
 
 call plug#begin()
 
-Plug 'airblade/vim-tag-closer'                                                      " Close tags - ctrl+g/
 Plug 'ap/vim-css-color'                                                             " Color highlighter
 Plug 'christoomey/vim-sort-motion'                                                  " Sort items in text objects
 Plug 'christoomey/vim-tmux-navigator'                                               " Navigation between tmux and vim
@@ -110,8 +105,9 @@ Plug 'vimwiki/vimwiki'                                                          
 
 call plug#end()
 
-" vim-sort-motion
+" vim-sort-motion {{{
 let g:sort_motion_flags = "ui"
+" }}}
 
 " coc {{{
 
@@ -270,10 +266,7 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 
 " }}}
 
-" vim-devicons
-set guifont=DroidSansMono_Nerd_Font:h13
-
-" vim-obsession
+" vim-obsession {{{
 augroup ObsessionGroup
   au!
   " When opening a file, make sure we record the Vim session with its tabs and splits.
@@ -287,36 +280,6 @@ augroup ObsessionGroup
       \   echo "" |
       \ endif
 augroup END
-
-" vim-tmux-focus-events
-au FocusGained, BufEnter * :checktime
-
-" Gist authorization settings
-let g:github_user = $GITHUB_USER
-let g:github_token = $GITHUB_TOKEN
-let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-
-" Markdown Preview
-let vim_markdown_preview_github=1
-
-" vim-session
-let g:session_autosave = 'no'
-
-" vim-javascript/vim-typescript {{{
-
-set conceallevel=1
-let g:javascript_conceal_function             = "ƒ"
-" let g:javascript_conceal_null                 = "ø"
-" let g:javascript_conceal_this                 = "@"
-" let g:javascript_conceal_return               = "⇚"
-" let g:javascript_conceal_undefined            = "¿"
-" let g:javascript_conceal_NaN                  = "ℕ"
-" let g:javascript_conceal_prototype            = "¶"
-" let g:javascript_conceal_static               = "•"
-" let g:javascript_conceal_super                = "Ω"
-let g:javascript_conceal_arrow_function       = "⇒"
-
 " }}}
 
 " vimwiki {{{
@@ -565,26 +528,26 @@ xnoremap p pgvy
 " }}}
 
 " Auto Commands {{{
-" jump to last cursor
 
-fun! StripTrailingWhitespace()
-  " don't strip on these filetypes
+" Current line highlighting
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
+
+function! StripTrailingWhitespace()
   if &ft =~ 'markdown'
     return
   endif
   %s/\s\+$//e
-endfun
+endfunction
 au BufWritePre * call StripTrailingWhitespace()
 
 " file formats
 au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 au Filetype gitcommit setlocal spell textwidth=72
 au Filetype markdown setlocal wrap linebreak nolist textwidth=0 wrapmargin=0 " http://vim.wikia.com/wiki/Word_wrap_without_line_breaks
-au FileType sh,cucumber,ruby,zsh,vim,json setlocal shiftwidth=4 tabstop=4 expandtab
+au FileType sh,zsh,vim,json setlocal shiftwidth=4 tabstop=4 expandtab
 au FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 au FileType json syntax match Comment +\/\/.\+$+
-au FileType json setlocal conceallevel=0
-
 
 " specify syntax highlighting for specific files
 au Bufread,BufNewFile *.spv set filetype=php
