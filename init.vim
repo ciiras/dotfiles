@@ -47,7 +47,7 @@ set tabstop=4
 set timeout
 set timeoutlen=1000
 set ttimeoutlen=0
-set undodir=~/.vim/undodir
+set undodir=~/.config/nvim/undodir
 set undofile
 set updatetime=300
 set visualbell
@@ -59,8 +59,8 @@ END
 
 " Plugins {{{
 
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   au VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
