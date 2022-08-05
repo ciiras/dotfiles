@@ -1,58 +1,52 @@
-
 " Settings {{{
 
 lua << END
-vim.cmd([[
-let g:netrw_liststyle=3
-let g:session_autosave = 'no'
-let mapleader = ","
+vim.g.mapleader = ','
+vim.g.netrw_liststyle = 3
+vim.g.session_autosave = 'no'
 
-set autoread
-set backspace=indent,eol,start
-set clipboard+=unnamed
-set cmdheight=2
-set colorcolumn=80
-set encoding=UTF-8
-set expandtab
-set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175
-set guioptions-=T
-set hidden
-set history=100
-set hlsearch
-set ignorecase
-set incsearch
-set laststatus=2
-set lazyredraw
-set list
-set listchars=tab:›\ ,eol:¬,space:⋅
-set mouse=a
-set nobackup
-set nocompatible
-set noswapfile
-set nowrap
-set nowritebackup
-set number
-set relativenumber
-set ruler
-set shiftwidth=4
-set shortmess+=c
-set shortmess+=I
-set showcmd
-set showmatch
-set signcolumn=yes
-set smartcase
-set splitbelow
-set splitright
-set tabstop=4
-set timeout
-set timeoutlen=1000
-set ttimeoutlen=0
-set undodir=~/.config/nvim/undodir
-set undofile
-set updatetime=300
-set visualbell
-set wildmenu
-]])
+vim.opt.autoread = true
+vim.opt.backspace = 'indent,eol,start'
+vim.opt.clipboard = 'unnamedplus'
+vim.opt.cmdheight = 2
+vim.opt.colorcolumn = '80'
+vim.opt.encoding = 'UTF-8'
+vim.opt.expandtab = true
+vim.opt.hidden = true
+vim.opt.history = 100
+vim.opt.hlsearch = true
+vim.opt.ignorecase = true
+vim.opt.incsearch = true
+vim.opt.laststatus = 2
+vim.opt.lazyredraw = true
+vim.opt.list = true
+vim.opt.listchars = {tab = '›~', eol = '¬', space = '⋅'}
+vim.opt.mouse = 'a'
+vim.opt.backup = false
+vim.opt.compatible = false
+vim.opt.swapfile = false
+vim.opt.wrap = false
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.ruler = true
+vim.opt.shiftwidth = 4
+vim.opt.shortmess:append('c')
+vim.opt.shortmess:append('I')
+vim.opt.showcmd = true
+vim.opt.showmatch = true
+vim.opt.scl = 'yes'
+vim.opt.smartcase = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.tabstop = 4
+vim.opt.timeout = true
+vim.opt.timeoutlen = 1000
+vim.opt.ttimeoutlen = 0
+vim.opt.undodir = os.getenv('HOME') .. '/.config/nvim/undodir'
+vim.opt.undofile = true
+vim.opt.updatetime = 300
+vim.opt.visualbell = true
+vim.opt.wildmenu = true
 END
 
 " }}}
