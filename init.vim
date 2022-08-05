@@ -7,9 +7,11 @@ vim.g.session_autosave = 'no'
 
 vim.opt.autoread = true
 vim.opt.backspace = 'indent,eol,start'
+vim.opt.backup = false
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.cmdheight = 2
 vim.opt.colorcolumn = '80'
+vim.opt.compatible = false
 vim.opt.encoding = 'UTF-8'
 vim.opt.expandtab = true
 vim.opt.hidden = true
@@ -22,22 +24,19 @@ vim.opt.lazyredraw = true
 vim.opt.list = true
 vim.opt.listchars = {tab = '›~', eol = '¬', space = '⋅'}
 vim.opt.mouse = 'a'
-vim.opt.backup = false
-vim.opt.compatible = false
-vim.opt.swapfile = false
-vim.opt.wrap = false
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.ruler = true
+vim.opt.scl = 'yes'
 vim.opt.shiftwidth = 4
 vim.opt.shortmess:append('c')
 vim.opt.shortmess:append('I')
 vim.opt.showcmd = true
 vim.opt.showmatch = true
-vim.opt.scl = 'yes'
 vim.opt.smartcase = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
+vim.opt.swapfile = false
 vim.opt.tabstop = 4
 vim.opt.timeout = true
 vim.opt.timeoutlen = 1000
@@ -47,6 +46,7 @@ vim.opt.undofile = true
 vim.opt.updatetime = 300
 vim.opt.visualbell = true
 vim.opt.wildmenu = true
+vim.opt.wrap = false
 END
 
 " }}}
