@@ -469,20 +469,24 @@ map W <Plug>(easymotion-bd-w)
 
 " Mappings {{{
 
+lua << END
+local map = vim.api.nvim_set_keymap
+
+-- Buffers
+map('n', '<leader>bl', ':ls<cr>', { silent = true })
+map('n', '<leader>bp', ':bp<cr>', { silent = true })
+map('n', '<leader>bn', ':bn<cr>', { silent = true })
+map('n', '<leader>bd', ':bd<cr>', { silent = true })
+map('n', '<leader>bD', ':%bd<cr>', { silent = true })
+map('n', '<leader>bo', ':<C-W>o<cr>', { silent = true })
+map('n', '<leader>bs', ':new<cr>', { silent = true })
+END
+
 " Reload .vimrc
 nnoremap <silent> <leader>r :source $MYVIMRC<cr> :echo '---.vimrc reloaded---'<cr>
 
 " Clear search highlight w/ esc key press
 nnoremap <silent> <esc> :nohlsearch<cr>
-
-" Buffers
-map <silent> <leader>bl :ls<cr>                 " List
-map <silent> <leader>bp :bp<cr>                 " Previous
-map <silent> <leader>bn :bn<cr>                 " Next
-map <silent> <leader>bd :bd<cr>                 " Close
-map <silent> <leader>bD :%bd<cr>                " Close All
-map <silent> <leader>bo <C-W>o                  " Only
-map <silent> <leader>bs :new<cr>                " Create Vertical
 
 " Split resizing
 map <M-h> <C-W>>
