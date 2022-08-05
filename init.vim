@@ -465,53 +465,48 @@ map t <Plug>(easymotion-bd-t)
 map W <Plug>(easymotion-bd-w)
 " }}}
 
-" }}}
-
-" Mappings {{{
-
-lua << END
-local map = vim.api.nvim_set_keymap
-
--- Buffers
-map('n', '<leader>bl', ':ls<cr>', { silent = true })
-map('n', '<leader>bp', ':bp<cr>', { silent = true })
-map('n', '<leader>bn', ':bn<cr>', { silent = true })
-map('n', '<leader>bd', ':bd<cr>', { silent = true })
-map('n', '<leader>bD', ':%bd<cr>', { silent = true })
-map('n', '<leader>bo', ':<C-W>o<cr>', { silent = true })
-map('n', '<leader>bs', ':new<cr>', { silent = true })
-END
-
-" Reload .vimrc
-nnoremap <silent> <leader>r :source $MYVIMRC<cr> :echo '---.vimrc reloaded---'<cr>
-
-" Clear search highlight w/ esc key press
-nnoremap <silent> <esc> :nohlsearch<cr>
-
-" Split resizing
-map <M-h> <C-W>>
-map <M-l> <C-W><
-map <M-j> <C-W>-
-map <M-k> <C-W>+
-
-map <M-=> <C-W>= " Equalize split size
-
-" Make splitting Vim windows easier
-map <leader>s <C-W>s
-map <leader>v <C-W>v
-
-" Git Fugitive
+" Git Fugitive {{{
 map <leader>gb :G blame<cr>
 map <leader>gd :Gdiff<cr>
 map <leader>gD :G diff<cr>
 map <leader>gs :Gstatus<cr>
+" }}}
+
+" }}}
+
+" Key Mappings {{{
+
+lua << END
+local map = vim.api.nvim_set_keymap
+
+map('n', '<leader>r', ':source $MYVIMRC<cr> :echo \'---.vimrc reloaded---\'<cr>', { noremap = true, silent = true })
+
+-- Buffers
+map('n', '<leader>bl', ':ls<cr>', { noremap = true, silent = true })
+map('n', '<leader>bp', ':bp<cr>', { noremap = true, silent = true })
+map('n', '<leader>bn', ':bn<cr>', { noremap = true, silent = true })
+map('n', '<leader>bd', ':bd<cr>', { noremap = true, silent = true })
+map('n', '<leader>bD', ':%bd<cr>', { noremap = true, silent = true })
+map('n', '<leader>bo', ':on<cr>', { noremap = true, silent = true })
+map('n', '<leader>bs', ':new<cr>', { noremap = true, silent = true })
+
+map('n', '<esc>', ':nohlsearch<cr>', { noremap = true, silent = true })
+
+-- Splits
+map('n', '<M-h>', '<C-W>>', { noremap = true })
+map('n', '<M-l>', '<C-W><', { noremap = true })
+map('n', '<M-j>', '<C-W>-', { noremap = true })
+map('n', '<M-k>', '<C-W>+', { noremap = true })
+map('n', '<M-=>', '<C-W>=', { noremap = true })
+map('n', '<leader>s', '<C-W>s', { noremap = true })
+map('n', '<leader>v', '<C-W>v', { noremap = true })
+
+map('n', 'Q', '<Nop>', { noremap = true }) -- Disable ex mode
+END
 
 " <C-N>/<C-P> Vim Pop Up Menu Navigation
 inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
-
-" Ex Mode Disable
-nnoremap Q <Nop>
 
 " JSON Formating
 map <leader>jf <Esc>:%!python3 -c "import json, sys, collections; print(json.dumps(json.loads(sys.stdin.read(), object_pairs_hook=collections.OrderedDict), indent=4))"<cr>
