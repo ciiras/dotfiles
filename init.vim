@@ -534,8 +534,4 @@ function! StripTrailingWhitespace()
 endfunction
 au BufWritePre * call StripTrailingWhitespace()
 
-" specify syntax highlighting for specific files
-au Bufread,BufNewFile *.spv set filetype=php
-au Bufread,BufNewFile *.md set filetype=markdown " Vim interprets .md as 'modula2' otherwise, see :set filetype?
-
 " }}}
