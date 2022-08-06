@@ -526,14 +526,6 @@ function! StripTrailingWhitespace()
 endfunction
 au BufWritePre * call StripTrailingWhitespace()
 
-" file formats
-au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-au Filetype gitcommit setlocal spell textwidth=72
-au Filetype markdown setlocal wrap linebreak nolist textwidth=0 wrapmargin=0 " http://vim.wikia.com/wiki/Word_wrap_without_line_breaks
-au FileType sh,zsh,vim,json setlocal shiftwidth=4 tabstop=4 expandtab
-au FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
-au FileType json syntax match Comment +\/\/.\+$+
-
 " specify syntax highlighting for specific files
 au Bufread,BufNewFile *.spv set filetype=php
 au Bufread,BufNewFile *.md set filetype=markdown " Vim interprets .md as 'modula2' otherwise, see :set filetype?
