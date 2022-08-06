@@ -36,6 +36,7 @@ option.shortmess:append('I')
 option.showcmd = true
 option.showmatch = true
 option.smartcase = true
+option.smartindent = true
 option.splitbelow = true
 option.splitright = true
 option.swapfile = false
