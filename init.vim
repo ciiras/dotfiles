@@ -387,7 +387,7 @@ vim.cmd("colorscheme nightfox")
 END
 " }}}
 
-" Lualine {{{
+" lualine {{{
 lua << END
 local modifiedColors = function(section)
    return { fg = '#dfdfe0', bg = vim.bo.modified and '#c94f6d' or '#39506d' }
@@ -517,6 +517,13 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
 
 " Auto Commands {{{
 
+function! StripTrailingWhitespace()
+  if &ft =~ 'markdown'
+    return
+  endif
+  %s/\s\+$//e
+endfunction
+
 lua << END
 local autocmd = vim.api.nvim_create_autocmd
 
@@ -524,14 +531,11 @@ autocmd({ 'WinEnter', 'BufReadPre' }, { command = 'setlocal cursorline' })
 autocmd('WinLeave', { command = 'setlocal nocursorline' })
 
 autocmd('BufRead', { command = 'setlocal foldmethod=marker' })
-END
 
-function! StripTrailingWhitespace()
-  if &ft =~ 'markdown'
-    return
-  endif
-  %s/\s\+$//e
-endfunction
-au BufWritePre * call StripTrailingWhitespace()
+local stripWhiteSpace = function()
+    vim.api.nvim_call_function('StripTrailingWhitespace', {})
+end
+autocmd('BufWritePre', { callback = stripWhiteSpace })
+END
 
 " }}}
