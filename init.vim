@@ -521,6 +521,8 @@ local autocmd = vim.api.nvim_create_autocmd
 
 autocmd({ 'WinEnter', 'BufReadPre' }, { command = 'setlocal cursorline' })
 autocmd('WinLeave', { command = 'setlocal nocursorline' })
+
+autocmd('BufRead', { command = 'setlocal foldmethod=marker' })
 END
 
 function! StripTrailingWhitespace()
@@ -534,9 +536,5 @@ au BufWritePre * call StripTrailingWhitespace()
 " specify syntax highlighting for specific files
 au Bufread,BufNewFile *.spv set filetype=php
 au Bufread,BufNewFile *.md set filetype=markdown " Vim interprets .md as 'modula2' otherwise, see :set filetype?
-
-" Close all folds when opening a new buffer
-au BufRead * setlocal foldmethod=marker
-au BufRead * normal zM
 
 " }}}
