@@ -502,20 +502,13 @@ map('n', '<leader>s', '<C-W>s', { noremap = true })
 map('n', '<leader>v', '<C-W>v', { noremap = true })
 
 map('n', 'Q', '<Nop>', { noremap = true }) -- Disable ex mode
+
+map('x', 'p', 'pgvy', { noremap = true })
 END
 
 " <C-N>/<C-P> Vim Pop Up Menu Navigation
 inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
-
-" JSON Formating
-map <leader>jf <Esc>:%!python3 -c "import json, sys, collections; print(json.dumps(json.loads(sys.stdin.read(), object_pairs_hook=collections.OrderedDict), indent=4))"<cr>
-
-" XML Formatting
-map <leader>xf <Esc>:%!python3 -c "import xml.dom.minidom, sys; print(xml.dom.minidom.parse(sys.stdin).toprettyxml())"<cr>
-
-" Always have the same thing in the clipboard
-xnoremap p pgvy
 
 " }}}
 
