@@ -516,9 +516,12 @@ inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
 
 " Auto Commands {{{
 
-" Current line highlighting
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
+lua << END
+local autocmd = vim.api.nvim_create_autocmd
+
+autocmd({ 'WinEnter', 'BufReadPre' }, { command = 'setlocal cursorline' })
+autocmd('WinLeave', { command = 'setlocal nocursorline' })
+END
 
 function! StripTrailingWhitespace()
   if &ft =~ 'markdown'
