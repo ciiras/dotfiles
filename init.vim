@@ -1,52 +1,54 @@
 " Settings {{{
 
 lua << END
-vim.g.mapleader = ','
-vim.g.netrw_liststyle = 3
-vim.g.session_autosave = 'no'
+local global = vim.g
+global.mapleader = ','
+global.netrw_liststyle = 3
+global.session_autosave = 'no'
 
-vim.opt.autoread = true
-vim.opt.backspace = 'indent,eol,start'
-vim.opt.backup = false
-vim.opt.clipboard = 'unnamedplus'
-vim.opt.cmdheight = 2
-vim.opt.colorcolumn = '80'
-vim.opt.compatible = false
-vim.opt.encoding = 'UTF-8'
-vim.opt.expandtab = true
-vim.opt.hidden = true
-vim.opt.history = 100
-vim.opt.hlsearch = true
-vim.opt.ignorecase = true
-vim.opt.incsearch = true
-vim.opt.laststatus = 2
-vim.opt.lazyredraw = true
-vim.opt.list = true
-vim.opt.listchars = {tab = '›~', eol = '¬', space = '⋅'}
-vim.opt.mouse = 'a'
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.ruler = true
-vim.opt.scl = 'yes'
-vim.opt.shiftwidth = 4
-vim.opt.shortmess:append('c')
-vim.opt.shortmess:append('I')
-vim.opt.showcmd = true
-vim.opt.showmatch = true
-vim.opt.smartcase = true
-vim.opt.splitbelow = true
-vim.opt.splitright = true
-vim.opt.swapfile = false
-vim.opt.tabstop = 4
-vim.opt.timeout = true
-vim.opt.timeoutlen = 1000
-vim.opt.ttimeoutlen = 0
-vim.opt.undodir = os.getenv('HOME') .. '/.config/nvim/undodir'
-vim.opt.undofile = true
-vim.opt.updatetime = 300
-vim.opt.visualbell = true
-vim.opt.wildmenu = true
-vim.opt.wrap = false
+local option = vim.opt
+option.autoread = true
+option.backspace = 'indent,eol,start'
+option.backup = false
+option.clipboard = 'unnamedplus'
+option.cmdheight = 2
+option.colorcolumn = '80'
+option.compatible = false
+option.encoding = 'UTF-8'
+option.expandtab = true
+option.hidden = true
+option.history = 100
+option.hlsearch = true
+option.ignorecase = true
+option.incsearch = true
+option.laststatus = 2
+option.lazyredraw = true
+option.list = true
+option.listchars = {tab = '›~', eol = '¬', space = '⋅'}
+option.mouse = 'a'
+option.number = true
+option.relativenumber = true
+option.ruler = true
+option.scl = 'yes'
+option.shiftwidth = 4
+option.shortmess:append('c')
+option.shortmess:append('I')
+option.showcmd = true
+option.showmatch = true
+option.smartcase = true
+option.splitbelow = true
+option.splitright = true
+option.swapfile = false
+option.tabstop = 4
+option.timeout = true
+option.timeoutlen = 1000
+option.ttimeoutlen = 0
+option.undodir = os.getenv('HOME') .. '/.config/nvim/undodir'
+option.undofile = true
+option.updatetime = 300
+option.visualbell = true
+option.wildmenu = true
+option.wrap = false
 END
 
 " }}}
