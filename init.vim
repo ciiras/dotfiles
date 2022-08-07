@@ -121,55 +121,26 @@ END
 " }}}
 
 " coc {{{
+lua << END
+vim.cmd([[
+let g:coc_global_extensions = ['coc-tsserver', 'coc-tslint-plugin', 'coc-angular', 'coc-eslint', 'coc-json', 'coc-spell-checker', 'coc-actions', 'coc-prettier']
+]])
+END
 
-let g:coc_global_extensions = [
-  \ 'coc-tsserver',
-  \ 'coc-tslint-plugin',
-  \ 'coc-angular',
-  \ 'coc-eslint',
-  \ 'coc-json',
-  \ 'coc-spell-checker',
-  \ 'coc-actions',
-  \ 'coc-prettier',
-  \ ]
-
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
-" position. Coc only does snippet and additional edit on confirm.
 if exists('*complete_info')
   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<cr>"
 else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<cr>"
 endif
 
-" Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<cr>
 
 function! s:show_documentation()
@@ -180,10 +151,8 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Highlight the symbol and its references when holding the cursor.
 au CursorHold * silent call CocActionAsync('highlight')
 
-" Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
 augroup mygroup
@@ -197,34 +166,23 @@ augroup end
 vmap <silent> <leader>a <Plug>(coc-codeaction-selected)
 nmap <silent> <leader>a <Plug>(coc-codeaction-selected)
 
-" Remap keys for applying codeAction to the current line.
 nmap <leader>ac  <Plug>(coc-codeaction)
-" Apply AutoFix to problem on the current line.
 nmap <leader>qf  <Plug>(coc-fix-current)
 
-" Introduce function text object
-" NOTE: Requires 'textDocument.documentSymbol' support from the language server.
 xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
-" Use <TAB> for selections ranges.
-" NOTE: Requires 'textDocument/selectionRange' support from the language server.
-" coc-tsserver, coc-python are the examples of servers that support it.
 nmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <TAB> <Plug>(coc-range-select)
 
-" Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 
-" Add `:Fold` command to fold current buffer.
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
-" Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-" Mappings using CoCList:
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr> " Show all diagnostics.
 nnoremap <silent> <space>e  :<C-u>CocList extensions<cr> " Manage extensions.
 nnoremap <silent> <space>c  :<C-u>CocList commands<cr> " Show commands.
@@ -236,7 +194,6 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<cr> " Do default action for previous i
 nnoremap <silent> <space>p  :<C-u>CocListResume<cr> " Resume latest coc list.
 nnoremap <silent> <space>t  :CocToggle<cr>
 
-" Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 vmap <leader>lf  :Prettier<cr>
 nmap <leader>lf  :Prettier<cr>
@@ -253,7 +210,6 @@ function! CocToggle()
     endif
 endfunction
 command! CocToggle :call CocToggle()
-
 " }}}
 
 " fzf {{{
