@@ -468,10 +468,12 @@ END
 " }}}
 
 " Git Fugitive {{{
-map <leader>gb :G blame<cr>
-map <leader>gd :Gdiff<cr>
-map <leader>gD :G diff<cr>
-map <leader>gs :Git<cr>
+lua << END
+nmap('<leader>gb', ':G blame<cr>')
+nmap('<leader>gd', ':Gdiff<cr>')
+nmap('<leader>gD', ':G diff<cr>')
+nmap('<leader>gs', ':Git<cr>')
+END
 " }}}
 
 " Plugins }}}
