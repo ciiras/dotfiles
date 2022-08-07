@@ -125,6 +125,18 @@ lua << END
 vim.cmd([[
 let g:coc_global_extensions = ['coc-tsserver', 'coc-tslint-plugin', 'coc-angular', 'coc-eslint', 'coc-json', 'coc-spell-checker', 'coc-actions', 'coc-prettier']
 ]])
+
+nmap('[g', '<Plug>(coc-diagnostic-prev)')
+nmap(']g', '<Plug>(coc-diagnostic-next)')
+
+nmap('gd', '<Plug>(coc-definition)')
+nmap('gy', '<Plug>(coc-type-definition)')
+nmap('gi', '<Plug>(coc-implementation)')
+nmap('gr', '<Plug>(coc-references)')
+
+-- nmap('K', ':call <SID>show_documentation()<cr>')
+
+nmap('<leader>rn', '<Plug>(coc-rename)')
 END
 
 if exists('*complete_info')
@@ -132,16 +144,6 @@ if exists('*complete_info')
 else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<cr>"
 endif
-
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-nnoremap <silent> K :call <SID>show_documentation()<cr>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -153,46 +155,18 @@ endfunction
 
 au CursorHold * silent call CocActionAsync('highlight')
 
-nmap <leader>rn <Plug>(coc-rename)
-
 augroup mygroup
   au!
-  " Setup formatexpr specified filetype(s).
   au FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
   au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
-
-vmap <silent> <leader>a <Plug>(coc-codeaction-selected)
-nmap <silent> <leader>a <Plug>(coc-codeaction-selected)
 
 nmap <leader>ac  <Plug>(coc-codeaction)
 nmap <leader>qf  <Plug>(coc-fix-current)
 
-xmap if <Plug>(coc-funcobj-i)
-xmap af <Plug>(coc-funcobj-a)
-omap if <Plug>(coc-funcobj-i)
-omap af <Plug>(coc-funcobj-a)
-
-nmap <silent> <TAB> <Plug>(coc-range-select)
-xmap <silent> <TAB> <Plug>(coc-range-select)
-
-command! -nargs=0 Format :call CocAction('format')
-
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr> " Show all diagnostics.
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr> " Manage extensions.
-nnoremap <silent> <space>c  :<C-u>CocList commands<cr> " Show commands.
 nnoremap <silent> <space>o  :<C-u>CocList outline<cr> " Find symbol of current document.
-nnoremap <space>s :CocSearch<Space>
 nnoremap <silent> <space>y  :<C-u>CocList -I symbols<cr> " Search workspace symbols.
-nnoremap <silent> <space>j  :<C-u>CocNext<cr> " Do default action for next item.
-nnoremap <silent> <space>k  :<C-u>CocPrev<cr> " Do default action for previous item.
-nnoremap <silent> <space>p  :<C-u>CocListResume<cr> " Resume latest coc list.
-nnoremap <silent> <space>t  :CocToggle<cr>
 
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 vmap <leader>lf  :Prettier<cr>
@@ -200,16 +174,6 @@ nmap <leader>lf  :Prettier<cr>
 vmap <leader>ls  <Plug>(coc-format-selected)
 nmap <leader>ls  <Plug>(coc-format-selected)
 xmap <leader>ls  <Plug>(coc-format-selected)
-
-" Toggle Coc
-function! CocToggle()
-    if g:coc_enabled
-        CocDisable
-    else
-        CocEnable
-    endif
-endfunction
-command! CocToggle :call CocToggle()
 " }}}
 
 " fzf {{{
