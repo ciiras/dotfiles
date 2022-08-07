@@ -73,7 +73,6 @@ Plug 'easymotion/vim-easymotion'                                                
 Plug 'EdenEast/nightfox.nvim'                                                       " Color scheme
 Plug 'fladson/vim-kitty'                                                            " Kitty config syntax highlighting
 Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do': 'make fsautocomplete' }          " F#
-Plug 'ianding1/leetcode.vim'                                                        " leetcode
 Plug 'junegunn/fzf.vim'                                                             " ripgrep fuzzy search
 Plug 'junegunn/vim-peekaboo'                                                        " Show clipboard/macro registers
 Plug 'kyazdani42/nvim-web-devicons'                                                 " Dev icons
@@ -281,16 +280,6 @@ augroup END
 " vimwiki {{{
 let g:vimwiki_list = [{'path': '~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/vimwiki'}]
 let g:vimwiki_url_maxsave = 0
-" }}}
-
-" leetcode {{{
-let g:leetcode_browser = 'firefox'
-let g:leetcode_solution_filetype = 'javascript'
-
-nnoremap <leader>lcl :LeetCodeList<cr>
-nnoremap <leader>lct :LeetCodeTest<cr>
-nnoremap <leader>lcs :LeetCodeSubmit<cr>
-nnoremap <leader>lci :LeetCodeSignIn<cr>
 " }}}
 
 " nvim-treesitter {{{
