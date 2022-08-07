@@ -101,7 +101,9 @@ Plug 'vimwiki/vimwiki'                                                          
 call plug#end()
 
 " vim-sort-motion {{{
-let g:sort_motion_flags = "ui"
+lua << END
+vim.g.sort_motion_flags = 'ui'
+END
 " }}}
 
 " coc {{{
@@ -264,11 +266,6 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 " vim-obsession {{{
 augroup ObsessionGroup
   au!
-  " When opening a file, make sure we record the Vim session with its tabs and splits.
-  " Checking 'modified' avoids recording a session when reading from stdin.
-  " From https://github.com/tpope/vim-obsession/issues/17
-  " Calling Obsession when the session is being recorded would pause the recording,
-  " that's why we check if v:this_session is empty.
   au VimEnter * nested
       \ if !&modified && empty(v:this_session) |
       \   Obsession |
