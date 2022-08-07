@@ -1,10 +1,19 @@
-" Variables {{{
+" Lua {{{
 lua << END
 global = vim.g
-map = vim.api.nvim_set_keymap
 opt = vim.opt
+
+keymap_options = { noremap = true, silent = true }
+
+function nmap(keymap, cmd)
+    vim.api.nvim_set_keymap('n', keymap, cmd, keymap_options)
+end
+
+function xmap(keymap, cmd)
+    vim.api.nvim_set_keymap('x', keymap, cmd, keymap_options)
+end
 END
-" }}}
+" Lua }}}
 
 " Settings {{{
 
@@ -58,7 +67,7 @@ opt.wildmenu = true
 opt.wrap = false
 END
 
-" }}}
+" Settings }}}
 
 " Plugins {{{
 
@@ -442,7 +451,7 @@ require("nvim-tree").setup({
     },
 })
 
-map('n', '<leader>.', ':NvimTreeFindFileToggle<cr>', { noremap = true, silent = true })
+nmap('<leader>.', ':NvimTreeFindFileToggle<cr>')
 END
 " }}}
 
@@ -451,10 +460,10 @@ autocmd User EasyMotionPromptBegin silent! CocDisable
 autocmd User EasyMotionPromptEnd silent! CocEnable
 
 lua << END
-map('n', 'f', '<Plug>(easymotion-bd-f)', { noremap = true, silent = true })
-map('n', 'F', '<Plug>(easymotion-bd-f)', { noremap = true, silent = true })
-map('n', 't', '<Plug>(easymotion-bd-t)', { noremap = true, silent = true })
-map('n', 'W', '<Plug>(easymotion-bd-w)', { noremap = true, silent = true })
+nmap('f', '<Plug>(easymotion-bd-f)')
+nmap('F', '<Plug>(easymotion-bd-f)')
+nmap('t', '<Plug>(easymotion-bd-t)')
+nmap('W', '<Plug>(easymotion-bd-w)')
 END
 " }}}
 
@@ -465,44 +474,44 @@ map <leader>gD :G diff<cr>
 map <leader>gs :Git<cr>
 " }}}
 
-" }}}
+" Plugins }}}
 
 " Key Mappings {{{
 
 lua << END
 
-map('n', '<leader>r', ':source $MYVIMRC<cr> :echo \'---.vimrc reloaded---\'<cr>', { noremap = true, silent = true })
+nmap('<leader>r', ':source $MYVIMRC<cr> :echo \'---.vimrc reloaded---\'<cr>')
 
 -- Buffers
-map('n', '<leader>bl', ':ls<cr>', { noremap = true, silent = true })
-map('n', '<leader>bp', ':bp<cr>', { noremap = true, silent = true })
-map('n', '<leader>bn', ':bn<cr>', { noremap = true, silent = true })
-map('n', '<leader>bd', ':bd<cr>', { noremap = true, silent = true })
-map('n', '<leader>bD', ':%bd<cr>', { noremap = true, silent = true })
-map('n', '<leader>bo', ':on<cr>', { noremap = true, silent = true })
-map('n', '<leader>bs', ':new<cr>', { noremap = true, silent = true })
+nmap('<leader>bl', ':ls<cr>')
+nmap('<leader>bp', ':bp<cr>')
+nmap('<leader>bn', ':bn<cr>')
+nmap('<leader>bd', ':bd<cr>')
+nmap('<leader>bD', ':%bd<cr>')
+nmap('<leader>bo', ':on<cr>')
+nmap('<leader>bs', ':new<cr>')
 
-map('n', '<esc>', ':nohlsearch<cr>', { noremap = true, silent = true })
+nmap('<esc>', ':nohlsearch<cr>')
 
 -- Splits
-map('n', '<M-h>', '<C-W>>', { noremap = true })
-map('n', '<M-l>', '<C-W><', { noremap = true })
-map('n', '<M-j>', '<C-W>-', { noremap = true })
-map('n', '<M-k>', '<C-W>+', { noremap = true })
-map('n', '<M-=>', '<C-W>=', { noremap = true })
-map('n', '<leader>s', '<C-W>s', { noremap = true })
-map('n', '<leader>v', '<C-W>v', { noremap = true })
+nmap('<M-h>', '<C-W>>')
+nmap('<M-l>', '<C-W><')
+nmap('<M-j>', '<C-W>-')
+nmap('<M-k>', '<C-W>+')
+nmap('<M-=>', '<C-W>=')
+nmap('<leader>s', '<C-W>s')
+nmap('<leader>v', '<C-W>v')
 
-map('n', 'Q', '<Nop>', { noremap = true }) -- Disable ex mode
+nmap('Q', '<Nop>') -- Disable ex mode
 
-map('x', 'p', 'pgvy', { noremap = true })
+xmap('p', 'pgvy')
 END
 
 " <C-N>/<C-P> Vim Pop Up Menu Navigation
 inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
 
-" }}}
+" Key Mappings }}}
 
 " Auto Commands {{{
 
@@ -527,4 +536,4 @@ end
 autocmd('BufWritePre', { callback = stripWhiteSpace })
 END
 
-" }}}
+" Auto Commands }}}
