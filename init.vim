@@ -1,12 +1,18 @@
+" Variables {{{
+lua << END
+global = vim.g
+map = vim.api.nvim_set_keymap
+opt = vim.opt
+END
+" }}}
+
 " Settings {{{
 
 lua << END
-local global = vim.g
 global.mapleader = ','
 global.netrw_liststyle = 3
 global.session_autosave = 'no'
 
-local opt = vim.opt
 opt.autoread = true
 opt.backspace = 'indent,eol,start'
 opt.backup = false
@@ -101,7 +107,7 @@ call plug#end()
 
 " vim-sort-motion {{{
 lua << END
-vim.g.sort_motion_flags = 'ui'
+global.sort_motion_flags = 'ui'
 END
 " }}}
 
@@ -435,29 +441,28 @@ require("nvim-tree").setup({
         adaptive_size = true,
     },
 })
+
+map('n', '<leader>.', ':NvimTreeFindFileToggle<cr>', { noremap = true, silent = true })
 END
-
-map <silent> <leader>. :NvimTreeFindFileToggle<cr>
-
 " }}}
 
 " vim-easymotion {{{
-let g:EasyMotion_smartcase = 1
-
 autocmd User EasyMotionPromptBegin silent! CocDisable
 autocmd User EasyMotionPromptEnd silent! CocEnable
 
-map f <Plug>(easymotion-bd-f)
-map F <Plug>(easymotion-bd-f)
-map t <Plug>(easymotion-bd-t)
-map W <Plug>(easymotion-bd-w)
+lua << END
+map('n', 'f', '<Plug>(easymotion-bd-f)', { noremap = true, silent = true })
+map('n', 'F', '<Plug>(easymotion-bd-f)', { noremap = true, silent = true })
+map('n', 't', '<Plug>(easymotion-bd-t)', { noremap = true, silent = true })
+map('n', 'W', '<Plug>(easymotion-bd-w)', { noremap = true, silent = true })
+END
 " }}}
 
 " Git Fugitive {{{
 map <leader>gb :G blame<cr>
 map <leader>gd :Gdiff<cr>
 map <leader>gD :G diff<cr>
-map <leader>gs :Gstatus<cr>
+map <leader>gs :Git<cr>
 " }}}
 
 " }}}
@@ -465,7 +470,6 @@ map <leader>gs :Gstatus<cr>
 " Key Mappings {{{
 
 lua << END
-local map = vim.api.nvim_set_keymap
 
 map('n', '<leader>r', ':source $MYVIMRC<cr> :echo \'---.vimrc reloaded---\'<cr>', { noremap = true, silent = true })
 
