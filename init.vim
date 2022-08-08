@@ -94,6 +94,8 @@ END
 
 " Plugins {{{
 
+lua << END
+vim.cmd([[
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -136,6 +138,8 @@ Plug 'tpope/vim-unimpaired'                                                     
 Plug 'vimwiki/vimwiki'                                                              " Vimwiki
 
 call plug#end()
+]])
+END
 
 " vim-sort-motion {{{
 lua << END
