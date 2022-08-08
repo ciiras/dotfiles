@@ -179,11 +179,13 @@ xmap <leader>ls  <Plug>(coc-format-selected)
 " fzf {{{
 set rtp+=/usr/local/opt/fzf " Maps fzf so the fzf.vim plugin
 
-map <silent> <leader>ff :Files<cr>
-map <silent> <leader>fg :GitFiles?<cr>
-map <silent> <leader>fh :History<cr>
-map <silent> <leader>fl :BLines<cr>
-map <silent> <leader>fr :RG<cr>
+lua << END
+nmap('<leader>ff', ':Files<cr>')
+nmap('<leader>fg', ':GitFiles?<cr>')
+nmap('<leader>fh', ':History<cr>')
+nmap('<leader>fl', ':BLines<cr>')
+nmap('<leader>fr', ':RG<cr>')
+END
 
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
@@ -200,11 +202,7 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 " vim-obsession {{{
 augroup ObsessionGroup
   au!
-  au VimEnter * nested
-      \ if !&modified && empty(v:this_session) |
-      \   Obsession |
-      \   echo "" |
-      \ endif
+  au VimEnter * nested if !&modified && empty(v:this_session) | Obsession | echo "" | endif
 augroup END
 " }}}
 
