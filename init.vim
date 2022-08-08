@@ -4,13 +4,17 @@ global = vim.g
 opt = vim.opt
 
 keymap_options = { noremap = true, silent = true }
-
-function nmap(keymap, cmd)
-    vim.api.nvim_set_keymap('n', keymap, cmd, keymap_options)
+function map(mode, keymap, cmd)
+    vim.api.nvim_set_keymap(mode, keymap, cmd, keymap_options)
 end
-
+function nmap(keymap, cmd)
+    map('n', keymap, cmd)
+end
 function xmap(keymap, cmd)
-    vim.api.nvim_set_keymap('x', keymap, cmd, keymap_options)
+    map('x', keymap, cmd)
+end
+function vmap(keymap, cmd)
+    map('v', keymap, cmd)
 end
 END
 " Lua }}}
@@ -137,6 +141,19 @@ nmap('gr', '<Plug>(coc-references)')
 -- nmap('K', ':call <SID>show_documentation()<cr>')
 
 nmap('<leader>rn', '<Plug>(coc-rename)')
+
+nmap('<leader>ac', '<Plug>(coc-codeaction)')
+nmap('<leader>qf', '<Plug>(coc-fix-current)')
+
+nmap('<space>a', ':<C-u>CocList diagnostics<cr>')                                   -- Show all diagnostics.
+nmap('<space>o', ':<C-u>CocList outline<cr>')                                       -- Find symbol of current document.
+nmap('<space>y', ':<C-u>CocList -I symbols<cr>')                                    -- Search workspace symbols.
+
+vmap('<leader>lf', ':Prettier<cr>')
+nmap('<leader>lf', ':Prettier<cr>')
+vmap('<leader>ls', '<Plug>(coc-format-selected)')
+nmap('<leader>ls', '<Plug>(coc-format-selected)')
+xmap('<leader>ls', '<Plug>(coc-format-selected)')
 END
 
 if exists('*complete_info')
@@ -161,25 +178,12 @@ augroup mygroup
   au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-nmap <leader>ac  <Plug>(coc-codeaction)
-nmap <leader>qf  <Plug>(coc-fix-current)
-
-nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr> " Show all diagnostics.
-nnoremap <silent> <space>o  :<C-u>CocList outline<cr> " Find symbol of current document.
-nnoremap <silent> <space>y  :<C-u>CocList -I symbols<cr> " Search workspace symbols.
-
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-vmap <leader>lf  :Prettier<cr>
-nmap <leader>lf  :Prettier<cr>
-vmap <leader>ls  <Plug>(coc-format-selected)
-nmap <leader>ls  <Plug>(coc-format-selected)
-xmap <leader>ls  <Plug>(coc-format-selected)
 " }}}
 
 " fzf {{{
-set rtp+=/usr/local/opt/fzf " Maps fzf so the fzf.vim plugin
-
 lua << END
+opt.rtp:append('/usr/local/opt/fzf')                                                  -- Maps fzf to the fzf.vim
 nmap('<leader>ff', ':Files<cr>')
 nmap('<leader>fg', ':GitFiles?<cr>')
 nmap('<leader>fh', ':History<cr>')
@@ -207,8 +211,10 @@ augroup END
 " }}}
 
 " vimwiki {{{
-let g:vimwiki_list = [{'path': '~/Library/Mobile\ Documents/com~apple~CloudDocs/Documents/vimwiki'}]
-let g:vimwiki_url_maxsave = 0
+lua << END
+global.vimwiki_list = {{path = '~/Library/Mobile Documents/com~apple~CloudDocs/Documents/vimwiki'}}
+global.vimwiki_url_maxsave = 0
+END
 " }}}
 
 " nvim-treesitter {{{
@@ -378,9 +384,6 @@ autocmd User EasyMotionPromptBegin silent! CocDisable
 autocmd User EasyMotionPromptEnd silent! CocEnable
 
 lua << END
-nmap('f', '<Plug>(easymotion-bd-f)')
-nmap('F', '<Plug>(easymotion-bd-f)')
-nmap('t', '<Plug>(easymotion-bd-t)')
 nmap('W', '<Plug>(easymotion-bd-w)')
 END
 " }}}
