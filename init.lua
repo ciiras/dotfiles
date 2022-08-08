@@ -1,6 +1,5 @@
-" Lua {{{
+-- Lua {{{
 
-lua << END
 create_autocmd = vim.api.nvim_create_autocmd
 create_usercmd = vim.api.nvim_create_user_command
 global = vim.g
@@ -34,13 +33,11 @@ function xmap(keymap, cmd, opts)
     opts = opts or {}
     map('x', keymap, cmd, opts)
 end
-END
 
-" Lua }}}
+-- Lua }}}
 
-" Settings {{{
+-- Settings {{{
 
-lua << END
 global.mapleader = ','
 global.netrw_liststyle = 3
 global.session_autosave = 'no'
@@ -88,13 +85,11 @@ opt.updatetime = 300
 opt.visualbell = true
 opt.wildmenu = true
 opt.wrap = false
-END
 
-" Settings }}}
+-- Settings }}}
 
-" Plugins {{{
+-- Plugins {{{
 
-lua << END
 vim.cmd([[
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -139,16 +134,12 @@ Plug 'vimwiki/vimwiki'                                                          
 
 call plug#end()
 ]])
-END
 
-" vim-sort-motion {{{
-lua << END
+-- vim-sort-motion {{{
 global.sort_motion_flags = 'ui'
-END
-" }}}
+-- }}}
 
-" coc {{{
-lua << END
+-- coc {{{
 global.coc_global_extensions = {'coc-tsserver', 'coc-tslint-plugin', 'coc-angular', 'coc-eslint', 'coc-json', 'coc-spell-checker', 'coc-actions', 'coc-prettier'}
 
 function show_documentation()
@@ -209,11 +200,9 @@ nmap('<leader>lf', ':Prettier<cr>')
 vmap('<leader>ls', '<Plug>(coc-format-selected)')
 nmap('<leader>ls', '<Plug>(coc-format-selected)')
 xmap('<leader>ls', '<Plug>(coc-format-selected)')
-END
-" }}}
+-- }}}
 
-" fzf {{{
-lua << END
+-- fzf {{{
 opt.rtp:append('/usr/local/opt/fzf') -- Maps fzf to the fzf.vim
 
 vim.cmd([[
@@ -232,29 +221,23 @@ nmap('<leader>fg', ':GitFiles?<cr>')
 nmap('<leader>fh', ':History<cr>')
 nmap('<leader>fl', ':BLines<cr>')
 nmap('<leader>fr', ':RG<cr>')
-END
-" }}}
+-- }}}
 
-" vim-obsession {{{
-lua << END
+-- vim-obsession {{{
 vim.cmd([[
 augroup ObsessionGroup
   au!
   au VimEnter * nested if !&modified && empty(v:this_session) | Obsession | echo "" | endif
 augroup END
 ]])
-END
-" }}}
+-- }}}
 
-" vimwiki {{{
-lua << END
+-- vimwiki {{{
 global.vimwiki_list = {{path = '~/Library/Mobile Documents/com~apple~CloudDocs/Documents/vimwiki'}}
 global.vimwiki_url_maxsave = 0
-END
-" }}}
+-- }}}
 
-" nvim-treesitter {{{
-lua << END
+-- nvim-treesitter {{{
 
     local cyan = "51"
     local gold = "142"
@@ -282,11 +265,9 @@ lua << END
             termcolors = { cyan, gold, white, red, yellow, lime, blue }
         }
     }
-END
-" }}}
+-- }}}
 
-" gitsigns.nvim {{{
-lua << END
+-- gitsigns.nvim {{{
 require('gitsigns').setup({
     on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
@@ -320,11 +301,9 @@ require('gitsigns').setup({
         map('n', '<leader>hD', function() gs.diffthis('~') end)
     end
 })
-END
-" }}}
+-- }}}
 
-" nightfox {{{
-lua << END
+-- nightfox {{{
 require('nightfox').setup({
     options = {
         transparent = true,
@@ -344,11 +323,9 @@ require('nightfox').setup({
 })
 
 vim.cmd("colorscheme nightfox")
-END
-" }}}
+-- }}}
 
-" lualine {{{
-lua << END
+-- lualine {{{
 local modifiedColors = function(section)
    return { fg = '#dfdfe0', bg = vim.bo.modified and '#c94f6d' or '#39506d' }
 end
@@ -389,22 +366,20 @@ require('lualine').setup({
         lualine_z = {}
     }
 })
-END
 
-nmap <silent> <leader>1 :LualineBuffersJump 1<cr>
-nmap <silent> <leader>2 :LualineBuffersJump 2<cr>
-nmap <silent> <leader>3 :LualineBuffersJump 3<cr>
-nmap <silent> <leader>4 :LualineBuffersJump 4<cr>
-nmap <silent> <leader>5 :LualineBuffersJump 5<cr>
-nmap <silent> <leader>6 :LualineBuffersJump 6<cr>
-nmap <silent> <leader>7 :LualineBuffersJump 7<cr>
-nmap <silent> <leader>8 :LualineBuffersJump 8<cr>
-nmap <silent> <leader>9 :LualineBuffersJump 9<cr>
+nmap('<leader>1', ':LualineBuffersJump 1<cr>')
+nmap('<leader>2', ':LualineBuffersJump 2<cr>')
+nmap('<leader>3', ':LualineBuffersJump 3<cr>')
+nmap('<leader>4', ':LualineBuffersJump 4<cr>')
+nmap('<leader>5', ':LualineBuffersJump 5<cr>')
+nmap('<leader>6', ':LualineBuffersJump 6<cr>')
+nmap('<leader>7', ':LualineBuffersJump 7<cr>')
+nmap('<leader>8', ':LualineBuffersJump 8<cr>')
+nmap('<leader>9', ':LualineBuffersJump 9<cr>')
 
-" }}}
+-- }}}
 
-" nvim-tree {{{
-lua << END
+-- nvim-tree {{{
 require("nvim-tree").setup({
     view = {
         adaptive_size = true,
@@ -412,33 +387,27 @@ require("nvim-tree").setup({
 })
 
 nmap('<leader>.', ':NvimTreeFindFileToggle<cr>')
-END
-" }}}
+-- }}}
 
-" vim-easymotion {{{
-lua << END
+-- vim-easymotion {{{
 create_autocmd('User', { pattern = 'EasyMotionPromptBegin', command = 'CocDisable' })
 create_autocmd('User', { pattern = 'EasyMotionPromptEnd', command = 'CocEnable' })
 
 nmap('<leader>ew', '<Plug>(easymotion-bd-w)')
 nmap('<leader>ef', '<Plug>(easymotion-bd-f)')
-END
-" }}}
+-- }}}
 
-" Git Fugitive {{{
-lua << END
+-- Git Fugitive {{{
 nmap('<leader>gb', ':G blame<cr>')
 nmap('<leader>gd', ':Gdiff<cr>')
 nmap('<leader>gD', ':G diff<cr>')
 nmap('<leader>gs', ':Git<cr>')
-END
-" }}}
+-- }}}
 
-" Plugins }}}
+-- Plugins }}}
 
-" Key Mappings {{{
+-- Key Mappings {{{
 
-lua << END
 nmap('<leader>r', ':source $MYVIMRC<cr> :echo \'---.vimrc reloaded---\'<cr>')
 
 -- Buffers
@@ -467,13 +436,11 @@ xmap('p', 'pgvy')
 
 imap('<C-j>', 'pumvisible() ? "<C-N>" : "<C-j>"', { expr = true })
 imap('<C-k>', 'pumvisible() ? "<C-P>" : "<C-k>"', { expr = true })
-END
 
-" Key Mappings }}}
+-- Key Mappings }}}
 
-" Auto Commands {{{
+-- Auto Commands {{{
 
-lua << END
 vim.cmd([[
 function! StripTrailingWhitespace()
   if &ft =~ 'markdown'
@@ -492,6 +459,5 @@ local stripWhiteSpace = function()
     vim.api.nvim_call_function('StripTrailingWhitespace', {})
 end
 create_autocmd('BufWritePre', { callback = stripWhiteSpace })
-END
 
-" Auto Commands }}}
+-- Auto Commands }}}
