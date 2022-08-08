@@ -128,6 +128,19 @@ END
 lua << END
 global.coc_global_extensions = {'coc-tsserver', 'coc-tslint-plugin', 'coc-angular', 'coc-eslint', 'coc-json', 'coc-spell-checker', 'coc-actions', 'coc-prettier'}
 
+function Show_documentation()
+    local filetype = vim.bo.filetype
+    if filetype == 'vim' or filetype == 'help' then
+        vim.api.nvim_command("h " .. vim.fn.expand('<cword>'))
+    elseif vim.fn['coc#rpc#ready']() then
+        vim.fn.CocActionAsync('doHover')
+    else
+        vim.api.nvim_command(
+            '!' .. vim.bo.keywordprg .. ' ' .. vim.fn.expand('<cword>')
+        )
+    end
+end
+
 nmap('[g', '<Plug>(coc-diagnostic-prev)')
 nmap(']g', '<Plug>(coc-diagnostic-next)')
 
@@ -136,16 +149,16 @@ nmap('gy', '<Plug>(coc-type-definition)')
 nmap('gi', '<Plug>(coc-implementation)')
 nmap('gr', '<Plug>(coc-references)')
 
--- nmap('K', ':call <SID>show_documentation()<cr>')
+nmap('K', ':lua Show_documentation() <cr>')
 
 nmap('<leader>rn', '<Plug>(coc-rename)')
 
 nmap('<leader>ac', '<Plug>(coc-codeaction)')
 nmap('<leader>qf', '<Plug>(coc-fix-current)')
 
-nmap('<space>a', ':<C-u>CocList diagnostics<cr>')                                   -- Show all diagnostics.
-nmap('<space>o', ':<C-u>CocList outline<cr>')                                       -- Find symbol of current document.
-nmap('<space>y', ':<C-u>CocList -I symbols<cr>')                                    -- Search workspace symbols.
+nmap('<space>a', ':<C-u>CocList diagnostics<cr>')
+nmap('<space>o', ':<C-u>CocList outline<cr>')
+nmap('<space>y', ':<C-u>CocList -I symbols<cr>')
 
 vmap('<leader>lf', ':Prettier<cr>')
 nmap('<leader>lf', ':Prettier<cr>')
