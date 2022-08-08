@@ -126,9 +126,7 @@ END
 
 " coc {{{
 lua << END
-vim.cmd([[
-let g:coc_global_extensions = ['coc-tsserver', 'coc-tslint-plugin', 'coc-angular', 'coc-eslint', 'coc-json', 'coc-spell-checker', 'coc-actions', 'coc-prettier']
-]])
+global.coc_global_extensions = {'coc-tsserver', 'coc-tslint-plugin', 'coc-angular', 'coc-eslint', 'coc-json', 'coc-spell-checker', 'coc-actions', 'coc-prettier'}
 
 nmap('[g', '<Plug>(coc-diagnostic-prev)')
 nmap(']g', '<Plug>(coc-diagnostic-next)')
