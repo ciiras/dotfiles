@@ -1,5 +1,7 @@
 " Lua {{{
 lua << END
+create_autocmd = vim.api.nvim_create_autocmd
+create_usercmd = vim.api.nvim_create_user_command
 global = vim.g
 opt = vim.opt
 
@@ -128,7 +130,7 @@ END
 lua << END
 global.coc_global_extensions = {'coc-tsserver', 'coc-tslint-plugin', 'coc-angular', 'coc-eslint', 'coc-json', 'coc-spell-checker', 'coc-actions', 'coc-prettier'}
 
-function Show_documentation()
+function show_documentation()
     local filetype = vim.bo.filetype
     if filetype == 'vim' or filetype == 'help' then
         vim.api.nvim_command("h " .. vim.fn.expand('<cword>'))
@@ -141,6 +143,27 @@ function Show_documentation()
     end
 end
 
+local coc_highlight = function()
+    vim.api.nvim_call_function('CocActionAsync', { 'highlight' })
+end
+create_autocmd('CursorHold', { callback = coc_highlight })
+
+vim.cmd([[
+augroup mygroup
+  au!
+  au FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<cr>"
+else
+  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<cr>"
+endif
+]])
+
+create_usercmd('Prettier', ':CocCommand prettier.formatFile', {})
+
 nmap('[g', '<Plug>(coc-diagnostic-prev)')
 nmap(']g', '<Plug>(coc-diagnostic-next)')
 
@@ -149,7 +172,7 @@ nmap('gy', '<Plug>(coc-type-definition)')
 nmap('gi', '<Plug>(coc-implementation)')
 nmap('gr', '<Plug>(coc-references)')
 
-nmap('K', ':lua Show_documentation() <cr>')
+nmap('K', ':lua show_documentation() <cr>')
 
 nmap('<leader>rn', '<Plug>(coc-rename)')
 
@@ -166,35 +189,11 @@ vmap('<leader>ls', '<Plug>(coc-format-selected)')
 nmap('<leader>ls', '<Plug>(coc-format-selected)')
 xmap('<leader>ls', '<Plug>(coc-format-selected)')
 END
-
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<cr>"
-else
-  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<cr>"
-endif
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-au CursorHold * silent call CocActionAsync('highlight')
-
-augroup mygroup
-  au!
-  au FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " }}}
 
 " fzf {{{
 lua << END
-opt.rtp:append('/usr/local/opt/fzf')                                                  -- Maps fzf to the fzf.vim
+opt.rtp:append('/usr/local/opt/fzf') -- Maps fzf to the fzf.vim
 nmap('<leader>ff', ':Files<cr>')
 nmap('<leader>fg', ':GitFiles?<cr>')
 nmap('<leader>fh', ':History<cr>')
@@ -215,10 +214,14 @@ command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
 " }}}
 
 " vim-obsession {{{
+lua << END
+vim.cmd([[
 augroup ObsessionGroup
   au!
   au VimEnter * nested if !&modified && empty(v:this_session) | Obsession | echo "" | endif
 augroup END
+]])
+END
 " }}}
 
 " vimwiki {{{
@@ -391,11 +394,12 @@ END
 " }}}
 
 " vim-easymotion {{{
-autocmd User EasyMotionPromptBegin silent! CocDisable
-autocmd User EasyMotionPromptEnd silent! CocEnable
-
 lua << END
-nmap('W', '<Plug>(easymotion-bd-w)')
+create_autocmd('User', { pattern = 'EasyMotionPromptBegin', command = 'CocDisable' })
+create_autocmd('User', { pattern = 'EasyMotionPromptEnd', command = 'CocEnable' })
+
+nmap('<leader>ew', '<Plug>(easymotion-bd-w)')
+nmap('<leader>ef', '<Plug>(easymotion-bd-f)')
 END
 " }}}
 
@@ -457,17 +461,15 @@ function! StripTrailingWhitespace()
 endfunction
 
 lua << END
-local autocmd = vim.api.nvim_create_autocmd
+create_autocmd({ 'WinEnter', 'BufReadPre' }, { command = 'setlocal cursorline' })
+create_autocmd('WinLeave', { command = 'setlocal nocursorline' })
 
-autocmd({ 'WinEnter', 'BufReadPre' }, { command = 'setlocal cursorline' })
-autocmd('WinLeave', { command = 'setlocal nocursorline' })
-
-autocmd('BufRead', { command = 'setlocal foldmethod=marker' })
+create_autocmd('BufRead', { command = 'setlocal foldmethod=marker' })
 
 local stripWhiteSpace = function()
     vim.api.nvim_call_function('StripTrailingWhitespace', {})
 end
-autocmd('BufWritePre', { callback = stripWhiteSpace })
+create_autocmd('BufWritePre', { callback = stripWhiteSpace })
 END
 
 " Auto Commands }}}
