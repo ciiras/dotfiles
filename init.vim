@@ -1,4 +1,5 @@
 " Lua {{{
+
 lua << END
 create_autocmd = vim.api.nvim_create_autocmd
 create_usercmd = vim.api.nvim_create_user_command
@@ -6,19 +7,35 @@ global = vim.g
 opt = vim.opt
 
 keymap_options = { noremap = true, silent = true }
-function map(mode, keymap, cmd)
-    vim.api.nvim_set_keymap(mode, keymap, cmd, keymap_options)
+
+function merge(tbl1, tbl2)
+    for k,v in pairs(tbl1) do
+        tbl2[k] = v
+    end
+    return tbl2
 end
-function nmap(keymap, cmd)
-    map('n', keymap, cmd)
+
+function map(mode, keymap, cmd, opts)
+    vim.api.nvim_set_keymap(mode, keymap, cmd, merge(opts, keymap_options))
 end
-function xmap(keymap, cmd)
-    map('x', keymap, cmd)
+function imap(keymap, cmd, opts)
+    opts = opts or {}
+    map('i', keymap, cmd, opts)
 end
-function vmap(keymap, cmd)
-    map('v', keymap, cmd)
+function nmap(keymap, cmd, opts)
+    opts = opts or {}
+    map('n', keymap, cmd, opts)
+end
+function vmap(keymap, cmd, opts)
+    opts = opts or {}
+    map('v', keymap, cmd, opts)
+end
+function xmap(keymap, cmd, opts)
+    opts = opts or {}
+    map('x', keymap, cmd, opts)
 end
 END
+
 " Lua }}}
 
 " Settings {{{
@@ -194,13 +211,8 @@ END
 " fzf {{{
 lua << END
 opt.rtp:append('/usr/local/opt/fzf') -- Maps fzf to the fzf.vim
-nmap('<leader>ff', ':Files<cr>')
-nmap('<leader>fg', ':GitFiles?<cr>')
-nmap('<leader>fh', ':History<cr>')
-nmap('<leader>fl', ':BLines<cr>')
-nmap('<leader>fr', ':RG<cr>')
-END
 
+vim.cmd([[
 function! RipgrepFzf(query, fullscreen)
   let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
@@ -208,9 +220,15 @@ function! RipgrepFzf(query, fullscreen)
   let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
   call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
 endfunction
+]])
+create_usercmd('RG', 'call RipgrepFzf(<q-args>, <bang>0)', { bang = true })
 
-command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
-
+nmap('<leader>ff', ':Files<cr>')
+nmap('<leader>fg', ':GitFiles?<cr>')
+nmap('<leader>fh', ':History<cr>')
+nmap('<leader>fl', ':BLines<cr>')
+nmap('<leader>fr', ':RG<cr>')
+END
 " }}}
 
 " vim-obsession {{{
@@ -417,7 +435,6 @@ END
 " Key Mappings {{{
 
 lua << END
-
 nmap('<leader>r', ':source $MYVIMRC<cr> :echo \'---.vimrc reloaded---\'<cr>')
 
 -- Buffers
@@ -443,24 +460,25 @@ nmap('<leader>v', '<C-W>v')
 nmap('Q', '<Nop>') -- Disable ex mode
 
 xmap('p', 'pgvy')
-END
 
-" <C-N>/<C-P> Vim Pop Up Menu Navigation
-inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
+imap('<C-j>', 'pumvisible() ? "<C-N>" : "<C-j>"', { expr = true })
+imap('<C-k>', 'pumvisible() ? "<C-P>" : "<C-k>"', { expr = true })
+END
 
 " Key Mappings }}}
 
 " Auto Commands {{{
 
+lua << END
+vim.cmd([[
 function! StripTrailingWhitespace()
   if &ft =~ 'markdown'
     return
   endif
   %s/\s\+$//e
 endfunction
+]])
 
-lua << END
 create_autocmd({ 'WinEnter', 'BufReadPre' }, { command = 'setlocal cursorline' })
 create_autocmd('WinLeave', { command = 'setlocal nocursorline' })
 
