@@ -17,6 +17,10 @@ end
 function map(mode, keymap, cmd, opts)
     vim.api.nvim_set_keymap(mode, keymap, cmd, merge(opts, keymap_options))
 end
+function cmap(keymap, cmd, opts)
+    opts = opts or {}
+    map('c', keymap, cmd, opts)
+end
 function imap(keymap, cmd, opts)
     opts = opts or {}
     map('i', keymap, cmd, opts)
@@ -436,6 +440,9 @@ xmap('p', 'pgvy')
 
 imap('<C-j>', 'pumvisible() ? "<C-N>" : "<C-j>"', { expr = true })
 imap('<C-k>', 'pumvisible() ? "<C-P>" : "<C-k>"', { expr = true })
+
+cmap('<C-j>', 'pumvisible() ? "<C-N>" : "<C-j>"', { expr = true })
+cmap('<C-k>', 'pumvisible() ? "<C-P>" : "<C-k>"', { expr = true })
 
 -- Key Mappings }}}
 
