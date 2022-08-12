@@ -438,11 +438,8 @@ nmap('Q', '<Nop>') -- Disable ex mode
 
 xmap('p', 'pgvy')
 
-imap('<C-j>', 'pumvisible() ? "<C-N>" : "<C-j>"', { expr = true })
-imap('<C-k>', 'pumvisible() ? "<C-P>" : "<C-k>"', { expr = true })
-
-cmap('<C-j>', 'pumvisible() ? "<C-N>" : "<C-j>"', { expr = true })
-cmap('<C-k>', 'pumvisible() ? "<C-P>" : "<C-k>"', { expr = true })
+imap('<C-J>', '<C-N>')
+imap('<C-K>', '<C-P>')
 
 -- Key Mappings }}}
 
