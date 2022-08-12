@@ -432,8 +432,7 @@ nmap('<M-=>', '<C-W>=')
 nmap('<leader>s', '<C-W>s')
 nmap('<leader>v', '<C-W>v')
 
-nmap('Q', '<Nop>') -- Disable ex mode
-
+nmap('q', '<Nop>')
 xmap('p', 'pgvy')
 
 imap('<C-J>', '<C-N>')
