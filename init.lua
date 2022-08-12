@@ -88,7 +88,6 @@ opt.undodir = os.getenv('HOME') .. '/.config/nvim/undodir'
 opt.undofile = true
 opt.updatetime = 300
 opt.visualbell = true
-opt.wildmenu = true
 opt.wrap = false
 
 -- Settings }}}
@@ -435,10 +434,8 @@ nmap('<leader>v', '<C-W>v')
 nmap('q', '<Nop>')
 xmap('p', 'pgvy')
 
-imap('<C-J>', '<C-N>')
-imap('<C-K>', '<C-P>')
-cmap('<C-J>', '<C-N>')
-cmap('<C-K>', '<C-P>')
+imap('<C-J>', 'pumvisible() ? "<C-N>" : "<Nop>"', { expr = true })
+imap('<C-K>', 'pumvisible() ? "<C-P>" : "<Nop>"', { expr = true })
 
 -- Key Mappings }}}
 
