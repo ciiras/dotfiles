@@ -342,8 +342,8 @@ require('nightfox').setup({
     groups = {
         all = {
             NormalNC = { bg = '#303030' },
-            Search = { fg ='#393b44', bg = '#DBC074' },
-            CursorLine = { bg = '#1c1c1c' },
+            Search = { fg ='#393b44', bg = '#63CDCF' },
+            CursorLine = { bg = '#1C1C1C' },
             Substitute = { fg ='#FFFFFF' },
         },
     },
