@@ -126,6 +126,7 @@ Plug 'nelstrom/vim-visual-star-search'                                          
 Plug 'neoclide/coc.nvim', {'branch': 'release'}                                     " Intellisense
 Plug 'nvim-lualine/lualine.nvim'                                                    " Status bar and tabs
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}                         " Treesitter
+Plug 'nvim-treesitter/playground'                                                   " Treesitter playground
 Plug 'p00f/nvim-ts-rainbow'                                                         " Rainbow parentheses
 Plug 'tmux-plugins/vim-tmux-focus-events'                                           " Adds FocusGained/FocusLost events back for other plugins
 Plug 'tomtom/tcomment_vim'                                                          " Comments
@@ -242,7 +243,6 @@ global.vimwiki_url_maxsave = 0
 -- }}}
 
 -- nvim-treesitter {{{
-
     local cyan = "51"
     local gold = "142"
     local white = "15"
@@ -269,6 +269,29 @@ global.vimwiki_url_maxsave = 0
             termcolors = { cyan, gold, white, red, yellow, lime, blue }
         }
     }
+-- }}}
+
+-- nvim-tresitter-playground {{{
+require "nvim-treesitter.configs".setup {
+    playground = {
+        enable = true,
+        disable = {},
+        updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+        persist_queries = false, -- Whether the query persists across vim sessions
+        keybindings = {
+            toggle_query_editor = 'o',
+            toggle_hl_groups = 'i',
+            toggle_injected_languages = 't',
+            toggle_anonymous_nodes = 'a',
+            toggle_language_display = 'I',
+            focus_language = 'f',
+            unfocus_language = 'F',
+            update = 'R',
+            goto_node = '<cr>',
+            show_help = '?',
+        },
+    }
+}
 -- }}}
 
 -- gitsigns.nvim {{{
