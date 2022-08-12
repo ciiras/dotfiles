@@ -397,9 +397,6 @@ nmap('<leader>.', ':NvimTreeFindFileToggle<cr>')
 -- vim-easymotion {{{
 create_autocmd('User', { pattern = 'EasyMotionPromptBegin', command = 'CocDisable' })
 create_autocmd('User', { pattern = 'EasyMotionPromptEnd', command = 'CocEnable' })
-
-nmap('<leader>ew', '<Plug>(easymotion-bd-w)')
-nmap('<leader>ef', '<Plug>(easymotion-bd-f)')
 -- }}}
 
 -- Git Fugitive {{{
