@@ -101,6 +101,13 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   au VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+function! UpdateRemotePlugins(...)
+    " Needed to refresh runtime files
+    let &rtp=&rtp
+    UpdateRemotePlugins
+endfunction
+
+
 call plug#begin()
 
 Plug 'ap/vim-css-color'                                                             " Color highlighter
@@ -112,6 +119,7 @@ Plug 'easymotion/vim-easymotion'                                                
 Plug 'EdenEast/nightfox.nvim'                                                       " Color scheme
 Plug 'fladson/vim-kitty'                                                            " Kitty config syntax highlighting
 Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do': 'make fsautocomplete' }          " F#
+Plug 'gelguy/wilder.nvim', { 'do': function('UpdateRemotePlugins') }                " Wildmenu extension
 Plug 'junegunn/fzf.vim'                                                             " ripgrep fuzzy search
 Plug 'junegunn/vim-peekaboo'                                                        " Show clipboard/macro registers
 Plug 'kyazdani42/nvim-web-devicons'                                                 " Dev icons
@@ -432,6 +440,42 @@ nmap('<leader>gD', ':G diff<cr>')
 nmap('<leader>gs', ':Git<cr>')
 -- }}}
 
+-- wilder {{{
+local wilder = require('wilder')
+
+wilder.setup({
+    modes = {':'},
+})
+
+wilder.set_option('renderer', wilder.popupmenu_renderer({
+    highlighter = wilder.basic_highlighter(),
+    left = {' ', wilder.popupmenu_devicons()},
+    right = {' ', wilder.popupmenu_scrollbar()},
+}))
+
+wilder.set_option('renderer', wilder.popupmenu_renderer(
+    wilder.popupmenu_border_theme({
+        highlights = {
+            border = 'Normal',
+        },
+        border = 'rounded',
+    })
+))
+
+wilder.set_option('pipeline', {
+  wilder.branch(
+    wilder.cmdline_pipeline({
+      -- sets the language to use, 'vim' and 'python' are supported
+      language = 'python',
+      -- 0 turns off fuzzy matching
+      -- 1 turns on fuzzy matching
+      -- 2 partial fuzzy matching (match does not have to begin with the same first letter)
+      fuzzy = 1,
+    })
+  )
+})
+-- }}}
+
 -- Plugins }}}
 
 -- Key Mappings {{{
@@ -463,8 +507,11 @@ nmap('<leader>v', '<C-W>v')
 nmap('q:', '<Nop>')
 xmap('p', 'pgvy')
 
-imap('<C-J>', 'pumvisible() ? "<C-N>" : "<Nop>"', { expr = true })
-imap('<C-K>', 'pumvisible() ? "<C-P>" : "<Nop>"', { expr = true })
+imap('<C-j>', 'pumvisible() ? "<C-n>" : "<C-j>"', { expr = true })
+imap('<C-k>', 'pumvisible() ? "<C-p>" : "<C-k>"', { expr = true })
+
+-- cmap('<C-j>', 'wildmenumode() ? "<Tab>" : "<C-j>"', { expr = true })
+-- cmap('<C-k>', 'wildmenumode() ? "<S-Tab>" : "<C-k>"', { expr = true })
 
 -- Key Mappings }}}
 
