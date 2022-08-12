@@ -411,7 +411,7 @@ nmap('<leader>gs', ':Git<cr>')
 
 nmap('<leader>r', ':source $MYVIMRC<cr> :echo \'---.vimrc reloaded---\'<cr>')
 
--- Buffers
+-- Buffers {{{
 nmap('<leader>bl', ':ls<cr>')
 nmap('<leader>bp', ':bp<cr>')
 nmap('<leader>bn', ':bn<cr>')
@@ -419,10 +419,11 @@ nmap('<leader>bd', ':bd<cr>')
 nmap('<leader>bD', ':%bd<cr>')
 nmap('<leader>bo', ':on<cr>')
 nmap('<leader>bs', ':new<cr>')
+-- }}}
 
 nmap('<esc>', ':nohlsearch<cr>')
 
--- Splits
+-- Splits {{{
 nmap('<M-h>', '<C-W>>')
 nmap('<M-l>', '<C-W><')
 nmap('<M-j>', '<C-W>-')
@@ -430,6 +431,7 @@ nmap('<M-k>', '<C-W>+')
 nmap('<M-=>', '<C-W>=')
 nmap('<leader>s', '<C-W>s')
 nmap('<leader>v', '<C-W>v')
+-- }}}
 
 nmap('q', '<Nop>')
 xmap('p', 'pgvy')
