@@ -45,6 +45,7 @@ end
 global.mapleader = ','
 global.netrw_liststyle = 3
 global.session_autosave = 'no'
+global.tmux_navigator_preserve_zoom = 1
 
 opt.autoread = true
 opt.backspace = 'indent,eol,start'
@@ -440,6 +441,8 @@ xmap('p', 'pgvy')
 
 imap('<C-J>', '<C-N>')
 imap('<C-K>', '<C-P>')
+cmap('<C-J>', '<C-N>')
+cmap('<C-K>', '<C-P>')
 
 -- Key Mappings }}}
 
