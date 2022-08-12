@@ -194,6 +194,9 @@ nmap('K', ':lua show_documentation() <cr>')
 nmap('<leader>rn', '<Plug>(coc-rename)')
 
 nmap('<leader>ac', '<Plug>(coc-codeaction)')
+vmap('<leader>a', '<Plug>(coc-codeaction-selected)')
+nmap('<leader>a', '<Plug>(coc-codeaction-selected)')
+
 nmap('<leader>qf', '<Plug>(coc-fix-current)')
 
 nmap('<space>a', ':<C-u>CocList diagnostics<cr>')
