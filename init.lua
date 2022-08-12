@@ -456,9 +456,8 @@ endfunction
 create_autocmd({ 'WinEnter', 'BufReadPre' }, { command = 'setlocal cursorline' })
 create_autocmd('WinLeave', { command = 'setlocal nocursorline' })
 
-create_autocmd({ 'BufEnter', 'FocusGained', 'InsertLeave' }, { command = ':set number relativenumber' })
-create_autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter' }, { command = ':set number norelativenumber' })
-create_autocmd('FocusLost', { command = 'silent redraw!' })
+create_autocmd({ 'BufEnter', 'FocusGained', 'InsertLeave' }, { command = 'set number relativenumber' })
+create_autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter' }, { command = 'set number norelativenumber' })
 
 create_autocmd('BufRead', { command = 'setlocal foldmethod=marker' })
 
