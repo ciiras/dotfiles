@@ -459,7 +459,7 @@ nmap('<leader>s', '<C-W>s')
 nmap('<leader>v', '<C-W>v')
 -- }}}
 
-nmap('q', '<Nop>')
+nmap('q:', '<Nop>')
 xmap('p', 'pgvy')
 
 imap('<C-J>', 'pumvisible() ? "<C-N>" : "<Nop>"', { expr = true })
