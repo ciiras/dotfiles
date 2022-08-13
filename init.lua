@@ -178,19 +178,19 @@ augroup mygroup
 augroup end
 
 inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : CheckBackspace() ? "\<Tab>" : coc#refresh()
-inoremap <expr><S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <expr><S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<C-H>"
 
-inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : pumvisible() ? "\<C-p>" : "\<C-k>"
+inoremap <silent><expr> <C-J> coc#pum#visible() ? coc#pum#next(1) : pumvisible() ? "\<C-N>" : "\<C-J>"
+inoremap <silent><expr> <C-K> coc#pum#visible() ? coc#pum#prev(1) : pumvisible() ? "\<C-P>" : "\<C-K>"
 
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-G>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Remap for do codeAction of selected region
 function! s:cocActionsOpenFromSelected(type) abort
   execute 'CocCommand actions.open ' . a:type
 endfunction
-xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+xmap <silent> <leader>a :<C-U>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-U>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 ]])
 
 create_usercmd('Prettier', ':CocCommand prettier.formatFile', {})
@@ -203,7 +203,7 @@ nmap('gy', '<Plug>(coc-type-definition)')
 nmap('gi', '<Plug>(coc-implementation)')
 nmap('gr', '<Plug>(coc-references)')
 
-nmap('K', ':lua show_documentation() <cr>')
+nmap('K', ':lua show_documentation() <CR>')
 
 nmap('<leader>rn', '<Plug>(coc-rename)')
 
@@ -213,12 +213,12 @@ nmap('<leader>a', '<Plug>(coc-codeaction-selected)')
 
 nmap('<leader>qf', '<Plug>(coc-fix-current)')
 
-nmap('<space>a', ':<C-u>CocList diagnostics<cr>')
-nmap('<space>o', ':<C-u>CocList outline<cr>')
-nmap('<space>y', ':<C-u>CocList -I symbols<cr>')
+nmap('<space>a', ':<C-U>CocList diagnostics<CR>')
+nmap('<space>o', ':<C-U>CocList outline<CR>')
+nmap('<space>y', ':<C-U>CocList -I symbols<CR>')
 
-vmap('<leader>lf', ':Prettier<cr>')
-nmap('<leader>lf', ':Prettier<cr>')
+vmap('<leader>lf', ':Prettier<CR>')
+nmap('<leader>lf', ':Prettier<CR>')
 vmap('<leader>ls', '<Plug>(coc-format-selected)')
 nmap('<leader>ls', '<Plug>(coc-format-selected)')
 xmap('<leader>ls', '<Plug>(coc-format-selected)')
@@ -266,11 +266,11 @@ endfunction
 ]])
 create_usercmd('RG', 'call RipgrepFzf(<q-args>, <bang>0)', { bang = true })
 
-nmap('<leader>ff', ':Files<cr>')
-nmap('<leader>fg', ':GitFiles?<cr>')
-nmap('<leader>fh', ':History<cr>')
-nmap('<leader>fl', ':BLines<cr>')
-nmap('<leader>fr', ':RG<cr>')
+nmap('<leader>ff', ':Files<CR>')
+nmap('<leader>fg', ':GitFiles?<CR>')
+nmap('<leader>fh', ':History<CR>')
+nmap('<leader>fl', ':BLines<CR>')
+nmap('<leader>fr', ':RG<CR>')
 -- }}}
 
 -- kyazdani42/nvim-tree.lua {{{
@@ -280,7 +280,7 @@ require("nvim-tree").setup({
     },
 })
 
-nmap('<leader>.', ':NvimTreeFindFileToggle<cr>')
+nmap('<leader>.', ':NvimTreeFindFileToggle<CR>')
 -- }}}
 
 -- lewis6991/gitsigns.nvim {{{
@@ -361,15 +361,15 @@ require('lualine').setup({
     }
 })
 
-nmap('<leader>1', ':LualineBuffersJump 1<cr>')
-nmap('<leader>2', ':LualineBuffersJump 2<cr>')
-nmap('<leader>3', ':LualineBuffersJump 3<cr>')
-nmap('<leader>4', ':LualineBuffersJump 4<cr>')
-nmap('<leader>5', ':LualineBuffersJump 5<cr>')
-nmap('<leader>6', ':LualineBuffersJump 6<cr>')
-nmap('<leader>7', ':LualineBuffersJump 7<cr>')
-nmap('<leader>8', ':LualineBuffersJump 8<cr>')
-nmap('<leader>9', ':LualineBuffersJump 9<cr>')
+nmap('<leader>1', ':LualineBuffersJump 1<CR>')
+nmap('<leader>2', ':LualineBuffersJump 2<CR>')
+nmap('<leader>3', ':LualineBuffersJump 3<CR>')
+nmap('<leader>4', ':LualineBuffersJump 4<CR>')
+nmap('<leader>5', ':LualineBuffersJump 5<CR>')
+nmap('<leader>6', ':LualineBuffersJump 6<CR>')
+nmap('<leader>7', ':LualineBuffersJump 7<CR>')
+nmap('<leader>8', ':LualineBuffersJump 8<CR>')
+nmap('<leader>9', ':LualineBuffersJump 9<CR>')
 
 -- }}}
 
@@ -418,7 +418,7 @@ require "nvim-treesitter.configs".setup {
             focus_language = 'f',
             unfocus_language = 'F',
             update = 'R',
-            goto_node = '<cr>',
+            goto_node = '<CR>',
             show_help = '?',
         },
     }
@@ -440,10 +440,10 @@ global.vimwiki_url_maxsave = 0
 -- }}}
 
 -- tpope/vim-fugitive {{{
-nmap('<leader>gb', ':G blame<cr>')
-nmap('<leader>gd', ':Gdiff<cr>')
-nmap('<leader>gD', ':G diff<cr>')
-nmap('<leader>gs', ':Git<cr>')
+nmap('<leader>gb', ':G blame<CR>')
+nmap('<leader>gd', ':Gdiff<CR>')
+nmap('<leader>gD', ':G diff<CR>')
+nmap('<leader>gs', ':Git<CR>')
 -- }}}
 
 -- gelguy/wilder.nvim {{{
@@ -451,8 +451,8 @@ local wilder = require('wilder')
 
 wilder.setup({
     modes = {':'},
-    next_key = '<C-j>',
-    previous_key = '<C-k>',
+    next_key = '<C-J>',
+    previous_key = '<C-K>',
 })
 
 wilder.set_option('renderer', wilder.popupmenu_renderer({
@@ -475,28 +475,28 @@ wilder.set_option('renderer', wilder.popupmenu_renderer(
 
 -- Key Mappings {{{
 
-nmap('<leader>r', ':source $MYVIMRC<cr> :echo \'---.vimrc reloaded---\'<cr>')
+nmap('<leader>r', ':source $MYVIMRC<CR> :echo \'---.vimrc reloaded---\'<CR>')
 
 -- Buffers {{{
-nmap('<leader>bl', ':ls<cr>')
-nmap('<leader>bp', ':bp<cr>')
-nmap('<leader>bn', ':bn<cr>')
-nmap('<leader>bd', ':bd<cr>')
-nmap('<leader>bD', ':%bd<cr>')
-nmap('<leader>bo', ':on<cr>')
-nmap('<leader>bs', ':new<cr>')
+nmap('<leader>bl', ':ls<CR>')
+nmap('<leader>bp', ':bp<CR>')
+nmap('<leader>bn', ':bn<CR>')
+nmap('<leader>bd', ':bd<CR>')
+nmap('<leader>bD', ':%bd<CR>')
+nmap('<leader>bo', ':on<CR>')
+nmap('<leader>bs', ':new<CR>')
 -- }}}
 
-nmap('<esc>', ':nohlsearch<cr>')
+nmap('<esc>', ':nohlsearch<CR>')
 
 -- Splits {{{
-nmap('<M-h>', '<C-w>>')
-nmap('<M-l>', '<C-w><')
-nmap('<M-j>', '<C-w>-')
-nmap('<M-k>', '<C-w>+')
-nmap('<M-=>', '<C-w>=')
-nmap('<leader>s', '<C-w>s')
-nmap('<leader>v', '<C-w>v')
+nmap('<M-h>', '<C-W>>')
+nmap('<M-l>', '<C-W><')
+nmap('<M-j>', '<C-W>-')
+nmap('<M-k>', '<C-W>+')
+nmap('<M-=>', '<C-W>=')
+nmap('<leader>s', '<C-W>s')
+nmap('<leader>v', '<C-W>v')
 -- }}}
 
 nmap('q:', '<Nop>')
