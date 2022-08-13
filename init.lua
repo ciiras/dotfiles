@@ -125,8 +125,6 @@ Plug 'junegunn/vim-peekaboo'                                                    
 Plug 'kyazdani42/nvim-web-devicons'                                                 " Dev icons
 Plug 'kyazdani42/nvim-tree.lua'                                                     " File explorer
 Plug 'lewis6991/gitsigns.nvim'                                                      " Git diff line indicator
-Plug 'kana/vim-textobj-line'                                                        " Create own text objects
-Plug 'kana/vim-textobj-user'                                                        " Create own text objects
 Plug 'kyazdani42/nvim-web-devicons'                                                 " Icons
 Plug 'markstory/vim-zoomwin'                                                        " Toggle show current split only
 Plug 'moll/vim-node'                                                                " Allow file navigation with require('...')
@@ -148,11 +146,11 @@ Plug 'vimwiki/vimwiki'                                                          
 call plug#end()
 ]])
 
--- vim-sort-motion {{{
+-- christoomey/vim-sort-motion {{{
 global.sort_motion_flags = 'ui'
 -- }}}
 
--- coc {{{
+-- cocneoclide/coc.nvim {{{
 global.coc_global_extensions = {'coc-tsserver', 'coc-tslint-plugin', 'coc-angular', 'coc-eslint', 'coc-json', 'coc-spell-checker', 'coc-actions', 'coc-prettier'}
 
 function show_documentation()
@@ -218,7 +216,35 @@ nmap('<leader>ls', '<Plug>(coc-format-selected)')
 xmap('<leader>ls', '<Plug>(coc-format-selected)')
 -- }}}
 
--- fzf {{{
+-- EdenEast/nightfox.nvim {{{
+require('nightfox').setup({
+    options = {
+        transparent = true,
+        dim_inactive = true,
+        styles = {
+            keywords = 'bold',
+        },
+    },
+    groups = {
+        all = {
+            IncSearch = { fg ='#393b44', bg = '#F4A261' },
+            NormalNC = { bg = '#303030' },
+            Search = { fg ='#393b44', bg = '#F4A261' },
+            CursorLine = { bg = '#1C1C1C' },
+            Substitute = { fg ='#FFFFFF' },
+        },
+    },
+})
+
+vim.cmd("colorscheme nightfox")
+-- }}}
+
+-- easymotion/vim-easymotion {{{
+create_autocmd('User', { pattern = 'EasyMotionPromptBegin', command = 'CocDisable' })
+create_autocmd('User', { pattern = 'EasyMotionPromptEnd', command = 'CocEnable' })
+-- }}}
+
+-- junegunn/fzf.vim {{{
 opt.rtp:append('/usr/local/opt/fzf') -- Maps fzf to the fzf.vim
 
 vim.cmd([[
@@ -239,73 +265,17 @@ nmap('<leader>fl', ':BLines<cr>')
 nmap('<leader>fr', ':RG<cr>')
 -- }}}
 
--- vim-obsession {{{
-vim.cmd([[
-augroup ObsessionGroup
-  au!
-  au VimEnter * nested if !&modified && empty(v:this_session) | Obsession | echo "" | endif
-augroup END
-]])
+-- kyazdani42/nvim-tree.lua {{{
+require("nvim-tree").setup({
+    view = {
+        adaptive_size = true,
+    },
+})
+
+nmap('<leader>.', ':NvimTreeFindFileToggle<cr>')
 -- }}}
 
--- vimwiki {{{
-global.vimwiki_list = {{path = '~/Library/Mobile Documents/com~apple~CloudDocs/Documents/vimwiki'}}
-global.vimwiki_url_maxsave = 0
--- }}}
-
--- nvim-treesitter {{{
-    local cyan = "51"
-    local gold = "142"
-    local white = "15"
-    local red = "9"
-    local yellow = "11"
-    local lime = "10"
-    local blue = "12"
-
-
-    require("nvim-treesitter.configs").setup {
-        ensure_installed = { "c", "c_sharp", "dockerfile", "html", "javascript", "lua", "make", "markdown", "rust", "scss", "tsx", "typescript", "vim", "yaml" },
-        sync_install = false,
-        auto_install = true,
-        ignore_install = {},
-        highlight = {
-            enable = true,
-            disable = {},
-            additional_vim_regex_highlighting = true,
-        },
-        rainbow = {
-            disable = {},
-            enable = true,
-            extended_mode = true,
-            termcolors = { cyan, gold, white, red, yellow, lime, blue }
-        }
-    }
--- }}}
-
--- nvim-tresitter-playground {{{
-require "nvim-treesitter.configs".setup {
-    playground = {
-        enable = true,
-        disable = {},
-        updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-        persist_queries = false, -- Whether the query persists across vim sessions
-        keybindings = {
-            toggle_query_editor = 'o',
-            toggle_hl_groups = 'i',
-            toggle_injected_languages = 't',
-            toggle_anonymous_nodes = 'a',
-            toggle_language_display = 'I',
-            focus_language = 'f',
-            unfocus_language = 'F',
-            update = 'R',
-            goto_node = '<cr>',
-            show_help = '?',
-        },
-    }
-}
--- }}}
-
--- gitsigns.nvim {{{
+-- lewis6991/gitsigns.nvim {{{
 require('gitsigns').setup({
     on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
@@ -341,30 +311,7 @@ require('gitsigns').setup({
 })
 -- }}}
 
--- nightfox {{{
-require('nightfox').setup({
-    options = {
-        transparent = true,
-        dim_inactive = true,
-        styles = {
-            keywords = 'bold',
-        },
-    },
-    groups = {
-        all = {
-            IncSearch = { fg ='#393b44', bg = '#F4A261' },
-            NormalNC = { bg = '#303030' },
-            Search = { fg ='#393b44', bg = '#F4A261' },
-            CursorLine = { bg = '#1C1C1C' },
-            Substitute = { fg ='#FFFFFF' },
-        },
-    },
-})
-
-vim.cmd("colorscheme nightfox")
--- }}}
-
--- lualine {{{
+-- nvim-lualine/lualine.nvim {{{
 local modifiedColors = function(section)
    return { fg = '#dfdfe0', bg = vim.bo.modified and '#c94f6d' or '#39506d' }
 end
@@ -418,29 +365,80 @@ nmap('<leader>9', ':LualineBuffersJump 9<cr>')
 
 -- }}}
 
--- nvim-tree {{{
-require("nvim-tree").setup({
-    view = {
-        adaptive_size = true,
-    },
-})
+-- nvim-treesitter/nvim-treesitter {{{
+    local cyan = "51"
+    local gold = "142"
+    local white = "15"
+    local red = "9"
+    local yellow = "11"
+    local lime = "10"
+    local blue = "12"
 
-nmap('<leader>.', ':NvimTreeFindFileToggle<cr>')
+
+    require("nvim-treesitter.configs").setup {
+        ensure_installed = { "c", "c_sharp", "dockerfile", "html", "javascript", "lua", "make", "markdown", "rust", "scss", "tsx", "typescript", "vim", "yaml" },
+        sync_install = false,
+        auto_install = true,
+        ignore_install = {},
+        highlight = {
+            enable = true,
+            disable = {},
+            additional_vim_regex_highlighting = true,
+        },
+        rainbow = {
+            disable = {},
+            enable = true,
+            extended_mode = true,
+            termcolors = { cyan, gold, white, red, yellow, lime, blue }
+        }
+    }
 -- }}}
 
--- vim-easymotion {{{
-create_autocmd('User', { pattern = 'EasyMotionPromptBegin', command = 'CocDisable' })
-create_autocmd('User', { pattern = 'EasyMotionPromptEnd', command = 'CocEnable' })
+-- nvim-tresitter/playground {{{
+require "nvim-treesitter.configs".setup {
+    playground = {
+        enable = true,
+        disable = {},
+        updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+        persist_queries = false, -- Whether the query persists across vim sessions
+        keybindings = {
+            toggle_query_editor = 'o',
+            toggle_hl_groups = 'i',
+            toggle_injected_languages = 't',
+            toggle_anonymous_nodes = 'a',
+            toggle_language_display = 'I',
+            focus_language = 'f',
+            unfocus_language = 'F',
+            update = 'R',
+            goto_node = '<cr>',
+            show_help = '?',
+        },
+    }
+}
 -- }}}
 
--- Git Fugitive {{{
+-- tpope/vim-obsession {{{
+vim.cmd([[
+augroup ObsessionGroup
+  au!
+  au VimEnter * nested if !&modified && empty(v:this_session) | Obsession | echo "" | endif
+augroup END
+]])
+-- }}}
+
+-- vimwiki/vimwiki {{{
+global.vimwiki_list = {{path = '~/Library/Mobile Documents/com~apple~CloudDocs/Documents/vimwiki'}}
+global.vimwiki_url_maxsave = 0
+-- }}}
+
+-- tpope/vim-fugitive {{{
 nmap('<leader>gb', ':G blame<cr>')
 nmap('<leader>gd', ':Gdiff<cr>')
 nmap('<leader>gD', ':G diff<cr>')
 nmap('<leader>gs', ':Git<cr>')
 -- }}}
 
--- wilder {{{
+-- gelguy/wilder.nvim {{{
 local wilder = require('wilder')
 
 wilder.setup({
