@@ -133,7 +133,7 @@ Plug 'moll/vim-node'                                                            
 Plug 'nelstrom/vim-visual-star-search'                                              " Visual mode */# search
 Plug 'neoclide/coc.nvim', {'branch': 'release'}                                     " Intellisense
 Plug 'nvim-lualine/lualine.nvim'                                                    " Status bar and tabs
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}                         " Treesitter
+Plug 'nvim-treesitter/nvim-treesitter'                                              " Treesitter
 Plug 'nvim-treesitter/playground'                                                   " Treesitter playground
 Plug 'p00f/nvim-ts-rainbow'                                                         " Rainbow parentheses
 Plug 'tmux-plugins/vim-tmux-focus-events'                                           " Adds FocusGained/FocusLost events back for other plugins
