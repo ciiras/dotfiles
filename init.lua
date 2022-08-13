@@ -382,8 +382,7 @@ nmap('<leader>9', ':LualineBuffersJump 9<CR>')
     local lime = "10"
     local blue = "12"
 
-
-    require("nvim-treesitter.configs").setup {
+    require("nvim-treesitter.configs").setup({
         ensure_installed = { "c", "c_sharp", "dockerfile", "html", "javascript", "lua", "make", "markdown", "rust", "scss", "tsx", "typescript", "vim", "yaml" },
         sync_install = false,
         auto_install = true,
@@ -397,9 +396,8 @@ nmap('<leader>9', ':LualineBuffersJump 9<CR>')
             disable = {},
             enable = true,
             extended_mode = true,
-            termcolors = { cyan, gold, white, red, yellow, lime, blue }
         }
-    }
+    })
 -- }}}
 
 -- nvim-tresitter/playground {{{
