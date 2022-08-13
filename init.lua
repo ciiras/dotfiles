@@ -113,7 +113,6 @@ call plug#begin()
 Plug 'ap/vim-css-color'                                                             " Color highlighter
 Plug 'christoomey/vim-sort-motion'                                                  " Sort items in text objects
 Plug 'christoomey/vim-tmux-navigator'                                               " Navigation between tmux and vim
-Plug 'cohama/lexima.vim'                                                            " Auto close parentheses
 Plug 'dstein64/vim-startuptime'                                                     " Startup time monitor
 Plug 'easymotion/vim-easymotion'                                                    " Enhanced char and word search
 Plug 'EdenEast/nightfox.nvim'                                                       " Color scheme
@@ -178,11 +177,13 @@ augroup mygroup
   au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<cr>"
-else
-  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<cr>"
-endif
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : CheckBackspace() ? "\<Tab>" : coc#refresh()
+inoremap <expr><S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : pumvisible() ? "\<C-p>" : "\<C-k>"
+
+inoremap <expr> <cr> coc#pum#visible() ? "\<C-y>" : "<cr>"
 ]])
 
 create_usercmd('Prettier', ':CocCommand prettier.formatFile', {})
@@ -443,6 +444,8 @@ local wilder = require('wilder')
 
 wilder.setup({
     modes = {':'},
+    next_key = '<C-j>',
+    previous_key = '<C-k>',
 })
 
 wilder.set_option('renderer', wilder.popupmenu_renderer({
@@ -459,19 +462,6 @@ wilder.set_option('renderer', wilder.popupmenu_renderer(
         border = 'rounded',
     })
 ))
-
-wilder.set_option('pipeline', {
-  wilder.branch(
-    wilder.cmdline_pipeline({
-      -- sets the language to use, 'vim' and 'python' are supported
-      language = 'python',
-      -- 0 turns off fuzzy matching
-      -- 1 turns on fuzzy matching
-      -- 2 partial fuzzy matching (match does not have to begin with the same first letter)
-      fuzzy = 1,
-    })
-  )
-})
 -- }}}
 
 -- Plugins }}}
@@ -493,23 +483,17 @@ nmap('<leader>bs', ':new<cr>')
 nmap('<esc>', ':nohlsearch<cr>')
 
 -- Splits {{{
-nmap('<M-h>', '<C-W>>')
-nmap('<M-l>', '<C-W><')
-nmap('<M-j>', '<C-W>-')
-nmap('<M-k>', '<C-W>+')
-nmap('<M-=>', '<C-W>=')
-nmap('<leader>s', '<C-W>s')
-nmap('<leader>v', '<C-W>v')
+nmap('<M-h>', '<C-w>>')
+nmap('<M-l>', '<C-w><')
+nmap('<M-j>', '<C-w>-')
+nmap('<M-k>', '<C-w>+')
+nmap('<M-=>', '<C-w>=')
+nmap('<leader>s', '<C-w>s')
+nmap('<leader>v', '<C-w>v')
 -- }}}
 
 nmap('q:', '<Nop>')
 xmap('p', 'pgvy')
-
-imap('<C-j>', 'pumvisible() ? "<C-n>" : "<C-j>"', { expr = true })
-imap('<C-k>', 'pumvisible() ? "<C-p>" : "<C-k>"', { expr = true })
-
--- cmap('<C-j>', 'wildmenumode() ? "<Tab>" : "<C-j>"', { expr = true })
--- cmap('<C-k>', 'wildmenumode() ? "<S-Tab>" : "<C-k>"', { expr = true })
 
 -- Key Mappings }}}
 
