@@ -531,4 +531,6 @@ local stripWhiteSpace = function()
 end
 create_autocmd('BufWritePre', { callback = stripWhiteSpace })
 
+create_autocmd('FileType', { command = 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o' })
+
 -- Auto Commands }}}
