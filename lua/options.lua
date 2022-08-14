@@ -40,7 +40,6 @@ opt.tabstop = 4
 opt.timeout = true
 opt.timeoutlen = 1000
 opt.ttimeoutlen = 0
-opt.undodir = os.getenv('HOME') .. '/.config/nvim/undodir'
 opt.undofile = true
 opt.updatetime = 300
 opt.visualbell = true
