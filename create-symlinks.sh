@@ -1,7 +1,9 @@
 curDir=$(pwd)
 
-ln -sfF ${curDir}/.config/nvim/init.lua ~/.config/nvim/init.lua
-ln -sfF ${curDir}/.config/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
+ln -sfF ${curDir}/init.lua ~/.config/nvim/init.lua
+ln -sfF ${curDir}/lua/options.lua ~/.config/nvim/lua/options.lua
+
+ln -sfF ${curDir}/coc-settings.json ~/.config/nvim/coc-settings.json
 
 ln -sfF ${curDir}/.gitconfig ~/.gitconfig
 ln -sfF ${curDir}/.gitignore ~/.gitignore
