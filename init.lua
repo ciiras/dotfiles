@@ -140,6 +140,7 @@ Plug 'tpope/vim-obsession'                                                      
 Plug 'tpope/vim-repeat'                                                             " Expands repeat support to plugins
 Plug 'tpope/vim-surround'                                                           " Surround tool
 Plug 'tpope/vim-unimpaired'                                                         " Adds utility key bindings
+Plug 'windwp/nvim-autopairs'                                                        " Autopairs
 Plug 'vimwiki/vimwiki'                                                              " Vimwiki
 
 call plug#end()
@@ -442,6 +443,10 @@ nmap('<leader>gb', ':G blame<CR>')
 nmap('<leader>gd', ':Gdiff<CR>')
 nmap('<leader>gD', ':G diff<CR>')
 nmap('<leader>gs', ':Git<CR>')
+-- }}}
+
+-- windwp/nvim-autopairs {{{
+require("nvim-autopairs").setup({})
 -- }}}
 
 -- gelguy/wilder.nvim {{{
