@@ -61,7 +61,6 @@ endfunction
 
 call plug#begin()
 
-Plug 'ap/vim-css-color'                                                             " Color highlighter
 Plug 'christoomey/vim-sort-motion'                                                  " Sort items in text objects
 Plug 'christoomey/vim-tmux-navigator'                                               " Navigation between tmux and vim
 Plug 'dstein64/vim-startuptime'                                                     " Startup time monitor
