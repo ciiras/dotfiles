@@ -1,5 +1,8 @@
 local fn = vim.fn
-local packer = require('packer')
+
+local function get_config(name)
+  return string.format('require("config/%s")', name)
+end
 
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -7,14 +10,14 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
-packer.startup({
+require('packer').startup({
     function(use)
         use({ 'wbthomason/packer.nvim' })
 
         use({ 'christoomey/vim-sort-motion' })
         use({ 'christoomey/vim-tmux-navigator' })
         use({ 'tpope/vim-unimpaired' })
-        use({ 'windwp/nvim-autopairs', config = require('nvim-autopairs').setup() })
+        use({ 'windwp/nvim-autopairs', config = get_config('nvim-autopairs') })
 
       if packer_bootstrap then
         require('packer').sync()
