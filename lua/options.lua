@@ -20,7 +20,7 @@ opt.incsearch = true
 opt.laststatus = 2
 opt.lazyredraw = true
 opt.list = true
-opt.listchars = {tab = '›~', eol = '¬', space = '⋅'}
+opt.listchars = {tab = '›⋅', eol = '↲', space = '⋅'}
 opt.mouse = 'a'
 opt.number = true
 opt.relativenumber = true
