@@ -8,10 +8,10 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 packer.init({
-    enable = true, -- enable profiling via :PackerCompile profile=true
-    threshold = 0, -- the amount in ms that a plugins load time must be over for it to be included in the profile
-    max_jobs = 20, -- Limit the number of simultaneous jobs. nil means no limit. Set to 20 in order to prevent PackerSync form being 'stuck' -> https://github.com/wbthomason/packer.nvim/issues/746
-    display = { -- Have packer use a popup window
+    enable = true,
+    threshold = 0,
+    max_jobs = 20,
+    display = {
         open_fn = function()
             return require('packer.util').float({ border = 'rounded' })
         end,
@@ -21,9 +21,19 @@ packer.init({
 packer.startup(function(use)
     use({ 'wbthomason/packer.nvim' })
 
+    use({ 'christoomey/vim-sort-motion' })
+    use({ 'christoomey/vim-tmux-navigator' })
+    use({ 'tpope/vim-unimpaired' })
     use({ 'windwp/nvim-autopairs', config = require('nvim-autopairs').setup() })
 
   if packer_bootstrap then
     require('packer').sync()
   end
 end)
+
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+  augroup end
+]])

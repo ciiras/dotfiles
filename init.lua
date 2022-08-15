@@ -61,7 +61,6 @@ endfunction
 
 call plug#begin()
 
-Plug 'christoomey/vim-sort-motion'                                                  " Sort items in text objects
 Plug 'christoomey/vim-tmux-navigator'                                               " Navigation between tmux and vim
 Plug 'dstein64/vim-startuptime'                                                     " Startup time monitor
 Plug 'easymotion/vim-easymotion'                                                    " Enhanced char and word search
@@ -89,7 +88,6 @@ Plug 'tpope/vim-fugitive'                                                       
 Plug 'tpope/vim-obsession'                                                          " Session.vim reload
 Plug 'tpope/vim-repeat'                                                             " Expands repeat support to plugins
 Plug 'tpope/vim-surround'                                                           " Surround tool
-Plug 'tpope/vim-unimpaired'                                                         " Adds utility key bindings
 Plug 'vimwiki/vimwiki'                                                              " Vimwiki
 
 call plug#end()
