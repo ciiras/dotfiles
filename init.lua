@@ -111,8 +111,7 @@ nmap('<leader>fr', ':RG<CR>')
 -- }}}
 
 -- kyazdani42/nvim-tree.lua {{{
-require("nvim-tree").setup({
-    auto_close = true,
+require('nvim-tree').setup({
     view = {
         adaptive_size = true,
     },
@@ -163,7 +162,7 @@ global.coc_global_extensions = {'coc-tsserver', 'coc-tslint-plugin', 'coc-angula
 function show_documentation()
     local filetype = vim.bo.filetype
     if filetype == 'vim' or filetype == 'help' then
-        vim.api.nvim_command("h " .. vim.fn.expand('<cword>'))
+        vim.api.nvim_command('h ' .. vim.fn.expand('<cword>'))
     elseif vim.fn['coc#rpc#ready']() then
         vim.fn.CocActionAsync('doHover')
     else
@@ -185,13 +184,13 @@ augroup mygroup
   au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
-inoremap <expr><S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<C-H>"
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : '<Tab>'
+inoremap <expr><S-Tab> coc#pum#visible() ? coc#pum#prev(1) : '<C-H>'
 
-inoremap <silent><expr> <C-J> coc#pum#visible() ? coc#pum#next(1) : pumvisible() ? "\<C-N>" : "\<C-J>"
-inoremap <silent><expr> <C-K> coc#pum#visible() ? coc#pum#prev(1) : pumvisible() ? "\<C-P>" : "\<C-K>"
+inoremap <silent><expr> <C-J> coc#pum#visible() ? coc#pum#next(1) : pumvisible() ? '<C-N>' : '<C-J>'
+inoremap <silent><expr> <C-K> coc#pum#visible() ? coc#pum#prev(1) : pumvisible() ? '<C-P>' : '<C-K>'
 
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-G>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : '<C-G>u<CR><c-r>=coc#on_enter()<CR>'
 
 " Remap for do codeAction of selected region
 function! s:cocActionsOpenFromSelected(type) abort
@@ -287,16 +286,8 @@ nmap('<leader>9', ':LualineBuffersJump 9<CR>')
 -- }}}
 
 -- nvim-treesitter/nvim-treesitter {{{
-    local cyan = "51"
-    local gold = "142"
-    local white = "15"
-    local red = "9"
-    local yellow = "11"
-    local lime = "10"
-    local blue = "12"
-
-    require("nvim-treesitter.configs").setup({
-        ensure_installed = { "c", "c_sharp", "dockerfile", "html", "javascript", "lua", "make", "markdown", "rust", "scss", "tsx", "typescript", "vim", "yaml" },
+    require('nvim-treesitter.configs').setup({
+        ensure_installed = { 'c', 'c_sharp', 'dockerfile', 'html', 'javascript', 'lua', 'make', 'markdown', 'rust', 'scss', 'tsx', 'typescript', 'vim', 'yaml' },
         sync_install = false,
         auto_install = true,
         ignore_install = {},
@@ -309,38 +300,33 @@ nmap('<leader>9', ':LualineBuffersJump 9<CR>')
             disable = {},
             enable = true,
             extended_mode = true,
+        },
+        playground = {
+            enable = true,
+            disable = {},
+            updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+            persist_queries = false, -- Whether the query persists across vim sessions
+            keybindings = {
+                toggle_query_editor = 'o',
+                toggle_hl_groups = 'i',
+                toggle_injected_languages = 't',
+                toggle_anonymous_nodes = 'a',
+                toggle_language_display = 'I',
+                focus_language = 'f',
+                unfocus_language = 'F',
+                update = 'R',
+                goto_node = '<CR>',
+                show_help = '?',
+            },
         }
     })
--- }}}
-
--- nvim-tresitter/playground {{{
-require "nvim-treesitter.configs".setup {
-    playground = {
-        enable = true,
-        disable = {},
-        updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-        persist_queries = false, -- Whether the query persists across vim sessions
-        keybindings = {
-            toggle_query_editor = 'o',
-            toggle_hl_groups = 'i',
-            toggle_injected_languages = 't',
-            toggle_anonymous_nodes = 'a',
-            toggle_language_display = 'I',
-            focus_language = 'f',
-            unfocus_language = 'F',
-            update = 'R',
-            goto_node = '<CR>',
-            show_help = '?',
-        },
-    }
-}
 -- }}}
 
 -- tpope/vim-obsession {{{
 vim.cmd([[
 augroup ObsessionGroup
   au!
-  au VimEnter * nested if !&modified && empty(v:this_session) | Obsession | echo "" | endif
+  au VimEnter * nested if !&modified && empty(v:this_session) | Obsession | echo '' | endif
 augroup END
 ]])
 -- }}}
@@ -427,25 +413,17 @@ xmap('p', 'pgvy')
 
 vim.cmd([[
 function! StripTrailingWhitespace()
-    if &ft =~ 'markdown'
-        return
-    endif
+    if &ft =~ 'markdown' | return | endif
     %s/\s\+$//e
 endfunction
 
 function! TurnOnRelativeNumber()
-    echo &ft
-    if &ft =~ 'NvimTree'
-        return
-    endif
+    if &ft =~ 'NvimTree' | return | endif
     set number relativenumber
 endfunction
 
 function! TurnOffRelativeNumber()
-    echo &ft
-    if &ft =~ 'NvimTree'
-        return
-    endif
+    if &ft =~ 'NvimTree' | return | endif
     set number norelativenumber
 endfunction
 ]])
