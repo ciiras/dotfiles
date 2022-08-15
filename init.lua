@@ -431,24 +431,23 @@ endfunction
 local turn_on_relative_number = function()
     vim.api.nvim_call_function('TurnOnRelativeNumber', {})
 end
+create_autocmd({ 'BufEnter', 'FocusGained', 'InsertLeave' }, { callback = turn_on_relative_number })
 
 local turn_off_relative_number = function()
     vim.api.nvim_call_function('TurnOffRelativeNumber', {})
 end
-
-create_autocmd({ 'WinEnter', 'BufReadPre' }, { command = 'setlocal cursorline' })
-create_autocmd('WinLeave', { command = 'setlocal nocursorline' })
-
-create_autocmd({ 'BufEnter', 'FocusGained', 'InsertLeave' }, { callback = turn_on_relative_number })
 create_autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter' }, { callback = turn_off_relative_number })
 
-create_autocmd('BufRead', { command = 'setlocal foldmethod=marker' })
+create_autocmd({ 'WinEnter', 'BufReadPre' }, { command = 'setlocal cursorline' })
+create_autocmd({ 'WinLeave' }, { command = 'setlocal nocursorline' })
 
-local stripWhiteSpace = function()
+create_autocmd({ 'BufRead' }, { command = 'setlocal foldmethod=marker' })
+
+local strip_trailing_white_space = function()
     vim.api.nvim_call_function('StripTrailingWhitespace', {})
 end
-create_autocmd('BufWritePre', { callback = stripWhiteSpace })
+create_autocmd({ 'BufWritePre' }, { callback = strip_trailing_white_space })
 
-create_autocmd('FileType', { command = 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o' })
+create_autocmd({ 'FileType' }, { command = 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o' })
 
 -- Auto Commands }}}
