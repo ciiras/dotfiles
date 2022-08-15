@@ -61,7 +61,6 @@ endfunction
 
 call plug#begin()
 
-Plug 'christoomey/vim-tmux-navigator'                                               " Navigation between tmux and vim
 Plug 'dstein64/vim-startuptime'                                                     " Startup time monitor
 Plug 'easymotion/vim-easymotion'                                                    " Enhanced char and word search
 Plug 'EdenEast/nightfox.nvim'                                                       " Color scheme
@@ -415,6 +414,14 @@ wilder.set_option('renderer', wilder.popupmenu_renderer(
         border = 'rounded',
     })
 ))
+wilder.set_option('pipeline', {
+    wilder.branch(
+        wilder.cmdline_pipeline({
+            language = 'python',
+            fuzzy = 2,
+        })
+    ),
+})
 -- }}}
 
 -- Plugins }}}
