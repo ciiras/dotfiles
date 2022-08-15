@@ -124,7 +124,7 @@ augroup mygroup
   au User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
-inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : CheckBackspace() ? "\<Tab>" : coc#refresh()
+inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr><S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<C-H>"
 
 inoremap <silent><expr> <C-J> coc#pum#visible() ? coc#pum#next(1) : pumvisible() ? "\<C-N>" : "\<C-J>"
@@ -461,18 +461,42 @@ xmap('p', 'pgvy')
 
 vim.cmd([[
 function! StripTrailingWhitespace()
-  if &ft =~ 'markdown'
-    return
-  endif
-  %s/\s\+$//e
+    if &ft =~ 'markdown'
+        return
+    endif
+    %s/\s\+$//e
+endfunction
+
+function! TurnOnRelativeNumber()
+    echo &ft
+    if &ft =~ 'NvimTree'
+        return
+    endif
+    set number relativenumber
+endfunction
+
+function! TurnOffRelativeNumber()
+    echo &ft
+    if &ft =~ 'NvimTree'
+        return
+    endif
+    set number norelativenumber
 endfunction
 ]])
+
+local turn_on_relative_number = function()
+    vim.api.nvim_call_function('TurnOnRelativeNumber', {})
+end
+
+local turn_off_relative_number = function()
+    vim.api.nvim_call_function('TurnOffRelativeNumber', {})
+end
 
 create_autocmd({ 'WinEnter', 'BufReadPre' }, { command = 'setlocal cursorline' })
 create_autocmd('WinLeave', { command = 'setlocal nocursorline' })
 
-create_autocmd({ 'BufEnter', 'FocusGained', 'InsertLeave' }, { command = 'set number relativenumber' })
-create_autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter' }, { command = 'set number norelativenumber' })
+create_autocmd({ 'BufEnter', 'FocusGained', 'InsertLeave' }, { callback = turn_on_relative_number })
+create_autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter' }, { callback = turn_off_relative_number })
 
 create_autocmd('BufRead', { command = 'setlocal foldmethod=marker' })
 
