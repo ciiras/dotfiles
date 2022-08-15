@@ -1,8 +1,5 @@
+-- packer {{{
 local fn = vim.fn
-
-local function get_config(name)
-  return string.format('require("config/%s")', name)
-end
 
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -12,12 +9,14 @@ end
 
 require('packer').startup({
     function(use)
-        use({ 'wbthomason/packer.nvim' })
+        use({ 'wbthomason/packer.nvim' })                                                   -- packer management
 
-        use({ 'christoomey/vim-sort-motion' })
-        use({ 'christoomey/vim-tmux-navigator' })
-        use({ 'tpope/vim-unimpaired' })
-        use({ 'windwp/nvim-autopairs', config = get_config('nvim-autopairs') })
+        use({ 'christoomey/vim-sort-motion' })                                              -- Sort motions
+        use({ 'christoomey/vim-tmux-navigator' })                                           -- tmux/nvim window/pane/split management
+        use({ 'easymotion/vim-easymotion' })                                                -- <leader><leader>f,t,s,w
+        use({ 'EdenEast/nightfox.nvim' })                                                   -- Color scheme
+        use({ 'tpope/vim-unimpaired' })                                                     -- Useful key mappings
+        use({ 'windwp/nvim-autopairs' })                                                    -- Auto close (), [], {}, '', "", etc...
 
       if packer_bootstrap then
         require('packer').sync()
@@ -41,3 +40,40 @@ vim.cmd([[
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile profile=true
   augroup end
 ]])
+-- packer }}}
+
+-- christoomey/vim-sort-motion {{{
+global.sort_motion_flags = 'ui'
+-- }}}
+
+-- easymotion/vim-easymotion {{{
+create_autocmd('User', { pattern = 'EasyMotionPromptBegin', command = 'CocDisable' })
+create_autocmd('User', { pattern = 'EasyMotionPromptEnd', command = 'CocEnable' })
+-- }}}
+
+-- EdenEast/nightfox.nvim {{{
+require('nightfox').setup({
+    options = {
+        transparent = true,
+        dim_inactive = true,
+        styles = {
+            keywords = 'bold',
+        },
+    },
+    groups = {
+        all = {
+            IncSearch = { fg ='#393b44', bg = '#F4A261' },
+            NormalNC = { bg = '#303030' },
+            Search = { fg ='#393b44', bg = '#F4A261' },
+            CursorLine = { bg = '#1C1C1C' },
+            Substitute = { fg ='#FFFFFF' },
+        },
+    },
+})
+
+vim.cmd([[colorscheme nightfox]])
+-- }}}
+
+-- windwp/nvim-autopairs {{{
+require('nvim-autopairs').setup()
+-- }}}

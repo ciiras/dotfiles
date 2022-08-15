@@ -61,9 +61,6 @@ endfunction
 
 call plug#begin()
 
-Plug 'dstein64/vim-startuptime'                                                     " Startup time monitor
-Plug 'easymotion/vim-easymotion'                                                    " Enhanced char and word search
-Plug 'EdenEast/nightfox.nvim'                                                       " Color scheme
 Plug 'fladson/vim-kitty'                                                            " Kitty config syntax highlighting
 Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do': 'make fsautocomplete' }          " F#
 Plug 'gelguy/wilder.nvim', { 'do': function('UpdateRemotePlugins') }                " Wildmenu extension
@@ -92,11 +89,75 @@ Plug 'vimwiki/vimwiki'                                                          
 call plug#end()
 ]])
 
--- christoomey/vim-sort-motion {{{
-global.sort_motion_flags = 'ui'
+-- junegunn/fzf.vim {{{
+opt.rtp:append('/usr/local/opt/fzf') -- Maps fzf to the fzf.vim
+
+vim.cmd([[
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+]])
+create_usercmd('RG', 'call RipgrepFzf(<q-args>, <bang>0)', { bang = true })
+
+nmap('<leader>ff', ':Files<CR>')
+nmap('<leader>fg', ':GitFiles?<CR>')
+nmap('<leader>fh', ':History<CR>')
+nmap('<leader>fl', ':BLines<CR>')
+nmap('<leader>fr', ':RG<CR>')
 -- }}}
 
--- cocneoclide/coc.nvim {{{
+-- kyazdani42/nvim-tree.lua {{{
+require("nvim-tree").setup({
+    auto_close = true,
+    view = {
+        adaptive_size = true,
+    },
+})
+
+nmap('<leader>.', ':NvimTreeFindFileToggle<CR>')
+-- }}}
+
+-- lewis6991/gitsigns.nvim {{{
+require('gitsigns').setup({
+    on_attach = function(bufnr)
+        local gs = package.loaded.gitsigns
+
+        local function map(mode, l, r, opts)
+          opts = opts or {}
+          opts.buffer = bufnr
+          vim.keymap.set(mode, l, r, opts)
+        end
+
+        map('n', ']c', function()
+          if vim.wo.diff then return ']c' end
+          vim.schedule(function() gs.next_hunk() end)
+          return '<Ignore>'
+        end, {expr=true})
+
+        map('n', '[c', function()
+          if vim.wo.diff then return '[c' end
+          vim.schedule(function() gs.prev_hunk() end)
+          return '<Ignore>'
+        end, {expr=true})
+
+        map({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>')
+        map('n', '<leader>hS', gs.stage_buffer)
+        map('n', '<leader>hu', gs.undo_stage_hunk)
+        map('n', '<leader>hR', gs.reset_buffer)
+        map('n', '<leader>hp', gs.preview_hunk)
+        map('n', '<leader>hb', function() gs.blame_line{full=true} end)
+        map('n', '<leader>tb', gs.toggle_current_line_blame)
+        map('n', '<leader>hd', gs.diffthis)
+        map('n', '<leader>hD', function() gs.diffthis('~') end)
+    end
+})
+-- }}}
+
+-- neoclide/coc.nvim {{{
 global.coc_global_extensions = {'coc-tsserver', 'coc-tslint-plugin', 'coc-angular', 'coc-eslint', 'coc-json', 'coc-spell-checker', 'coc-actions', 'coc-prettier'}
 
 function show_documentation()
@@ -169,101 +230,6 @@ nmap('<leader>lf', ':Prettier<CR>')
 vmap('<leader>ls', '<Plug>(coc-format-selected)')
 nmap('<leader>ls', '<Plug>(coc-format-selected)')
 xmap('<leader>ls', '<Plug>(coc-format-selected)')
--- }}}
-
--- EdenEast/nightfox.nvim {{{
-require('nightfox').setup({
-    options = {
-        transparent = true,
-        dim_inactive = true,
-        styles = {
-            keywords = 'bold',
-        },
-    },
-    groups = {
-        all = {
-            IncSearch = { fg ='#393b44', bg = '#F4A261' },
-            NormalNC = { bg = '#303030' },
-            Search = { fg ='#393b44', bg = '#F4A261' },
-            CursorLine = { bg = '#1C1C1C' },
-            Substitute = { fg ='#FFFFFF' },
-        },
-    },
-})
-
-vim.cmd("colorscheme nightfox")
--- }}}
-
--- easymotion/vim-easymotion {{{
-create_autocmd('User', { pattern = 'EasyMotionPromptBegin', command = 'CocDisable' })
-create_autocmd('User', { pattern = 'EasyMotionPromptEnd', command = 'CocEnable' })
--- }}}
-
--- junegunn/fzf.vim {{{
-opt.rtp:append('/usr/local/opt/fzf') -- Maps fzf to the fzf.vim
-
-vim.cmd([[
-function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
-  let initial_command = printf(command_fmt, shellescape(a:query))
-  let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
-endfunction
-]])
-create_usercmd('RG', 'call RipgrepFzf(<q-args>, <bang>0)', { bang = true })
-
-nmap('<leader>ff', ':Files<CR>')
-nmap('<leader>fg', ':GitFiles?<CR>')
-nmap('<leader>fh', ':History<CR>')
-nmap('<leader>fl', ':BLines<CR>')
-nmap('<leader>fr', ':RG<CR>')
--- }}}
-
--- kyazdani42/nvim-tree.lua {{{
-require("nvim-tree").setup({
-    view = {
-        adaptive_size = true,
-    },
-})
-
-nmap('<leader>.', ':NvimTreeFindFileToggle<CR>')
--- }}}
-
--- lewis6991/gitsigns.nvim {{{
-require('gitsigns').setup({
-    on_attach = function(bufnr)
-        local gs = package.loaded.gitsigns
-
-        local function map(mode, l, r, opts)
-          opts = opts or {}
-          opts.buffer = bufnr
-          vim.keymap.set(mode, l, r, opts)
-        end
-
-        map('n', ']c', function()
-          if vim.wo.diff then return ']c' end
-          vim.schedule(function() gs.next_hunk() end)
-          return '<Ignore>'
-        end, {expr=true})
-
-        map('n', '[c', function()
-          if vim.wo.diff then return '[c' end
-          vim.schedule(function() gs.prev_hunk() end)
-          return '<Ignore>'
-        end, {expr=true})
-
-        map({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>')
-        map('n', '<leader>hS', gs.stage_buffer)
-        map('n', '<leader>hu', gs.undo_stage_hunk)
-        map('n', '<leader>hR', gs.reset_buffer)
-        map('n', '<leader>hp', gs.preview_hunk)
-        map('n', '<leader>hb', function() gs.blame_line{full=true} end)
-        map('n', '<leader>tb', gs.toggle_current_line_blame)
-        map('n', '<leader>hd', gs.diffthis)
-        map('n', '<leader>hD', function() gs.diffthis('~') end)
-    end
-})
 -- }}}
 
 -- nvim-lualine/lualine.nvim {{{
