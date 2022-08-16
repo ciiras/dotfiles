@@ -54,7 +54,6 @@ endif
 
 call plug#begin()
 
-Plug 'tomtom/tcomment_vim'                                                          " Comments
 Plug 'tpope/vim-fugitive'                                                           " Exposes git commands
 Plug 'tpope/vim-obsession'                                                          " Session.vim reload
 Plug 'tpope/vim-repeat'                                                             " Expands repeat support to plugins

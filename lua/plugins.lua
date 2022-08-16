@@ -52,6 +52,7 @@ require('packer').startup({
         })
         use({ 'nvim-treesitter/playground' })                                               -- Treesitter playground
         use({ 'p00f/nvim-ts-rainbow' })                                                     -- Rainbow (), [], {}
+        use({ 'tomtom/tcomment_vim' })                                                      -- Comment motions
 
         use({ 'tpope/vim-unimpaired' })                                                     -- Useful key mappings
         use({ 'windwp/nvim-autopairs' })                                                    -- Auto close (), [], {}, '', "", etc...
