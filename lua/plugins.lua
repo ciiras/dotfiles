@@ -1,6 +1,10 @@
 -- packer {{{
 local fn = vim.fn
 
+function get_config(name)
+    return string.format("require(\"config/%s\")", name)
+end
+
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
@@ -21,6 +25,7 @@ require('packer').startup({
         use({ 'junegunn/vim-peekaboo' })                                                    -- Register window
         use({ 'kyazdani42/nvim-web-devicons' })                                             -- Icons
         use({ 'kyazdani42/nvim-tree.lua' })                                                 -- File explorer
+        use({ 'lewis6991/gitsigns.nvim', config = get_config('gitsigns') })                 -- Git gutter info
 
         use({ 'tpope/vim-unimpaired' })                                                     -- Useful key mappings
         use({ 'windwp/nvim-autopairs' })                                                    -- Auto close (), [], {}, '', "", etc...
