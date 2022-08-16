@@ -15,7 +15,7 @@ require('packer').startup({
     function(use)
         use({ 'wbthomason/packer.nvim' })                                                   -- packer management
 
-        use({ 'christoomey/vim-sort-motion' })                                              -- Sort motions
+        use({ 'christoomey/vim-sort-motion', config = get_config('vim-sort-motion') })      -- Sort motions
         use({ 'christoomey/vim-tmux-navigator' })                                           -- tmux/nvim window/pane/split management
         use({ 'easymotion/vim-easymotion' })                                                -- <leader><leader>f,t,s,w
         use({ 'EdenEast/nightfox.nvim' })                                                   -- Color scheme
@@ -94,10 +94,6 @@ vim.cmd([[
   augroup end
 ]])
 -- packer }}}
-
--- christoomey/vim-sort-motion {{{
-global.sort_motion_flags = 'ui'
--- }}}
 
 -- easymotion/vim-easymotion {{{
 create_autocmd('User', { pattern = 'EasyMotionPromptBegin', command = 'CocDisable' })
