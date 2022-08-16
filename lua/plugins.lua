@@ -25,12 +25,22 @@ require('packer').startup({
         use({ 'junegunn/vim-peekaboo' })                                                    -- Register window
         use({ 'kyazdani42/nvim-tree.lua' })                                                 -- File explorer
         use({ 'kyazdani42/nvim-web-devicons' })                                             -- Icons
-        use({ 'lewis6991/gitsigns.nvim', config = get_config('gitsigns') })                 -- Git gutter info
+        use({
+            'lewis6991/gitsigns.nvim',
+            config = get_config('gitsigns')
+        })                                                                                  -- Git gutter info
         use({ 'markstory/vim-zoomwin' })                                                    -- <leader>z
         use({ 'moll/vim-node' })                                                            -- gd for Node.js require(...)
         use({ 'nelstrom/vim-visual-star-search' })                                          -- Visual mode */# search
-        use({ 'neoclide/coc.nvim', branch = 'release', config = get_config('coc') })        -- Lsp management
-        use({ 'nvim-lualine/lualine.nvim', config = get_config('lualine') })                -- Status line
+        use({
+            'neoclide/coc.nvim',
+            branch = 'release',
+            config = get_config('coc')
+        })                                                                                  -- Lsp management
+        use({
+            'nvim-lualine/lualine.nvim',
+            config = get_config('lualine')
+        })                                                                                  -- Status line
         use({
             'nvim-treesitter/nvim-treesitter',
             config = get_config('nvim-treesitter'),
