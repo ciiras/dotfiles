@@ -62,6 +62,11 @@ require('packer').startup({
             config = get_config('vim-obsession')
         })                                                                                  -- Session management
         use({ 'tpope/vim-repeat' })                                                         -- Better Repeat
+        use({ 'tpope/vim-surround' })                                                       -- Surround motions
+        use({
+            'vimwiki/vimwiki',
+            config = get_config('vimwiki')
+        })                                                                                  -- Wiki
 
         use({ 'tpope/vim-unimpaired' })                                                     -- Useful key mappings
         use({ 'windwp/nvim-autopairs' })                                                    -- Auto close (), [], {}, '', "", etc...

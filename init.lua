@@ -43,23 +43,6 @@ end
 require('plugins')
 require('options')
 
--- Plugins {{{
-
-vim.cmd([[
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  au VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin()
-
-Plug 'tpope/vim-surround'                                                           " Surround tool
-Plug 'vimwiki/vimwiki'                                                              " Vimwiki
-
-call plug#end()
-]])
-
 -- junegunn/fzf.vim {{{
 opt.rtp:append('/usr/local/opt/fzf')
 
@@ -80,13 +63,6 @@ nmap('<leader>fh', ':History<CR>')
 nmap('<leader>fl', ':BLines<CR>')
 nmap('<leader>fr', ':RG<CR>')
 -- }}}
-
--- vimwiki/vimwiki {{{
-global.vimwiki_list = {{path = '~/Library/Mobile Documents/com~apple~CloudDocs/Documents/vimwiki'}}
-global.vimwiki_url_maxsave = 0
--- }}}
-
--- Plugins }}}
 
 -- Key Mappings {{{
 
