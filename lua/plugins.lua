@@ -31,6 +31,17 @@ require('packer').startup({
         use({ 'nelstrom/vim-visual-star-search' })                                          -- Visual mode */# search
         use({ 'neoclide/coc.nvim', branch = 'release', config = get_config('coc') })        -- Lsp management
         use({ 'nvim-lualine/lualine.nvim', config = get_config('lualine') })                -- Status line
+        use({
+            'nvim-treesitter/nvim-treesitter',
+            config = get_config('nvim-treesitter'),
+            requires = {
+                { 'nvim-treesitter/playground' },
+                { 'p00f/nvim-ts-rainbow' }
+            },
+            run = ':TSUpdate'
+        })
+        use({ 'nvim-treesitter/playground' })                                               -- Treesitter playground
+        use({ 'p00f/nvim-ts-rainbow' })                                                     -- Rainbow (), [], {}
 
         use({ 'tpope/vim-unimpaired' })                                                     -- Useful key mappings
         use({ 'windwp/nvim-autopairs' })                                                    -- Auto close (), [], {}, '', "", etc...
