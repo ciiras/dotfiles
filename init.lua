@@ -54,10 +54,6 @@ endif
 
 call plug#begin()
 
-Plug 'kyazdani42/nvim-web-devicons'                                                 " Icons
-Plug 'markstory/vim-zoomwin'                                                        " Toggle show current split only
-Plug 'moll/vim-node'                                                                " Allow file navigation with require('...')
-Plug 'nelstrom/vim-visual-star-search'                                              " Visual mode */# search
 Plug 'neoclide/coc.nvim', {'branch': 'release'}                                     " Intellisense
 Plug 'nvim-lualine/lualine.nvim'                                                    " Status bar and tabs
 Plug 'nvim-treesitter/nvim-treesitter'                                              " Treesitter

@@ -23,9 +23,12 @@ require('packer').startup({
         use({ 'gelguy/wilder.nvim' })                                                       -- wildmenu plugin
         use({ 'junegunn/fzf.vim' })                                                         -- Fuzzy finder
         use({ 'junegunn/vim-peekaboo' })                                                    -- Register window
-        use({ 'kyazdani42/nvim-web-devicons' })                                             -- Icons
         use({ 'kyazdani42/nvim-tree.lua' })                                                 -- File explorer
+        use({ 'kyazdani42/nvim-web-devicons' })                                             -- Icons
         use({ 'lewis6991/gitsigns.nvim', config = get_config('gitsigns') })                 -- Git gutter info
+        use({ 'markstory/vim-zoomwin' })                                                    -- <leader>z
+        use({ 'moll/vim-node' })                                                            -- gd for Node.js require(...)
+        use({ 'nelstrom/vim-visual-star-search' })                                          -- Visual mode */# search
 
         use({ 'tpope/vim-unimpaired' })                                                     -- Useful key mappings
         use({ 'windwp/nvim-autopairs' })                                                    -- Auto close (), [], {}, '', "", etc...
