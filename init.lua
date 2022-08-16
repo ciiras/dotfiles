@@ -54,7 +54,6 @@ endif
 
 call plug#begin()
 
-Plug 'tpope/vim-repeat'                                                             " Expands repeat support to plugins
 Plug 'tpope/vim-surround'                                                           " Surround tool
 Plug 'vimwiki/vimwiki'                                                              " Vimwiki
 
