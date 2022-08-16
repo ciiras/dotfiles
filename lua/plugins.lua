@@ -20,7 +20,7 @@ require('packer').startup({
         use({ 'easymotion/vim-easymotion' })                                                -- <leader><leader>f,t,s,w
         use({ 'EdenEast/nightfox.nvim' })                                                   -- Color scheme
         use({ 'fladson/vim-kitty' })                                                        -- Kitty config syntax highlighting
-        use({ 'gelguy/wilder.nvim' })                                                       -- wildmenu plugin
+        use({ 'gelguy/wilder.nvim', config = get_config('wilder') })                        -- wildmenu plugin
         use({ 'junegunn/fzf.vim' })                                                         -- Fuzzy finder
         use({ 'junegunn/vim-peekaboo' })                                                    -- Register window
         use({ 'kyazdani42/nvim-tree.lua' })                                                 -- File explorer
@@ -122,36 +122,6 @@ require('nightfox').setup({
 })
 
 vim.cmd([[colorscheme nightfox]])
--- }}}
-
--- gelguy/wilder.nvim {{{
-local wilder = require('wilder')
-
-wilder.setup({
-    modes = {':'},
-    next_key = '<C-J>',
-    previous_key = '<C-K>',
-})
-
-wilder.set_option('renderer', wilder.popupmenu_renderer(
-    wilder.popupmenu_border_theme({
-        border = 'rounded',
-        highlights = {
-            border = 'Normal',
-        },
-        left = {' ', wilder.popupmenu_devicons()},
-        right = {' ', wilder.popupmenu_scrollbar()},
-    })
-))
-
-wilder.set_option('pipeline', {
-    wilder.branch(
-        wilder.cmdline_pipeline({
-            language = 'python',
-            fuzzy = 2,
-        })
-    ),
-})
 -- }}}
 
 -- kyazdani42/nvim-tree.lua {{{
