@@ -18,6 +18,9 @@ require('packer').startup({
         use({ 'fladson/vim-kitty' })                                                        -- Kitty config syntax highlighting
         use({ 'gelguy/wilder.nvim' })                                                       -- wildmenu plugin
         use({ 'junegunn/fzf.vim' })                                                         -- Fuzzy finder
+        use({ 'junegunn/vim-peekaboo' })                                                    -- Register window
+        use({ 'kyazdani42/nvim-web-devicons' })                                             -- Icons
+        use({ 'kyazdani42/nvim-tree.lua' })                                                 -- File explorer
 
         use({ 'tpope/vim-unimpaired' })                                                     -- Useful key mappings
         use({ 'windwp/nvim-autopairs' })                                                    -- Auto close (), [], {}, '', "", etc...
@@ -77,6 +80,14 @@ require('nightfox').setup({
 })
 
 vim.cmd([[colorscheme nightfox]])
+-- }}}
+
+-- kyazdani42/nvim-tree.lua {{{
+require('nvim-tree').setup({
+    view = {
+        adaptive_size = true,
+    },
+})
 -- }}}
 
 -- windwp/nvim-autopairs {{{

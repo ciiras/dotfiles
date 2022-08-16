@@ -54,9 +54,6 @@ endif
 
 call plug#begin()
 
-Plug 'junegunn/vim-peekaboo'                                                        " Show clipboard/macro registers
-Plug 'kyazdani42/nvim-web-devicons'                                                 " Dev icons
-Plug 'kyazdani42/nvim-tree.lua'                                                     " File explorer
 Plug 'lewis6991/gitsigns.nvim'                                                      " Git diff line indicator
 Plug 'kyazdani42/nvim-web-devicons'                                                 " Icons
 Plug 'markstory/vim-zoomwin'                                                        " Toggle show current split only
@@ -98,15 +95,6 @@ nmap('<leader>fl', ':BLines<CR>')
 nmap('<leader>fr', ':RG<CR>')
 -- }}}
 
--- kyazdani42/nvim-tree.lua {{{
-require('nvim-tree').setup({
-    view = {
-        adaptive_size = true,
-    },
-})
-
-nmap('<leader>.', ':NvimTreeFindFileToggle<CR>')
--- }}}
 
 -- lewis6991/gitsigns.nvim {{{
 require('gitsigns').setup({
@@ -361,6 +349,11 @@ nmap('<leader>v', '<C-W>v')
 
 nmap('q:', '<Nop>')
 xmap('p', 'pgvy')
+
+
+-- kyazdani42/nvim-tree.lua {{{
+nmap('<leader>.', ':NvimTreeFindFileToggle<CR>')
+-- }}}
 
 -- Key Mappings }}}
 
