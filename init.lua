@@ -54,7 +54,6 @@ endif
 
 call plug#begin()
 
-Plug 'tpope/vim-fugitive'                                                           " Exposes git commands
 Plug 'tpope/vim-obsession'                                                          " Session.vim reload
 Plug 'tpope/vim-repeat'                                                             " Expands repeat support to plugins
 Plug 'tpope/vim-surround'                                                           " Surround tool
@@ -96,13 +95,6 @@ augroup END
 -- vimwiki/vimwiki {{{
 global.vimwiki_list = {{path = '~/Library/Mobile Documents/com~apple~CloudDocs/Documents/vimwiki'}}
 global.vimwiki_url_maxsave = 0
--- }}}
-
--- tpope/vim-fugitive {{{
-nmap('<leader>gb', ':G blame<CR>')
-nmap('<leader>gd', ':Gdiff<CR>')
-nmap('<leader>gD', ':G diff<CR>')
-nmap('<leader>gs', ':Git<CR>')
 -- }}}
 
 -- Plugins }}}

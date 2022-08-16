@@ -2,7 +2,7 @@
 local fn = vim.fn
 
 function get_config(name)
-    return string.format("require(\"config/%s\")", name)
+    return string.format('require("config/%s")', name)
 end
 
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -53,13 +53,17 @@ require('packer').startup({
         use({ 'nvim-treesitter/playground' })                                               -- Treesitter playground
         use({ 'p00f/nvim-ts-rainbow' })                                                     -- Rainbow (), [], {}
         use({ 'tomtom/tcomment_vim' })                                                      -- Comment motions
+        use({
+            'tpope/vim-fugitive',
+            config = get_config('vim-fugitive')
+        })                                                                                  -- Git commands
 
         use({ 'tpope/vim-unimpaired' })                                                     -- Useful key mappings
         use({ 'windwp/nvim-autopairs' })                                                    -- Auto close (), [], {}, '', "", etc...
 
-      if packer_bootstrap then
-        require('packer').sync()
-      end
+        if packer_bootstrap then
+            require('packer').sync()
+        end
     end,
     config = {
         enable = true,
