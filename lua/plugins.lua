@@ -1,4 +1,3 @@
--- packer {{{
 local fn = vim.fn
 
 function get_config(name)
@@ -23,7 +22,7 @@ require('packer').startup({
         use({ 'gelguy/wilder.nvim', config = get_config('wilder') })                        -- wildmenu plugin
         use({ 'junegunn/fzf.vim' })                                                         -- Fuzzy finder
         use({ 'junegunn/vim-peekaboo' })                                                    -- Register window
-        use({ 'kyazdani42/nvim-tree.lua' })                                                 -- File explorer
+        use({ 'kyazdani42/nvim-tree.lua', config = get_config('nvim-tree') })               -- File explorer
         use({ 'kyazdani42/nvim-web-devicons' })                                             -- Icons
         use({
             'lewis6991/gitsigns.nvim',
@@ -93,7 +92,6 @@ vim.cmd([[
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile profile=true
   augroup end
 ]])
--- packer }}}
 
 -- easymotion/vim-easymotion {{{
 create_autocmd('User', { pattern = 'EasyMotionPromptBegin', command = 'CocDisable' })
@@ -122,14 +120,6 @@ require('nightfox').setup({
 })
 
 vim.cmd([[colorscheme nightfox]])
--- }}}
-
--- kyazdani42/nvim-tree.lua {{{
-require('nvim-tree').setup({
-    view = {
-        adaptive_size = true,
-    },
-})
 -- }}}
 
 -- windwp/nvim-autopairs {{{
