@@ -57,6 +57,10 @@ require('packer').startup({
             'tpope/vim-fugitive',
             config = get_config('vim-fugitive')
         })                                                                                  -- Git commands
+        use({
+            'tpope/vim-obsession',
+            config = get_config('vim-obsession')
+        })                                                                                  -- Session management
 
         use({ 'tpope/vim-unimpaired' })                                                     -- Useful key mappings
         use({ 'windwp/nvim-autopairs' })                                                    -- Auto close (), [], {}, '', "", etc...

@@ -54,7 +54,6 @@ endif
 
 call plug#begin()
 
-Plug 'tpope/vim-obsession'                                                          " Session.vim reload
 Plug 'tpope/vim-repeat'                                                             " Expands repeat support to plugins
 Plug 'tpope/vim-surround'                                                           " Surround tool
 Plug 'vimwiki/vimwiki'                                                              " Vimwiki
@@ -81,15 +80,6 @@ nmap('<leader>fg', ':GitFiles?<CR>')
 nmap('<leader>fh', ':History<CR>')
 nmap('<leader>fl', ':BLines<CR>')
 nmap('<leader>fr', ':RG<CR>')
--- }}}
-
--- tpope/vim-obsession {{{
-vim.cmd([[
-augroup ObsessionGroup
-  au!
-  au VimEnter * nested if !&modified && empty(v:this_session) | Obsession | echo '' | endif
-augroup END
-]])
 -- }}}
 
 -- vimwiki/vimwiki {{{
