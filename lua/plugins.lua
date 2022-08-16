@@ -29,6 +29,7 @@ require('packer').startup({
         use({ 'markstory/vim-zoomwin' })                                                    -- <leader>z
         use({ 'moll/vim-node' })                                                            -- gd for Node.js require(...)
         use({ 'nelstrom/vim-visual-star-search' })                                          -- Visual mode */# search
+        use({ 'neoclide/coc.nvim', branch = 'release', config = get_config('coc') })        -- Lsp management
 
         use({ 'tpope/vim-unimpaired' })                                                     -- Useful key mappings
         use({ 'windwp/nvim-autopairs' })                                                    -- Auto close (), [], {}, '', "", etc...
