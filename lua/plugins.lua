@@ -30,6 +30,7 @@ require('packer').startup({
         use({ 'moll/vim-node' })                                                            -- gd for Node.js require(...)
         use({ 'nelstrom/vim-visual-star-search' })                                          -- Visual mode */# search
         use({ 'neoclide/coc.nvim', branch = 'release', config = get_config('coc') })        -- Lsp management
+        use({ 'nvim-lualine/lualine.nvim', config = get_config('lualine') })                -- Status line
 
         use({ 'tpope/vim-unimpaired' })                                                     -- Useful key mappings
         use({ 'windwp/nvim-autopairs' })                                                    -- Auto close (), [], {}, '', "", etc...
