@@ -128,18 +128,6 @@ require('nightfox').setup({
 vim.cmd([[colorscheme nightfox]])
 -- }}}
 
--- kyazdani42/nvim-tree.lua {{{
-require('nvim-tree').setup({
-    view = {
-        adaptive_size = true,
-    },
-})
--- }}}
-
--- windwp/nvim-autopairs {{{
-require('nvim-autopairs').setup()
--- }}}
-
 -- gelguy/wilder.nvim {{{
 local wilder = require('wilder')
 
@@ -168,4 +156,16 @@ wilder.set_option('pipeline', {
         })
     ),
 })
+-- }}}
+
+-- kyazdani42/nvim-tree.lua {{{
+require('nvim-tree').setup({
+    view = {
+        adaptive_size = true,
+    },
+})
+-- }}}
+
+-- windwp/nvim-autopairs {{{
+require('nvim-autopairs').setup()
 -- }}}
