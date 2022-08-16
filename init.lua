@@ -52,19 +52,8 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   au VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-function! UpdateRemotePlugins(...)
-    " Needed to refresh runtime files
-    let &rtp=&rtp
-    UpdateRemotePlugins
-endfunction
-
-
 call plug#begin()
 
-Plug 'fladson/vim-kitty'                                                            " Kitty config syntax highlighting
-Plug 'fsharp/vim-fsharp', { 'for': 'fsharp', 'do': 'make fsautocomplete' }          " F#
-Plug 'gelguy/wilder.nvim', { 'do': function('UpdateRemotePlugins') }                " Wildmenu extension
-Plug 'junegunn/fzf.vim'                                                             " ripgrep fuzzy search
 Plug 'junegunn/vim-peekaboo'                                                        " Show clipboard/macro registers
 Plug 'kyazdani42/nvim-web-devicons'                                                 " Dev icons
 Plug 'kyazdani42/nvim-tree.lua'                                                     " File explorer
@@ -78,7 +67,6 @@ Plug 'nvim-lualine/lualine.nvim'                                                
 Plug 'nvim-treesitter/nvim-treesitter'                                              " Treesitter
 Plug 'nvim-treesitter/playground'                                                   " Treesitter playground
 Plug 'p00f/nvim-ts-rainbow'                                                         " Rainbow parentheses
-Plug 'tmux-plugins/vim-tmux-focus-events'                                           " Adds FocusGained/FocusLost events back for other plugins
 Plug 'tomtom/tcomment_vim'                                                          " Comments
 Plug 'tpope/vim-fugitive'                                                           " Exposes git commands
 Plug 'tpope/vim-obsession'                                                          " Session.vim reload
@@ -90,15 +78,15 @@ call plug#end()
 ]])
 
 -- junegunn/fzf.vim {{{
-opt.rtp:append('/usr/local/opt/fzf') -- Maps fzf to the fzf.vim
+opt.rtp:append('/usr/local/opt/fzf')
 
 vim.cmd([[
 function! RipgrepFzf(query, fullscreen)
-  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
-  let initial_command = printf(command_fmt, shellescape(a:query))
-  let reload_command = printf(command_fmt, '{q}')
-  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
-  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+    let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+    let initial_command = printf(command_fmt, shellescape(a:query))
+    let reload_command = printf(command_fmt, '{q}')
+    let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+    call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
 endfunction
 ]])
 create_usercmd('RG', 'call RipgrepFzf(<q-args>, <bang>0)', { bang = true })
@@ -341,39 +329,6 @@ nmap('<leader>gb', ':G blame<CR>')
 nmap('<leader>gd', ':Gdiff<CR>')
 nmap('<leader>gD', ':G diff<CR>')
 nmap('<leader>gs', ':Git<CR>')
--- }}}
-
--- gelguy/wilder.nvim {{{
-local wilder = require('wilder')
-
-wilder.setup({
-    modes = {':'},
-    next_key = '<C-J>',
-    previous_key = '<C-K>',
-})
-
-wilder.set_option('renderer', wilder.popupmenu_renderer({
-    highlighter = wilder.basic_highlighter(),
-    left = {' ', wilder.popupmenu_devicons()},
-    right = {' ', wilder.popupmenu_scrollbar()},
-}))
-
-wilder.set_option('renderer', wilder.popupmenu_renderer(
-    wilder.popupmenu_border_theme({
-        highlights = {
-            border = 'Normal',
-        },
-        border = 'rounded',
-    })
-))
-wilder.set_option('pipeline', {
-    wilder.branch(
-        wilder.cmdline_pipeline({
-            language = 'python',
-            fuzzy = 2,
-        })
-    ),
-})
 -- }}}
 
 -- Plugins }}}

@@ -15,6 +15,10 @@ require('packer').startup({
         use({ 'christoomey/vim-tmux-navigator' })                                           -- tmux/nvim window/pane/split management
         use({ 'easymotion/vim-easymotion' })                                                -- <leader><leader>f,t,s,w
         use({ 'EdenEast/nightfox.nvim' })                                                   -- Color scheme
+        use({ 'fladson/vim-kitty' })                                                        -- Kitty config syntax highlighting
+        use({ 'gelguy/wilder.nvim' })                                                       -- wildmenu plugin
+        use({ 'junegunn/fzf.vim' })                                                         -- Fuzzy finder
+
         use({ 'tpope/vim-unimpaired' })                                                     -- Useful key mappings
         use({ 'windwp/nvim-autopairs' })                                                    -- Auto close (), [], {}, '', "", etc...
 
@@ -77,4 +81,34 @@ vim.cmd([[colorscheme nightfox]])
 
 -- windwp/nvim-autopairs {{{
 require('nvim-autopairs').setup()
+-- }}}
+
+-- gelguy/wilder.nvim {{{
+local wilder = require('wilder')
+
+wilder.setup({
+    modes = {':'},
+    next_key = '<C-J>',
+    previous_key = '<C-K>',
+})
+
+wilder.set_option('renderer', wilder.popupmenu_renderer(
+    wilder.popupmenu_border_theme({
+        border = 'rounded',
+        highlights = {
+            border = 'Normal',
+        },
+        left = {' ', wilder.popupmenu_devicons()},
+        right = {' ', wilder.popupmenu_scrollbar()},
+    })
+))
+
+wilder.set_option('pipeline', {
+    wilder.branch(
+        wilder.cmdline_pipeline({
+            language = 'python',
+            fuzzy = 2,
+        })
+    ),
+})
 -- }}}
