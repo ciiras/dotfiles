@@ -68,7 +68,10 @@ require('packer').startup({
         })                                                                                  -- Wiki
 
         use({ 'tpope/vim-unimpaired' })                                                     -- Useful key mappings
-        use({ 'windwp/nvim-autopairs' })                                                    -- Auto close (), [], {}, '', "", etc...
+        use({
+            'windwp/nvim-autopairs',
+            config = get_config('nvim-autopairs')
+        })               -- Auto close (), [], {}, '', "", etc...
 
         if packer_bootstrap then
             require('packer').sync()
@@ -120,8 +123,4 @@ require('nightfox').setup({
 })
 
 vim.cmd([[colorscheme nightfox]])
--- }}}
-
--- windwp/nvim-autopairs {{{
-require('nvim-autopairs').setup()
 -- }}}
