@@ -20,7 +20,6 @@ require('packer').startup({
         use({ 'EdenEast/nightfox.nvim' })                                                   -- Color scheme
         use({ 'fladson/vim-kitty' })                                                        -- Kitty config syntax highlighting
         use({ 'gelguy/wilder.nvim', config = get_config('wilder') })                        -- wildmenu plugin
-        use({ 'junegunn/fzf.vim' })                                                         -- Fuzzy finder
         use({ 'junegunn/vim-peekaboo' })                                                    -- Register window
         use({ 'kyazdani42/nvim-tree.lua', config = get_config('nvim-tree') })               -- File explorer
         use({ 'kyazdani42/nvim-web-devicons' })                                             -- Icons
@@ -40,6 +39,18 @@ require('packer').startup({
             'nvim-lualine/lualine.nvim',
             config = get_config('lualine')
         })                                                                                  -- Status line
+        use({
+          'nvim-telescope/telescope.nvim',
+          tag = '0.1.x',
+          requires = {
+              {'nvim-lua/plenary.nvim'}
+          },
+          config = get_config('telescope')
+        })                                                                                 -- Fuzzy finder
+        use {
+            'nvim-telescope/telescope-fzf-native.nvim',
+            run = 'make'
+        }                                                                                  -- Telescope sorter
         use({
             'nvim-treesitter/nvim-treesitter',
             config = get_config('nvim-treesitter'),
