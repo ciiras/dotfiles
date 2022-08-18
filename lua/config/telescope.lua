@@ -7,7 +7,8 @@ telescope.setup({
     defaults = {
         vimgrep_arguments = {
             'rg', '--follow', '--color=never', '--no-heading',
-            '--with-filename', '--line-number', '--column', '--smart-case'
+            '--with-filename', '--line-number', '--column', '--smart-case',
+            '--hidden'
         },
         mappings = {
             i = {
