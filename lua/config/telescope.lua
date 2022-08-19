@@ -2,9 +2,9 @@ local telescope = require('telescope')
 local actions = require('telescope.actions')
 
 local rg = {
-    'rg', '--follow', '--color=never', '--no-heading',
-    '--with-filename', '--line-number', '--column', '--smart-case',
-    '--hidden', '--no-ignore', '--glob', '!.git/*'
+    'rg', '--follow', '--color=never', '--no-heading', '--with-filename',
+    '--line-number', '--column', '--smart-case', '--hidden', '--no-ignore',
+    '--glob', '!.git/*', '--glob', '!/node_modules/*'
 }
 
 telescope.load_extension('fzf')
@@ -40,7 +40,7 @@ telescope.setup({
         borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
         color_devicons = true,
         use_less = true,
-        set_env = {['COLORTERM'] = 'truecolor'} -- default = nil,
+        set_env = {['COLORTERM'] = 'truecolor'},
     },
     pickers = {
         find_command = rg,
