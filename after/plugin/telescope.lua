@@ -1,6 +1,3 @@
-nmap('<leader>ff', ':Telescope find_files hidden=true<cr>')
-nmap('<leader>fr', ':Telescope live_grep<cr>')
-
-vim.cmd([[
-nnoremap <silent> <Leader>fg <cmd>lua require('modules.telescope.git_status').git_status()<CR>
-]])
+nmap('<leader>ff', '<cmd>lua require(\'telescope.builtin\').find_files()<CR>')
+nmap('<leader>fg', '<cmd>lua require(\'modules.telescope.git_status\').git_status()<CR>')
+nmap('<leader>fr', '<cmd>lua require(\'telescope.builtin\').live_grep()<CR>')

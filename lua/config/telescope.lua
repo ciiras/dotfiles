@@ -1,17 +1,16 @@
 local telescope = require('telescope')
 local actions = require('telescope.actions')
 
-local rg = {
-    'rg', '--follow', '--color=never', '--no-heading', '--with-filename',
-    '--line-number', '--column', '--smart-case', '--hidden', '--no-ignore',
-    '--glob', '!.git/*', '--glob', '!/node_modules/*'
-}
-
 telescope.load_extension('fzf')
 
 telescope.setup({
     defaults = {
-        vimgrep_arguments = rg,
+        vimgrep_arguments = { -- live_grep()
+            'rg', '--follow', '--color=never', '--no-heading',
+            '--with-filename', '--line-number', '--column', '--smart-case',
+            '--hidden', '--no-ignore', '--glob', '!.git/*', '--glob',
+            '!/node_modules',
+        },
         mappings = {
             i = {
                 ['<esc>'] = actions.close,
@@ -43,6 +42,11 @@ telescope.setup({
         set_env = {['COLORTERM'] = 'truecolor'},
     },
     pickers = {
-        find_command = rg,
+        find_files = {
+            find_command = {
+                'rg', '--hidden', '--files', '--no-ignore', '--glob',
+                '!.git/*', '--glob', '!/node_modules',
+            },
+        }
     },
 })
