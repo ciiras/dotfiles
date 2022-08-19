@@ -4,7 +4,7 @@ local actions = require('telescope.actions')
 local rg = {
     'rg', '--follow', '--color=never', '--no-heading',
     '--with-filename', '--line-number', '--column', '--smart-case',
-    '--hidden', '--no-ignore'
+    '--hidden', '--no-ignore', '--glob', '!.git/*'
 }
 
 telescope.load_extension('fzf')
@@ -12,7 +12,6 @@ telescope.load_extension('fzf')
 telescope.setup({
     defaults = {
         vimgrep_arguments = rg,
-        find_command = rg,
         mappings = {
             i = {
                 ['<esc>'] = actions.close,
@@ -42,5 +41,8 @@ telescope.setup({
         color_devicons = true,
         use_less = true,
         set_env = {['COLORTERM'] = 'truecolor'} -- default = nil,
+    },
+    pickers = {
+        find_command = rg,
     },
 })
