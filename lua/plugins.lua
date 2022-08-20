@@ -1,5 +1,3 @@
-local fn = vim.fn
-
 local function get_config(name)
     return string.format('require("config/%s")', name)
 end
@@ -7,7 +5,7 @@ end
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-  vim.cmd [[packadd packer.nvim]]
+  exec([[packadd packer.nvim]], false)
 end
 
 require('packer').startup({
@@ -103,9 +101,9 @@ require('packer').startup({
     }
 })
 
-vim.cmd([[
+exec([[
   augroup packer_user_config
     autocmd!
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile profile=true
   augroup end
-]])
+]], false)

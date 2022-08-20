@@ -18,7 +18,7 @@ local coc_highlight = function()
 end
 create_autocmd('CursorHold', { callback = coc_highlight })
 
-vim.cmd([[
+exec([[
 augroup mygroup
   au!
   au FileType typescript,json setl formatexpr=CocAction('formatSelected')
@@ -39,7 +39,7 @@ function! s:cocActionsOpenFromSelected(type) abort
 endfunction
 xmap <silent> <leader>a :<C-U>execute 'CocCommand actions.open ' . visualmode()<CR>
 nmap <silent> <leader>a :<C-U>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
-]])
+]], false)
 
 create_usercmd('Prettier', ':CocCommand prettier.formatFile', {})
 

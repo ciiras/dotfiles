@@ -1,1 +1,1 @@
-vim.cmd([[colorscheme nightfox]])
+exec([[colorscheme nightfox]], false)

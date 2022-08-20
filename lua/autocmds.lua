@@ -1,4 +1,4 @@
-vim.cmd([[
+exec([[
 function! StripTrailingWhitespace()
     if &ft =~ 'markdown' | return | endif
     %s/\s\+$//e
@@ -13,7 +13,7 @@ function! TurnOffRelativeNumber()
     if &ft =~ 'NvimTree' | return | endif
     set number norelativenumber
 endfunction
-]])
+]], false)
 
 local turn_on_relative_number = function()
     vim.api.nvim_call_function('TurnOnRelativeNumber', {})

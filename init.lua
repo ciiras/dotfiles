@@ -4,6 +4,8 @@ create_autocmd = vim.api.nvim_create_autocmd
 create_usercmd = vim.api.nvim_create_user_command
 global = vim.g
 opt = vim.opt
+fn = vim.fn
+exec = vim.api.nvim_exec
 
 keymap_options = { noremap = true, silent = true }
 
