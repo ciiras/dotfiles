@@ -1,6 +1,6 @@
 local fn = vim.fn
 
-function get_config(name)
+local function get_config(name)
     return string.format('require("config/%s")', name)
 end
 
@@ -82,7 +82,7 @@ require('packer').startup({
         use({
             'windwp/nvim-autopairs',
             config = get_config('nvim-autopairs')
-        })               -- Auto close (), [], {}, '', "", etc...
+        })                                                                                  -- Auto close (), [], {}, '', "", etc...
 
         if packer_bootstrap then
             require('packer').sync()
