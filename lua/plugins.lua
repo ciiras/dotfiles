@@ -107,11 +107,6 @@ vim.cmd([[
   augroup end
 ]])
 
--- easymotion/vim-easymotion {{{
-create_autocmd('User', { pattern = 'EasyMotionPromptBegin', command = 'CocDisable' })
-create_autocmd('User', { pattern = 'EasyMotionPromptEnd', command = 'CocEnable' })
--- }}}
-
 -- EdenEast/nightfox.nvim {{{
 require('nightfox').setup({
     options = {
@@ -132,6 +127,4 @@ require('nightfox').setup({
         },
     },
 })
-
-vim.cmd([[colorscheme nightfox]])
 -- }}}
