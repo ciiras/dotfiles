@@ -17,7 +17,10 @@ require('packer').startup({
         use({ 'christoomey/vim-sort-motion', config = get_config('vim-sort-motion') })      -- Sort motions
         use({ 'christoomey/vim-tmux-navigator' })                                           -- tmux/nvim window/pane/split management
         use({ 'easymotion/vim-easymotion' })                                                -- <leader><leader>f,t,s,w
-        use({ 'EdenEast/nightfox.nvim' })                                                   -- Color scheme
+        use({
+            'EdenEast/nightfox.nvim',
+            config = get_config('nightfox')
+        })                                                                                  -- Color scheme
         use({ 'fladson/vim-kitty' })                                                        -- Kitty config syntax highlighting
         use({ 'gelguy/wilder.nvim', config = get_config('wilder') })                        -- wildmenu plugin
         use({ 'junegunn/vim-peekaboo' })                                                    -- Register window
@@ -106,25 +109,3 @@ vim.cmd([[
     autocmd BufWritePost plugins.lua source <afile> | PackerCompile profile=true
   augroup end
 ]])
-
--- EdenEast/nightfox.nvim {{{
-require('nightfox').setup({
-    options = {
-        transparent = true,
-        dim_inactive = true,
-        styles = {
-            keywords = 'bold',
-        },
-    },
-    groups = {
-        all = {
-            IncSearch = { fg ='#393b44', bg = '#F4A261' },
-            NormalNC = { bg = '#303030' },
-            Search = { fg ='#393b44', bg = '#F4A261' },
-            CursorLine = { bg = '#1C1C1C' },
-            CursorColumn = { bg = '#1C1C1C' },
-            Substitute = { fg ='#FFFFFF' },
-        },
-    },
-})
--- }}}
