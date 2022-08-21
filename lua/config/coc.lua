@@ -32,16 +32,9 @@ inoremap <silent><expr> <C-J> coc#pum#visible() ? coc#pum#next(1) : pumvisible()
 inoremap <silent><expr> <C-K> coc#pum#visible() ? coc#pum#prev(1) : pumvisible() ? '<C-P>' : '<C-K>'
 
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : '<C-G>u<CR><c-r>=coc#on_enter()<CR>'
-
-" Remap for do codeAction of selected region
-function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
-endfunction
-xmap <silent> <leader>a :<C-U>execute 'CocCommand actions.open ' . visualmode()<CR>
-nmap <silent> <leader>a :<C-U>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 ]], false)
 
-create_usercmd('Prettier', ':CocCommand prettier.formatFile', {})
+create_usercmd('Prettier', '<cmd>CocCommand prettier.formatFile', {})
 
 nmap('[g', '<Plug>(coc-diagnostic-prev)')
 nmap(']g', '<Plug>(coc-diagnostic-next)')
@@ -51,7 +44,7 @@ nmap('gy', '<Plug>(coc-type-definition)')
 nmap('gi', '<Plug>(coc-implementation)')
 nmap('gr', '<Plug>(coc-references)')
 
-nmap('K', ':lua show_documentation() <CR>')
+nmap('K', '<cmd>lua show_documentation() <CR>')
 
 nmap('<leader>rn', '<Plug>(coc-rename)')
 
@@ -61,12 +54,12 @@ nmap('<leader>a', '<Plug>(coc-codeaction-selected)')
 
 nmap('<leader>qf', '<Plug>(coc-fix-current)')
 
-nmap('<space>a', ':<C-U>CocList diagnostics<CR>')
-nmap('<space>o', ':<C-U>CocList outline<CR>')
-nmap('<space>y', ':<C-U>CocList -I symbols<CR>')
+nmap('<space>a', '<cmd>CocList diagnostics<CR>')
+nmap('<space>o', '<cmd>CocList outline<CR>')
+nmap('<space>y', '<cmd>CocList -I symbols<CR>')
 
-vmap('<leader>lf', ':Prettier<CR>')
-nmap('<leader>lf', ':Prettier<CR>')
+vmap('<leader>lf', '<cmd>Prettier<CR>')
+nmap('<leader>lf', '<cmd>Prettier<CR>')
 vmap('<leader>ls', '<Plug>(coc-format-selected)')
 nmap('<leader>ls', '<Plug>(coc-format-selected)')
 xmap('<leader>ls', '<Plug>(coc-format-selected)')
