@@ -1,20 +1,14 @@
 require('nvim-treesitter.configs').setup({
+    auto_install = true,
     ensure_installed = {
         'c', 'c_sharp', 'dockerfile', 'html', 'javascript', 'lua', 'make',
         'markdown', 'rust', 'scss', 'tsx', 'typescript', 'vim', 'yaml',
     },
-    sync_install = false,
-    auto_install = true,
-    ignore_install = {},
     highlight = {
         enable = true,
         disable = {},
     },
-    rainbow = {
-        disable = {},
-        enable = true,
-        extended_mode = true,
-    },
+    ignore_install = {},
     playground = {
         enable = true,
         disable = {},
@@ -32,5 +26,16 @@ require('nvim-treesitter.configs').setup({
             goto_node = '<CR>',
             show_help = '?',
         },
-    }
+    },
+    query_linter = {
+        enable = true,
+        use_virtual_text = true,
+        lint_events = {'BufWrite', 'CursorHold'},
+    },
+    rainbow = {
+        disable = {},
+        enable = true,
+        extended_mode = true,
+    },
+    sync_install = false,
 })
