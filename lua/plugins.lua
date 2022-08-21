@@ -34,7 +34,6 @@ require('packer').startup({
         use({
             'neoclide/coc.nvim',
             branch = 'release',
-            config = get_config('coc')
         })                                                                                  -- Lsp management
         use({
             'nvim-lualine/lualine.nvim',
