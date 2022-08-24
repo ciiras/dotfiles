@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 curDir=$(pwd)
 
 ln -sfF ${curDir}/init.lua ~/.config/nvim/init.lua
