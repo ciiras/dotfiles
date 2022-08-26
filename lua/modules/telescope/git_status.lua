@@ -5,7 +5,6 @@ local E = {}
 
 local delta = previewers.new_termopen_previewer {
   get_command = function(entry)
-      print(entry)
       return { 'git', '-c', 'core.pager=delta', '-c', 'delta.side-by-side=false', 'diff', entry.path }
   end
 }
