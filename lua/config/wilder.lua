@@ -2,8 +2,6 @@ local wilder = require('wilder')
 
 wilder.setup({
     modes = {':'},
-    next_key = '<C-J>',
-    previous_key = '<C-K>',
 })
 
 wilder.set_option('renderer', wilder.popupmenu_renderer(

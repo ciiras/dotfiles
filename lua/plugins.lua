@@ -34,10 +34,21 @@ packer.startup(function(use)
         'EdenEast/nightfox.nvim',
         config = get_config('nightfox')
     })                                                                                  -- Color scheme
+    use({ "famiu/bufdelete.nvim" })                                                     -- Delete buffer w/o closing window
     use({
         'gelguy/wilder.nvim',
         config = get_config('wilder')
     })                                                                                  -- wildmenu plugin
+    use ({
+        'hrsh7th/nvim-cmp',
+        config = get_config('nvim-cmp')
+    })
+    use ({ 'hrsh7th/cmp-buffer' })
+    use ({ 'hrsh7th/cmp-path' })
+    use ({ 'hrsh7th/cmp-nvim-lua' })
+    use ({ 'hrsh7th/cmp-nvim-lsp' })
+    use ({ 'hrsh7th/cmp-nvim-lsp-document-symbol' })
+    use ({ 'tamago324/cmp-zsh' })
     use({ 'junegunn/vim-peekaboo' })                                                    -- Register window
     use({
         'kyazdani42/nvim-tree.lua',
@@ -52,9 +63,9 @@ packer.startup(function(use)
     use({ 'moll/vim-node' })                                                            -- gd for Node.js require(...)
     use({ 'nelstrom/vim-visual-star-search' })                                          -- Visual mode */# search
     use({
-        'neoclide/coc.nvim',
-        branch = 'release',
-    })                                                                                  -- Lsp management
+        'neovim/nvim-lspconfig',
+        config = get_config('nvim-lspconfig')
+    })                                                                                  -- Lsp config
     use({
         'nvim-lualine/lualine.nvim',
         config = get_config('lualine')
@@ -81,6 +92,10 @@ packer.startup(function(use)
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end
     })
     use({ 'nvim-treesitter/playground' })                                               -- Treesitter playground
+    use {
+        'onsails/lspkind-nvim',
+        requires = { { "famiu/bufdelete.nvim" } }
+    }
     use({ 'p00f/nvim-ts-rainbow' })                                                     -- Rainbow (), [], {}
     use({ 'tomtom/tcomment_vim' })                                                      -- Comment motions
     use({

@@ -46,3 +46,5 @@ require('plugins')
 require('options')
 require('mappings')
 require('autocmds')
+
+vim.lsp.set_log_level('debug')
