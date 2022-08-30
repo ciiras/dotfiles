@@ -24,6 +24,7 @@ nmap('<leader>v', '<C-W>v')
 
 nmap('q:', '<Nop>')
 xmap('p', 'pgvy')
+nmap('<leader>ya', 'ggvGY') -- copy all
 
 
 -- kyazdani42/nvim-tree.lua {{{
