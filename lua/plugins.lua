@@ -49,6 +49,10 @@ packer.startup(function(use)
     use ({ 'hrsh7th/cmp-nvim-lsp' })
     use ({ 'hrsh7th/cmp-nvim-lsp-document-symbol' })
     use ({ 'tamago324/cmp-zsh' })
+    use ({
+        'jose-elias-alvarez/null-ls.nvim',
+        config = get_config('null-ls')
+    })                                                                                  -- Non Lsp Client hooks
     use({ 'junegunn/vim-peekaboo' })                                                    -- Register window
     use({
         'kyazdani42/nvim-tree.lua',
@@ -60,6 +64,13 @@ packer.startup(function(use)
         config = get_config('gitsigns')
     })                                                                                  -- Git gutter info
     use({ 'markstory/vim-zoomwin' })                                                    -- <leader>z
+    use({
+        'MunifTanjim/eslint.nvim',
+        config = get_config('eslint'),
+        requires = {
+            {'jose-elias-alvarez/null-ls.nvim'}
+        }
+    })                                                                                  -- eslint
     use({ 'moll/vim-node' })                                                            -- gd for Node.js require(...)
     use({ 'nelstrom/vim-visual-star-search' })                                          -- Visual mode */# search
     use({
