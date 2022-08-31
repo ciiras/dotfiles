@@ -68,7 +68,6 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export LS_COLORS=Gxfxcxdxbxegedabagacad
 export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
-export PATH=./:/Users/griffithc/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export TERM="screen-256color"
 
 # }}}
@@ -287,3 +286,5 @@ bindkey '^ ' autosuggest-accept
 zplugin light zsh-users/zsh-syntax-highlighting
 
 # }}}
+
+export PATH="./:$PATH"
