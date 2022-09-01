@@ -34,7 +34,11 @@ packer.startup(function(use)
         'EdenEast/nightfox.nvim',
         config = get_config('nightfox')
     })                                                                                  -- Color scheme
-    use({ "famiu/bufdelete.nvim" })                                                     -- Delete buffer w/o closing window
+    use({ 'famiu/bufdelete.nvim' })                                                     -- Delete buffer w/o closing window
+    use({
+        'folke/trouble.nvim',
+        config = get_config('trouble')
+    })                                                                                  -- Diagnostics quick fix list
     use({
         'gelguy/wilder.nvim',
         config = get_config('wilder')
