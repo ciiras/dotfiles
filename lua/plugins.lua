@@ -55,7 +55,10 @@ packer.startup(function(use)
     use ({ 'tamago324/cmp-zsh' })
     use ({
         'jose-elias-alvarez/null-ls.nvim',
-        config = get_config('null-ls')
+        config = get_config('null-ls'),
+        requires = {
+            {'nvim-lua/plenary.nvim'}
+        },
     })                                                                                  -- Non Lsp Client hooks
     use({ 'junegunn/vim-peekaboo' })                                                    -- Register window
     use({
