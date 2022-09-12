@@ -108,7 +108,7 @@ packer.startup(function(use)
             { 'p00f/nvim-ts-rainbow' }
         },
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end
-    })
+    })                                                                                  -- Treesitter
     use({ 'nvim-treesitter/playground' })                                               -- Treesitter playground
     use {
         'onsails/lspkind-nvim',
