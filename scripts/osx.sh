@@ -13,3 +13,7 @@ defaults write com.apple.finder AppleShowAllFiles -boolean true; killall Finder;
 ssDir="/Users/${curUser}/Pictures"
 mkdir ${ssDir}
 defaults write com.apple.screencapture location ${ssDir}
+
+# Reduce Display Motion
+defaults write com.apple.Accessibility ReduceMotionEnabled -bool true
+defaults write com.apple.universalaccess reduceMotion -bool true # Having issues with this one
