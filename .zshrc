@@ -285,6 +285,8 @@ bindkey '^ ' autosuggest-accept
 
 zplugin light zsh-users/zsh-syntax-highlighting
 
+zplugin light kutsan/zsh-system-clipboard
+
 # }}}
 
 export PATH="./:$PATH"
