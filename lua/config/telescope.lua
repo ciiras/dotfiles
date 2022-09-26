@@ -9,7 +9,7 @@ telescope.setup({
             'rg', '--follow', '--color=never', '--no-heading',
             '--with-filename', '--line-number', '--column', '--smart-case',
             '--hidden', '--no-ignore', '--glob', '!.git/*', '--glob',
-            '!/node_modules',
+            '!/node_modules', '--glob', '!.next/*',
         },
         mappings = {
             i = {
@@ -36,7 +36,7 @@ telescope.setup({
         find_files = {
             find_command = {
                 'rg', '--hidden', '--files', '--no-ignore', '--glob',
-                '!.git/*', '--glob', '!/node_modules',
+                '!.git/*', '--glob', '!/node_modules', '--glob', '!.next/*',
             },
         }
     },
