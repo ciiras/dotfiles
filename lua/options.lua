@@ -1,5 +1,6 @@
+global.loaded = 1
+global.loaded_netrwPlugin = 1
 global.mapleader = ','
-global.netrw_liststyle = 3
 global.session_autosave = 'no'
 global.tmux_navigator_preserve_zoom = 1
 
