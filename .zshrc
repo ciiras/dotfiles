@@ -1,7 +1,7 @@
 # Basic Settings {{{
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/griffithc/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
