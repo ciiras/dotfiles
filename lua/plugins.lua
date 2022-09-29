@@ -29,6 +29,7 @@ packer.startup(function(use)
         config = get_config('vim-sort-motion')
     })                                                                                  -- Sort motions
     use({ 'christoomey/vim-tmux-navigator' })                                           -- tmux/nvim window/pane/split management
+    use({ 'dstein64/vim-startuptime' })                                                   -- Startup time profiling
     use({ 'easymotion/vim-easymotion' })                                                -- <leader><leader>f,t,s,w
     use({
         'EdenEast/nightfox.nvim',
