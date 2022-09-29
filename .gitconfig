@@ -32,5 +32,4 @@
     new = green
     whitespace = red reverse
 [pull]
-    ff = only
     rebase = true
