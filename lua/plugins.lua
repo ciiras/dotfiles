@@ -53,6 +53,10 @@ packer.startup(function(use)
     use ({ 'hrsh7th/cmp-nvim-lua' })
     use ({ 'hrsh7th/cmp-nvim-lsp' })
     use ({ 'hrsh7th/cmp-nvim-lsp-document-symbol' })
+    use ({
+        'norcalli/nvim-colorizer.lua',
+        config = get_config('nvim-colorizer')
+    })                                                                                  -- Color visualizer
     use ({ 'tamago324/cmp-zsh' })
     use ({
         'jose-elias-alvarez/null-ls.nvim',
