@@ -120,14 +120,6 @@ packer.startup(function(use)
         requires = { { "famiu/bufdelete.nvim" } }
     }
     use({ 'p00f/nvim-ts-rainbow' })                                                     -- Rainbow (), [], {}
-    use {
-        'startup-nvim/startup.nvim',
-        requires = {
-            'nvim-telescope/telescope.nvim',
-            'nvim-lua/plenary.nvim'
-        },
-        config = get_config('startup'),
-    }                                                                                   -- Dashboard
     use({ 'tomtom/tcomment_vim' })                                                      -- Comment motions
     use({
         'tpope/vim-fugitive',
