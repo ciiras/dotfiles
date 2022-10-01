@@ -125,10 +125,7 @@ packer.startup(function(use)
     }
     use({ 'p00f/nvim-ts-rainbow' })                                                     -- Rainbow (), [], {}
     use({ 'tpope/vim-fugitive', })                                                      -- Git commands
-    use({
-        'tpope/vim-obsession',
-        config = get_config('vim-obsession')
-    })                                                                                  -- Session management
+    use({ 'tpope/vim-obsession' })                                                      -- Session management
     use({ 'tpope/vim-repeat' })                                                         -- Better Repeat
     use({ 'tpope/vim-surround' })                                                       -- Surround motions
     use({ 'tpope/vim-unimpaired' })                                                     -- Useful key mappings
