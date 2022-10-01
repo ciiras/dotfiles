@@ -90,6 +90,10 @@ packer.startup(function(use)
         config = get_config('nvim-lspconfig')
     })                                                                                  -- Lsp config
     use({
+        'numToStr/Comment.nvim',
+        config = get_config('Comment')
+    })                                                                                  -- Comments
+    use({
         'nvim-lualine/lualine.nvim',
         config = get_config('lualine')
     })                                                                                  -- Status line
@@ -120,7 +124,6 @@ packer.startup(function(use)
         requires = { { "famiu/bufdelete.nvim" } }
     }
     use({ 'p00f/nvim-ts-rainbow' })                                                     -- Rainbow (), [], {}
-    use({ 'tomtom/tcomment_vim' })                                                      -- Comment motions
     use({
         'tpope/vim-fugitive',
         config = get_config('vim-fugitive')
