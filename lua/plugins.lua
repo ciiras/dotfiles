@@ -124,10 +124,7 @@ packer.startup(function(use)
         requires = { { "famiu/bufdelete.nvim" } }
     }
     use({ 'p00f/nvim-ts-rainbow' })                                                     -- Rainbow (), [], {}
-    use({
-        'tpope/vim-fugitive',
-        config = get_config('vim-fugitive')
-    })                                                                                  -- Git commands
+    use({ 'tpope/vim-fugitive', })                                                      -- Git commands
     use({
         'tpope/vim-obsession',
         config = get_config('vim-obsession')
