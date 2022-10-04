@@ -7,8 +7,8 @@ global.tmux_navigator_preserve_zoom = 1
 opt.autoread = true
 opt.backspace = 'indent,eol,start'
 opt.backup = false
+opt.ch = 0
 opt.clipboard = 'unnamedplus'
-opt.cmdheight = 2
 opt.colorcolumn = '80'
 opt.compatible = false
 opt.encoding = 'UTF-8'
@@ -22,6 +22,7 @@ opt.laststatus = 2
 opt.lazyredraw = true
 opt.list = true
 opt.listchars = {tab = '›⋅', eol = '↲', space = '⋅'}
+opt.ls = 0
 opt.mouse = 'a'
 opt.number = true
 opt.relativenumber = true
