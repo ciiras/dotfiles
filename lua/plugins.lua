@@ -81,7 +81,6 @@ packer.startup(function(use)
         }
     })                                                                                  -- eslint
     use({ 'moll/vim-node' })                                                            -- gd for Node.js require(...)
-    use({ 'nelstrom/vim-visual-star-search' })                                          -- Visual mode */# search
     use({
         'neovim/nvim-lspconfig',
         config = get_config('nvim-lspconfig')
