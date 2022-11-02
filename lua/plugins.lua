@@ -41,6 +41,11 @@ packer.startup(function(use)
         'gelguy/wilder.nvim',
         config = get_config('wilder')
     })                                                                                  -- wildmenu plugin
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+        config = get_config('lspsaga')
+    })                                                                                  -- Lsp UI upgrade
     use ({
         'hrsh7th/nvim-cmp',
         config = get_config('nvim-cmp')
