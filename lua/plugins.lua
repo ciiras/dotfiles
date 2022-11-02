@@ -62,6 +62,9 @@ packer.startup(function(use)
             {'nvim-lua/plenary.nvim'}
         },
     })                                                                                  -- Non Lsp Client hooks
+    use ({
+        'jose-elias-alvarez/nvim-lsp-ts-utils',
+    })                                                                                  -- Lsp TypeScript utilities
     use({ 'junegunn/vim-peekaboo' })                                                    -- Register window
     use({
         'kyazdani42/nvim-tree.lua',
