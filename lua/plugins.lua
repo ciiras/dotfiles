@@ -69,6 +69,10 @@ packer.startup(function(use)
     })                                                                                  -- Non Lsp Client hooks
     use ({
         'jose-elias-alvarez/nvim-lsp-ts-utils',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'neovim/nvim-lspconfig',
+        },
     })                                                                                  -- Lsp TypeScript utilities
     use({ 'junegunn/vim-peekaboo' })                                                    -- Register window
     use({
@@ -85,7 +89,7 @@ packer.startup(function(use)
         'MunifTanjim/eslint.nvim',
         config = get_config('eslint'),
         requires = {
-            {'jose-elias-alvarez/null-ls.nvim'}
+            'jose-elias-alvarez/null-ls.nvim'
         }
     })                                                                                  -- eslint
     use({ 'moll/vim-node' })                                                            -- gd for Node.js require(...)
@@ -105,7 +109,7 @@ packer.startup(function(use)
         'nvim-telescope/telescope.nvim',
         tag = '0.1.x',
         requires = {
-            {'nvim-lua/plenary.nvim'}
+            'nvim-lua/plenary.nvim'
         },
         config = get_config('telescope')
     })                                                                                 -- Fuzzy finder
