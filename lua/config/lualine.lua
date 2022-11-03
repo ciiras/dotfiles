@@ -31,6 +31,10 @@ require('lualine').setup({
                 max_length = vim.o.columns,
                 mode = 2,
                 show_filename_only = false,
+                buffers_color = {
+                    active = { bg = '#39506d', fg = '#cdcecf' },
+                    inactive = { bg = '#39506d', fg = '#719cd6' },
+                },
             },
         },
         lualine_b = {},
@@ -38,5 +42,5 @@ require('lualine').setup({
         lualine_x = {},
         lualine_y = {},
         lualine_z = {}
-    }
+    },
 })
