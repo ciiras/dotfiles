@@ -8,8 +8,8 @@ telescope.setup({
         vimgrep_arguments = { -- live_grep()
             'rg', '--follow', '--color=never', '--no-heading',
             '--with-filename', '--line-number', '--column', '--smart-case',
-            '--hidden', '--no-ignore', '--glob', '!.git/*', '--glob',
-            '!/node_modules', '--glob', '!.next/*',
+            '--hidden', '--no-ignore', '--glob', '!.git', '--glob',
+            '!/node_modules', '--glob', '!.next', '--glob', '!Session.vim',
         },
         mappings = {
             i = {
@@ -36,7 +36,8 @@ telescope.setup({
         find_files = {
             find_command = {
                 'rg', '--hidden', '--files', '--no-ignore', '--glob',
-                '!.git/*', '--glob', '!/node_modules', '--glob', '!.next/*',
+                '!.git', '--glob', '!/node_modules', '--glob', '!.next',
+                '--glob', '!Session.vim',
             },
         }
     },
