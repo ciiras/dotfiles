@@ -6,10 +6,15 @@ telescope.load_extension('fzf')
 telescope.setup({
     defaults = {
         vimgrep_arguments = { -- live_grep()
-            'rg', '--follow', '--color=never', '--no-heading',
-            '--with-filename', '--line-number', '--column', '--smart-case',
-            '--hidden', '--no-ignore', '--glob', '!.git', '--glob',
-            '!/node_modules', '--glob', '!.next', '--glob', '!Session.vim',
+            'rg', '--follow', '--color=never', '--no-heading', '--with-filename',
+            '--line-number', '--column', '--smart-case', '--hidden', '--no-ignore',
+            '--glob', '!.git',
+            '--glob', '!/node_modules',
+            '--glob', '!.next',
+            '--glob', '!projects/**/node_modules',
+            '--glob', '!build-node-docker/node_modules',
+            '--glob', '!Session.vim',
+            '--glob', '!package-lock.json',
         },
         mappings = {
             i = {
@@ -35,8 +40,12 @@ telescope.setup({
     pickers = {
         find_files = {
             find_command = {
-                'rg', '--hidden', '--files', '--no-ignore', '--glob',
-                '!.git', '--glob', '!/node_modules', '--glob', '!.next',
+                'rg', '--hidden', '--files', '--no-ignore',
+                '--glob', '!.git',
+                '--glob', '!/node_modules',
+                '--glob', '!.next',
+                '--glob', '!projects/**/node_modules',
+                '--glob', '!build-node-docker/node_modules',
                 '--glob', '!Session.vim',
             },
         }
