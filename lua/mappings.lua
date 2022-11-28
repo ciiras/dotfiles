@@ -18,8 +18,8 @@ nmap('<M-l>', '<C-W><')
 nmap('<M-j>', '<C-W>-')
 nmap('<M-k>', '<C-W>+')
 nmap('<M-=>', '<C-W>=')
-nmap('<leader>s', '<C-W>s')
-nmap('<leader>v', '<C-W>v')
+nmap('<leader>sh', '<C-W>s')
+nmap('<leader>sv', '<C-W>v')
 -- }}}
 
 nmap('q:', '<Nop>')
