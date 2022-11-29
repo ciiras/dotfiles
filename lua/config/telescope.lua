@@ -1,8 +1,6 @@
 local telescope = require('telescope')
 local actions = require('telescope.actions')
 
-telescope.load_extension('fzf')
-
 telescope.setup({
     defaults = {
         vimgrep_arguments = { -- live_grep()
@@ -38,6 +36,11 @@ telescope.setup({
         },
         set_env = {['COLORTERM'] = 'truecolor'},
     },
+    extensions = {
+        file_browser = {
+            hidden = true,
+        },
+    },
     pickers = {
         find_files = {
             find_command = {
@@ -53,3 +56,6 @@ telescope.setup({
         }
     },
 })
+
+telescope.load_extension('fzf')
+telescope.load_extension('file_browser')

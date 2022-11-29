@@ -114,6 +114,9 @@ packer.startup(function(use)
         config = get_config('telescope')
     })                                                                                 -- Fuzzy finder
     use {
+        'nvim-telescope/telescope-file-browser.nvim'
+    }                                                                                  -- Telescope file browser
+    use {
         'nvim-telescope/telescope-fzf-native.nvim',
         run = 'make'
     }                                                                                  -- Telescope sorter
