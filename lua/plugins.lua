@@ -145,6 +145,12 @@ packer.startup(function(use)
         config = get_config('vimwiki')
     })                                                                                  -- Wiki
     use({
+        'williamboman/mason.nvim',
+    })                                                                                  -- Lsp install management
+    use({
+        'williamboman/mason-lspconfig.nvim',
+    })                                                                                  -- Lsp config interop
+    use({
         'windwp/nvim-autopairs',
         config = get_config('nvim-autopairs')
     })                                                                                  -- Auto close (), [], {}, '', "", etc...
