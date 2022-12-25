@@ -29,25 +29,25 @@ packer.startup(function(use)
     use({ 'dstein64/vim-startuptime' })                                                 -- Startup time profiling
     use({
         'EdenEast/nightfox.nvim',
-        config = get_config('nightfox')
+        config = get_config('nightfox'),
     })                                                                                  -- Color scheme
     use({ 'famiu/bufdelete.nvim' })                                                     -- Delete buffer w/o closing window
     use({
         'folke/trouble.nvim',
-        config = get_config('trouble')
+        config = get_config('trouble'),
     })                                                                                  -- Diagnostics quick fix list
     use({
         'gelguy/wilder.nvim',
-        config = get_config('wilder')
+        config = get_config('wilder'),
     })                                                                                  -- wildmenu plugin
     use({
-        "glepnir/lspsaga.nvim",
-        branch = "main",
-        config = get_config('lspsaga')
+        'glepnir/lspsaga.nvim',
+        branch = 'main',
+        config = get_config('lspsaga'),
     })                                                                                  -- Lsp UI upgrade
     use ({
         'hrsh7th/nvim-cmp',
-        config = get_config('nvim-cmp')
+        config = get_config('nvim-cmp'),
     })
     use ({ 'hrsh7th/cmp-buffer' })
     use ({ 'hrsh7th/cmp-path' })
@@ -56,46 +56,48 @@ packer.startup(function(use)
     use ({ 'hrsh7th/cmp-nvim-lsp-document-symbol' })
     use ({
         'norcalli/nvim-colorizer.lua',
-        config = get_config('nvim-colorizer')
+        config = get_config('nvim-colorizer'),
     })                                                                                  -- Color visualizer
-    use ({ 'tamago324/cmp-zsh' })
+    use({
+        'jayp0521/mason-null-ls.nvim',
+        config = get_config('mason-null-ls'),
+    })                                                                                  -- Mason/null-ls auto installer
     use ({
         'jose-elias-alvarez/null-ls.nvim',
         config = get_config('null-ls'),
         requires = {
-            {'nvim-lua/plenary.nvim'}
+            'nvim-lua/plenary.nvim',
         },
     })                                                                                  -- Non Lsp Client hooks
     use ({
         'jose-elias-alvarez/nvim-lsp-ts-utils',
         requires = {
-            'nvim-lua/plenary.nvim',
-            'neovim/nvim-lspconfig',
+            'nvim-lua/plenary.nvim'
         },
     })                                                                                  -- Lsp TypeScript utilities
     use({ 'junegunn/vim-peekaboo' })                                                    -- Register window
     use({
         'kyazdani42/nvim-tree.lua',
-        config = get_config('nvim-tree')
+        config = get_config('nvim-tree'),
     })                                                                                  -- File explorer
     use({ 'kyazdani42/nvim-web-devicons' })                                             -- Icons
     use({
         'lewis6991/gitsigns.nvim',
-        config = get_config('gitsigns')
+        config = get_config('gitsigns'),
     })                                                                                  -- Git gutter info
     use({ 'markstory/vim-zoomwin' })                                                    -- <leader>z
     use({ 'moll/vim-node' })                                                            -- gd for Node.js require(...)
     use({
         'neovim/nvim-lspconfig',
-        config = get_config('nvim-lspconfig')
+        config = get_config('nvim-lspconfig'),
     })                                                                                  -- Lsp config
     use({
         'numToStr/Comment.nvim',
-        config = get_config('Comment')
+        config = get_config('Comment'),
     })                                                                                  -- Comments
     use({
         'nvim-lualine/lualine.nvim',
-        config = get_config('lualine')
+        config = get_config('lualine'),
     })                                                                                  -- Status line
     use({
         'nvim-telescope/telescope.nvim',
@@ -103,7 +105,7 @@ packer.startup(function(use)
         requires = {
             'nvim-lua/plenary.nvim'
         },
-        config = get_config('telescope')
+        config = get_config('telescope'),
     })                                                                                 -- Fuzzy finder
     use {
         'nvim-telescope/telescope-file-browser.nvim'
@@ -124,9 +126,12 @@ packer.startup(function(use)
     use({ 'nvim-treesitter/playground' })                                               -- Treesitter playground
     use {
         'onsails/lspkind-nvim',
-        requires = { { "famiu/bufdelete.nvim" } }
+        requires = {
+            'famiu/bufdelete.nvim',
+        },
     }
     use({ 'p00f/nvim-ts-rainbow' })                                                     -- Rainbow (), [], {}
+    use({ 'tamago324/cmp-zsh' })                                                        -- ZSH auto completion
     use({ 'tpope/vim-fugitive', })                                                      -- Git commands
     use({ 'tpope/vim-obsession' })                                                      -- Session management
     use({ 'tpope/vim-repeat' })                                                         -- Better Repeat
@@ -134,7 +139,7 @@ packer.startup(function(use)
     use({ 'tpope/vim-unimpaired' })                                                     -- Useful key mappings
     use({
         'vimwiki/vimwiki',
-        config = get_config('vimwiki')
+        config = get_config('vimwiki'),
     })                                                                                  -- Wiki
     use({
         'williamboman/mason.nvim',
@@ -144,7 +149,7 @@ packer.startup(function(use)
     })                                                                                  -- Lsp config interop
     use({
         'windwp/nvim-autopairs',
-        config = get_config('nvim-autopairs')
+        config = get_config('nvim-autopairs'),
     })                                                                                  -- Auto close (), [], {}, '', "", etc...
 
     if packer_bootstrap then
