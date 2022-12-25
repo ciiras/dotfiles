@@ -84,13 +84,6 @@ packer.startup(function(use)
         config = get_config('gitsigns')
     })                                                                                  -- Git gutter info
     use({ 'markstory/vim-zoomwin' })                                                    -- <leader>z
-    use({
-        'MunifTanjim/eslint.nvim',
-        config = get_config('eslint'),
-        requires = {
-            'jose-elias-alvarez/null-ls.nvim'
-        }
-    })                                                                                  -- eslint
     use({ 'moll/vim-node' })                                                            -- gd for Node.js require(...)
     use({
         'neovim/nvim-lspconfig',
