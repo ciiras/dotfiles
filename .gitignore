@@ -4,3 +4,4 @@
 .vim/
 .zcomp*
 Session.vim
+.luarc.json

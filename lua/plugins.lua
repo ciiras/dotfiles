@@ -58,10 +58,7 @@ packer.startup(function(use)
         'norcalli/nvim-colorizer.lua',
         config = get_config('nvim-colorizer'),
     })                                                                                  -- Color visualizer
-    use({
-        'jayp0521/mason-null-ls.nvim',
-        config = get_config('mason-null-ls'),
-    })                                                                                  -- Mason/null-ls auto installer
+    use({ 'jayp0521/mason-null-ls.nvim' })                                              -- Mason/null-ls auto installer
     use ({
         'jose-elias-alvarez/null-ls.nvim',
         config = get_config('null-ls'),

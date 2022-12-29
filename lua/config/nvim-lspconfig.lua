@@ -54,13 +54,24 @@ lspConfig.sumneko_lua.setup {
   settings = {
     Lua = {
       diagnostics = {
-        globals = { 'vim' },
+        globals = {
+            'cmap',
+            'create_autocmd',
+            'exec',
+            'fn',
+            'global',
+            'imap',
+            'keymap',
+            'keymap_options',
+            'nmap',
+            'opt',
+            'vim',
+            'vmap',
+            'xmap',
+        },
       },
       workspace = {
-        library = {
-          [vim.fn.expand '$VIMRUNTIME/lua'] = true,
-          [vim.fn.stdpath 'config' .. '/lua'] = true,
-        },
+        library = vim.api.nvim_get_runtime_file("", true),
       },
     },
   }
