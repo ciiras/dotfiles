@@ -13,13 +13,14 @@ nmap('<leader>bs', '<cmd>new<CR>')
 nmap('<esc>', '<cmd>nohlsearch<CR>')
 
 -- Splits {{{
+nmap('<leader>sh', '<C-W>s')
+nmap('<leader>sv', '<C-W>v')
+
 nmap('<M-h>', '<C-W>>')
 nmap('<M-l>', '<C-W><')
 nmap('<M-j>', '<C-W>-')
 nmap('<M-k>', '<C-W>+')
 nmap('<M-=>', '<C-W>=')
-nmap('<leader>sh', '<C-W>s')
-nmap('<leader>sv', '<C-W>v')
 -- }}}
 
 nmap('q:', '<Nop>')
@@ -29,6 +30,4 @@ nmap('<leader>da', 'ggvGD')
 nmap('<leader>va', 'ggvG')
 nmap('<leader>ya', 'ggvGY')
 
--- kyazdani42/nvim-tree.lua {{{
 nmap('<leader>.', '<cmd>NvimTreeFindFileToggle<CR>')
--- }}}
