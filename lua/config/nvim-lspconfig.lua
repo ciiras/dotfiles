@@ -14,7 +14,7 @@ require('mason-lspconfig').setup({
 
 local lspConfig = require('lspconfig')
 
-local on_attach = function(bufnr)
+local on_attach = function(_, bufnr)
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     local bufopts = { noremap=true, silent=true, buffer=bufnr }
@@ -28,7 +28,7 @@ local on_attach = function(bufnr)
 end
 
 local on_attach_tsserver = function(client, bufnr)
-    on_attach(bufnr)
+    on_attach(client, bufnr)
 
     local utils = require('nvim-lsp-ts-utils')
     utils.setup({
