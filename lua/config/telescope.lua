@@ -14,6 +14,8 @@ telescope.setup({
             '--glob', '!build-node-docker/node_modules',
             '--glob', '!Session.vim',
             '--glob', '!package-lock.json',
+            '--glob', '!consul.js',
+            '--glob', '!consul-keys.ctmpl',
         },
         mappings = {
             i = {
@@ -52,6 +54,8 @@ telescope.setup({
                 '--glob', '!projects/**/node_modules',
                 '--glob', '!build-node-docker/node_modules',
                 '--glob', '!Session.vim',
+                '--glob', '!consul.js',
+                '--glob', '!consul-keys.ctmpl',
             },
         }
     },
