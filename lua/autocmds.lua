@@ -4,13 +4,21 @@ function! StripTrailingWhitespace()
     %s/\s\+$//e
 endfunction
 
+function! IsExcludedFileType()
+    if &ft =~ 'NvimTree'
+        return 'excluded'
+    elseif &ft =~ 'sagarename'
+        return 'excluded'
+    endif
+endfunction
+
 function! TurnOnRelativeNumber()
-    if &ft =~ 'NvimTree' | return | endif
+    if IsExcludedFileType() =~ 'excluded' | return | endif
     set number relativenumber
 endfunction
 
 function! TurnOffRelativeNumber()
-    if &ft =~ 'NvimTree' | return | endif
+    if IsExcludedFileType() =~ 'excluded'| return | endif
     set number norelativenumber
 endfunction
 ]], false)
