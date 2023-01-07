@@ -116,7 +116,6 @@ packer.startup(function(use)
         config = get_config('nvim-treesitter'),
         requires = {
             'nvim-treesitter/playground',
-            'p00f/nvim-ts-rainbow'
         },
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end
     })                                                                                  -- Treesitter
@@ -127,7 +126,6 @@ packer.startup(function(use)
             'famiu/bufdelete.nvim',
         },
     }
-    use({ 'p00f/nvim-ts-rainbow' })                                                     -- Rainbow (), [], {}
     use({ 'tamago324/cmp-zsh' })                                                        -- ZSH auto completion
     use({ 'tpope/vim-fugitive', })                                                      -- Git commands
     use({ 'tpope/vim-obsession' })                                                      -- Session management
