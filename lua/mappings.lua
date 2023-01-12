@@ -22,8 +22,8 @@ nmap('<M-=>', '<C-W>=')
 nmap('q:', '<Nop>')
 xmap('p', 'pgvy')
 
-nmap('<leader>da', 'ggvGg_d')
-nmap('<leader>va', 'ggvGg_')
-nmap('<leader>ya', 'ggvGg_y')
+nmap('<leader>da', 'ggVGd')
+nmap('<leader>va', 'ggVGg_')
+nmap('<leader>ya', 'gg0vGg_y')
 
 nmap('<leader>.', '<cmd>NvimTreeFindFileToggle<CR>')
