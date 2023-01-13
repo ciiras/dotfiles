@@ -27,10 +27,6 @@ packer.startup(function(use)
     use({ 'christoomey/vim-sort-motion' })                                              -- Sort motions
     use({ 'christoomey/vim-tmux-navigator' })                                           -- tmux/nvim window/pane/split management
     use({ 'dstein64/vim-startuptime' })                                                 -- Startup time profiling
-    use {
-        'echasnovski/mini.nvim',
-        config = get_config('mini'),
-    }                                                                                   -- Animations
     use({
         'EdenEast/nightfox.nvim',
         config = get_config('nightfox'),
