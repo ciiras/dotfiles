@@ -8,5 +8,8 @@ require('nvim-tree').setup({
     view = {
         adaptive_size = true,
     },
+    notify = {
+        threshold = vim.log.levels.ERROR,
+    },
 })
 
