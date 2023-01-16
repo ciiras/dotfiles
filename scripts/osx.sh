@@ -8,6 +8,8 @@ defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 
 # Finder - Show All Files
 defaults write com.apple.finder AppleShowAllFiles -boolean true; killall Finder;
+defaults write com.apple.dock autohide-delay -float 0; defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock
+# UNDO - defaults write com.apple.dock autohide-delay -float 0.5; defaults write com.apple.dock autohide-time-modifier -int 0.5 ;killall Dock
 
 # Screenshots Location
 ssDir="/Users/${curUser}/Pictures"
