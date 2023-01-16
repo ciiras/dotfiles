@@ -19,3 +19,6 @@ defaults write com.apple.screencapture location ${ssDir}
 # Reduce Display Motion
 defaults write com.apple.Accessibility ReduceMotionEnabled -bool true
 defaults write com.apple.universalaccess reduceMotion -bool true # Having issues with this one
+
+# Disable Disk Ejection Warning
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.DiskArbitration.diskarbitrationd.plist DADisableEjectNotification -bool YES && sudo pkill diskarbitrationd
