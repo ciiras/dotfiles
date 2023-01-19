@@ -30,7 +30,7 @@ telescope.setup({
         initial_mode = 'insert',
         layout_strategy = 'flex',
         layout_config = {
-            width = 0.75,
+            width = 0.95,
             prompt_position = 'bottom',
             preview_cutoff = 120,
             horizontal = {mirror = false},
