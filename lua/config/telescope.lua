@@ -32,9 +32,15 @@ telescope.setup({
         layout_config = {
             width = 0.95,
             prompt_position = 'bottom',
-            preview_cutoff = 120,
-            horizontal = {mirror = false},
-            vertical = {mirror = true}
+            preview_cutoff = 20,
+            horizontal = {
+                preview_width = 0.5,
+                mirror = false
+            },
+            vertical = {
+                preview_height = 0.5,
+                mirror = false
+            },
         },
         set_env = {['COLORTERM'] = 'truecolor'},
     },
