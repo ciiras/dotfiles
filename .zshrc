@@ -68,6 +68,7 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 export LS_COLORS=Gxfxcxdxbxegedabagacad
 export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
+export ODY_ENV=true # Needs to exist for ~/projects/od-env/build-node-docker/gendockerfile.sh generate w/ nodemon
 export TERM="screen-256color"
 
 # }}}
@@ -106,6 +107,7 @@ alias nci="npm ci"
 alias nrl="npm run lint"
 alias r="source ~/.zshrc"
 alias rc="~/projects/od-env/build-node-docker/render-consul-template.sh"
+alias rd="~/projects/od-env/build-node-docker/gendockerfile.sh"
 alias rgf="ripgrep_files"
 alias rgn="ripgrep_file_names_only"
 alias t="tmux"
