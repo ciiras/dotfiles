@@ -172,6 +172,7 @@ bindkey "^s" history-incremental-search-forward
 # Envrionment Management {{{
 
 eval "$(nodenv init -)"
+eval "$(jenv init -)"
 
 # }}}
 
@@ -292,3 +293,5 @@ zplugin light kutsan/zsh-system-clipboard
 # }}}
 
 export PATH="./:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$HOME/.jenv/bin:$PATH"

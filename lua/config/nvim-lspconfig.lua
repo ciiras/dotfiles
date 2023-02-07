@@ -50,30 +50,37 @@ lspConfig.tsserver.setup({
     on_attach = on_attach_tsserver,
 })
 
-lspConfig.sumneko_lua.setup {
-  on_attach = on_attach,
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = {
-            'cmap',
-            'create_autocmd',
-            'exec',
-            'fn',
-            'global',
-            'imap',
-            'keymap',
-            'keymap_options',
-            'nmap',
-            'opt',
-            'vim',
-            'vmap',
-            'xmap',
+lspConfig.sumneko_lua.setup({
+    on_attach = on_attach,
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = {
+                    'cmap',
+                    'create_autocmd',
+                    'exec',
+                    'fn',
+                    'global',
+                    'imap',
+                    'keymap',
+                    'keymap_options',
+                    'nmap',
+                    'opt',
+                    'vim',
+                    'vmap',
+                    'xmap',
+                },
+            },
+            workspace = {
+                library = vim.api.nvim_get_runtime_file("", true),
+            },
         },
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
-      },
+    }
+})
+
+lspConfig.jdtls.setup({
+    cmd = {
+        'jdtls',
     },
-  }
-}
+    on_attach = on_attach,
+})
