@@ -293,5 +293,7 @@ zplugin light kutsan/zsh-system-clipboard
 # }}}
 
 export PATH="./:$PATH"
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.nodenv/bin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
