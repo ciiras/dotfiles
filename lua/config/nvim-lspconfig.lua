@@ -84,3 +84,7 @@ lspConfig.jdtls.setup({
     },
     on_attach = on_attach,
 })
+
+lspConfig.rust_analyzer.setup({
+    on_attach = on_attach,
+})
