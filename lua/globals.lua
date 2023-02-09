@@ -15,25 +15,35 @@ local function merge(tbl1, tbl2)
 end
 
 local function map(mode, keymap, cmd, opts)
-    vim.api.nvim_set_keymap(mode, keymap, cmd, merge(opts, keymap_options))
+    vim.keymap.set(mode, keymap, cmd, merge(opts, keymap_options))
 end
+
 function cmap(keymap, cmd, opts)
     opts = opts or {}
     map('c', keymap, cmd, opts)
 end
+
 function imap(keymap, cmd, opts)
     opts = opts or {}
     map('i', keymap, cmd, opts)
 end
+
 function nmap(keymap, cmd, opts)
     opts = opts or {}
     map('n', keymap, cmd, opts)
 end
+
 function vmap(keymap, cmd, opts)
     opts = opts or {}
     map('v', keymap, cmd, opts)
 end
+
 function xmap(keymap, cmd, opts)
     opts = opts or {}
     map('x', keymap, cmd, opts)
+end
+
+function nxmap(keymap, cmd, opts)
+    opts = opts or {}
+    map({"n","x"}, keymap, cmd, opts)
 end

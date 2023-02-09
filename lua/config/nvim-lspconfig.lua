@@ -65,6 +65,7 @@ lspConfig.sumneko_lua.setup({
                     'keymap',
                     'keymap_options',
                     'nmap',
+                    'nxmap',
                     'opt',
                     'vim',
                     'vmap',
