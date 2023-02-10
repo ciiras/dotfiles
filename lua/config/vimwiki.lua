@@ -1,3 +1,3 @@
 global.vimwiki_list = {{path = '~/Library/Mobile Documents/com~apple~CloudDocs/Documents/vimwiki'}}
-global.vimwiki_url_maxsave = 0
 global.vimwiki_listsyms = ' ✓'
+global.vimwiki_url_maxsave = 0

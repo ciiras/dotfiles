@@ -84,6 +84,7 @@ packer.startup(function(use)
         config = get_config('gitsigns'),
     })                                                                                  -- Git gutter info
     use({ 'markstory/vim-zoomwin' })                                                    -- <leader>z
+    use({ 'mattn/calendar-vim' })                                                       -- Calendar
     use({ 'moll/vim-node' })                                                            -- gd for Node.js require(...)
     use({
         'neovim/nvim-lspconfig',
