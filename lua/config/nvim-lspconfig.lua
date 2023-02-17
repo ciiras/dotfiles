@@ -8,7 +8,7 @@ require('mason').setup({
 require('mason-lspconfig').setup({
     ensure_installed = {
         'jdtls',
-        'sumneko_lua',
+        'lua_ls',
         'tsserver',
     }
 })
@@ -50,7 +50,7 @@ lspConfig.tsserver.setup({
     on_attach = on_attach_tsserver,
 })
 
-lspConfig.sumneko_lua.setup({
+lspConfig.lua_ls.setup({
     on_attach = on_attach,
     settings = {
         Lua = {
