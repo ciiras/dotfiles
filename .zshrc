@@ -16,12 +16,8 @@ ENABLE_CORRECTION="true"
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
-# Oh My ZSH Plugins {{{
-
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(brew docker git ripgrep tmux z)
-
-# }}}
+plugins=(docker docker-compose git z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -79,14 +75,6 @@ alias cl="clear"
 alias code="code-insiders"
 alias d="docker"
 alias dc="docker-compose"
-alias dcd="dc down"
-alias dcps="dc ps"
-alias dcl="docker_compose_logs"
-alias dcr="docker_compose_restart"
-alias dcs="docker_compose_stop"
-alias dcu="docker_compose_up"
-alias dr="killall Docker && open /Applications/Docker.app"
-alias du="dc ps | rg unhealthy"
 alias g="nocorrect git"
 alias gdsw="gds --word-diff"
 alias glrbd="git pull --rebase origin develop"
@@ -107,25 +95,9 @@ alias nrl="npm run lint"
 alias r="source ~/.zshrc"
 alias rc="~/projects/od-env/build-node-docker/render-consul-template.sh"
 alias rd="~/projects/od-env/build-node-docker/gendockerfile.sh"
-alias rgf="ripgrep_files"
-alias rgn="ripgrep_file_names_only"
 alias t="tmux"
 alias vi="nvim"
 alias v="nvim"
-
-# }}}
-
-# Functions {{{
-
-function docker_compose_up() { docker-compose up -d $@ && docker-compose logs -f $@ }
-function docker_compose_restart() { docker-compose restart $@ && docker-compose logs -f $@ }
-function docker_compose_logs() { docker-compose logs -f $@ }
-function docker_compose_stop() { docker-compose stop $@ && docker-compose rm -f $@ }
-function display_placer_set() {
-    displayplacer "id:E4E6B386-B893-9D5B-A207-BA495AE1FC4E res:2560x1440 color_depth:4 scaling:off origin:(0,0) degree:0" "id:F466F621-B5FA-04A0-0800-CFA6C258DECD res:1680x1050 color_depth:4 scaling:on origin:(2560,358) degree:0" "id:9F831D7A-8A6E-816B-80CC-9043E3313BEC res:2560x1440 color_depth:4 scaling:off origin:(-2560,0) degree:0"
-}
-function ripgrep_files() { rg -g $@ --files }
-function ripgrep_file_names_only() { rg $@ -l }
 
 # }}}
 
