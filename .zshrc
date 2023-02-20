@@ -16,9 +16,6 @@ ENABLE_CORRECTION="true"
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(docker docker-compose git z)
-
 source $ZSH/oh-my-zsh.sh
 
 # }}}
@@ -203,6 +200,11 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
 ### End of Zinit's installer chunk
+
+zinit snippet OMZ::plugins/git/git.plugin.zsh
+zinit snippet OMZ::plugins/docker/docker.plugin.zsh
+zinit snippet OMZ::plugins/docker-compose/docker-compose.plugin.zsh
+zinit snippet OMZ::plugins/z/z.plugin.zsh
 
 zinit light eendroroy/alien
 export ALIEN_SECTIONS_LEFT=(
