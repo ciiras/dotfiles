@@ -242,8 +242,12 @@ zinit light kutsan/zsh-system-clipboard
 
 # }}}
 
+# PATH {{{
+
 export PATH="./:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.nodenv/bin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# }}}
