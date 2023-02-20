@@ -217,7 +217,7 @@ precmd_functions+=(zle-keymap-select)
 
 # }}}
 
-# ZPlugin {{{
+# Zinit {{{
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -234,7 +234,7 @@ autoload -Uz _zinit
 
 ### End of Zinit's installer chunk
 
-zplugin light eendroroy/alien
+zinit light eendroroy/alien
 export ALIEN_SECTIONS_LEFT=(
   exit
   path
@@ -282,13 +282,13 @@ export ALIEN_CRYSTAL_COLOR=8
 export ALIEN_NODE_COLOR=41
 export ALIEN_PHP_COLOR=57
 
-zplugin light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-autosuggestions
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 bindkey '^ ' autosuggest-accept
 
-zplugin light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-syntax-highlighting
 
-zplugin light kutsan/zsh-system-clipboard
+zinit light kutsan/zsh-system-clipboard
 
 # }}}
 
