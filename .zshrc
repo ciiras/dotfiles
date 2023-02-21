@@ -44,38 +44,6 @@ export TERM="screen-256color"
 
 # }}}
 
-# Alias {{{
-
-alias cl="clear"
-alias code="code-insiders"
-alias d="docker"
-alias dc="docker-compose"
-alias g="nocorrect git"
-alias gdsw="gds --word-diff"
-alias glrbd="git pull --rebase origin develop"
-alias glrbm="git pull --rebase origin master"
-alias gmv="git mv"
-alias gpu="git push -u origin HEAD"
-alias gr="git reset"
-alias grh="git reset --hard"
-alias grs="git reset --soft"
-alias gsta="git stash save"
-alias gstapa="git stash save -p"
-alias gstau="git stash save -u"
-alias k="kubectl"
-alias l="ls -lAh"
-alias ls="ls"
-alias ne="nodenv"
-alias nrl="npm run lint"
-alias r="source ~/.zshrc"
-alias rc="~/projects/od-env/build-node-docker/render-consul-template.sh"
-alias rd="~/projects/od-env/build-node-docker/gendockerfile.sh"
-alias t="tmux"
-alias vi="nvim"
-alias v="nvim"
-
-# }}}
-
 # Auto Complete Fuzzy {{{
 
 # 0 -- vanilla completion (abc => abc)
@@ -239,6 +207,38 @@ bindkey '^ ' autosuggest-accept
 zinit light zsh-users/zsh-syntax-highlighting
 
 zinit light kutsan/zsh-system-clipboard
+
+# }}}
+
+# Alias {{{
+
+alias cl="clear"
+alias code="code-insiders"
+alias d="docker"
+alias dc="docker-compose"
+alias g="nocorrect git"
+alias gdsw="gds --word-diff"
+alias glrbd="git pull --rebase origin develop"
+alias glrbm="git pull --rebase origin master"
+alias gmv="git mv"
+alias gpu="git push -u origin HEAD"
+alias gr="git reset"
+alias grh="git reset --hard"
+alias grs="git reset --soft"
+alias gsta="git stash save"
+alias gstapa="git stash save -p"
+alias gstau="git stash save -u"
+alias k="kubectl"
+alias l="ls -lAh"
+alias ls="ls"
+alias ne="nodenv"
+alias nrl="npm run lint"
+alias r="source ~/.zshrc"
+alias rc="~/projects/od-env/build-node-docker/render-consul-template.sh"
+alias rd="~/projects/od-env/build-node-docker/gendockerfile.sh"
+alias t="tmux"
+alias vi="nvim"
+alias v="nvim"
 
 # }}}
 
