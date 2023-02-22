@@ -1,4 +1,83 @@
-# Basic Settings {{{
+# Zinit {{{
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+### End of Zinit's installer chunk
+
+zinit snippet OMZ::plugins/git/git.plugin.zsh
+zinit snippet OMZ::plugins/docker/docker.plugin.zsh
+zinit snippet OMZ::plugins/docker-compose/docker-compose.plugin.zsh
+zinit snippet OMZ::plugins/z/z.plugin.zsh
+
+zinit light eendroroy/alien
+export ALIEN_SECTIONS_LEFT=(
+  exit
+  path
+  vcs_branch:async
+  vcs_status:async
+  vcs_dirty:async
+  newline
+  ssh
+  venv
+  versions
+  prompt
+)
+export ALIEN_SECTION_PATH_COMPONENTS=2
+export ALIEN_VERSIONS_PROMPT='NODE'
+
+export ALIEN_PROMPT_FG=255
+export ALIEN_SECTION_EXIT_FG=0
+export ALIEN_SECTION_EXIT_BG=0
+export ALIEN_SECTION_EXIT_BG_ERROR=255
+export ALIEN_SECTION_TIME_FG=255
+export ALIEN_SECTION_TIME_BG=235
+export ALIEN_SECTION_BATTERY_FG=255
+export ALIEN_SECTION_BATTERY_BG=237
+export ALIEN_SECTION_USER_FG=255
+export ALIEN_SECTION_USER_BG=239
+export ALIEN_SECTION_PATH_FG=255
+export ALIEN_SECTION_PATH_BG=241
+export ALIEN_SECTION_VCS_BRANCH_FG=232
+export ALIEN_SECTION_VCS_BRANCH_BG=243
+export ALIEN_SECTION_VCS_STATUS_FG=232
+export ALIEN_SECTION_VCS_STATUS_BG=245
+export ALIEN_SECTION_VCS_DIRTY_FG=232
+export ALIEN_SECTION_VCS_DIRTY_BG=247
+export ALIEN_SECTION_SSH_FG=254
+export ALIEN_SECTION_VENV_FG=252
+export ALIEN_GIT_TRACKED_COLOR=234
+export ALIEN_GIT_UN_TRACKED_COLOR=241
+export ALIEN_SECTION_VERSION_BG=235
+export ALIEN_PYTHON_COLOR=40
+export ALIEN_RUBY_COLOR=196
+export ALIEN_JAVA_COLOR=178
+export ALIEN_GO_COLOR=81
+export ALIEN_ELIXIR_COLOR=99
+export ALIEN_CRYSTAL_COLOR=8
+export ALIEN_NODE_COLOR=41
+export ALIEN_PHP_COLOR=57
+
+zinit light zsh-users/zsh-autosuggestions
+export ZSH_AUTOSUGGEST_USE_ASYNC=1
+bindkey '^ ' autosuggest-accept
+
+zinit light zsh-users/zsh-syntax-highlighting
+
+zinit light kutsan/zsh-system-clipboard
+
+# }}}
+
+# Oh My Zsh {{{
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -127,86 +206,6 @@ zle -N zle-keymap-select
 
 preexec() { zle-keymap-select ;}
 precmd_functions+=(zle-keymap-select)
-
-# }}}
-
-# Zinit {{{
-
-### Added by Zinit's installer
-if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.zinit/bin" && \
-        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
-        print -P "%F{160}▓▒░ The clone has failed.%f%b"
-fi
-
-source "$HOME/.zinit/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-### End of Zinit's installer chunk
-
-zinit snippet OMZ::plugins/git/git.plugin.zsh
-zinit snippet OMZ::plugins/docker/docker.plugin.zsh
-zinit snippet OMZ::plugins/docker-compose/docker-compose.plugin.zsh
-zinit snippet OMZ::plugins/z/z.plugin.zsh
-
-zinit light eendroroy/alien
-export ALIEN_SECTIONS_LEFT=(
-  exit
-  path
-  vcs_branch:async
-  vcs_status:async
-  vcs_dirty:async
-  newline
-  ssh
-  venv
-  versions
-  prompt
-)
-export ALIEN_SECTION_PATH_COMPONENTS=2
-export ALIEN_VERSIONS_PROMPT='NODE'
-
-export ALIEN_PROMPT_FG=255
-export ALIEN_SECTION_EXIT_FG=0
-export ALIEN_SECTION_EXIT_BG=0
-export ALIEN_SECTION_EXIT_BG_ERROR=255
-export ALIEN_SECTION_TIME_FG=255
-export ALIEN_SECTION_TIME_BG=235
-export ALIEN_SECTION_BATTERY_FG=255
-export ALIEN_SECTION_BATTERY_BG=237
-export ALIEN_SECTION_USER_FG=255
-export ALIEN_SECTION_USER_BG=239
-export ALIEN_SECTION_PATH_FG=255
-export ALIEN_SECTION_PATH_BG=241
-export ALIEN_SECTION_VCS_BRANCH_FG=232
-export ALIEN_SECTION_VCS_BRANCH_BG=243
-export ALIEN_SECTION_VCS_STATUS_FG=232
-export ALIEN_SECTION_VCS_STATUS_BG=245
-export ALIEN_SECTION_VCS_DIRTY_FG=232
-export ALIEN_SECTION_VCS_DIRTY_BG=247
-export ALIEN_SECTION_SSH_FG=254
-export ALIEN_SECTION_VENV_FG=252
-export ALIEN_GIT_TRACKED_COLOR=234
-export ALIEN_GIT_UN_TRACKED_COLOR=241
-export ALIEN_SECTION_VERSION_BG=235
-export ALIEN_PYTHON_COLOR=40
-export ALIEN_RUBY_COLOR=196
-export ALIEN_JAVA_COLOR=178
-export ALIEN_GO_COLOR=81
-export ALIEN_ELIXIR_COLOR=99
-export ALIEN_CRYSTAL_COLOR=8
-export ALIEN_NODE_COLOR=41
-export ALIEN_PHP_COLOR=57
-
-zinit light zsh-users/zsh-autosuggestions
-export ZSH_AUTOSUGGEST_USE_ASYNC=1
-bindkey '^ ' autosuggest-accept
-
-zinit light zsh-users/zsh-syntax-highlighting
-
-zinit light kutsan/zsh-system-clipboard
 
 # }}}
 
