@@ -1,6 +1,6 @@
-# Zinit {{{
+# Plugins {{{
 
-### Added by Zinit's installer
+# {{{ Zinit Installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
@@ -12,12 +12,47 @@ fi
 source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
-### End of Zinit's installer chunk
+# }}} End of Zinit's installer chunk
+
+zinit light kutsan/zsh-system-clipboard
+zinit light marlonrichert/zsh-autocomplete
+zinit light MichaelAquilina/zsh-you-should-use
+
+# Oh My Zsh {{{
 
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit snippet OMZ::plugins/docker/docker.plugin.zsh
 zinit snippet OMZ::plugins/docker-compose/docker-compose.plugin.zsh
 zinit snippet OMZ::plugins/z/z.plugin.zsh
+
+# }}}
+
+# Vim mode {{{
+
+zinit light softmoth zsh-vim-mode
+MODE_CURSOR_VIINS="#00ff00 blinking bar"
+MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #ff0000"
+MODE_CURSOR_VICMD="green block"
+MODE_CURSOR_SEARCH="#ff00ff steady underline"
+MODE_CURSOR_VISUAL="$MODE_CURSOR_VICMD steady underline"
+MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #00ffff"
+
+# }}}
+
+# Auto Suggestions {{{
+zinit light zsh-users/zsh-autosuggestions
+export ZSH_AUTOSUGGEST_USE_ASYNC=1
+bindkey '^ ' autosuggest-accept
+
+zinit light zsh-users/zsh-completions
+bindkey '^P' up-line-or-search
+bindkey '^N' down-line-or-search
+
+# }}}
+
+zinit light zsh-users/zsh-syntax-highlighting
+
+# Alien Theme {{{
 
 zinit light eendroroy/alien
 export ALIEN_SECTIONS_LEFT=(
@@ -67,47 +102,28 @@ export ALIEN_CRYSTAL_COLOR=8
 export ALIEN_NODE_COLOR=41
 export ALIEN_PHP_COLOR=57
 
-zinit light zsh-users/zsh-autosuggestions
-export ZSH_AUTOSUGGEST_USE_ASYNC=1
-bindkey '^ ' autosuggest-accept
-
-zinit light zsh-users/zsh-syntax-highlighting
-
-zinit light kutsan/zsh-system-clipboard
+# }}}
 
 # }}}
 
-# Oh My Zsh {{{
+# Settings {{{
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-source $ZSH/oh-my-zsh.sh
+setopt AUTO_CD
+setopt HIST_SAVE_NO_DUPS
 
 # }}}
 
-# Exports {{{
+# Environment Variables {{{
 
 export CLICOLOR=1
-export EDITOR='nvim'
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse-list --border'
-export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
-export GREP_OPTIONS='--color=auto'
-export GREP_COLOR='1;32'
-export KEYTIMEOUT=5
+export EDITOR="nvim"
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse-list --border"
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow"
+export GREP_OPTIONS="--color=auto"
+export GREP_COLOR="1;32"
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=10000
+export KEYTIMEOUT=1
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
 export LESS_TERMCAP_me=$'\e[0m'
@@ -119,7 +135,9 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 export LS_COLORS=Gxfxcxdxbxegedabagacad
 export MANPAGER="less -X" # Don’t clear the screen after quitting a manual page
 export ODY_ENV=true # Needs to exist for ~/projects/od-env/build-node-docker/gendockerfile.sh generate w/ nodemon
+export SAVEHIST=10000
 export TERM="screen-256color"
+export VISUAL="nvim"
 
 # }}}
 
@@ -154,58 +172,10 @@ unset LSCOLORS
 
 # }}}
 
-# Key Bindings {{{
-
-bindkey "^r" history-incremental-search-backward
-bindkey "^s" history-incremental-search-forward
-
-# }}}
-
-# Envrionment Management {{{
+# Language Management {{{
 
 eval "$(nodenv init -)"
 eval "$(jenv init -)"
-
-# }}}
-
-# Vi mode {{{
-
-bindkey -v #vim style
-
-bindkey -M vicmd '^P' up-line-or-search
-bindkey -M vicmd '^N' down-line-or-search
-
-bindkey -M viins '^P' up-line-or-search
-bindkey -M viins '^N' down-line-or-search
-
-bindkey -M viins '^R' history-incremental-search-backward
-bindkey -M viins '^F' history-incremental-search-forward
-
-bindkey -M vicmd '/' history-incremental-search-backward
-
-bindkey -M menuselect '^h' vi-backward-char
-bindkey -M menuselect '^k' vi-up-line-or-history
-bindkey -M menuselect '^l' vi-forward-char
-bindkey -M menuselect '^j' vi-down-line-or-history
-
-CURSOR_BLOCK='\e[1 q'
-CURSOR_BEAM='\e[5 q'
-
-function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'block' ]]; then
-    echo -ne $CURSOR_BLOCK
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'beam' ]]; then
-    echo -ne $CURSOR_BEAM
-  fi
-}
-zle -N zle-keymap-select
-
-preexec() { zle-keymap-select ;}
-precmd_functions+=(zle-keymap-select)
 
 # }}}
 
@@ -227,6 +197,7 @@ alias grs="git reset --soft"
 alias gsta="git stash save"
 alias gstapa="git stash save -p"
 alias gstau="git stash save -u"
+alias history="history 0"
 alias k="kubectl"
 alias l="ls -lAh"
 alias ls="ls"
