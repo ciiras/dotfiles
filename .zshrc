@@ -191,8 +191,9 @@ eval "$(jenv init -)"
 
 # }}}
 
-# Alias {{{
+# Aliases {{{
 
+alias -- -='cd -'
 alias cl="clear"
 alias code="code-insiders"
 alias d="docker"
