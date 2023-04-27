@@ -189,6 +189,7 @@ unset LSCOLORS
 
 eval "$(nodenv init -)"
 eval "$(jenv init -)"
+eval "$(rbenv init - zsh)"
 
 # }}}
 
