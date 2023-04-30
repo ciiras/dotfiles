@@ -6,14 +6,6 @@ local has_words_before = function()
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
 
-local feedkey = function(key, mode)
-    vim.api.nvim_feedkeys(
-        vim.api.nvim_replace_termcodes(key, true, true, true),
-        mode,
-        true
-    )
-end
-
 lspkind.init({
     symbol_map = {
         Text = '',
@@ -75,18 +67,28 @@ cmp.setup({
             else
                 fallback()
             end
-        end, {'i', 's'}),
+        end, {'i', 'c', 's'}),
         ['<S-Tab>'] = cmp.mapping(function()
             if cmp.visible() then
                 cmp.select_prev_item()
             end
-        end, {'i', 's'})
+        end, {'i', 'c', 's'})
     },
     sources = {
-        {name = 'nvim_lsp'}, {name = 'buffer', keyword_length = 5},
-        {name = 'calc'}, {name = 'emoji'}, {name = 'spell'}, {name = 'path'}
-    }
+        {name = 'nvim_lsp'},
+        {name = 'buffer', keyword_length = 5},
+        {name = 'calc'},
+        {name = 'emoji'},
+        {name = 'spell'},
+        {name = 'path'},
+    },
+    window = {
+          completion = cmp.config.window.bordered(),
+    },
 })
 
--- Use buffer source for `/`.
-cmp.setup.cmdline('/', {sources = {{name = 'buffer'}}})
+cmp.setup.cmdline({ '/', '?' }, {
+    sources = {
+        {name = 'buffer'}
+    }
+})
