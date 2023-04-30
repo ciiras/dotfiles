@@ -129,6 +129,9 @@ packer.startup(function(use)
         },
     }
     use({ 'tamago324/cmp-zsh' })                                                        -- ZSH auto completion
+    use { 'tzachar/cmp-fuzzy-buffer',
+        requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
+    }
     use({ 'tpope/vim-fugitive', })                                                      -- Git commands
     use({ 'tpope/vim-obsession' })                                                      -- Session management
     use({ 'tpope/vim-repeat' })                                                         -- Better Repeat

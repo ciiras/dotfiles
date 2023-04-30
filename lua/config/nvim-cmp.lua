@@ -89,6 +89,6 @@ cmp.setup({
 
 cmp.setup.cmdline({ '/', '?' }, {
     sources = {
-        {name = 'buffer'}
+        {name = 'fuzzy_buffer'}
     }
 })
