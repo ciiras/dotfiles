@@ -45,6 +45,7 @@ MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #00ffff"
 # Auto Suggestions {{{
 zinit light zsh-users/zsh-autosuggestions
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 bindkey '^ ' autosuggest-accept
 
 zinit light zsh-users/zsh-completions
