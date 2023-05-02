@@ -49,7 +49,7 @@ packer.startup(function(use)
     use ({
         'hrsh7th/nvim-cmp',
         config = get_config('nvim-cmp'),
-    })
+    })                                                                                  -- Lsp autocomplete
     use ({ 'hrsh7th/cmp-buffer' })
     use ({ 'hrsh7th/cmp-path' })
     use ({ 'hrsh7th/cmp-nvim-lua' })
@@ -131,7 +131,7 @@ packer.startup(function(use)
     use({ 'tamago324/cmp-zsh' })                                                        -- ZSH auto completion
     use { 'tzachar/cmp-fuzzy-buffer',
         requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
-    }
+    }                                                                                   -- nvim-cmp fuzzy finder for / and ?
     use({ 'tpope/vim-fugitive', })                                                      -- Git commands
     use({ 'tpope/vim-obsession' })                                                      -- Session management
     use({ 'tpope/vim-repeat' })                                                         -- Better Repeat
