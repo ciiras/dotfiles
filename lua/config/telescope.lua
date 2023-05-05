@@ -18,6 +18,7 @@ telescope.setup({
             '--glob', '!package-lock.json',
             '--glob', '!consul.js',
             '--glob', '!consul-keys.ctmpl',
+            '--glob', '!.eslintcache',
         },
         mappings = {
             i = {
@@ -66,6 +67,7 @@ telescope.setup({
                 '--glob', '!Session.vim',
                 '--glob', '!consul.js',
                 '--glob', '!consul-keys.ctmpl',
+                '--glob', '!.eslintcache',
             },
         }
     },
