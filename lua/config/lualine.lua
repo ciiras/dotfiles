@@ -28,13 +28,13 @@ require('lualine').setup({
         lualine_a = {
             {
                 'buffers',
-                max_length = vim.o.columns,
-                mode = 2,
-                show_filename_only = false,
                 buffers_color = {
                     active = { bg = '#39506d', fg = '#cdcecf' },
                     inactive = { bg = '#39506d', fg = '#719cd6' },
                 },
+                max_length = vim.o.columns,
+                mode = 2,
+                show_filename_only = true,
             },
         },
         lualine_b = {},
