@@ -1,3 +1,4 @@
+global.barbar_auto_setup = false
 global.loaded = 1
 global.loaded_netrwPlugin = 1
 global.mapleader = ','

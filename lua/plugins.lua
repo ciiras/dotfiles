@@ -128,6 +128,14 @@ packer.startup(function(use)
             'famiu/bufdelete.nvim',
         },
     }
+    use {
+        'romgrk/barbar.nvim',
+        config = get_config('barbar'),
+        requires = {
+          'lewis6991/gitsigns.nvim',
+          'nvim-tree/nvim-web-devicons',
+        },
+    }                                                                                   -- Tabs
     use({ 'tamago324/cmp-zsh' })                                                        -- ZSH auto completion
     use { 'tzachar/cmp-fuzzy-buffer',
         requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
