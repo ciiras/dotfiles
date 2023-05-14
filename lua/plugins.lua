@@ -22,26 +22,26 @@ packer.init({
 })
 
 packer.startup(function(use)
-    use({ 'wbthomason/packer.nvim' })                                                   -- packer management
+    use ({ 'wbthomason/packer.nvim' })                                                   -- packer management
 
-    use({ 'christoomey/vim-sort-motion' })                                              -- Sort motions
-    use({ 'christoomey/vim-tmux-navigator' })                                           -- tmux/nvim window/pane/split management
-    use({ 'dstein64/vim-startuptime' })                                                 -- Startup time profiling
-    use({
+    use ({ 'christoomey/vim-sort-motion' })                                              -- Sort motions
+    use ({ 'christoomey/vim-tmux-navigator' })                                           -- tmux/nvim window/pane/split management
+    use ({ 'dstein64/vim-startuptime' })                                                 -- Startup time profiling
+    use ({
         'EdenEast/nightfox.nvim',
         config = get_config('nightfox'),
     })                                                                                  -- Color scheme
-    use({ 'famiu/bufdelete.nvim' })                                                     -- Delete buffer w/o closing window
-    use({
+    use ({ 'famiu/bufdelete.nvim' })                                                     -- Delete buffer w/o closing window
+    use ({
         'folke/trouble.nvim',
         config = get_config('trouble'),
     })                                                                                  -- Diagnostics quick fix list
-    use({
+    use ({
         'gelguy/wilder.nvim',
         config = get_config('wilder'),
         run = ':UpdateRemotePlugins'
     })                                                                                  -- wildmenu plugin
-    use({
+    use ({
         'glepnir/lspsaga.nvim',
         branch = 'main',
         config = get_config('lspsaga'),
@@ -59,7 +59,7 @@ packer.startup(function(use)
         'norcalli/nvim-colorizer.lua',
         config = get_config('nvim-colorizer'),
     })                                                                                  -- Color visualizer
-    use({ 'jayp0521/mason-null-ls.nvim' })                                              -- Mason/null-ls auto installer
+    use ({ 'jayp0521/mason-null-ls.nvim' })                                             -- Mason/null-ls auto installer
     use ({
         'jose-elias-alvarez/null-ls.nvim',
         config = get_config('null-ls'),
@@ -73,47 +73,47 @@ packer.startup(function(use)
             'nvim-lua/plenary.nvim'
         },
     })                                                                                  -- Lsp TypeScript utilities
-    use({ 'junegunn/vim-peekaboo' })                                                    -- Register window
-    use({
+    use ({ 'junegunn/vim-peekaboo' })                                                   -- Register window
+    use ({
         'kyazdani42/nvim-tree.lua',
         config = get_config('nvim-tree'),
     })                                                                                  -- File explorer
-    use({ 'kyazdani42/nvim-web-devicons' })                                             -- Icons
-    use({
+    use ({ 'kyazdani42/nvim-web-devicons' })                                            -- Icons
+    use ({
         'lewis6991/gitsigns.nvim',
         config = get_config('gitsigns'),
     })                                                                                  -- Git gutter info
-    use({ 'markstory/vim-zoomwin' })                                                    -- <leader>z
-    use({ 'mattn/calendar-vim' })                                                       -- Calendar
-    use({ 'moll/vim-node' })                                                            -- gd for Node.js require(...)
-    use({
+    use ({ 'markstory/vim-zoomwin' })                                                   -- <leader>z
+    use ({ 'mattn/calendar-vim' })                                                      -- Calendar
+    use ({ 'moll/vim-node' })                                                           -- gd for Node.js require(...)
+    use ({
         'neovim/nvim-lspconfig',
         config = get_config('nvim-lspconfig'),
     })                                                                                  -- Lsp config
-    use({
+    use ({
         'numToStr/Comment.nvim',
         config = get_config('Comment'),
     })                                                                                  -- Comments
-    use({
+    use ({
         'nvim-lualine/lualine.nvim',
         config = get_config('lualine'),
     })                                                                                  -- Status line
-    use({
+    use ({
         'nvim-telescope/telescope.nvim',
         tag = '0.1.x',
         requires = {
             'nvim-lua/plenary.nvim'
         },
         config = get_config('telescope'),
-    })                                                                                 -- Fuzzy finder
-    use {
+    })                                                                                  -- Fuzzy finder
+    use ({
         'nvim-telescope/telescope-file-browser.nvim'
-    }                                                                                  -- Telescope file browser
-    use {
+    })                                                                                  -- Telescope file browser
+    use ({
         'nvim-telescope/telescope-fzf-native.nvim',
         run = 'make'
-    }                                                                                  -- Telescope sorter
-    use({
+    })                                                                                  -- Telescope sorter
+    use ({
         'nvim-treesitter/nvim-treesitter',
         config = get_config('nvim-treesitter'),
         requires = {
@@ -121,41 +121,42 @@ packer.startup(function(use)
         },
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end
     })                                                                                  -- Treesitter
-    use({ 'nvim-treesitter/playground' })                                               -- Treesitter playground
-    use {
+    use ({ 'nvim-treesitter/nvim-treesitter-context' })                                 -- Treesitter sticky function declaration
+    use ({ 'nvim-treesitter/playground' })                                              -- Treesitter playground
+    use ({
         'onsails/lspkind-nvim',
         requires = {
             'famiu/bufdelete.nvim',
         },
-    }
-    use {
+    })
+    use ({
         'romgrk/barbar.nvim',
         config = get_config('barbar'),
         requires = {
-          'lewis6991/gitsigns.nvim',
-          'nvim-tree/nvim-web-devicons',
+            'lewis6991/gitsigns.nvim',
+            'nvim-tree/nvim-web-devicons',
         },
-    }                                                                                   -- Tabs
-    use({ 'tamago324/cmp-zsh' })                                                        -- ZSH auto completion
-    use { 'tzachar/cmp-fuzzy-buffer',
+    })                                                                                  -- Tabs
+    use ({ 'tamago324/cmp-zsh' })                                                       -- ZSH auto completion
+    use ({ 'tzachar/cmp-fuzzy-buffer',
         requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
-    }                                                                                   -- nvim-cmp fuzzy finder for / and ?
-    use({ 'tpope/vim-fugitive', })                                                      -- Git commands
-    use({ 'tpope/vim-obsession' })                                                      -- Session management
-    use({ 'tpope/vim-repeat' })                                                         -- Better Repeat
-    use({ 'tpope/vim-surround' })                                                       -- Surround motions
-    use({ 'tpope/vim-unimpaired' })                                                     -- Useful key mappings
-    use({
+    })                                                                                  -- nvim-cmp fuzzy finder for / and ?
+    use ({ 'tpope/vim-fugitive', })                                                     -- Git commands
+    use ({ 'tpope/vim-obsession' })                                                     -- Session management
+    use ({ 'tpope/vim-repeat' })                                                        -- Better Repeat
+    use ({ 'tpope/vim-surround' })                                                      -- Surround motions
+    use ({ 'tpope/vim-unimpaired' })                                                    -- Useful key mappings
+    use ({
         'vimwiki/vimwiki',
         config = get_config('vimwiki'),
     })                                                                                  -- Wiki
-    use({
+    use ({
         'williamboman/mason.nvim',
     })                                                                                  -- Lsp install management
-    use({
+    use ({
         'williamboman/mason-lspconfig.nvim',
     })                                                                                  -- Lsp config interop
-    use({
+    use ({
         'windwp/nvim-autopairs',
         config = get_config('nvim-autopairs'),
     })                                                                                  -- Auto close (), [], {}, '', "", etc...
