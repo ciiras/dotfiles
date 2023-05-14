@@ -4,7 +4,8 @@ end
 
 require('lualine').setup({
     options = {
-        disabled_filetypes = { 'NvimTree' },
+        disabled_filetypes = { 'NvimTree', 'Trouble' },
+        globalstatus = true,
     },
     sections = {
         lualine_b = {},

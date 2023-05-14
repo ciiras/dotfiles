@@ -20,11 +20,9 @@ opt.history = 100
 opt.hlsearch = true
 opt.ignorecase = true
 opt.incsearch = true
-opt.laststatus = 2
 opt.lazyredraw = true
 opt.list = true
 opt.listchars = {tab = '›⋅', eol = '↲', space = '⋅'}
-opt.ls = 0
 opt.mouse = 'a'
 opt.number = true
 opt.relativenumber = true
