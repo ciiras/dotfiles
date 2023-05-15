@@ -1,13 +1,5 @@
 nmap('<leader>r', ':source $MYVIMRC<CR> :echo \'---.vimrc reloaded---\'<CR>')
 
-nmap('<leader>bl', '<cmd>ls<CR>')
-nmap('<leader>bp', '<cmd>bp<CR>')
-nmap('<leader>bn', '<cmd>bn<CR>')
-nmap('<leader>bd', '<cmd>bd<CR>')
-nmap('<leader>bD', '<cmd>%bd<CR>')
-nmap('<leader>bo', '<cmd>on<CR>')
-nmap('<leader>bs', '<cmd>new<CR>')
-
 nmap('<esc>', '<cmd>nohlsearch<CR>')
 
 nmap('<leader>sh', '<C-W>s')
