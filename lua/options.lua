@@ -45,5 +45,4 @@ opt.timeoutlen = 1000
 opt.ttimeoutlen = 0
 opt.undofile = true
 opt.updatetime = 300
-opt.visualbell = true
 opt.wrap = false
