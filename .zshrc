@@ -222,7 +222,7 @@ alias nrl="npm run lint"
 alias r="source ~/.zshrc"
 alias rc="~/projects/od-env/build-node-docker/render-consul-template.sh"
 alias rd="~/projects/od-env/build-node-docker/gendockerfile.sh"
-alias t="tmux"
+alias t="tmux attach"
 alias vi="nvim"
 alias v="nvim"
 
