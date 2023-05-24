@@ -22,16 +22,16 @@ packer.init({
 })
 
 packer.startup(function(use)
-    use ({ 'wbthomason/packer.nvim' })                                                   -- packer management
+    use ({ 'wbthomason/packer.nvim' })                                                  -- packer management
 
-    use ({ 'christoomey/vim-sort-motion' })                                              -- Sort motions
-    use ({ 'christoomey/vim-tmux-navigator' })                                           -- tmux/nvim window/pane/split management
-    use ({ 'dstein64/vim-startuptime' })                                                 -- Startup time profiling
+    use ({ 'christoomey/vim-sort-motion' })                                             -- Sort motions
+    use ({ 'christoomey/vim-tmux-navigator' })                                          -- tmux/nvim window/pane/split management
+    use ({ 'dstein64/vim-startuptime' })                                                -- Startup time profiling
     use ({
         'EdenEast/nightfox.nvim',
         config = get_config('nightfox'),
     })                                                                                  -- Color scheme
-    use ({ 'famiu/bufdelete.nvim' })                                                     -- Delete buffer w/o closing window
+    use ({ 'famiu/bufdelete.nvim' })                                                    -- Delete buffer w/o closing window
     use ({
         'folke/trouble.nvim',
         config = get_config('trouble'),
