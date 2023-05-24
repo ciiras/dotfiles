@@ -87,6 +87,11 @@ packer.startup(function(use)
         'lewis6991/gitsigns.nvim',
         config = get_config('gitsigns'),
     })                                                                                  -- Git gutter info
+    use ({ 'glts/vim-magnum' })                                                         -- Big integer library
+    use ({
+        'glts/vim-radical',
+        requires = {'glts/vim-magnum'}
+    })                                                                                  -- Decimal, hex, octal, and binary number conversion
     use ({ 'markstory/vim-zoomwin' })                                                   -- <leader>z
     use ({ 'mattn/calendar-vim' })                                                      -- Calendar
     use ({ 'moll/vim-node' })                                                           -- gd for Node.js require(...)
