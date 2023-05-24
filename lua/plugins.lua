@@ -42,6 +42,10 @@ packer.startup(function(use)
         run = ':UpdateRemotePlugins'
     })                                                                                  -- wildmenu plugin
     use ({
+        'glacambre/firenvim',
+        run = function() vim.fn['firenvim#install'](0) end
+    })                                                                                  -- Browser textarea nvim control
+    use ({
         'glepnir/lspsaga.nvim',
         branch = 'main',
         config = get_config('lspsaga'),
