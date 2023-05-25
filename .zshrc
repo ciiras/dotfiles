@@ -223,7 +223,7 @@ alias r="source ~/.zshrc"
 alias rc="~/projects/od-env/build-node-docker/render-consul-template.sh"
 alias rd="~/projects/od-env/build-node-docker/gendockerfile.sh"
 alias rm="trash"
-alias t="tmux attach"
+alias t="tmux"
 alias vi="nvim"
 alias v="nvim"
 
