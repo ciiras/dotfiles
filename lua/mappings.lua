@@ -2,8 +2,8 @@ nmap('<leader>r', ':source $MYVIMRC<CR> :echo \'---.vimrc reloaded---\'<CR>')
 
 nmap('<esc>', '<cmd>nohlsearch<CR>')
 
-nmap('<leader>sh', '<C-W>s')
-nmap('<leader>sv', '<C-W>v')
+nmap('<leader>%', '<C-W>s')
+nmap('<leader>"', '<C-W>v')
 
 nmap('<M-h>', '<C-W>>')
 nmap('<M-l>', '<C-W><')
