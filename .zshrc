@@ -18,33 +18,25 @@ autoload -Uz _zinit
 
 # }}} End of Zinit's installer chunk
 
-zinit light eendroroy/alien
-zinit light marlonrichert/zsh-autocomplete
-zinit light softmoth zsh-vim-mode
+zinit for \
+    light-mode eendroroy/alien \
+    light-mode marlonrichert/zsh-autocomplete \
+    light-mode softmoth/zsh-vim-mode
 
-zinit snippet OMZ::plugins/git/git.plugin.zsh
-zinit snippet OMZ::plugins/docker/docker.plugin.zsh
-zinit snippet OMZ::plugins/docker-compose/docker-compose.plugin.zsh
-zinit snippet OMZ::plugins/z/z.plugin.zsh
-
-zinit ice wait lucid
-zinit light zsh-users/zsh-completions
-
-zinit ice wait lucid
-zinit light kutsan/zsh-system-clipboard
-
-zinit ice wait lucid
-zinit light MichaelAquilina/zsh-you-should-use
-
-zinit ice wait lucid
-zinit light zsh-users/zsh-autosuggestions
-
-zinit ice wait lucid
-zinit light zsh-users/zsh-syntax-highlighting
+zinit wait lucid for \
+    light-mode kutsan/zsh-system-clipboard \
+    light-mode MichaelAquilina/zsh-you-should-use \
+    light-mode OMZ::plugins/docker-compose/docker-compose.plugin.zsh \
+    light-mode OMZ::plugins/docker/docker.plugin.zsh \
+    light-mode OMZ::plugins/git/git.plugin.zsh \
+    light-mode OMZ::plugins/z/z.plugin.zsh \
+    light-mode zsh-users/zsh-autosuggestions \
+    light-mode zsh-users/zsh-completions \
+    light-mode zsh-users/zsh-syntax-highlighting \
 
 # }}}
 
-# Vim mode {{{
+# Vim mode config {{{
 
 MODE_CURSOR_VIINS="#00ff00 blinking bar"
 MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #ff0000"
@@ -55,7 +47,7 @@ MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #00ffff"
 
 # }}}
 
-# Auto Suggestions {{{
+# Auto Suggestions config {{{
 
 export ZSH_AUTOSUGGEST_USE_ASYNC=1
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
@@ -66,7 +58,7 @@ bindkey '^N' down-line-or-search
 
 # }}}
 
-# Alien Theme {{{
+# Alien Theme config {{{
 
 export ALIEN_SECTIONS_LEFT=(
   exit
