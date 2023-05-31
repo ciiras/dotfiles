@@ -21,18 +21,18 @@ autoload -Uz _zinit
 zinit for \
     light-mode eendroroy/alien \
     light-mode marlonrichert/zsh-autocomplete \
-    light-mode softmoth/zsh-vim-mode
+    light-mode softmoth/zsh-vim-mode \
+    light-mode OMZ::plugins/docker-compose/docker-compose.plugin.zsh \
+    light-mode OMZ::plugins/docker/docker.plugin.zsh \
+    light-mode OMZ::plugins/git/git.plugin.zsh \
+    light-mode OMZ::plugins/z/z.plugin.zsh
 
 zinit wait lucid for \
     light-mode kutsan/zsh-system-clipboard \
     light-mode MichaelAquilina/zsh-you-should-use \
-    light-mode OMZ::plugins/docker-compose/docker-compose.plugin.zsh \
-    light-mode OMZ::plugins/docker/docker.plugin.zsh \
-    light-mode OMZ::plugins/git/git.plugin.zsh \
-    light-mode OMZ::plugins/z/z.plugin.zsh \
     light-mode zsh-users/zsh-autosuggestions \
     light-mode zsh-users/zsh-completions \
-    light-mode zsh-users/zsh-syntax-highlighting \
+    light-mode zsh-users/zsh-syntax-highlighting
 
 # }}}
 
