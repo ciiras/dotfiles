@@ -6,6 +6,6 @@ require("lspsaga").setup({
         enable = false,
     },
     rename = {
-        whole_project = false,
+        whole_project = true,
     },
 })
