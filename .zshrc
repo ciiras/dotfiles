@@ -36,29 +36,7 @@ zinit wait lucid for \
 
 # }}}
 
-# Vim mode config {{{
-
-MODE_CURSOR_VIINS="#00ff00 blinking bar"
-MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #ff0000"
-MODE_CURSOR_VICMD="green block"
-MODE_CURSOR_SEARCH="#ff00ff steady underline"
-MODE_CURSOR_VISUAL="$MODE_CURSOR_VICMD steady underline"
-MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #00ffff"
-
-# }}}
-
-# Auto Suggestions config {{{
-
-export ZSH_AUTOSUGGEST_USE_ASYNC=1
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
-bindkey '^ ' autosuggest-accept
-
-bindkey '^P' up-line-or-search
-bindkey '^N' down-line-or-search
-
-# }}}
-
-# Alien Theme config {{{
+# eendroroy/alien config {{{
 
 export ALIEN_SECTIONS_LEFT=(
   exit
@@ -106,6 +84,28 @@ export ALIEN_ELIXIR_COLOR=99
 export ALIEN_CRYSTAL_COLOR=8
 export ALIEN_NODE_COLOR=41
 export ALIEN_PHP_COLOR=57
+
+# }}}
+
+# vim mode config {{{
+
+MODE_CURSOR_VIINS="#00ff00 blinking bar"
+MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #ff0000"
+MODE_CURSOR_VICMD="green block"
+MODE_CURSOR_SEARCH="#ff00ff steady underline"
+MODE_CURSOR_VISUAL="$MODE_CURSOR_VICMD steady underline"
+MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #00ffff"
+
+# }}}
+
+# zsh-users/zsh-autosuggestions config {{{
+
+export ZSH_AUTOSUGGEST_USE_ASYNC=1
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
+bindkey '^ ' autosuggest-accept
+
+bindkey '^P' up-line-or-search
+bindkey '^N' down-line-or-search
 
 # }}}
 
