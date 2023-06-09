@@ -44,3 +44,5 @@ end
 create_autocmd({ 'BufWritePre' }, { callback = strip_trailing_white_space })
 
 create_autocmd({ 'FileType' }, { command = 'setlocal formatoptions-=c formatoptions-=r formatoptions-=o' })
+
+create_autocmd({ 'VimResized' }, { command = 'wincmd =' })
