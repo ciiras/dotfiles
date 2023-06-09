@@ -23,3 +23,6 @@ ln -sfF Users/griffithc/project/dotfiles/nvim/init.lua ~/.config/nvim/init.lua
 
 ### load value into environment variable
 export <env_var>=$(security find-generic-password -a "$USER" -s "<key>" -w)
+
+## Brewfile
+brew bundle dump -f
