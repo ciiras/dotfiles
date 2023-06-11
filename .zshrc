@@ -24,13 +24,13 @@ zinit for \
     light-mode OMZ::plugins/docker-compose/docker-compose.plugin.zsh \
     light-mode OMZ::plugins/docker/docker.plugin.zsh \
     light-mode OMZ::plugins/git/git.plugin.zsh \
-    light-mode softmoth/zsh-vim-mode
+    light-mode softmoth/zsh-vim-mode \
+    light-mode zsh-users/zsh-autosuggestions
 
 zinit wait lucid for \
     light-mode agkozak/zsh-z \
     light-mode kutsan/zsh-system-clipboard \
     light-mode MichaelAquilina/zsh-you-should-use \
-    light-mode zsh-users/zsh-autosuggestions \
     light-mode zsh-users/zsh-completions \
     light-mode zsh-users/zsh-syntax-highlighting
 
