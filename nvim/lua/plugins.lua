@@ -125,13 +125,28 @@ packer.startup(function(use)
     use ({
         'nvim-treesitter/nvim-treesitter',
         config = get_config('nvim-treesitter'),
-        requires = {
-            'nvim-treesitter/playground',
-        },
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end
     })                                                                                  -- Treesitter
-    use ({ 'nvim-treesitter/nvim-treesitter-context' })                                 -- Treesitter sticky function declaration
-    use ({ 'nvim-treesitter/playground' })                                              -- Treesitter playground
+    use ({
+        'nvim-treesitter/nvim-treesitter-context',
+        after = 'nvim-treesitter',
+    })                                                                                  -- Treesitter sticky function declaration
+    use ({
+        'nvim-treesitter/playground',
+        after = 'nvim-treesitter',
+        config = get_config('nvim-treesitter-playground'),
+        requires = {
+            'nvim-treesitter/nvim-treesitter',
+        },
+    })                                                                                  -- Treesitter playground
+    use({
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        after = 'nvim-treesitter',
+        config = get_config('nvim-treesitter-textobjects'),
+        requires = {
+            'nvim-treesitter/nvim-treesitter',
+        },
+    })                                                                                  -- Treesitter function/class textobjects
     use ({
         'onsails/lspkind-nvim',
         requires = {
