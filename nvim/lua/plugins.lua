@@ -95,6 +95,7 @@ packer.startup(function(use)
     use ({ 'markstory/vim-zoomwin' })                                                   -- <leader>z
     use ({ 'mattn/calendar-vim' })                                                      -- Calendar
     use ({ 'moll/vim-node' })                                                           -- gd for Node.js require(...)
+    use ({ 'RRethy/vim-illuminate' })                                                   -- Highlight word under cursor
     use ({
         'neovim/nvim-lspconfig',
         config = get_config('nvim-lspconfig'),
