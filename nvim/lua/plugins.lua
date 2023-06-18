@@ -27,6 +27,11 @@ packer.startup(function(use)
     use ({ 'christoomey/vim-sort-motion' })                                             -- Sort motions
     use ({ 'christoomey/vim-tmux-navigator' })                                          -- tmux/nvim window/pane/split management
     use ({ 'dstein64/vim-startuptime' })                                                -- Startup time profiling
+    use {
+        'echasnovski/mini.indentscope',
+        branch = 'stable',
+        config = get_config('mini-indentscope'),
+    }                                                                                   -- Highlight current indent
     use ({
         'EdenEast/nightfox.nvim',
         config = get_config('nightfox'),
