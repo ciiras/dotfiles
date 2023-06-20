@@ -134,10 +134,6 @@ packer.startup(function(use)
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end
     })                                                                                  -- Treesitter
     use ({
-        'nvim-treesitter/nvim-treesitter-context',
-        after = 'nvim-treesitter',
-    })                                                                                  -- Treesitter sticky function declaration
-    use ({
         'nvim-treesitter/playground',
         after = 'nvim-treesitter',
         config = get_config('nvim-treesitter-playground'),
@@ -167,6 +163,10 @@ packer.startup(function(use)
             'nvim-tree/nvim-web-devicons',
         },
     })                                                                                  -- Tabs
+    use {
+        'SmiteshP/nvim-navic',
+        requires = 'neovim/nvim-lspconfig'
+    }                                                                                   -- Status line code context
     use ({ 'tamago324/cmp-zsh' })                                                       -- ZSH auto completion
     use ({ 'tzachar/cmp-fuzzy-buffer',
         requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
