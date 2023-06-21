@@ -232,10 +232,15 @@ alias v="nvim"
 
 # PATH {{{
 
+
 export PATH="./:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.nodenv/bin:$PATH"
 export PATH="$HOME/.jenv/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PATH="$ANDROID_HOME/emulator:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
 
 # }}}
