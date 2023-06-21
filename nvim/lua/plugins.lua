@@ -32,6 +32,11 @@ packer.startup(function(use)
         branch = 'stable',
         config = get_config('mini-indentscope'),
     }                                                                                   -- Highlight current indent
+    use {
+        'echasnovski/mini.surround',
+        branch = 'stable',
+        config = get_config('mini-surround'),
+    }                                                                                   -- Surround motions
     use ({
         'EdenEast/nightfox.nvim',
         config = get_config('nightfox'),
@@ -174,7 +179,6 @@ packer.startup(function(use)
     use ({ 'tpope/vim-fugitive', })                                                     -- Git commands
     use ({ 'tpope/vim-obsession' })                                                     -- Session management
     use ({ 'tpope/vim-repeat' })                                                        -- Better Repeat
-    use ({ 'tpope/vim-surround' })                                                      -- Surround motions
     use ({ 'tpope/vim-unimpaired' })                                                    -- Useful key mappings
     use ({
         'vimwiki/vimwiki',
