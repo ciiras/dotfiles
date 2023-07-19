@@ -138,14 +138,6 @@ packer.startup(function(use)
         config = get_config('nvim-treesitter'),
         run = function() require('nvim-treesitter.install').update({ with_sync = true }) end
     })                                                                                  -- Treesitter
-    use ({
-        'nvim-treesitter/playground',
-        after = 'nvim-treesitter',
-        config = get_config('nvim-treesitter-playground'),
-        requires = {
-            'nvim-treesitter/nvim-treesitter',
-        },
-    })                                                                                  -- Treesitter playground
     use({
         'nvim-treesitter/nvim-treesitter-textobjects',
         after = 'nvim-treesitter',
