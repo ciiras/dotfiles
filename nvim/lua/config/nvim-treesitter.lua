@@ -3,7 +3,7 @@ require('nvim-treesitter.configs').setup({
     ensure_installed = {
         'c', 'c_sharp', 'dockerfile', 'html', 'javascript', 'lua', 'make',
         'markdown', 'markdown_inline', 'rust', 'scss', 'toml', 'tsx',
-        'typescript', 'vim', 'yaml'
+        'typescript', 'yaml'
     },
     highlight = {
         enable = true,
