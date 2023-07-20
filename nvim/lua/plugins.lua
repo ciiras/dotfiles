@@ -53,6 +53,7 @@ packer.startup(function(use)
     })                                                                                  -- wildmenu plugin
     use ({
         'glepnir/lspsaga.nvim',
+        after = 'nvim-lspconfig',
         branch = 'main',
         config = get_config('lspsaga'),
     })                                                                                  -- Lsp UI upgrade
