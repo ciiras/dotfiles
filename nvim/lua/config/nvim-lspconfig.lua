@@ -16,25 +16,27 @@ require('mason-lspconfig').setup({
 local lspConfig = require('lspconfig')
 local navic = require("nvim-navic")
 
-local on_attach = function(client, bufnr)
+local on_attach = function(client, bufNum)
     if client.server_capabilities.documentSymbolProvider then
-        navic.attach(client, bufnr)
+        navic.attach(client, bufNum)
     end
 
-    vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+    vim.api.nvim_buf_set_option(bufNum, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
-    vim.keymap.set('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', bufopts)
-    vim.keymap.set('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', bufopts)
-    vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', bufopts)
-    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
-    vim.keymap.set('n', '<space>rn', '<Cmd>Lspsaga rename<CR>', bufopts)
-    vim.keymap.set('n', '<space>ca', '<cmd>Lspsaga code_action<CR>', bufopts)
-    vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+    local bufOpts = { noremap=true, silent=true, buffer=bufNum }
+    vim.keymap.set('n', '[d', '<Cmd>Lspsaga diagnostic_jump_prev<CR>', keymap_options)
+    vim.keymap.set('n', ']d', '<Cmd>Lspsaga diagnostic_jump_next<CR>', keymap_options)
+    vim.keymap.set('n', 'gd', '<Cmd>Glance definitions<CR>', bufOpts)
+    vim.keymap.set('n', 'gr', '<Cmd>Glance references<CR>', bufOpts)
+    vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', bufOpts)
+    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufOpts)
+    vim.keymap.set('n', '<space>rn', '<Cmd>Lspsaga rename<CR>', bufOpts)
+    vim.keymap.set('n', '<space>ca', '<cmd>Lspsaga code_action<CR>', bufOpts)
+    vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufOpts)
 end
 
-local on_attach_tsserver = function(client, bufnr)
-    on_attach(client, bufnr)
+local on_attach_tsserver = function(client, bufNum)
+    on_attach(client, bufNum)
 
     local utils = require('nvim-lsp-ts-utils')
     utils.setup({

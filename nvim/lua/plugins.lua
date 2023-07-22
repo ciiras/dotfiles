@@ -26,6 +26,7 @@ packer.startup(function(use)
 
     use ({ 'christoomey/vim-sort-motion' })                                             -- Sort motions
     use ({ 'christoomey/vim-tmux-navigator' })                                          -- tmux/nvim window/pane/split management
+    use ({ 'DNLHC/glance.nvim' })                                                       -- Custom view/edit for Lsp definitions and references
     use ({ 'dstein64/vim-startuptime' })                                                -- Startup time profiling
     use {
         'echasnovski/mini.indentscope',
