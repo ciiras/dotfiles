@@ -55,6 +55,13 @@ lspConfig.tsserver.setup({
         },
     },
     on_attach = on_attach_tsserver,
+    filetypes = {
+        'javascript',
+        'json',
+        'typescript',
+        'typescript.tsx',
+        'typescriptreact',
+    },
 })
 
 lspConfig.lua_ls.setup({
