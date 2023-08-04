@@ -17,5 +17,3 @@ xmap('p', 'pgvy')
 nmap('<leader>da', 'ggVGd')
 nmap('<leader>va', 'ggVGg_')
 nmap('<leader>ya', 'gg0vGg_y')
-
-nmap('<leader>.', '<cmd>NvimTreeFindFileToggle<CR>')

@@ -86,10 +86,6 @@ packer.startup(function(use)
         },
     })                                                                                  -- Lsp TypeScript utilities
     use ({ 'junegunn/vim-peekaboo' })                                                   -- Register window
-    use ({
-        'kyazdani42/nvim-tree.lua',
-        config = get_config('nvim-tree'),
-    })                                                                                  -- File explorer
     use ({ 'kyazdani42/nvim-web-devicons' })                                            -- Icons
     use ({
         'lewis6991/gitsigns.nvim',
