@@ -14,13 +14,8 @@ require('mason-lspconfig').setup({
 })
 
 local lspConfig = require('lspconfig')
-local navic = require("nvim-navic")
 
 local on_attach = function(client, bufNum)
-    if client.server_capabilities.documentSymbolProvider then
-        navic.attach(client, bufNum)
-    end
-
     vim.api.nvim_buf_set_option(bufNum, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     local bufOpts = { noremap=true, silent=true, buffer=bufNum }

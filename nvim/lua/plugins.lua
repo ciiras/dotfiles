@@ -94,12 +94,10 @@ packer.startup(function(use)
         'lewis6991/gitsigns.nvim',
         config = get_config('gitsigns'),
     })                                                                                  -- Git gutter info
-    use ({ 'glts/vim-magnum' })                                                         -- Big integer library
     use ({
         'glts/vim-radical',
         requires = {'glts/vim-magnum'}
     })                                                                                  -- Decimal, hex, octal, and binary number conversion
-    use ({ 'markstory/vim-zoomwin' })                                                   -- <leader>z
     use ({ 'mattn/calendar-vim' })                                                      -- Calendar
     use ({ 'moll/vim-node' })                                                           -- gd for Node.js require(...)
     use ({ 'RRethy/vim-illuminate' })                                                   -- Highlight word under cursor
@@ -157,10 +155,6 @@ packer.startup(function(use)
             'nvim-tree/nvim-web-devicons',
         },
     })                                                                                  -- Tabs
-    use {
-        'SmiteshP/nvim-navic',
-        requires = 'neovim/nvim-lspconfig'
-    }                                                                                   -- Status line code context
     use ({ 'tamago324/cmp-zsh' })                                                       -- ZSH auto completion
     use ({ 'tzachar/cmp-fuzzy-buffer',
         requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
