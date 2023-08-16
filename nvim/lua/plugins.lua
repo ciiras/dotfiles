@@ -98,7 +98,7 @@ packer.startup(function(use)
         'glts/vim-radical',
         requires = {'glts/vim-magnum'}
     })                                                                                  -- Decimal, hex, octal, and binary number conversion
-    use ({ 'mattn/calendar-vim' })                                                      -- Calendar
+    use ({ 'markstory/vim-zoomwin' })                                                   -- <leader>z
     use ({ 'moll/vim-node' })                                                           -- gd for Node.js require(...)
     use ({ 'RRethy/vim-illuminate' })                                                   -- Highlight word under cursor
     use ({
