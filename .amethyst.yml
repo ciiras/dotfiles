@@ -183,9 +183,9 @@ select-wide-layout:
   key: s
 
 # Select fullscreen layout
-select-fullscreen-layout:
-  mod: mod1
-  key: d
+# select-fullscreen-layout:
+#   mod: mod1
+#   key: d
 
 # Select column layout
 select-column-layout:
