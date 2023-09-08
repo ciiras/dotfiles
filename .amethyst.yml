@@ -182,10 +182,10 @@ select-wide-layout:
   mod: mod1
   key: s
 
-# Select fullscreen layout
-# select-fullscreen-layout:
-#   mod: mod1
-#   key: d
+# Select fullscreen layout - set to g because i don't currently use that shortcut and there isn't a way to disable it
+select-fullscreen-layout:
+  mod: mod1
+  key: g
 
 # Select column layout
 select-column-layout:
