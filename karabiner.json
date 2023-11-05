@@ -18,7 +18,7 @@
                 },
                 "rules": [
                     {
-                        "description": "CAPS_LOCK to HYPER (SHIFT+COMMAND+OPTION+CONTROL) or ESCAPE (If Alone)",
+                        "description": "Caps Lock -> Hyper (Hold) or Esc (Press/Release)",
                         "manipulators": [
                             {
                                 "from": {
@@ -93,7 +93,7 @@
                         ]
                     },
                     {
-                        "description": "Disable Cmd+H Hide (rev 2)",
+                        "description": "Disable Cmd+H Hide",
                         "manipulators": [
                             {
                                 "description": "",
@@ -123,6 +123,54 @@
                                         ]
                                     }
                                 },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Disable Hyper+, which triggers WiFi logging.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": {
+                                        "mandatory": [
+                                        "command",
+                                        "control",
+                                        "option",
+                                        "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f13"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Disable Hyper+. which triggers sysdiagnose.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": {
+                                        "mandatory": [
+                                        "command",
+                                        "control",
+                                        "option",
+                                        "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "f13"
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
