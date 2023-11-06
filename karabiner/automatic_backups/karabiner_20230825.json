@@ -18,7 +18,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Caps Lock -> Hyper (Hold) or Esc (Press/Release)",
+                        "description": "CAPS_LOCK to HYPER (SHIFT+COMMAND+OPTION+CONTROL) or ESCAPE (If Alone)",
                         "manipulators": [
                             {
                                 "from": {
@@ -93,7 +93,7 @@
                         ]
                     },
                     {
-                        "description": "Disable Cmd+H Hide",
+                        "description": "Disable Cmd+H Hide (rev 2)",
                         "manipulators": [
                             {
                                 "description": "",
@@ -123,54 +123,6 @@
                                         ]
                                     }
                                 },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Disable Hyper+, which triggers WiFi logging.",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "comma",
-                                    "modifiers": {
-                                        "mandatory": [
-                                        "command",
-                                        "control",
-                                        "option",
-                                        "shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f13"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Disable Hyper+. which triggers sysdiagnose.",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "period",
-                                    "modifiers": {
-                                        "mandatory": [
-                                        "command",
-                                        "control",
-                                        "option",
-                                        "shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f13"
-                                    }
-                                ],
                                 "type": "basic"
                             }
                         ]
@@ -254,23 +206,40 @@
                     "identifiers": {
                         "is_keyboard": true,
                         "is_pointing_device": true,
-                        "product_id": 33398,
-                        "vendor_id": 9306
+                        "product_id": 20565,
+                        "vendor_id": 12815
                     },
                     "ignore": true,
                     "manipulate_caps_lock_led": true,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "escape"
-                            },
-                            "to": [
-                                {
-                                    "key_code": "grave_accent_and_tilde"
-                                }
-                            ]
-                        }
-                    ],
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 20565,
+                        "vendor_id": 12815
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": [],
+                    "treat_as_built_in_keyboard": false
+                },
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": false,
+                        "is_pointing_device": true,
+                        "product_id": 45085,
+                        "vendor_id": 1133
+                    },
+                    "ignore": true,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": [],
                     "treat_as_built_in_keyboard": false
                 }
             ],
@@ -401,7 +370,18 @@
                 "delay_milliseconds_before_open_device": 1000
             },
             "selected": true,
-            "simple_modifications": [],
+            "simple_modifications": [
+                {
+                    "from": {
+                        "key_code": "escape"
+                    },
+                    "to": [
+                        {
+                            "key_code": "grave_accent_and_tilde"
+                        }
+                    ]
+                }
+            ],
             "virtual_hid_keyboard": {
                 "country_code": 0,
                 "indicate_sticky_modifier_keys_state": true,
