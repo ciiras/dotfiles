@@ -5,6 +5,9 @@
 * nvim/lua
 * nvim/after
 
+### ~/.config/karabiner/
+* karabiner/
+
 ### ~/
 * .gitignore
 * .gitconfig
