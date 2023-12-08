@@ -111,7 +111,7 @@ packer.startup(function(use)
     })                                                                                  -- Status line
     use ({
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.x',
+        tag = '0.1.4',
         requires = {
             'nvim-lua/plenary.nvim'
         },
