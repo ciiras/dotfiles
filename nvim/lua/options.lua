@@ -3,6 +3,7 @@ global.loaded = 1
 global.loaded_netrwPlugin = 1
 global.mapleader = ','
 global.session_autosave = 'no'
+global.skip_ts_context_commentstring_module = true
 global.tmux_navigator_preserve_zoom = 1
 
 opt.autoread = true

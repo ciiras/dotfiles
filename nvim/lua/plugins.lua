@@ -76,6 +76,10 @@ packer.startup(function(use)
     })                                                                                  -- Color visualizer
     use ({ 'jayp0521/mason-null-ls.nvim' })                                             -- Mason/null-ls auto installer
     use ({
+        'JoosepAlviste/nvim-ts-context-commentstring',
+        config = get_config('ts-context-commentstring'),
+    })                                                                                  -- Comment String extension (JSX support)
+    use ({
         'jose-elias-alvarez/null-ls.nvim',
         config = get_config('null-ls'),
         requires = {
