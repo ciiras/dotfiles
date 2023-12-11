@@ -1,23 +1,3 @@
-## Symlinks
-
-### ~/.config/nvim/
-* nvim/init.lua
-* nvim/lua
-* nvim/after
-
-### ~/.config/karabiner/
-* karabiner/
-
-### ~/
-* .gitignore
-* .gitconfig
-* .tmux.conf
-* .zshrc
-* .kitty.conf
-
-### Example
-ln -sfF Users/griffithc/project/dotfiles/nvim/init.lua ~/.config/nvim/init.lua
-
 ## macOS Keychain
 
 ### create/get key/value from the shell
