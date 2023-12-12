@@ -1,15 +1,10 @@
-local packer = require('packer')
-
-local function get_config(name)
-    return string.format('require("config/%s")', name)
-end
-
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
   Packer_Bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
   exec([[packadd packer.nvim]], false)
 end
 
+local packer = require('packer')
 packer.init({
     enable = true,
     threshold = 0,
@@ -20,6 +15,10 @@ packer.init({
         end,
     },
 })
+
+local function get_config(name)
+    return string.format('require("config/%s")', name)
+end
 
 packer.startup(function(use)
     use ({ 'wbthomason/packer.nvim' })                                                  -- packer management
