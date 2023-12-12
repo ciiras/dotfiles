@@ -9,3 +9,7 @@ export <env_var>=$(security find-generic-password -a "$USER" -s "<key>" -w)
 
 ## Brewfile
 brew bundle dump -f
+
+## Python
+python3 -m pip freeze > <file>
+python3 -m pip install -r <file>
