@@ -14,6 +14,7 @@ brew "docutils"
 brew "python@3.11"
 brew "awscli"
 brew "berkeley-db", link: true
+brew "diffr"
 brew "dnsmasq"
 brew "docker", link: false
 brew "docker-compose", link: false
