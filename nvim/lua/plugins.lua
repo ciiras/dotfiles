@@ -73,7 +73,14 @@ packer.startup(function(use)
         'norcalli/nvim-colorizer.lua',
         config = get_config('nvim-colorizer'),
     })                                                                                  -- Color visualizer
-    use ({ 'jayp0521/mason-null-ls.nvim' })                                             -- Mason/null-ls auto installer
+    use ({
+        'jayp0521/mason-null-ls.nvim',
+        event = { 'BufReadPre', 'BufNewFile' },
+        dependencies = {
+            'williamboman/mason.nvim',
+            'jose-elias-alvarez/null-ls.nvim',
+        },
+    })                                                                                  -- Mason/null-ls auto installer
     use ({
         'JoosepAlviste/nvim-ts-context-commentstring',
         config = get_config('ts-context-commentstring'),
