@@ -18,20 +18,20 @@
 
 	zinit for \
 	    light-mode eendroroy/alien \
-	    light-mode marlonrichert/zsh-autocomplete \
+	    marlonrichert/zsh-autocomplete \
         as"completions" OMZP::docker/completions/_docker \
 	    OMZP::docker \
-	    light-mode OMZP::docker-compose \
-	    light-mode OMZP::git \
-	    light-mode softmoth/zsh-vim-mode \
-	    light-mode zsh-users/zsh-autosuggestions
+	    OMZP::docker-compose \
+	    OMZP::git \
+	    softmoth/zsh-vim-mode \
+	    zsh-users/zsh-autosuggestions
 
 	zinit wait lucid for \
 	    light-mode agkozak/zsh-z \
-	    light-mode kutsan/zsh-system-clipboard \
-	    light-mode MichaelAquilina/zsh-you-should-use \
-	    light-mode zsh-users/zsh-completions \
-	    light-mode zsh-users/zsh-syntax-highlighting
+	    kutsan/zsh-system-clipboard \
+	    MichaelAquilina/zsh-you-should-use \
+	    zsh-users/zsh-completions \
+	    zsh-users/zsh-syntax-highlighting
 
 	# }}}
 
