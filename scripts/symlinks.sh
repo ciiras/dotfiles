@@ -12,3 +12,4 @@ ln -sfF $DOT_FILES_DIR/.gitconfig $USER_DIR/.gitconfig
 ln -sfF $DOT_FILES_DIR/.gitignore $USER_DIR/.gitignore
 ln -sfF $DOT_FILES_DIR/.tmux.conf $USER_DIR/.tmux.conf
 ln -sfF $DOT_FILES_DIR/.zshrc $USER_DIR/.zshrc
+ln -sfF $DOT_FILES_DIR/cspell.json $USER_DIR/cspell.json
