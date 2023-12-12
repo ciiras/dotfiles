@@ -18,6 +18,7 @@ brew "diffr"
 brew "dnsmasq"
 brew "docker"
 brew "docker-compose", link: false
+brew "fd"
 brew "fzf"
 brew "gd"
 brew "gdk-pixbuf"
