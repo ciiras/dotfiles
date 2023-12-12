@@ -14,12 +14,15 @@
 
 	# Plugins {{{
 
+    export ZSH_CACHE_DIR=/Users/$USER/.local/share/zinit # not sure why i have to do this to make OMZP::docker work
+
 	zinit for \
 	    light-mode eendroroy/alien \
 	    light-mode marlonrichert/zsh-autocomplete \
-	    light-mode OMZ::plugins/docker-compose/docker-compose.plugin.zsh \
-	    light-mode OMZ::plugins/docker/docker.plugin.zsh \
-	    light-mode OMZ::plugins/git/git.plugin.zsh \
+        as"completions" OMZP::docker/completions/_docker \
+	    OMZP::docker \
+	    light-mode OMZP::docker-compose \
+	    light-mode OMZP::git \
 	    light-mode softmoth/zsh-vim-mode \
 	    light-mode zsh-users/zsh-autosuggestions
 
