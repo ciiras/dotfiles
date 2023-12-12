@@ -8,6 +8,7 @@ ln -sfF $DOT_FILES_DIR/nvim/after $XDG_CONFIG_HOME/nvim/after
 ln -sfF $DOT_FILES_DIR/nvim/init.lua $XDG_CONFIG_HOME/nvim/init.lua
 ln -sfF $DOT_FILES_DIR/nvim/lua $XDG_CONFIG_HOME/nvim/lua
 
+ln -sfF $DOT_FILES_DIR/.amethyst.yml $USER_DIR/.amethyst.yml
 ln -sfF $DOT_FILES_DIR/.gitconfig $USER_DIR/.gitconfig
 ln -sfF $DOT_FILES_DIR/.gitignore $USER_DIR/.gitignore
 ln -sfF $DOT_FILES_DIR/.tmux.conf $USER_DIR/.tmux.conf
