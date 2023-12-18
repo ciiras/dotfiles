@@ -11,6 +11,7 @@ opt.backspace = 'indent,eol,start'
 opt.backup = false
 opt.ch = 0
 opt.clipboard = 'unnamedplus'
+opt.cmdheight = 1
 opt.colorcolumn = '80'
 opt.compatible = false
 opt.encoding = 'UTF-8'
