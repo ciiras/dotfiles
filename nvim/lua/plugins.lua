@@ -183,6 +183,10 @@ packer.startup(function(use)
         'windwp/nvim-autopairs',
         config = get_config('nvim-autopairs'),
     })                                                                                  -- Auto close (), [], {}, '', "", etc...
+    use ({
+        'windwp/nvim-ts-autotag',
+        config = get_config('nvim-ts-autotag'),
+    })                                                                                  -- Auto close <div> etc...
 
     if Packer_Bootstrap then
         packer.sync()
