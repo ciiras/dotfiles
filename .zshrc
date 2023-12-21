@@ -234,7 +234,6 @@ alias v="nvim"
 
 # PATH {{{
 
-
 export PATH=./:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.nodenv/bin:$PATH
