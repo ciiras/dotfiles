@@ -10,8 +10,8 @@ hyper - h : yabai -m window --focus west
 hyper - j : yabai -m window --focus south
 hyper - k : yabai -m window --focus north
 hyper - l : yabai -m window --focus east
-hyper - n : yabai -m window --focus stack.next
-hyper - p : yabai -m window --focus stack.prev
+hyper - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+hyper - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 
 # move managed window
 shift + ctrl - h : yabai -m window --warp west
@@ -19,12 +19,23 @@ shift + ctrl - j : yabai -m window --warp south
 shift + ctrl - k : yabai -m window --warp north
 shift + ctrl - l : yabai -m window --warp east
 
+# move floating window
+shift + ctrl + alt - h : yabai -m window --move rel:-20:0
+shift + ctrl + alt - j : yabai -m window --move rel:0:20
+shift + ctrl + alt - k : yabai -m window --move rel:0:-20
+shift + ctrl + alt - l : yabai -m window --move rel:20:0
+
+# move window to display and follow focus
+shift + ctrl - 1  : yabai -m window --display 1; yabai -m display --focus 1
+shift + ctrl - 2  : yabai -m window --display 2; yabai -m display --focus 2
+
 # adjust window size
 shift + alt - h : yabai -m window --resize left:-20:0; yabai -m window --resize right:-20:0
 shift + alt - j : yabai -m window --resize top:0:-20; yabai -m window --resize bottom:0:-20
 shift + alt - k : yabai -m window --resize top:0:20; yabai -m window --resize bottom:0:20
 shift + alt - l : yabai -m window --resize left:20:0; yabai -m window --resize right:20:0
 
+# actions
 hyper - b : yabai -m space --balance # Balance size of windows
 hyper - e : yabai -m window --toggle split # toggle window split type
 hyper - f : yabai -m window --toggle zoom-fullscreen # Toggle window zoom
@@ -33,24 +44,3 @@ hyper - s : yabai -m window --stack south
 hyper - t : yabai -m window --toggle float --grid 4:4:1:1:2:2 # float / un-float window and center on screen
 hyper - x : yabai -m space --mirror x-axis # Flip the tree horizontally
 hyper - y : yabai -m space --mirror y-axis # Flip the tree vertically
-
-
-# make floating window fill screen
-# shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
-
-# make floating window fill left-half of screen
-# shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
-
-# send window to monitor and follow focus
-ctrl + cmd - 1  : yabai -m window --display 1; yabai -m display --focus 1
-ctrl + cmd - 2  : yabai -m window --display 2; yabai -m display --focus 2
-
-# move floating window
-# shift + ctrl - a : yabai -m window --move rel:-20:0
-# shift + ctrl - s : yabai -m window --move rel:0:20
-
-# set insertion point in focused container
-# ctrl + alt - h : yabai -m window --insert west
-
-# toggle sticky(+float), picture-in-picture
-# alt - p : yabai -m window --toggle sticky --toggle pip
