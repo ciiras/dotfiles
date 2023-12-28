@@ -18,7 +18,7 @@ hyper - b : yabai -m space --balance # Balance size of windows
 hyper - e : yabai -m window --toggle split # toggle window split type
 hyper - f : yabai -m window --toggle zoom-fullscreen # Toggle window zoom
 hyper - r : yabai -m space --rotate 90 # Rotate the window tree clock-wise (options: 90, 180, 270 degree)
-hyper - s : yabai -m window --stack south
+hyper - s : yabai -m window --stack next ||yabai -m window --stack prev
 hyper - t : yabai -m window --toggle float --grid 4:4:1:1:2:2 # float / un-float window and center on screen
 hyper - x : yabai -m space --mirror x-axis # Flip the tree horizontally
 hyper - y : yabai -m space --mirror y-axis # Flip the tree vertically
