@@ -123,17 +123,16 @@ packer.startup(function(use)
         'nvim-telescope/telescope.nvim',
         tag = '0.1.4',
         requires = {
-            'nvim-lua/plenary.nvim'
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope-file-browser.nvim',
+            {
+                'nvim-telescope/telescope-fzf-native.nvim',
+                run = 'make'
+            },
+            'nvim-telescope/telescope-node-modules.nvim',
         },
         config = get_config('telescope'),
-    })                                                                                  -- Fuzzy finder
-    use ({
-        'nvim-telescope/telescope-file-browser.nvim'
-    })                                                                                  -- Telescope file browser
-    use ({
-        'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'make'
-    })                                                                                  -- Telescope sorter
+    })                                                                                  -- Telescope
     use ({
         'nvim-treesitter/nvim-treesitter',
         config = get_config('nvim-treesitter'),
