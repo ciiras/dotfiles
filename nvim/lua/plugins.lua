@@ -130,6 +130,7 @@ packer.startup(function(use)
                 run = 'make'
             },
             'nvim-telescope/telescope-node-modules.nvim',
+            'piersolenski/telescope-import.nvim',
         },
         config = get_config('telescope'),
     })                                                                                  -- Telescope
