@@ -47,5 +47,6 @@ yabai -m rule --add app="^Homerow$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Karabiner-EventViewer$" manage=off
 yabai -m rule --add app="^Docker Desktop$" manage=off
+yabai -m rule --add title='^Close Tab$' manage=off
 
 echo "yabai configuration loaded..."
