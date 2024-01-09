@@ -5,3 +5,4 @@
 .zcomp*
 Session.vim
 .luarc.json
+karabiner/automatic_backups/
