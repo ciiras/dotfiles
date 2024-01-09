@@ -48,5 +48,6 @@ yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Karabiner-EventViewer$" manage=off
 yabai -m rule --add app="^Docker Desktop$" manage=off
 yabai -m rule --add title='^Close Tab$' manage=off
+yabai -m rule --add title='^Zoom Meeting$' manage=off
 
 echo "yabai configuration loaded..."
