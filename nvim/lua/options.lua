@@ -37,6 +37,8 @@ opt.showcmd = true
 opt.showmatch = true
 opt.smartcase = true
 opt.smartindent = true
+opt.spell = true
+opt.spelllang = 'en_us'
 opt.splitbelow = true
 opt.splitright = true
 opt.swapfile = false
@@ -48,3 +50,4 @@ opt.ttimeoutlen = 0
 opt.undofile = true
 opt.updatetime = 300
 opt.wrap = false
+

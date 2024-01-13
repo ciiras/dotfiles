@@ -3,14 +3,12 @@ DOT_FILES_DIR=$USER_DIR/projects/dotfiles
 XDG_CONFIG_HOME=$USER_DIR/.config
 
 mkdir ~/.config
-mkdir ~/.config/cspell
 mkdir ~/.config/kitty
 mkdir ~/.config/nvim
 mkdir ~/.config/lua
 mkdir ~/.config/skhd
 mkdir ~/.config/yabai
 
-ln -sfF $DOT_FILES_DIR/cspell.json $XDG_CONFIG_HOME/cspell/cspell.json
 ln -sfF $DOT_FILES_DIR/karabiner $XDG_CONFIG_HOME/karabiner
 ln -sfF $DOT_FILES_DIR/kitty.conf $XDG_CONFIG_HOME/kitty/kitty.conf
 ln -sfF $DOT_FILES_DIR/nvim/after $XDG_CONFIG_HOME/nvim/after
