@@ -68,9 +68,11 @@ cmp.setup({
                 fallback()
             end
         end, {'i', 'c', 's'}),
-        ['<S-Tab>'] = cmp.mapping(function()
+        ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
+            else
+                fallback()
             end
         end, {'i', 'c', 's'})
     },

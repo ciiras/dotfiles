@@ -1,7 +1,7 @@
 local wilder = require('wilder')
 
 wilder.setup({
-    modes = {':'}
+    modes = {':'},
 })
 
 wilder.set_option('pipeline', {
