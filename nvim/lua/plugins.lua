@@ -53,7 +53,7 @@ packer.startup(function(use)
         'gelguy/wilder.nvim',
         config = get_config('wilder'),
         run = ':UpdateRemotePlugins'
-    })                                                                                  -- wildmenu plugin
+    })                                                                                  -- wild menu plugin
     use ({
         'glepnir/lspsaga.nvim',
         after = 'nvim-lspconfig',
@@ -63,7 +63,7 @@ packer.startup(function(use)
     use ({
         'hrsh7th/nvim-cmp',
         config = get_config('nvim-cmp'),
-    })                                                                                  -- Lsp autocomplete
+    })                                                                                  -- Lsp auto-complete
     use ({ 'hrsh7th/cmp-buffer' })
     use ({ 'hrsh7th/cmp-path' })
     use ({ 'hrsh7th/cmp-nvim-lua' })
@@ -97,7 +97,7 @@ packer.startup(function(use)
         requires = {
             'nvim-lua/plenary.nvim'
         },
-    })                                                                                  -- Lsp TypeScript utilities
+    })                                                                                  -- Lsp Typescript utilities
     use ({ 'junegunn/vim-peekaboo' })                                                   -- Register window
     use ({ 'kyazdani42/nvim-web-devicons' })                                            -- Icons
     use ({
@@ -146,7 +146,7 @@ packer.startup(function(use)
         requires = {
             'nvim-treesitter/nvim-treesitter',
         },
-    })                                                                                  -- Treesitter function/class textobjects
+    })                                                                                  -- Treesitter function/class text objects
     use ({
         'onsails/lspkind-nvim',
         requires = {
