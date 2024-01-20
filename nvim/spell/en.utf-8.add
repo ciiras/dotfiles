@@ -44,3 +44,5 @@ js
 gd
 JSX
 UI
+fitToCoordinates
+initialCamera
