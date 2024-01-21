@@ -14,7 +14,7 @@
 
 	# Plugins {{{
 
-    export ZSH_CACHE_DIR=/Users/$USER/.local/share/zinit # not sure why i have to do this to make OMZP::docker work
+    export ZSH_CACHE_DIR=$HOME/.local/share/zinit # not sure why i have to do this to make OMZP::docker work
 
 	zinit for \
 	    light-mode eendroroy/alien \
