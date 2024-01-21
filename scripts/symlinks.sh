@@ -1,8 +1,5 @@
-USER_DIR=/Users/$USER
-DOT_FILES_DIR=$USER_DIR/projects/dotfiles
-XDG_CONFIG_HOME=$USER_DIR/.config
+DOT_FILES_DIR=$HOME/projects/dotfiles
 
-mkdir -p ~/.config
 mkdir -p ~/.config/kitty
 mkdir -p ~/.config/nvim
 mkdir -p ~/.config/nvim/spell
@@ -19,8 +16,8 @@ ln -sfF $DOT_FILES_DIR/nvim/spell/en.utf-8.add $XDG_CONFIG_HOME/nvim/spell/en.ut
 ln -sfF $DOT_FILES_DIR/skhd/skhdrc $XDG_CONFIG_HOME/skhd/skhdrc
 ln -sfF $DOT_FILES_DIR/yabai/yabairc $XDG_CONFIG_HOME/yabai/yabairc
 
-ln -sfF $DOT_FILES_DIR/.amethyst.yml $USER_DIR/.amethyst.yml
-ln -sfF $DOT_FILES_DIR/.gitconfig $USER_DIR/.gitconfig
-ln -sfF $DOT_FILES_DIR/.gitignore $USER_DIR/.gitignore
-ln -sfF $DOT_FILES_DIR/.tmux.conf $USER_DIR/.tmux.conf
-ln -sfF $DOT_FILES_DIR/.zshrc $USER_DIR/.zshrc
+ln -sfF $DOT_FILES_DIR/.amethyst.yml $HOME/.amethyst.yml
+ln -sfF $DOT_FILES_DIR/.gitconfig $HOME/.gitconfig
+ln -sfF $DOT_FILES_DIR/.gitignore $HOME/.gitignore
+ln -sfF $DOT_FILES_DIR/.tmux.conf $HOME/.tmux.conf
+ln -sfF $DOT_FILES_DIR/.zshrc $HOME/.zshrc
