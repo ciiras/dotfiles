@@ -138,6 +138,7 @@ setopt SHARE_HISTORY             # Share history between all sessions.
 # Environment Variables {{{
 
 export CLICOLOR=1
+export DOT_FILES_DIR=$HOME/projects/dotfiles
 export EDITOR="nvim"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow"
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse-list --border"
@@ -161,8 +162,8 @@ export ODY_ENV=true # Needs to exist for ~/projects/od-env/build-node-docker/gen
 export SAVEHIST=10000
 export TERM="screen-256color"
 export VISUAL="nvim"
-export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 # }}}
