@@ -167,7 +167,7 @@ zstyle ':completion:*' matcher-list '' 'r:|?=** m:{a-z\-}={A-Z\_}'
 
 # }}}
 
-# Colours {{{
+# Colors {{{
 
 autoload colors; colors
 
@@ -183,7 +183,6 @@ export PR_RED PR_GREEN PR_YELLOW PR_BLUE PR_WHITE PR_BLACK
 export PR_BOLD_RED PR_BOLD_GREEN PR_BOLD_YELLOW PR_BOLD_BLUE
 export PR_BOLD_WHITE PR_BOLD_BLACK
 
-# Clear LSCOLORS
 unset LSCOLORS
 
 # }}}
