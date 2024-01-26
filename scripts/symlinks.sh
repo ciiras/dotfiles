@@ -31,4 +31,4 @@ createSymLink $DOT_FILES_DIR/.amethyst.yml $HOME/.amethyst.yml
 createSymLink $DOT_FILES_DIR/.gitconfig $HOME/.gitconfig
 createSymLink $DOT_FILES_DIR/.gitignore $HOME/.gitignore
 createSymLink $DOT_FILES_DIR/.tmux.conf $HOME/.tmux.conf
-createSymLink $DOT_FILES_DIR/.zshrc $HOME/.zshrc
+createSymLink $DOT_FILES_DIR/zsh/.zshrc $HOME/.zshrc
