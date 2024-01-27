@@ -20,5 +20,6 @@ export LSCOLORS=Gxfxcxdxbxegedabagacad
 export MANPAGER='less -X' # Don’t clear the screen after quitting a manual page
 export ODY_ENV=true # Needs to exist for ~/projects/od-env/build-node-docker/gendockerfile.sh generate w/ nodemon
 export SAVEHIST=10000
+export SHELL_SESSIONS_DISABLE=1
 export TERM='screen-256color'
 export VISUAL='nvim'
