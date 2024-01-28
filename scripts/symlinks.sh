@@ -33,7 +33,6 @@ createSymLink $DOT_FILES_DIR/yabai/yabairc $XDG_CONFIG_HOME/yabai/yabairc
 createSymLink $DOT_FILES_DIR/zsh/.zshenv $XDG_CONFIG_HOME/zsh/.zshenv
 createSymLink $DOT_FILES_DIR/zsh/.zshrc $XDG_CONFIG_HOME/zsh/.zshrc
 
-createSymLink $DOT_FILES_DIR/.amethyst.yml $HOME/.amethyst.yml
 createSymLink $DOT_FILES_DIR/.gitconfig $HOME/.gitconfig
 createSymLink $DOT_FILES_DIR/.gitignore $HOME/.gitignore
 createSymLink $DOT_FILES_DIR/.tmux.conf $HOME/.tmux.conf
