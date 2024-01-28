@@ -8,6 +8,7 @@ export GREP_OPTIONS='--color=auto'
 export HISTSIZE=10000
 export HOMEBREW_GITHUB_API_TOKEN="$(security find-generic-password -a "$USER" -s "HOMEBREW_GITHUB_API_TOKEN" -w)"
 export KEYTIMEOUT=1
+export LESSHISTSIZE=0
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
 export LESS_TERMCAP_me=$'\e[0m'
