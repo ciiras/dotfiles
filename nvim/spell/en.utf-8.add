@@ -138,3 +138,6 @@ containsTime
 undefined
 ensureAddress
 toISOString
+GetTripLegDetailsSummaryReplay
+distanceFromCenter
+GetTripLeg
