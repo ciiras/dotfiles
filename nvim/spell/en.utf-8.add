@@ -141,3 +141,4 @@ toISOString
 GetTripLegDetailsSummaryReplay
 distanceFromCenter
 GetTripLeg
+parens
