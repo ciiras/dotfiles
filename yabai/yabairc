@@ -42,11 +42,13 @@ yabai -m rule --add title='Settings$' manage=off
 # float apps
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Bartender 5$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Docker Desktop$" manage=off
 yabai -m rule --add app="^GlobalProtect$" manage=off
 yabai -m rule --add app="^Homerow$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Karabiner-EventViewer$" manage=off
-yabai -m rule --add app="^Docker Desktop$" manage=off
+
 yabai -m rule --add title='^Close Tab$' manage=off
 yabai -m rule --add title='^Zoom Meeting$' manage=off
 
