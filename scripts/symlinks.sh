@@ -37,4 +37,4 @@ createSymLink $DOT_FILES_DIR/.gitconfig $HOME/.gitconfig
 createSymLink $DOT_FILES_DIR/.gitignore $HOME/.gitignore
 createSymLink $DOT_FILES_DIR/.tmux.conf $HOME/.tmux.conf
 
-createSymLink $DOT_FILES_DIR/zsh/zshenv /private/etc/zshenv sudo
+createSymLink $DOT_FILES_DIR/zsh/zshenv /etc/zshenv sudo
