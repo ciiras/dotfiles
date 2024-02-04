@@ -1,5 +1,5 @@
 require('globals')
-require('plugins')
 require('options')
+require('plugins')
 require('mappings')
 require('autocmds')
