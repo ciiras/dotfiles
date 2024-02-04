@@ -1,201 +1,216 @@
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-  Packer_Bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-  exec([[packadd packer.nvim]], false)
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
-
-local packer = require('packer')
-packer.init({
-    enable = true,
-    threshold = 0,
-    max_jobs = 20,
-    display = {
-        open_fn = function()
-            return require('packer.util').float({ border = 'rounded' })
-        end,
-    },
-})
+vim.opt.rtp:prepend(lazypath)
 
 local function get_config(name)
-    return string.format('require("config/%s")', name)
+    return load(string.format('require("config/%s")', name))
 end
 
-packer.startup(function(use)
-    use ({ 'wbthomason/packer.nvim' })                                                  -- packer management
-
-    use ({ 'christoomey/vim-sort-motion' })                                             -- Sort motions
-    use ({ 'christoomey/vim-tmux-navigator' })                                          -- tmux/nvim window/pane/split management
-    use ({
+local plugins = {
+    {   -- Sort motions
+        'christoomey/vim-sort-motion',
+    },
+    {   -- tmux/nvim window/pane/split management
+        'christoomey/vim-tmux-navigator'
+    },
+    {   -- Custom view/edit for Lsp definitions and references
         'DNLHC/glance.nvim',
-        config = get_config('glance'),
-    })                                                                                  -- Custom view/edit for Lsp definitions and references
-    use ({ 'dstein64/vim-startuptime' })                                                -- Startup time profiling
-    use {
+        init = get_config('glance'),
+    },
+    {   -- Startup time profiling
+        'dstein64/vim-startuptime',
+    },
+    {   -- Highlight current indent
         'echasnovski/mini.indentscope',
         branch = 'stable',
-        config = get_config('mini-indentscope'),
-    }                                                                                   -- Highlight current indent
-    use {
+        init = get_config('mini-indentscope'),
+    },
+    {   -- Surround motions
         'echasnovski/mini.surround',
         branch = 'stable',
-        config = get_config('mini-surround'),
-    }                                                                                   -- Surround motions
-    use ({
+        init = get_config('mini-surround'),
+    },
+    {   -- Color scheme
         'EdenEast/nightfox.nvim',
-        config = get_config('nightfox'),
-    })                                                                                  -- Color scheme
-    use ({ 'famiu/bufdelete.nvim' })                                                    -- Delete buffer w/o closing window
-    use ({
+        init = get_config('nightfox'),
+    },
+    {   -- Delete buffer w/o closing window
+        'famiu/bufdelete.nvim'
+    },
+    {   -- Diagnostics quick fix list
         'folke/trouble.nvim',
-        config = get_config('trouble'),
-    })                                                                                  -- Diagnostics quick fix list
-    use ({
+        init = get_config('trouble'),
+    },
+    {   -- wild menu plugin
         'gelguy/wilder.nvim',
-        config = get_config('wilder'),
-        run = ':UpdateRemotePlugins'
-    })                                                                                  -- wild menu plugin
-    use ({
+        init = get_config('wilder'),
+        build = ':UpdateRemotePlugins',
+    },
+    {   -- Lsp UI upgrade
         'glepnir/lspsaga.nvim',
-        after = 'nvim-lspconfig',
         branch = 'main',
-        config = get_config('lspsaga'),
-    })                                                                                  -- Lsp UI upgrade
-    use ({
+        init = get_config('lspsaga'),
+    },
+    {   -- Lsp auto-complete
         'hrsh7th/nvim-cmp',
-        config = get_config('nvim-cmp'),
-    })                                                                                  -- Lsp auto-complete
-    use ({ 'hrsh7th/cmp-buffer' })
-    use ({ 'hrsh7th/cmp-path' })
-    use ({ 'hrsh7th/cmp-nvim-lua' })
-    use ({ 'hrsh7th/cmp-nvim-lsp' })
-    use ({ 'hrsh7th/cmp-nvim-lsp-document-symbol' })
-    use ({
+        init = get_config('nvim-cmp'),
+        dependencies = {
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-nvim-lua',
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-nvim-lsp-document-symbol',
+        },
+    },
+    {   -- Color visualizer
         'norcalli/nvim-colorizer.lua',
-        config = get_config('nvim-colorizer'),
-    })                                                                                  -- Color visualizer
-    use ({
+        init = get_config('nvim-colorizer'),
+    },
+    {   -- Mason/null-ls auto installer
         'jayp0521/mason-null-ls.nvim',
         event = { 'BufReadPre', 'BufNewFile' },
         dependencies = {
             'williamboman/mason.nvim',
             'jose-elias-alvarez/null-ls.nvim',
         },
-    })                                                                                  -- Mason/null-ls auto installer
-    use ({
+    },
+    {   -- Comment String extension (JSX support)
         'JoosepAlviste/nvim-ts-context-commentstring',
-        config = get_config('ts-context-commentstring'),
-    })                                                                                  -- Comment String extension (JSX support)
-    use ({
+        init = get_config('ts-context-commentstring'),
+    },
+    {   -- Non Lsp Client hooks
         'jose-elias-alvarez/null-ls.nvim',
-        config = get_config('null-ls'),
-        requires = {
+        init = get_config('null-ls'),
+        dependencies = {
             'nvim-lua/plenary.nvim',
         },
-    })                                                                                  -- Non Lsp Client hooks
-    use ({
+    },
+    {   -- Lsp Typescript utilities
         'jose-elias-alvarez/nvim-lsp-ts-utils',
-        requires = {
+        dependencies = {
             'nvim-lua/plenary.nvim'
         },
-    })                                                                                  -- Lsp Typescript utilities
-    use ({ 'junegunn/vim-peekaboo' })                                                   -- Register window
-    use ({ 'kyazdani42/nvim-web-devicons' })                                            -- Icons
-    use ({
+    },
+    {   -- Register window
+        'junegunn/vim-peekaboo'
+    },
+    {   -- Git gutter info
         'lewis6991/gitsigns.nvim',
-        config = get_config('gitsigns'),
-    })                                                                                  -- Git gutter info
-    use ({ 'markstory/vim-zoomwin' })                                                   -- <leader>z
-    use ({ 'moll/vim-node' })                                                           -- gd for Node.js require(...)
-    use ({ 'RRethy/vim-illuminate' })                                                   -- Highlight word under cursor
-    use ({
+        init = get_config('gitsigns'),
+    },
+    {   -- <leader>z
+        'markstory/vim-zoomwin'
+    },
+    {   -- gd for Node.js require(...)
+        'moll/vim-node'
+    },
+    {   -- Highlight word under cursor
+        'RRethy/vim-illuminate'
+    },
+    {   -- Lsp config
         'neovim/nvim-lspconfig',
-        config = get_config('nvim-lspconfig'),
-    })                                                                                  -- Lsp config
-    use ({
+        init = get_config('nvim-lspconfig'),
+    },
+    {   -- Comments
         'numToStr/Comment.nvim',
-        config = get_config('Comment'),
-    })                                                                                  -- Comments
-    use ({
+        init = get_config('Comment'),
+    },
+    {   -- Status line
         'nvim-lualine/lualine.nvim',
-        config = get_config('lualine'),
-    })                                                                                  -- Status line
-    use ({
+        init = get_config('lualine'),
+    },
+    {   -- Telescope
         'nvim-telescope/telescope.nvim',
         tag = '0.1.4',
-        requires = {
+        dependencies = {
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-file-browser.nvim',
             {
                 'nvim-telescope/telescope-fzf-native.nvim',
-                run = 'make'
+                build = 'make'
             },
             'nvim-telescope/telescope-node-modules.nvim',
             'piersolenski/telescope-import.nvim',
         },
-        config = get_config('telescope'),
-    })                                                                                  -- Telescope
-    use ({
+        init = get_config('telescope'),
+    },
+    {   -- Treesitter
         'nvim-treesitter/nvim-treesitter',
-        config = get_config('nvim-treesitter'),
-        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end
-    })                                                                                  -- Treesitter
-    use({
+        init = get_config('nvim-treesitter'),
+        build = function() require('nvim-treesitter.install').update({ with_sync = true }) end
+    },
+    {   -- Treesitter function/class text objects
         'nvim-treesitter/nvim-treesitter-textobjects',
-        after = 'nvim-treesitter',
-        config = get_config('nvim-treesitter-textobjects'),
-        requires = {
+        init = get_config('nvim-treesitter-textobjects'),
+        dependencies = {
             'nvim-treesitter/nvim-treesitter',
         },
-    })                                                                                  -- Treesitter function/class text objects
-    use ({
+    },
+    {   -- LSP pictograms
         'onsails/lspkind-nvim',
-        requires = {
+        dependencies = {
             'famiu/bufdelete.nvim',
         },
-    })
-    use ({
+    },
+    {   -- Tabs
         'romgrk/barbar.nvim',
-        config = get_config('barbar'),
-        requires = {
+        init = get_config('barbar'),
+        dependencies = {
             'lewis6991/gitsigns.nvim',
             'nvim-tree/nvim-web-devicons',
         },
-    })                                                                                  -- Tabs
-    use ({ 'tamago324/cmp-zsh' })                                                       -- ZSH auto completion
-    use ({ 'tzachar/cmp-fuzzy-buffer',
-        requires = {'hrsh7th/nvim-cmp', 'tzachar/fuzzy.nvim'}
-    })                                                                                  -- nvim-cmp fuzzy finder for / and ?
-    use ({ 'tpope/vim-fugitive', })                                                     -- Git commands
-    use ({ 'tpope/vim-obsession' })                                                     -- Session management
-    use ({ 'tpope/vim-repeat' })                                                        -- Better Repeat
-    use ({ 'tpope/vim-unimpaired' })                                                    -- Useful key mappings
-    use ({
+    },
+    {   -- ZSH auto completion
+        'tamago324/cmp-zsh'
+    },
+    {   -- nvim-cmp fuzzy finder for / and ?
+        'tzachar/cmp-fuzzy-buffer',
+        dependencies = {
+            'hrsh7th/nvim-cmp',
+            'tzachar/fuzzy.nvim',
+        },
+    },
+    {   -- Git commands
+        'tpope/vim-fugitive',
+    },
+    {   -- Session management
+        'tpope/vim-obsession'
+    },
+    {   -- Better Repeat
+        'tpope/vim-repeat'
+    },
+    {   -- Useful key mappings
+        'tpope/vim-unimpaired'
+    },
+    {   -- Wiki
         'vimwiki/vimwiki',
-        config = get_config('vimwiki'),
-    })                                                                                  -- Wiki
-    use ({
+        init = get_config('vimwiki'),
+    },
+    {   -- Lsp install management
         'williamboman/mason.nvim',
-    })                                                                                  -- Lsp install management
-    use ({
+    },
+    {   -- Lsp config interop
         'williamboman/mason-lspconfig.nvim',
-    })                                                                                  -- Lsp config interop
-    use ({
+    },
+    {   -- Auto close (), [], {}, '', "", etc...
         'windwp/nvim-autopairs',
-        config = get_config('nvim-autopairs'),
-    })                                                                                  -- Auto close (), [], {}, '', "", etc...
-    use ({
+        init = get_config('nvim-autopairs'),
+    },
+    {   -- Auto close <div> etc...
         'windwp/nvim-ts-autotag',
-        config = get_config('nvim-ts-autotag'),
-    })                                                                                  -- Auto close <div> etc...
+        init = get_config('nvim-ts-autotag'),
+    },
+}
 
-    if Packer_Bootstrap then
-        packer.sync()
-    end
-end)
+local opts = {}
 
-exec([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile profile=true
-  augroup end
-]], false)
+require("lazy").setup(plugins, opts)
