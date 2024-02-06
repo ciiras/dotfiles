@@ -14,14 +14,20 @@ createSymLink() {
     echo "symlink $dest_path CREATED"
 }
 
+mkdir -p ~/.config/git
 mkdir -p ~/.config/kitty
 mkdir -p ~/.config/nvim
 mkdir -p ~/.config/nvim/spell
 mkdir -p ~/.config/lua
 mkdir -p ~/.config/skhd
+mkdir -p ~/.config/tmux
 mkdir -p ~/.config/yabai
 mkdir -p ~/.config/zsh
 
+createSymLink $DOT_FILES_DIR/zsh/zshenv /etc/zshenv sudo
+
+createSymLink $DOT_FILES_DIR/git/config $XDG_CONFIG_HOME/git/config
+createSymLink $DOT_FILES_DIR/git/ignore $XDG_CONFIG_HOME/git/ignore
 createSymLink $DOT_FILES_DIR/karabiner $XDG_CONFIG_HOME/karabiner
 createSymLink $DOT_FILES_DIR/kitty/kitty.conf $XDG_CONFIG_HOME/kitty/kitty.conf
 createSymLink $DOT_FILES_DIR/nvim/after $XDG_CONFIG_HOME/nvim/after
@@ -33,8 +39,3 @@ createSymLink $DOT_FILES_DIR/tmux/.tmux.conf $HOME/.tmux.conf
 createSymLink $DOT_FILES_DIR/yabai/yabairc $XDG_CONFIG_HOME/yabai/yabairc
 createSymLink $DOT_FILES_DIR/zsh/.zshenv $XDG_CONFIG_HOME/zsh/.zshenv
 createSymLink $DOT_FILES_DIR/zsh/.zshrc $XDG_CONFIG_HOME/zsh/.zshrc
-
-createSymLink $DOT_FILES_DIR/.gitconfig $HOME/.gitconfig
-createSymLink $DOT_FILES_DIR/.gitignore $HOME/.gitignore
-
-createSymLink $DOT_FILES_DIR/zsh/zshenv /etc/zshenv sudo

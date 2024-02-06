@@ -7,12 +7,12 @@
 .docker
 .DS_Store
 .flipper
-.git/
+.git
 .local
 .luarc.json
 .next
 .Trash
-.vim/
+.vim
 .zcomp*
-karabiner/automatic_backups/
+karabiner/automatic_backups
 Session.vim

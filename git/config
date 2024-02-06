@@ -1,5 +1,5 @@
 [core]
-    excludesfile = ~/.gitignore
+    excludesfile = ~/.config/git/ignore
     pager = diffr | less -+X -+F --mouse
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
