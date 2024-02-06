@@ -35,7 +35,7 @@ createSymLink $DOT_FILES_DIR/nvim/init.lua $XDG_CONFIG_HOME/nvim/init.lua
 createSymLink $DOT_FILES_DIR/nvim/lua $XDG_CONFIG_HOME/nvim/lua
 createSymLink $DOT_FILES_DIR/nvim/spell/en.utf-8.add $XDG_CONFIG_HOME/nvim/spell/en.utf-8.add
 createSymLink $DOT_FILES_DIR/skhd/skhdrc $XDG_CONFIG_HOME/skhd/skhdrc
-createSymLink $DOT_FILES_DIR/tmux/.tmux.conf $HOME/.tmux.conf
+createSymLink $DOT_FILES_DIR/tmux/tmux.conf $XDG_CONFIG_HOME/tmux/tmux.conf
 createSymLink $DOT_FILES_DIR/yabai/yabairc $XDG_CONFIG_HOME/yabai/yabairc
 createSymLink $DOT_FILES_DIR/zsh/.zshenv $XDG_CONFIG_HOME/zsh/.zshenv
 createSymLink $DOT_FILES_DIR/zsh/.zshrc $XDG_CONFIG_HOME/zsh/.zshrc
