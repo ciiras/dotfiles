@@ -23,7 +23,7 @@ mkdir -p ~/.config/yabai
 mkdir -p ~/.config/zsh
 
 createSymLink $DOT_FILES_DIR/karabiner $XDG_CONFIG_HOME/karabiner
-createSymLink $DOT_FILES_DIR/kitty.conf $XDG_CONFIG_HOME/kitty/kitty.conf
+createSymLink $DOT_FILES_DIR/kitty/kitty.conf $XDG_CONFIG_HOME/kitty/kitty.conf
 createSymLink $DOT_FILES_DIR/nvim/after $XDG_CONFIG_HOME/nvim/after
 createSymLink $DOT_FILES_DIR/nvim/init.lua $XDG_CONFIG_HOME/nvim/init.lua
 createSymLink $DOT_FILES_DIR/nvim/lua $XDG_CONFIG_HOME/nvim/lua
