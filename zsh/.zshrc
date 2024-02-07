@@ -177,35 +177,34 @@ eval "$(rbenv init - zsh)"
 # Aliases {{{
 
 alias -- -='cd -'
-alias cl="clear"
-alias code="code-insiders"
-alias d="docker"
-alias dc="docker-compose"
-alias g="nocorrect git"
-alias gdsw="gds --word-diff"
-alias glrbd="git pull --rebase origin develop"
-alias glrbm="git pull --rebase origin master"
-alias gmv="git mv"
-alias gpu="git push -u origin HEAD"
-alias gr="git reset"
-alias grh="git reset --hard"
-alias grs="git reset --soft"
-alias gsta="git stash save"
-alias gstapa="git stash save -p"
-alias gstau="git stash save -u"
-alias history="history 0"
-alias k="kubectl"
-alias l="ls -AHlh"
-alias ls="ls"
-alias ne="nodenv"
-alias nrl="npm run lint"
+alias cat=bat
+alias cl=clear
+alias d=docker
+alias dc=docker-compose
+alias g='nocorrect git'
+alias gdsw='gds --word-diff'
+alias glrbd='git pull --rebase origin develop'
+alias glrbm='git pull --rebase origin master'
+alias gmv='git mv'
+alias gpu='git push -u origin HEAD'
+alias gr='git reset'
+alias grh='git reset --hard'
+alias grs='git reset --soft'
+alias gsta='git stash save'
+alias gstapa='git stash save -p'
+alias gstau='git stash save -u'
+alias history='history 0'
+alias k=kubectl
+alias l='eza --long -all --git'
+alias ne=nodenv
+alias nrl='npm run lint'
 alias r="source $ZDOTDIR/.zshrc"
-alias rc="~/projects/od-env/build-node-docker/render-consul-template.sh"
-alias rd="~/projects/od-env/build-node-docker/gendockerfile.sh"
-alias rm="trash"
-alias t="tmux"
-alias vi="nvim"
-alias v="nvim"
+alias rc=~/projects/od-env/build-node-docker/render-consul-template.sh
+alias rd=~/projects/od-env/build-node-docker/gendockerfile.sh
+alias rm=trash
+alias t=tmux
+alias vi=nvim
+alias v=nvim
 
 # }}}
 
