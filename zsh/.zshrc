@@ -18,8 +18,7 @@
 
 	zinit for \
 	    light-mode eendroroy/alien \
-	    marlonrichert/zsh-autocomplete \
-        as"completions" OMZP::docker/completions/_docker \
+	    marlonrichert/zsh-autocomplete as"completions" OMZP::docker/completions/_docker \
 	    OMZP::docker \
 	    OMZP::docker-compose \
 	    OMZP::git \
@@ -27,11 +26,11 @@
 	    zsh-users/zsh-autosuggestions
 
 	zinit wait lucid for \
-	    light-mode agkozak/zsh-z \
 	    kutsan/zsh-system-clipboard \
 	    MichaelAquilina/zsh-you-should-use \
 	    zsh-users/zsh-completions \
-	    zsh-users/zsh-syntax-highlighting
+	    zsh-users/zsh-syntax-highlighting \
+        z-shell/zsh-zoxide
 
 	# }}}
 
@@ -121,7 +120,6 @@ timezsh() {
 
 # Settings {{{
 
-setopt AUTO_CD                   # cd is the default command
 setopt CORRECT                   # Spelling correction
 setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.
 setopt HIST_EXPIRE_DUPS_FIRST    # Expire a duplicate event first when trimming history.
@@ -176,7 +174,6 @@ eval "$(rbenv init - zsh)"
 
 # Aliases {{{
 
-alias -- -='cd -'
 alias cat=bat
 alias cl=clear
 alias d=docker
