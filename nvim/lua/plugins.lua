@@ -50,6 +50,11 @@ local plugins = {
         'folke/trouble.nvim',
         init = get_config('trouble'),
     },
+    {
+      "folke/which-key.nvim",
+      event = "VeryLazy",
+      opts = {}
+    },
     {   -- wild menu plugin
         'gelguy/wilder.nvim',
         init = get_config('wilder'),
