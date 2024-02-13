@@ -22,7 +22,6 @@ opt.history = 100
 opt.hlsearch = true
 opt.ignorecase = true
 opt.incsearch = true
-opt.lazyredraw = true
 opt.list = true
 opt.listchars = {tab = '›⋅', eol = '↲', space = '⋅'}
 opt.mouse = 'a'

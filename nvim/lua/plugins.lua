@@ -46,6 +46,18 @@ local plugins = {
     {   -- Delete buffer w/o closing window
         'famiu/bufdelete.nvim'
     },
+    {
+        'folke/noice.nvim',
+        event = "VeryLazy",
+        init = get_config('noice'),
+        dependencies = {
+            'MunifTanjim/nui.nvim',
+            {
+                'rcarriga/nvim-notify',
+                init = get_config('notify'),
+            },
+        },
+    },
     {   -- Diagnostics quick fix list
         'folke/trouble.nvim',
         init = get_config('trouble'),
@@ -118,6 +130,9 @@ local plugins = {
     {   -- gd for Node.js require(...)
         'moll/vim-node'
     },
+    {
+        'MunifTanjim/nui.nvim'
+    },
     {   -- Highlight word under cursor
         'RRethy/vim-illuminate'
     },
@@ -165,6 +180,9 @@ local plugins = {
         dependencies = {
             'famiu/bufdelete.nvim',
         },
+    },
+    {
+        'rcarriga/nvim-notify',
     },
     {   -- Tabs
         'romgrk/barbar.nvim',
