@@ -45,7 +45,6 @@ local plugins = {
     },
     {
         'folke/noice.nvim',
-        init = get_config('noice'),
         dependencies = {
             'MunifTanjim/nui.nvim',
             {
@@ -53,6 +52,7 @@ local plugins = {
                 init = get_config('notify'),
             },
         },
+        init = get_config('noice'),
     },
     {   -- Diagnostics quick fix list
         'folke/trouble.nvim',
@@ -64,8 +64,8 @@ local plugins = {
     },
     {   -- wild menu plugin
         'gelguy/wilder.nvim',
-        init = get_config('wilder'),
         build = ':UpdateRemotePlugins',
+        init = get_config('wilder'),
     },
     {   -- Lsp UI upgrade
         'glepnir/lspsaga.nvim',
@@ -74,7 +74,6 @@ local plugins = {
     },
     {   -- Lsp auto-complete
         'hrsh7th/nvim-cmp',
-        init = get_config('nvim-cmp'),
         dependencies = {
             'hrsh7th/cmp-buffer',
             'hrsh7th/cmp-path',
@@ -82,6 +81,7 @@ local plugins = {
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-nvim-lsp-document-symbol',
         },
+        init = get_config('nvim-cmp'),
     },
     {   -- Color visualizer
         'norcalli/nvim-colorizer.lua',
@@ -89,10 +89,13 @@ local plugins = {
     },
     {   -- Mason/null-ls auto installer
         'jayp0521/mason-null-ls.nvim',
-        event = { 'BufReadPre', 'BufNewFile' },
         dependencies = {
             'williamboman/mason.nvim',
             'jose-elias-alvarez/null-ls.nvim',
+        },
+        event = {
+            'BufReadPre',
+            'BufNewFile'
         },
     },
     {   -- Comment String extension (JSX support)
@@ -101,10 +104,10 @@ local plugins = {
     },
     {   -- Non Lsp Client hooks
         'jose-elias-alvarez/null-ls.nvim',
-        init = get_config('null-ls'),
         dependencies = {
             'nvim-lua/plenary.nvim',
         },
+        init = get_config('null-ls'),
     },
     {   -- Lsp Typescript utilities
         'jose-elias-alvarez/nvim-lsp-ts-utils',
@@ -145,7 +148,6 @@ local plugins = {
     },
     {   -- Telescope
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.4',
         dependencies = {
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-file-browser.nvim',
@@ -156,19 +158,20 @@ local plugins = {
             'nvim-telescope/telescope-node-modules.nvim',
             'piersolenski/telescope-import.nvim',
         },
+        tag = '0.1.4',
         init = get_config('telescope'),
     },
     {   -- Treesitter
         'nvim-treesitter/nvim-treesitter',
+        build = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
         init = get_config('nvim-treesitter'),
-        build = function() require('nvim-treesitter.install').update({ with_sync = true }) end
     },
     {   -- Treesitter function/class text objects
         'nvim-treesitter/nvim-treesitter-textobjects',
-        init = get_config('nvim-treesitter-textobjects'),
         dependencies = {
             'nvim-treesitter/nvim-treesitter',
         },
+        init = get_config('nvim-treesitter-textobjects'),
     },
     {   -- LSP pictograms
         'onsails/lspkind-nvim',
@@ -181,21 +184,21 @@ local plugins = {
     },
     {   -- Tabs
         'romgrk/barbar.nvim',
-        init = get_config('barbar'),
         dependencies = {
             'lewis6991/gitsigns.nvim',
             'nvim-tree/nvim-web-devicons',
         },
+        init = get_config('barbar'),
     },
     {   -- ZSH auto completion
         'tamago324/cmp-zsh'
     },
     {   -- nvim-cmp fuzzy finder for / and ?
-        'tzachar/cmp-fuzzy-buffer',
         dependencies = {
             'hrsh7th/nvim-cmp',
             'tzachar/fuzzy.nvim',
         },
+        'tzachar/cmp-fuzzy-buffer',
     },
     {   -- Git commands
         'tpope/vim-fugitive',
