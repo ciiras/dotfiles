@@ -18,9 +18,11 @@ end
 local plugins = {
     {   -- Sort motions
         'christoomey/vim-sort-motion',
+        event = 'VeryLazy',
     },
     {   -- tmux/nvim window/pane/split management
-        'christoomey/vim-tmux-navigator'
+        'christoomey/vim-tmux-navigator',
+        event = 'VeryLazy',
     },
     {   -- Custom view/edit for Lsp definitions and references
         'DNLHC/glance.nvim',
@@ -60,6 +62,7 @@ local plugins = {
     },
     {
         'folke/which-key.nvim',
+        event = 'VeryLazy',
         opts = {},
     },
     {   -- wild menu plugin
@@ -93,10 +96,7 @@ local plugins = {
             'williamboman/mason.nvim',
             'jose-elias-alvarez/null-ls.nvim',
         },
-        event = {
-            'BufReadPre',
-            'BufNewFile'
-        },
+        event = 'VeryLazy',
     },
     {   -- Comment String extension (JSX support)
         'JoosepAlviste/nvim-ts-context-commentstring',
@@ -114,25 +114,30 @@ local plugins = {
         dependencies = {
             'nvim-lua/plenary.nvim'
         },
+        event = 'VeryLazy',
     },
     {   -- Register window
-        'junegunn/vim-peekaboo'
+        'junegunn/vim-peekaboo',
+        event = 'VeryLazy',
     },
     {   -- Git gutter info
         'lewis6991/gitsigns.nvim',
         init = get_config('gitsigns'),
     },
     {   -- <leader>z
-        'markstory/vim-zoomwin'
+        'markstory/vim-zoomwin',
+        event = 'VeryLazy',
     },
     {   -- gd for Node.js require(...)
-        'moll/vim-node'
+        'moll/vim-node',
+        event = 'VeryLazy',
     },
     {
         'MunifTanjim/nui.nvim'
     },
     {   -- Highlight word under cursor
-        'RRethy/vim-illuminate'
+        'RRethy/vim-illuminate',
+        event = 'VeryLazy',
     },
     {   -- Lsp config
         'neovim/nvim-lspconfig',
@@ -171,6 +176,7 @@ local plugins = {
         dependencies = {
             'nvim-treesitter/nvim-treesitter',
         },
+        event = 'VeryLazy',
         init = get_config('nvim-treesitter-textobjects'),
     },
     {   -- LSP pictograms
@@ -191,30 +197,36 @@ local plugins = {
         init = get_config('barbar'),
     },
     {   -- ZSH auto completion
-        'tamago324/cmp-zsh'
+        'tamago324/cmp-zsh',
+        event = 'VeryLazy',
     },
     {   -- nvim-cmp fuzzy finder for / and ?
+        'tzachar/cmp-fuzzy-buffer',
         dependencies = {
             'hrsh7th/nvim-cmp',
             'tzachar/fuzzy.nvim',
         },
-        'tzachar/cmp-fuzzy-buffer',
+        event = 'VeryLazy',
     },
     {   -- Git commands
         'tpope/vim-fugitive',
+        event = 'VeryLazy',
     },
     {   -- Session management
         'tpope/vim-obsession',
         lazy = false,
     },
     {   -- Better Repeat
-        'tpope/vim-repeat'
+        'tpope/vim-repeat',
+        event = 'VeryLazy',
     },
     {   -- Useful key mappings
-        'tpope/vim-unimpaired'
+        'tpope/vim-unimpaired',
+        event = 'VeryLazy',
     },
     {   -- Wiki
         'vimwiki/vimwiki',
+        event = 'VeryLazy',
         init = get_config('vimwiki'),
     },
     {   -- Lsp install management
@@ -229,6 +241,7 @@ local plugins = {
     },
     {   -- Auto close <div> etc...
         'windwp/nvim-ts-autotag',
+        event = 'VeryLazy',
         init = get_config('nvim-ts-autotag'),
     },
 }
