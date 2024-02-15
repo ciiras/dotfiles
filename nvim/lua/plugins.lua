@@ -26,9 +26,6 @@ local plugins = {
         'DNLHC/glance.nvim',
         init = get_config('glance'),
     },
-    {   -- Startup time profiling
-        'dstein64/vim-startuptime',
-    },
     {   -- Highlight current indent
         'echasnovski/mini.indentscope',
         branch = 'stable',
@@ -44,11 +41,10 @@ local plugins = {
         init = get_config('nightfox'),
     },
     {   -- Delete buffer w/o closing window
-        'famiu/bufdelete.nvim'
+        'famiu/bufdelete.nvim',
     },
     {
         'folke/noice.nvim',
-        event = "VeryLazy",
         init = get_config('noice'),
         dependencies = {
             'MunifTanjim/nui.nvim',
@@ -63,9 +59,8 @@ local plugins = {
         init = get_config('trouble'),
     },
     {
-      "folke/which-key.nvim",
-      event = "VeryLazy",
-      opts = {}
+        'folke/which-key.nvim',
+        opts = {},
     },
     {   -- wild menu plugin
         'gelguy/wilder.nvim',
@@ -206,7 +201,8 @@ local plugins = {
         'tpope/vim-fugitive',
     },
     {   -- Session management
-        'tpope/vim-obsession'
+        'tpope/vim-obsession',
+        lazy = false,
     },
     {   -- Better Repeat
         'tpope/vim-repeat'
@@ -234,6 +230,10 @@ local plugins = {
     },
 }
 
-local opts = {}
+local opts = {
+    defaults = {
+        lazy = true,
+    },
+}
 
 require("lazy").setup(plugins, opts)
