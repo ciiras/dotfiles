@@ -14,6 +14,7 @@ createSymLink() {
     echo "symlink $dest_path CREATED"
 }
 
+mkdir -p ~/.config/borders
 mkdir -p ~/.config/git
 mkdir -p ~/.config/kitty
 mkdir -p ~/.config/nvim
@@ -26,6 +27,7 @@ mkdir -p ~/.config/zsh
 
 createSymLink $DOT_FILES_DIR/zsh/zshenv /etc/zshenv sudo
 
+createSymLink $DOT_FILES_DIR/borders/bordersrc $XDG_CONFIG_HOME/borders/bordersrc
 createSymLink $DOT_FILES_DIR/git/config $XDG_CONFIG_HOME/git/config
 createSymLink $DOT_FILES_DIR/git/ignore $XDG_CONFIG_HOME/git/ignore
 createSymLink $DOT_FILES_DIR/karabiner $XDG_CONFIG_HOME/karabiner
