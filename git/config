@@ -11,7 +11,7 @@
     name = Christopher Griffith
     email = christopher.griffith@taillight.com
 [init]
-    templatedir = ~/.git-templates
+    templatedir = ~/projects/od-env/projects/git-templates
 [fetch]
     prune = true
 [alias]
