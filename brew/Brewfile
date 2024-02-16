@@ -22,6 +22,7 @@ brew "python@3.11"
 brew "awscli"
 brew "bat"
 brew "berkeley-db", link: true
+brew "btop"
 brew "cmatrix"
 brew "diffr"
 brew "dnsmasq", restart_service: true
