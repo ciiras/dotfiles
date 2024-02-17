@@ -8,10 +8,16 @@ opt = vim.opt
 keymap_options = { noremap = true, silent = true }
 
 local function merge(tbl1, tbl2)
+    local tbl = {}
+
     for k,v in pairs(tbl1) do
-        tbl2[k] = v
+        tbl[k] = v
     end
-    return tbl2
+    for k,v in pairs(tbl2) do
+        tbl[k] = v
+    end
+
+    return tbl
 end
 
 local function map(mode, keymap, cmd, opts)
