@@ -154,6 +154,7 @@ local plugins = {
     {   -- Telescope
         'nvim-telescope/telescope.nvim',
         dependencies = {
+            'debugloop/telescope-undo.nvim',
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-file-browser.nvim',
             {
