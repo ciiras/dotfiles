@@ -245,6 +245,10 @@ local plugins = {
         event = 'VeryLazy',
         init = get_config('nvim-ts-autotag'),
     },
+    {
+        'xiyaowong/transparent.nvim',
+        lazy = false,
+    },
 }
 
 local opts = {
