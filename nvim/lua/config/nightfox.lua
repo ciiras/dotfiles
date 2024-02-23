@@ -8,11 +8,12 @@ require('nightfox').setup({
     },
     groups = {
         all = {
-            IncSearch = { fg ='#393b44', bg = '#F4A261' },
-            Search = { fg ='#393b44', bg = '#F4A261' },
-            CursorLine = { bg = '#1C1C1C' },
             CursorColumn = { bg = '#1C1C1C' },
+            CursorLine = { bg = '#1C1C1C' },
+            IncSearch = { fg ='#393B44', bg = '#F4A261' },
+            Search = { fg ='#393B44', bg = '#F4A261' },
             Substitute = { fg ='#FFFFFF' },
+            WinSeparator = { fg = '#AEAFB0', bg = '#303030' }
         },
     },
 })
