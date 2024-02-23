@@ -23,4 +23,5 @@ export ODY_ENV=true # Needs to exist for ~/projects/od-env/build-node-docker/gen
 export SAVEHIST=10000
 export SHELL_SESSIONS_DISABLE=1
 export TERM='screen-256color'
+export TMUX_PLUGIN_MANAGER_PATH="$XDG_CACHE_HOME/tmux/plugins"
 export VISUAL='nvim'
