@@ -22,6 +22,7 @@ export MANPAGER='less -X' # Don’t clear the screen after quitting a manual pag
 export NODENV_ROOT="$XDG_CONFIG_HOME/nodenv"
 export ODY_ENV=true # Needs to exist for ~/projects/od-env/build-node-docker/gendockerfile.sh generate w/ nodemon
 export RBENV_ROOT="$XDG_CONFIG_HOME/rbenv"
+export REDISCLI_HISTFILE="$XDG_DATA_HOME/redis/history"
 export SAVEHIST=10000
 export SHELL_SESSIONS_DISABLE=1
 export TERM='screen-256color'

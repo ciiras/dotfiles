@@ -14,17 +14,18 @@ createSymLink() {
     echo "symlink $dest_path CREATED"
 }
 
-mkdir -p ~/.config/borders
-mkdir -p ~/.config/git
-mkdir -p ~/.config/kitty
-mkdir -p ~/.config/nvim
-mkdir -p ~/.config/nvim/spell
-mkdir -p ~/.config/lua
-mkdir -p ~/.config/pip
-mkdir -p ~/.config/skhd
-mkdir -p ~/.config/tmux
-mkdir -p ~/.config/yabai
-mkdir -p ~/.config/zsh
+mkdir -p "$XDG_CONFIG_HOME/borders"
+mkdir -p "$XDG_CONFIG_HOME/git"
+mkdir -p "$XDG_CONFIG_HOME/kitty"
+mkdir -p "$XDG_CONFIG_HOME/nvim/spell"
+mkdir -p "$XDG_CONFIG_HOME/lua"
+mkdir -p "$XDG_CONFIG_HOME/pip"
+mkdir -p "$XDG_CONFIG_HOME/skhd"
+mkdir -p "$XDG_CONFIG_HOME/tmux"
+mkdir -p "$XDG_CONFIG_HOME/yabai"
+mkdir -p "$XDG_CONFIG_HOME/zsh"
+
+mkdir -p "$XDG_DATA_HOME/redis"
 
 createSymLink $DOT_FILES_DIR/zsh/zshenv /etc/zshenv sudo
 
