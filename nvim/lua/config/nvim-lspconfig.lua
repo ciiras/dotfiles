@@ -7,8 +7,10 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     ensure_installed = {
+        'bashls',
         'jdtls',
         'lua_ls',
+        'rust_analyzer',
         'tsserver',
     }
 })
@@ -96,5 +98,9 @@ lspConfig.jdtls.setup({
 })
 
 lspConfig.rust_analyzer.setup({
+    on_attach = on_attach,
+})
+
+lspConfig.bashls.setup({
     on_attach = on_attach,
 })
