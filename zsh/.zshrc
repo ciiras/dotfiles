@@ -2,12 +2,15 @@
 
 	# {{{ Installer/Loader
 
-	ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-	[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-	[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+	ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit"
+	[ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname "$ZINIT_HOME")"
+	[ ! -d "${ZINIT_HOME}/.git" ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 
+    # shellcheck disable=SC1091,SC1094
 	source "${ZINIT_HOME}/zinit.zsh"
     autoload -Uz _zinit
+
+    # shellcheck disable=SC2154
     (( ${+_comps} )) && _comps[zinit]=_zinit
 
 	# }}}
@@ -89,12 +92,12 @@ export ALIEN_PHP_COLOR=57
 
 # vim mode config {{{
 
-MODE_CURSOR_VIINS="#CDCECF blinking bar"
-MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #CDCECF"
-MODE_CURSOR_VICMD="#CDCECF blinking block"
-MODE_CURSOR_SEARCH="#CDCECF steady underline"
-MODE_CURSOR_VISUAL="$MODE_CURSOR_VICMD steady underline"
-MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #CDCECF"
+export MODE_CURSOR_VIINS="#CDCECF blinking bar"
+export MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #CDCECF"
+export MODE_CURSOR_VICMD="#CDCECF blinking block"
+export MODE_CURSOR_SEARCH="#CDCECF steady underline"
+export MODE_CURSOR_VISUAL="$MODE_CURSOR_VICMD steady underline"
+export MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #CDCECF"
 
 # }}}
 
@@ -106,15 +109,6 @@ bindkey '^ ' autosuggest-accept
 
 bindkey '^P' up-line-or-search
 bindkey '^N' down-line-or-search
-
-# }}}
-
-# {{{ Timing
-
-timezsh() {
-  shell=${1-$SHELL}
-  for i in $(seq 1 10); do /usr/bin/time $shell -i -c exit; done
-}
 
 # }}}
 
@@ -196,7 +190,7 @@ alias l='eza --long -all --git'
 alias lg=lazygit
 alias ne=nodenv
 alias nrl='npm run lint'
-alias r="source $ZDOTDIR/.zshrc"
+alias r='source $ZDOTDIR/.zshrc'
 alias rc=~/projects/od-env/build-node-docker/render-consul-template.sh
 alias rd=~/projects/od-env/build-node-docker/gendockerfile.sh
 alias rm=trash

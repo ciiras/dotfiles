@@ -46,12 +46,6 @@ local on_attach_tsserver = function(client, bufNum)
 end
 
 lspConfig.tsserver.setup({
-    init_options = {
-        preferences = {
-            disableSuggestions = false,
-        },
-    },
-    on_attach = on_attach_tsserver,
     filetypes = {
         'javascript',
         'json',
@@ -59,6 +53,12 @@ lspConfig.tsserver.setup({
         'typescript.tsx',
         'typescriptreact',
     },
+    init_options = {
+        preferences = {
+            disableSuggestions = false,
+        },
+    },
+    on_attach = on_attach_tsserver,
 })
 
 lspConfig.lua_ls.setup({
@@ -102,5 +102,10 @@ lspConfig.rust_analyzer.setup({
 })
 
 lspConfig.bashls.setup({
+    filetypes = {
+        'sh',
+        'bash',
+        'zsh',
+    },
     on_attach = on_attach,
 })

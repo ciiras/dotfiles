@@ -173,3 +173,8 @@ msg
 
 ctrl
 zinit
+shellcheck
+SC1091
+SC1094
+ABraCadabra
+SC2154
