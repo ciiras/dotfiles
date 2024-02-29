@@ -13,7 +13,7 @@ require('nightfox').setup({
             IncSearch = { fg ='#393B44', bg = '#F4A261' },
             Search = { fg ='#393B44', bg = '#F4A261' },
             Substitute = { fg ='#FFFFFF' },
-            WinSeparator = { fg = '#AEAFB0', bg = '#303030' }
+            WinSeparator = { fg = '#AEAFB0' }
         },
     },
 })
