@@ -20,7 +20,6 @@
     export ZSH_CACHE_DIR="${XDG_DATA_HOME}/zinit" # not sure why i have to do this to make OMZP::docker work
 
 	zinit for \
-	    light-mode eendroroy/alien \
 	    marlonrichert/zsh-autocomplete as"completions" OMZP::docker/completions/_docker \
 	    OMZP::docker \
 	    OMZP::docker-compose \
@@ -36,57 +35,6 @@
         z-shell/zsh-zoxide
 
 	# }}}
-
-# }}}
-
-# eendroroy/alien config {{{
-
-export ALIEN_SECTIONS_LEFT=(
-  exit
-  path
-  vcs_branch:async
-  vcs_status:async
-  vcs_dirty:async
-  newline
-  ssh
-  venv
-  versions
-  prompt
-)
-export ALIEN_SECTION_PATH_COMPONENTS=2
-export ALIEN_VERSIONS_PROMPT='NODE'
-
-export ALIEN_PROMPT_FG=255
-export ALIEN_SECTION_EXIT_FG=0
-export ALIEN_SECTION_EXIT_BG=0
-export ALIEN_SECTION_EXIT_BG_ERROR=255
-export ALIEN_SECTION_TIME_FG=255
-export ALIEN_SECTION_TIME_BG=235
-export ALIEN_SECTION_BATTERY_FG=255
-export ALIEN_SECTION_BATTERY_BG=237
-export ALIEN_SECTION_USER_FG=255
-export ALIEN_SECTION_USER_BG=239
-export ALIEN_SECTION_PATH_FG=255
-export ALIEN_SECTION_PATH_BG=241
-export ALIEN_SECTION_VCS_BRANCH_FG=232
-export ALIEN_SECTION_VCS_BRANCH_BG=243
-export ALIEN_SECTION_VCS_STATUS_FG=232
-export ALIEN_SECTION_VCS_STATUS_BG=245
-export ALIEN_SECTION_VCS_DIRTY_FG=232
-export ALIEN_SECTION_VCS_DIRTY_BG=247
-export ALIEN_SECTION_SSH_FG=254
-export ALIEN_SECTION_VENV_FG=252
-export ALIEN_GIT_TRACKED_COLOR=234
-export ALIEN_GIT_UN_TRACKED_COLOR=241
-export ALIEN_SECTION_VERSION_BG=235
-export ALIEN_PYTHON_COLOR=40
-export ALIEN_RUBY_COLOR=196
-export ALIEN_JAVA_COLOR=178
-export ALIEN_GO_COLOR=81
-export ALIEN_ELIXIR_COLOR=99
-export ALIEN_CRYSTAL_COLOR=8
-export ALIEN_NODE_COLOR=41
-export ALIEN_PHP_COLOR=57
 
 # }}}
 
@@ -157,15 +105,6 @@ unset LSCOLORS
 
 # }}}
 
-# Language Management {{{
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(nodenv init -)"
-eval "$(jenv init -)"
-eval "$(rbenv init - zsh)"
-
-# }}}
-
 # Aliases {{{
 
 alias cat=bat
@@ -208,5 +147,15 @@ export PATH=./:$PATH
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export PATH=$ANDROID_SDK_ROOT/emulator:$PATH
 export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
+
+# }}}
+
+# eval {{{
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(nodenv init -)"
+eval "$(jenv init -)"
+eval "$(rbenv init - zsh)"
+eval "$(starship init zsh)"
 
 # }}}
