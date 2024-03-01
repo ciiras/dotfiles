@@ -42,7 +42,7 @@ format = '$symbol'
 
 [java]
 disabled = false
-format = '$symbol'
+style = 'fg:#719cd6'
 
 [lua]
 disabled = false
