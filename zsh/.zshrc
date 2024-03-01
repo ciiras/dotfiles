@@ -140,16 +140,6 @@ alias v=nvim
 
 # }}}
 
-# PATH {{{
-
-export PATH=./:$PATH
-
-export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
-export PATH=$ANDROID_SDK_ROOT/emulator:$PATH
-export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
-
-# }}}
-
 # eval {{{
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
