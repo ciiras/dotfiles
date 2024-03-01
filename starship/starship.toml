@@ -10,6 +10,7 @@ $lua\
 $java\
 $ruby\
 $dotnet\
+$gradle\
 $nodejs\
 $character"""
 
@@ -35,6 +36,9 @@ deleted_style = 'fg:#e0c989'
 
 [git_status]
 style = 'fg:#e0c989'
+
+[gradle]
+format = '$symbol'
 
 [java]
 disabled = false
