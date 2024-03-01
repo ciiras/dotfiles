@@ -5,19 +5,24 @@ $git_branch\
 $git_status\
 $git_metrics\
 $all\
+$docker_context\
+$lua\
+$java\
+$ruby\
+$dotnet\
 $nodejs\
 $character"""
 
 [directory]
 style = 'fg:#e0c989'
-truncation_length = 5
 truncation_symbol = '.../'
 
 [docker_context]
 format = '$symbol '
 
 [dotnet]
-disabled = true
+disabled = false
+format = '$symbol'
 
 [git_branch]
 format = ' [$symbol$branch]($style) '
@@ -32,21 +37,24 @@ deleted_style = 'fg:#e0c989'
 style = 'fg:#e0c989'
 
 [java]
-disabled = true
+disabled = false
+format = '$symbol'
 
 [lua]
-disabled = true
+disabled = false
+format = '$symbol'
 
 [nodejs]
-format = ' [$symbol$version]($style) '
+format = '[$symbol$version]($style) '
 style = 'fg:#719cd6'
 
 [os]
-disabled = true
+disabled = false
 style = 'fg:#719cd6'
 
 [os.symbols]
-Macos = '  '
+Macos = ' '
 
 [ruby]
-disabled = true
+disabled = false
+format = '$symbol'
