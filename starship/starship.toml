@@ -35,6 +35,8 @@ added_style = 'fg:#e0c989'
 deleted_style = 'fg:#e0c989'
 
 [git_status]
+ahead = '⇡$count'
+behind = '⇣$count'
 style = 'fg:#e0c989'
 
 [gradle]
