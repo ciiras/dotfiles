@@ -7,10 +7,10 @@ $git_metrics\
 $all\
 $docker_context\
 $lua\
+$gradle\
 $java\
 $ruby\
 $dotnet\
-$gradle\
 $nodejs\
 $character"""
 
@@ -20,10 +20,6 @@ truncation_symbol = '.../'
 
 [docker_context]
 format = '$symbol '
-
-[dotnet]
-disabled = false
-format = '$symbol'
 
 [git_branch]
 format = ' [$symbol$branch]($style) '
@@ -40,15 +36,16 @@ behind = '⇣$count'
 style = 'fg:#e0c989'
 
 [gradle]
-format = '$symbol'
+format = '$symbol '
 
 [java]
 disabled = false
+format = '[${symbol}(${version} )]($style)'
 style = 'fg:#719cd6'
 
 [lua]
 disabled = false
-format = '$symbol'
+format = '$symbol '
 
 [nodejs]
 format = '[$symbol$version]($style) '
@@ -63,4 +60,4 @@ Macos = ' '
 
 [ruby]
 disabled = false
-format = '$symbol'
+format = '$symbol '
