@@ -35,6 +35,7 @@ export REDISCLI_HISTFILE="$XDG_DATA_HOME/redis/history"
 export SAVEHIST=10000
 export SHELL_SESSIONS_DISABLE=1
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
+export STARSHIP_LOG='error'
 export TERM='screen-256color'
 export TMUX_PLUGIN_MANAGER_PATH="$XDG_DATA_HOME/tmux/plugins"
 export VISUAL='nvim'
