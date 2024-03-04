@@ -182,3 +182,5 @@ starship
 HOMEBREW_GITHUB_API_TOKEN
 eval
 gradle
+luacheck
+lang

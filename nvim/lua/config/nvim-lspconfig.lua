@@ -17,7 +17,7 @@ require('mason-lspconfig').setup({
 
 local lspConfig = require('lspconfig')
 
-local on_attach = function(client, bufNum)
+local on_attach = function(client, bufNum) ---@diagnostic disable-line unused-local
     vim.api.nvim_buf_set_option(bufNum, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
     local bufOpts = { noremap=true, silent=true, buffer=bufNum }

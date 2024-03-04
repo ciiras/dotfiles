@@ -1,4 +1,4 @@
-require('nvim-treesitter.configs').setup({
+require('nvim-treesitter.configs').setup({ ---@diagnostic disable-line missing-fields
     textobjects = {
         select = {
             enable = true,
