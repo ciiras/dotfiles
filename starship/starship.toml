@@ -40,7 +40,7 @@ format = '$symbol '
 
 [java]
 disabled = false
-format = '[${symbol}(${version} )]($style)'
+format = '[$symbol$version]($style) '
 style = 'fg:#719cd6'
 
 [lua]
@@ -60,4 +60,5 @@ Macos = ' '
 
 [ruby]
 disabled = false
-format = '$symbol '
+format = '[$symbol$version]($style) '
+style = 'fg:#719cd6'
