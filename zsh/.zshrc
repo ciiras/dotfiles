@@ -125,7 +125,7 @@ alias gstapa='git stash save -p'
 alias gstau='git stash save -u'
 alias history='history 0'
 alias k=kubectl
-alias l='eza --long -all --git'
+alias l='eza --long -all --git --icons=always -h'
 alias lg=lazygit
 alias ne=nodenv
 alias nrl='npm run lint'
