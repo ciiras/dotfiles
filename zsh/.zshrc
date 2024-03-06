@@ -32,12 +32,17 @@
 	    kutsan/zsh-system-clipboard \
 	    MichaelAquilina/zsh-you-should-use \
 	    zsh-users/zsh-completions \
-	    zsh-users/zsh-syntax-highlighting \
-        z-shell/zsh-zoxide
+	    zsh-users/zsh-syntax-highlighting
 
     # shellcheck disable=SC2016
     zinit ice from"gh-r" as"program" atload'eval "$(starship init zsh)"'
-    zinit load starship/starship
+    zinit light starship/starship
+
+    # shellcheck disable=SC2016
+    zinit ice from"gh-r" as"program" atload'eval "$(zoxide init --cmd c zsh)"'
+    zi light ajeetdsouza/zoxide
+    zi has'zoxide' wait lucid for \
+    z-shell/zsh-zoxide
 
     # zsh-users/zsh-autosuggestions config {{{
 
@@ -75,7 +80,7 @@ export MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #CDCECF"
 
 # }}}
 
-# Settings {{{
+# Options {{{
 
 setopt CORRECT                   # Spelling correction
 setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.
@@ -148,8 +153,8 @@ alias v=nvim
 # eval {{{
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$(nodenv init -)"
 eval "$(jenv init -)"
+eval "$(nodenv init -)"
 eval "$(rbenv init - zsh)"
 eval "$(starship init zsh)"
 
