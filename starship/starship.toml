@@ -69,3 +69,6 @@ style = 'fg:#719cd6'
 [swift]
 format = '[$symbol$version]($style) '
 style = 'fg:#719cd6'
+
+[package]
+disabled = true
