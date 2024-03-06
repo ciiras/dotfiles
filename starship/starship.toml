@@ -1,11 +1,11 @@
 format = """
-[┌───](bold green) \
+[┌───](bold #9d79d6) \
 $os\
 $directory\
 $git_branch\
 $git_status\
 $git_metrics
-[└──](bold green) \
+[└──](bold #9d79d6) \
 $docker_context\
 $lua\
 $gradle\
