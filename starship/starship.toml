@@ -51,7 +51,7 @@ disabled = false
 format = '$symbol '
 
 [nodejs]
-format = '[$symbol$version]($style) '
+format = '$symbol[$version]($style) '
 style = 'fg:#719cd6'
 
 [os]
