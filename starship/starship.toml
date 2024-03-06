@@ -1,16 +1,18 @@
 format = """
+[┌───](bold green) \
 $os\
 $directory\
 $git_branch\
 $git_status\
-$git_metrics\
-$all\
+$git_metrics
+[└──](bold green) \
 $docker_context\
 $lua\
 $gradle\
 $java\
 $ruby\
 $swift\
+$rust\
 $dotnet\
 $nodejs\
 $character"""
