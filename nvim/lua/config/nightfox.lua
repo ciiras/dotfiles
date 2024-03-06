@@ -10,6 +10,7 @@ require('nightfox').setup({
         all = {
             CursorColumn = { bg = '#1C1C1C' },
             CursorLine = { bg = '#1C1C1C' },
+            Folded = { fg='#719CD6' },
             IncSearch = { fg ='#393B44', bg = '#F4A261' },
             Search = { fg ='#393B44', bg = '#F4A261' },
             Substitute = { fg ='#FFFFFF' },
