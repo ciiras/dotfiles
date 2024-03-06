@@ -26,17 +26,17 @@ format = '$symbol '
 
 [git_branch]
 format = ' [$symbol$branch]($style) '
-style = 'fg:#719cd6'
+style = 'fg:#9d79d6'
 
 [git_metrics]
 disabled = false
-added_style = 'fg:#e0c989'
-deleted_style = 'fg:#e0c989'
+added_style = 'fg:#9d79d6'
+deleted_style = 'fg:#9d79d6'
 
 [git_status]
 ahead = '⇡$count'
 behind = '⇣$count'
-style = 'fg:#e0c989'
+style = 'fg:#9d79d6'
 
 [gradle]
 format = '$symbol '
