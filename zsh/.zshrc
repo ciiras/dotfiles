@@ -39,6 +39,27 @@
     zinit ice from"gh-r" as"program" atload'eval "$(starship init zsh)"'
     zinit load starship/starship
 
+    # zsh-users/zsh-autosuggestions config {{{
+
+    export ZSH_AUTOSUGGEST_USE_ASYNC=1
+    export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
+    bindkey '^ ' autosuggest-accept
+
+    bindkey '^P' up-line-or-search
+    bindkey '^N' down-line-or-search
+
+    # }}}
+
+    # Auto Complete Fuzzy {{{
+
+    # 0 -- vanilla completion (abc => abc)
+    # 1 -- smart case completion (abc => Abc)
+    # 2 -- word flex completion (abc => A-big-Car)
+    # 3 -- full flex completion (abc => ABraCadabra)
+    zstyle ':completion:*' matcher-list '' 'r:|?=** m:{a-z\-}={A-Z\_}'
+
+    # }}}
+
 	# }}}
 
 # }}}
@@ -54,17 +75,6 @@ export MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #CDCECF"
 
 # }}}
 
-# zsh-users/zsh-autosuggestions config {{{
-
-export ZSH_AUTOSUGGEST_USE_ASYNC=1
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
-bindkey '^ ' autosuggest-accept
-
-bindkey '^P' up-line-or-search
-bindkey '^N' down-line-or-search
-
-# }}}
-
 # Settings {{{
 
 setopt CORRECT                   # Spelling correction
@@ -77,16 +87,6 @@ setopt HIST_IGNORE_SPACE         # Do not record an event starting with a space.
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
 setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
 setopt SHARE_HISTORY             # Share history between all sessions.
-
-# }}}
-
-# Auto Complete Fuzzy {{{
-
-# 0 -- vanilla completion (abc => abc)
-# 1 -- smart case completion (abc => Abc)
-# 2 -- word flex completion (abc => A-big-Car)
-# 3 -- full flex completion (abc => ABraCadabra)
-zstyle ':completion:*' matcher-list '' 'r:|?=** m:{a-z\-}={A-Z\_}'
 
 # }}}
 
