@@ -20,7 +20,8 @@
     export ZSH_CACHE_DIR="${XDG_DATA_HOME}/zinit" # not sure why i have to do this to make OMZP::docker work
 
 	zinit for \
-	    marlonrichert/zsh-autocomplete as"completions" OMZP::docker/completions/_docker \
+	    marlonrichert/zsh-autocomplete as"completions" \
+        OMZP::docker/completions/_docker \
 	    OMZP::docker \
 	    OMZP::docker-compose \
 	    OMZP::git \
@@ -33,6 +34,10 @@
 	    zsh-users/zsh-completions \
 	    zsh-users/zsh-syntax-highlighting \
         z-shell/zsh-zoxide
+
+    # shellcheck disable=SC2016
+    zinit ice from"gh-r" as"program" atload'eval "$(starship init zsh)"'
+    zinit load starship/starship
 
 	# }}}
 
