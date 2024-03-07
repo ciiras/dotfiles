@@ -1,3 +1,4 @@
+export _ZO_DATA_DIR="$XDG_DATA_HOME/zoxide"
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export CLICOLOR=1
 export DOT_FILES_DIR="$HOME/projects/dotfiles"
