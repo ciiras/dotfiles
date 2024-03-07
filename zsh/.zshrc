@@ -41,8 +41,6 @@
     # shellcheck disable=SC2016
     zinit ice from"gh-r" as"program" atload'eval "$(zoxide init --cmd c zsh)"'
     zi light ajeetdsouza/zoxide
-    zi has'zoxide' wait lucid for \
-    z-shell/zsh-zoxide
 
     # zsh-users/zsh-autosuggestions config {{{
 
@@ -159,5 +157,6 @@ eval "$(jenv init -)"
 eval "$(nodenv init -)"
 eval "$(rbenv init - zsh)"
 eval "$(starship init zsh)"
+eval "$(zoxide init --cmd c zsh)"
 
 # }}}
