@@ -39,7 +39,7 @@ behind = '⇣$count'
 style = 'fg:#9d79d6'
 
 [gradle]
-format = '$symbol '
+format = '[$symbol($version)]($style) '
 
 [java]
 disabled = false
