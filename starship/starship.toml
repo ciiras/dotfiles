@@ -19,7 +19,9 @@ $character"""
 
 [directory]
 style = 'fg:#e0c989'
+truncation_length = 2
 truncation_symbol = '.../'
+truncate_to_repo = false
 
 [docker_context]
 format = '$symbol '
