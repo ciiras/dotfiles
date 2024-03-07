@@ -195,3 +195,5 @@ devDependencies
 ramda
 ios
 mobileReactNative
+zod
+req
