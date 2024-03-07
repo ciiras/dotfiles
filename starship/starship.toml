@@ -61,6 +61,9 @@ style = 'fg:#719cd6'
 [os.symbols]
 Macos = ' '
 
+[package]
+disabled = true
+
 [ruby]
 disabled = false
 format = '[$symbol$version]($style) '
@@ -69,6 +72,3 @@ style = 'fg:#719cd6'
 [swift]
 format = '[$symbol$version]($style) '
 style = 'fg:#719cd6'
-
-[package]
-disabled = true
