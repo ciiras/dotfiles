@@ -11,3 +11,4 @@ mkdir -p "$XDG_CONFIG_HOME/yabai"
 mkdir -p "$XDG_CONFIG_HOME/zsh"
 
 mkdir -p "$XDG_DATA_HOME/redis"
+mkdir -p "$XDG_DATA_HOME/tmux/scripts"
