@@ -189,3 +189,9 @@ fillColor
 https
 github
 SC2016
+renderer
+runtime
+devDependencies
+ramda
+ios
+mobileReactNative

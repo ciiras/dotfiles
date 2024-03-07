@@ -48,7 +48,7 @@ style = 'fg:#719cd6'
 
 [lua]
 disabled = false
-format = '$symbol '
+format = '[$symbol($version)]($style) '
 
 [nodejs]
 format = '$symbol[$version]($style) '
