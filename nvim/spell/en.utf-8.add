@@ -197,3 +197,5 @@ ios
 mobileReactNative
 zod
 req
+
+MyRequestBody
