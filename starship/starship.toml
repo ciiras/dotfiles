@@ -38,6 +38,7 @@ deleted_style = 'fg:#9d79d6'
 [git_status]
 ahead = '⇡$count'
 behind = '⇣$count'
+diverged = '⇕$behind_count⇣$ahead_count⇡'
 style = 'fg:#9d79d6'
 
 [gradle]
