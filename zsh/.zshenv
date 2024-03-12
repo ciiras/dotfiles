@@ -1,5 +1,7 @@
 export _ZO_DATA_DIR="$XDG_DATA_HOME/zoxide"
-export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+export ANDROID_SDK_EMULATOR="$ANDROID_SDK_ROOT/emulator"
+export ANDROID_SDK_PLATFORM_TOOLS="$ANDROID_SDK_ROOT/platform-tools"
 export CLICOLOR=1
 export DOT_FILES_DIR="$HOME/projects/dotfiles"
 export EDITOR='nvim'
@@ -30,11 +32,7 @@ export LSCOLORS
 export MANPAGER='less -X' # Don’t clear the screen after quitting a manual page
 export NODENV_ROOT="$XDG_CONFIG_HOME/nodenv"
 export ODY_ENV=true # Needs to exist for ~/projects/od-env/build-node-docker/gendockerfile.sh generate w/ nodemon
-
-export PATH=./:$PATH
-export PATH=$ANDROID_SDK_ROOT/emulator:$PATH
-export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
-
+export PATH=./:$ANDROID_SDK_EMULATOR:$ANDROID_SDK_ROOT:$PATH
 export RBENV_ROOT="$XDG_CONFIG_HOME/rbenv"
 export REDISCLI_HISTFILE="$XDG_DATA_HOME/redis/history"
 export SAVEHIST=10000
