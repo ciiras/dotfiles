@@ -1,28 +1,28 @@
 format = """
 [┌───](bold #9d79d6) \
-$os\
-$cmd_duration\
-$directory\
-$git_branch\
-$git_status\
-$git_metrics
+${os}\
+${cmd_duration}\
+${directory}\
+${git_branch}\
+${git_status}\
+${git_metrics}
 [└──](bold #9d79d6) \
-$docker_context\
-$lua\
-$gradle\
-$java\
-$ruby\
-$swift\
-$rust\
-$dotnet\
-$nodejs\
-$jobs\
-$character"""
+${docker_context}\
+${lua}\
+${gradle}\
+${java}\
+${ruby}\
+${swift}\
+${rust}\
+${dotnet}\
+${nodejs}\
+${jobs}\
+${character}"""
 
 add_newline = false
 
 [cmd_duration]
-format = '[$duration]($style) '
+format = '[${duration}](${style}) '
 min_time = 1
 style = 'fg:#719cd6'
 
@@ -33,10 +33,10 @@ truncation_symbol = '.../'
 truncate_to_repo = false
 
 [docker_context]
-format = '$symbol '
+format = '${symbol} '
 
 [git_branch]
-format = ' [$symbol$branch]($style) '
+format = ' [${symbol}${branch}](${style}) '
 style = 'fg:#9d79d6'
 
 [git_metrics]
@@ -45,33 +45,32 @@ added_style = 'fg:#9d79d6'
 deleted_style = 'fg:#9d79d6'
 
 [git_status]
-ahead = '⇡$count'
-behind = '⇣$count'
-diverged = '⇕$behind_count⇣$ahead_count⇡'
+ahead = '⇡${count}'
+behind = '⇣${count}'
+diverged = '⇕${behind_count}⇣${ahead_count}⇡'
 style = 'fg:#9d79d6'
 
 [gradle]
-format = '[$symbol($version)]($style) '
+format = '[${symbol}(${version})](${style}) '
 style = 'fg:#719cd6'
 
 [java]
 disabled = false
-format = '[$symbol$version]($style) '
+format = '[${symbol}${version}](${style}) '
 style = 'fg:#719cd6'
 
 [jobs]
-format = '[$symbol$number]($style) '
+format = '[${symbol}${number}](${style}) '
 number_threshold = 1
 symbol_threshold = 1
 style = 'fg:#719cd6'
 
 [lua]
 disabled = false
-format = '[$symbol($version)]($style) '
+format = '[${symbol}(${version})](${style}) '
 
 [nodejs]
-format = '$symbol[$version]($style) '
-style = 'fg:#719cd6'
+format = '${symbol}[${version}](${style}) '
 
 [os]
 disabled = false
@@ -85,9 +84,9 @@ disabled = true
 
 [ruby]
 disabled = false
-format = '[$symbol$version]($style) '
+format = '[${symbol}${version}](${style}) '
 style = 'fg:#719cd6'
 
 [swift]
-format = '[$symbol$version]($style) '
+format = '[${symbol}${version}](${style}) '
 style = 'fg:#719cd6'
