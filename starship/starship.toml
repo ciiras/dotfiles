@@ -1,12 +1,13 @@
+add_newline = false
 format = """
-[┌───](bold #9d79d6) \
+[┌───](bold purple) \
 ${os}\
 ${cmd_duration}\
 ${directory}\
 ${git_branch}\
 ${git_status}\
 ${git_metrics}
-[└──](bold #9d79d6) \
+[└──](bold purple) \
 ${docker_context}\
 ${lua}\
 ${gradle}\
@@ -18,16 +19,23 @@ ${dotnet}\
 ${nodejs}\
 ${jobs}\
 ${character}"""
-
-add_newline = false
+palette = 'nightfox'
+[palettes.nightfox]
+blue = '#719CD6'
+cyan = '#7ad5d6'
+green = '#81B29A'
+purple = '#9D79D6'
+red = '#C94F6D'
+white = '#AEAFB0'
+yellow = '#E0C989'
 
 [cmd_duration]
 format = '[${duration}](${style}) '
 min_time = 1
-style = 'fg:#719cd6'
+style = 'fg:blue'
 
 [directory]
-style = 'fg:#e0c989'
+style = 'fg:yellow'
 truncation_length = 2
 truncation_symbol = '.../'
 truncate_to_repo = false
@@ -37,33 +45,30 @@ format = '${symbol} '
 
 [git_branch]
 format = ' [${symbol}${branch}](${style}) '
-style = 'fg:#9d79d6'
+style = 'fg:purple'
 
 [git_metrics]
 disabled = false
-added_style = 'fg:#9d79d6'
-deleted_style = 'fg:#9d79d6'
+added_style = 'fg:purple'
+deleted_style = 'fg:purple'
 
 [git_status]
 ahead = '⇡${count}'
 behind = '⇣${count}'
 diverged = '⇕${behind_count}⇣${ahead_count}⇡'
-style = 'fg:#9d79d6'
+style = 'fg:purple'
 
 [gradle]
 format = '[${symbol}(${version})](${style}) '
-style = 'fg:#719cd6'
 
 [java]
 disabled = false
 format = '[${symbol}${version}](${style}) '
-style = 'fg:#719cd6'
 
 [jobs]
 format = '[${symbol}${number}](${style}) '
 number_threshold = 1
 symbol_threshold = 1
-style = 'fg:#719cd6'
 
 [lua]
 disabled = false
@@ -74,7 +79,7 @@ format = '${symbol}[${version}](${style}) '
 
 [os]
 disabled = false
-style = 'fg:#719cd6'
+style = 'fg:blue'
 
 [os.symbols]
 Macos = ' '
@@ -85,8 +90,3 @@ disabled = true
 [ruby]
 disabled = false
 format = '[${symbol}${version}](${style}) '
-style = 'fg:#719cd6'
-
-[swift]
-format = '[${symbol}${version}](${style}) '
-style = 'fg:#719cd6'
