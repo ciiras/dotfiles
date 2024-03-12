@@ -17,6 +17,8 @@ $dotnet\
 $nodejs\
 $character"""
 
+add_newline = false
+
 [directory]
 style = 'fg:#e0c989'
 truncation_length = 2
