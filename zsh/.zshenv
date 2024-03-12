@@ -21,8 +21,12 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
-export LS_COLORS=Gxfxcxdxbxegedabagacad
-export LSCOLORS=Gxfxcxdxbxegedabagacad
+
+LS_COLORS=Gxfxcxdxbxegedabagacad
+LSCOLORS=LS_COLORS
+export LS_COLORS
+export LSCOLORS
+
 export MANPAGER='less -X' # Don’t clear the screen after quitting a manual page
 export NODENV_ROOT="$XDG_CONFIG_HOME/nodenv"
 export ODY_ENV=true # Needs to exist for ~/projects/od-env/build-node-docker/gendockerfile.sh generate w/ nodemon
