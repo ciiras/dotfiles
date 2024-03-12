@@ -16,6 +16,7 @@ $swift\
 $rust\
 $dotnet\
 $nodejs\
+$jobs\
 $character"""
 
 add_newline = false
@@ -55,6 +56,12 @@ format = '[$symbol($version)]($style) '
 [java]
 disabled = false
 format = '[$symbol$version]($style) '
+style = 'fg:#719cd6'
+
+[jobs]
+format = '[$symbol$number]($style) '
+number_threshold = 1
+symbol_threshold = 1
 style = 'fg:#719cd6'
 
 [lua]
