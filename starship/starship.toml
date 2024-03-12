@@ -1,6 +1,7 @@
 format = """
 [┌───](bold #9d79d6) \
 $os\
+$cmd_duration\
 $directory\
 $git_branch\
 $git_status\
@@ -18,6 +19,11 @@ $nodejs\
 $character"""
 
 add_newline = false
+
+[cmd_duration]
+format = '[$duration]($style) '
+min_time = 1
+style = 'fg:#719cd6'
 
 [directory]
 style = 'fg:#e0c989'
