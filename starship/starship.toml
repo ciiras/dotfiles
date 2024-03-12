@@ -52,6 +52,7 @@ style = 'fg:#9d79d6'
 
 [gradle]
 format = '[$symbol($version)]($style) '
+style = 'fg:#719cd6'
 
 [java]
 disabled = false
