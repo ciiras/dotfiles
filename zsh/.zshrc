@@ -136,7 +136,7 @@ alias k=kubectl
 alias l='eza --long -all --git --icons=always -h'
 alias ne=nodenv
 alias nrl='npm run lint'
-alias r='source $ZDOTDIR/.zshrc'
+alias r='source $ZDOTDIR/.zshenv; source $ZDOTDIR/.zshrc'
 alias rc=~/projects/od-env/build-node-docker/render-consul-template.sh
 alias rd=~/projects/od-env/build-node-docker/gendockerfile.sh
 alias rm=trash
