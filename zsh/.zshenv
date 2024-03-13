@@ -15,7 +15,7 @@ nf_white=252
 EZA_DATE="da=38;5;${nf_blue}"
 EZA_DIR="di=38;5;${nf_blue}"
 EZA_FILES="fi=38;5;${nf_white}:ex=38;5;${nf_green}"
-EZA_HEADER="hd=34;4"
+EZA_HEADER="hd=37;4"
 EZA_RIGHTS_GROUP="gr=38;5;${nf_orange}:gw=38;5;${nf_purple}:gx=38;5;${nf_blue}"
 EZA_RIGHTS_OTHER="tr=38;5;${nf_orange}:tw=38;5;${nf_purple}:tx=38;5;${nf_blue}:xa=38;5;${nf_white}"
 EZA_RIGHTS_USER="ur=38;5;${nf_orange}:uw=38;5;${nf_purple}:ux=38;5;${nf_blue}:ue=38;5;${nf_blue}"
