@@ -6,22 +6,21 @@ export CLICOLOR=1
 export DOT_FILES_DIR="$HOME/projects/dotfiles"
 export EDITOR='nvim'
 
-NF_BLUE=75
-NF_GREEN=72
-NF_RED=124
-NF_PURPLE=98
-NF_WHITE=252
-NF_YELLOW=186
+nf_blue=75
+nf_green=72
+nf_purple=98
+nf_orange=214
+nf_white=252
 
-EZA_DATE="da=38;5;${NF_YELLOW}"
-EZA_DIR="di=38;5;${NF_BLUE}"
-EZA_FILES="fi=38;5;${NF_WHITE}:ex=38;5;${NF_GREEN}"
+EZA_DATE="da=38;5;${nf_blue}"
+EZA_DIR="di=38;5;${nf_blue}"
+EZA_FILES="fi=38;5;${nf_white}:ex=38;5;${nf_green}"
 EZA_HEADER="hd=34;4"
-EZA_RIGHTS_GROUP="gr=38;5;${NF_YELLOW}:gw=38;5;${NF_RED}:gx=38;5;${NF_GREEN}"
-EZA_RIGHTS_OTHER="tr=38;5;${NF_YELLOW}:tw=38;5;${NF_RED}:tx=38;5;${NF_GREEN}:xa=38;5;${NF_WHITE}"
-EZA_RIGHTS_USER="ur=38;5;${NF_YELLOW}:uw=38;5;${NF_RED}:ux=38;5;${NF_GREEN}:ue=38;5;${NF_GREEN}"
-EZA_SIZE="sn=38;5;${NF_GREEN}"
-EZA_USER="uu=38;5;${NF_PURPLE}"
+EZA_RIGHTS_GROUP="gr=38;5;${nf_orange}:gw=38;5;${nf_purple}:gx=38;5;${nf_blue}"
+EZA_RIGHTS_OTHER="tr=38;5;${nf_orange}:tw=38;5;${nf_purple}:tx=38;5;${nf_blue}:xa=38;5;${nf_white}"
+EZA_RIGHTS_USER="ur=38;5;${nf_orange}:uw=38;5;${nf_purple}:ux=38;5;${nf_blue}:ue=38;5;${nf_blue}"
+EZA_SIZE="sn=38;5;${nf_green}"
+EZA_USER="uu=38;5;${nf_purple}"
 export EZA_COLORS="reset:${EZA_HEADER}:${EZA_RIGHTS_USER}:${EZA_RIGHTS_GROUP}:${EZA_RIGHTS_OTHER}:${EZA_SIZE}:${EZA_USER}:${EZA_DATE}:${EZA_DIR}:${EZA_FILES}"
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
