@@ -5,6 +5,24 @@ export ANDROID_SDK_PLATFORM_TOOLS="$ANDROID_SDK_ROOT/platform-tools"
 export CLICOLOR=1
 export DOT_FILES_DIR="$HOME/projects/dotfiles"
 export EDITOR='nvim'
+
+NIGHTFOX_BLUE=75
+NIGHTFOX_GREEN=72
+NIGHTFOX_RED=124
+NIGHTFOX_WHITE=252
+NIGHTFOX_YELLOW=186
+
+EZA_DATE="da=38;5;${NIGHTFOX_YELLOW}"
+EZA_DIR="di=38;5;${NIGHTFOX_BLUE}"
+EZA_FILES="fi=38;5;${NIGHTFOX_WHITE}:ex=38;5;${NIGHTFOX_GREEN}"
+EZA_HEADER="hd=34;4"
+EZA_RIGHTS_GROUP="gr=38;5;${NIGHTFOX_YELLOW}:gw=38;5;${NIGHTFOX_RED}:gx=38;5;${NIGHTFOX_GREEN}"
+EZA_RIGHTS_OTHER="tr=38;5;${NIGHTFOX_YELLOW}:tw=38;5;${NIGHTFOX_RED}:tx=38;5;${NIGHTFOX_GREEN}:xa=38;5;${NIGHTFOX_WHITE}"
+EZA_RIGHTS_USER="ur=38;5;${NIGHTFOX_YELLOW}:uw=38;5;${NIGHTFOX_RED}:ux=38;5;${NIGHTFOX_GREEN}:ue=38;5;${NIGHTFOX_GREEN}"
+EZA_SIZE="sn=38;5;${NIGHTFOX_GREEN}"
+EZA_USER="uu=38;5;${NIGHTFOX_RED}"
+export EZA_COLORS="reset:${EZA_HEADER}:${EZA_RIGHTS_USER}:${EZA_RIGHTS_GROUP}:${EZA_RIGHTS_OTHER}:${EZA_SIZE}:${EZA_USER}:${EZA_DATE}:${EZA_DIR}:${EZA_FILES}"
+
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse-list --border'
 export GREP_COLOR='1;32'
@@ -23,12 +41,6 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
-
-LS_COLORS=Gxfxcxdxbxegedabagacad
-LSCOLORS=LS_COLORS
-export LS_COLORS
-export LSCOLORS
-
 export MANPAGER='less -X' # Don’t clear the screen after quitting a manual page
 export NODENV_ROOT="$XDG_CONFIG_HOME/nodenv"
 export ODY_ENV=true # Needs to exist for ~/projects/od-env/build-node-docker/gendockerfile.sh generate w/ nodemon
