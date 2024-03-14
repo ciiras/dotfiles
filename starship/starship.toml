@@ -1,4 +1,5 @@
 add_newline = false
+
 format = """
 [┌───](bold purple) \
 ${os}\
@@ -6,7 +7,8 @@ ${cmd_duration}\
 ${directory}\
 ${git_branch}\
 ${git_status}\
-${git_metrics}
+${git_metrics}\
+${git_commit}
 [└──](bold purple) \
 ${docker_context}\
 ${lua}\
@@ -19,6 +21,7 @@ ${dotnet}\
 ${nodejs}\
 ${jobs}\
 ${character}"""
+
 palette = 'nightfox'
 [palettes.nightfox]
 blue = '#719CD6'
@@ -46,6 +49,9 @@ format = '${symbol} '
 [git_branch]
 format = ' [${symbol}${branch}](${style}) '
 style = 'fg:purple'
+
+[git_commit]
+style = 'green'
 
 [git_metrics]
 disabled = false
