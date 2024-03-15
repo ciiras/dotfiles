@@ -44,6 +44,7 @@ export LESS_TERMCAP_us=$'\e[1;4;31m'
 export MANPAGER='less -X' # Don’t clear the screen after quitting a manual page
 export NODENV_ROOT="$XDG_CONFIG_HOME/nodenv"
 export ODY_ENV=true # Needs to exist for ~/projects/od-env/build-node-docker/gendockerfile.sh generate w/ nodemon
+
 export PATH=".:$PATH"
 export PATH="$ANDROID_SDK_EMULATOR:$PATH"
 export PATH="$ANDROID_SDK_TOOLS:$PATH"
