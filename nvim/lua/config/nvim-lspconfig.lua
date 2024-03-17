@@ -10,6 +10,7 @@ require('mason-lspconfig').setup({
         'bashls',
         'jdtls',
         'lua_ls',
+        'marksman',
         'rust_analyzer',
         'tsserver',
     }
@@ -45,20 +46,13 @@ local on_attach_tsserver = function(client, bufNum)
     utils.setup_client(client)
 end
 
-lspConfig.tsserver.setup({
+lspConfig.bashls.setup({
     filetypes = {
-        'javascript',
-        'json',
-        'typescript',
-        'typescript.tsx',
-        'typescriptreact',
+        'sh',
+        'bash',
+        'zsh',
     },
-    init_options = {
-        preferences = {
-            disableSuggestions = false,
-        },
-    },
-    on_attach = on_attach_tsserver,
+    on_attach = on_attach,
 })
 
 lspConfig.lua_ls.setup({
@@ -97,15 +91,26 @@ lspConfig.jdtls.setup({
     on_attach = on_attach,
 })
 
+lspConfig.marksman.setup({
+    on_attach = on_attach,
+})
+
 lspConfig.rust_analyzer.setup({
     on_attach = on_attach,
 })
 
-lspConfig.bashls.setup({
+lspConfig.tsserver.setup({
     filetypes = {
-        'sh',
-        'bash',
-        'zsh',
+        'javascript',
+        'json',
+        'typescript',
+        'typescript.tsx',
+        'typescriptreact',
     },
-    on_attach = on_attach,
+    init_options = {
+        preferences = {
+            disableSuggestions = false,
+        },
+    },
+    on_attach = on_attach_tsserver,
 })
