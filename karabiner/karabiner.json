@@ -18,10 +18,10 @@
                 },
                 "rules": [
                     {
-                        "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+,",
+                        "description": "Disable Creating sysdiagnose file",
                         "manipulators": [
                             {
-                                "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+,",
+                                "description": "command+shift+option+control+comma",
                                 "from": {
                                     "key_code": "comma",
                                     "modifiers": {
@@ -35,14 +35,9 @@
                                 },
                                 "to": [],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+.",
-                        "manipulators": [
+                            },
                             {
-                                "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+.",
+                                "description": "command+shift+option+control+period",
                                 "from": {
                                     "key_code": "period",
                                     "modifiers": {
@@ -56,15 +51,10 @@
                                 },
                                 "to": [],
                                 "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+/",
-                        "manipulators": [
+                            },
                             {
                                 "from": {
-                                    "description": "Avoid starting sysdiagnose with the built-in macOS shortcut cmd+shift+option+ctrl+/",
+                                    "description": "command+shift+option+control+slash",
                                     "key_code": "slash",
                                     "modifiers": {
                                         "mandatory": [
@@ -81,14 +71,44 @@
                         ]
                     },
                     {
-                        "description": "Caps Lock -> Hyper (Hold)",
+                        "description": "Disable MacOS Hide Application Key Bindings",
+                        "manipulators": [
+                            {
+                                "description": "command+h",
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command"
+                                        ]
+                                    }
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "command+option+h",
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "option"
+                                        ]
+                                    }
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Map Caps Lock (Hold) -> Hyper",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": {}
                                 },
-                                "to": [
+                                 "to": [
                                     {
                                         "key_code": "left_shift",
                                         "modifiers": [
@@ -108,10 +128,10 @@
                         ]
                     },
                     {
-                        "description": "Control + [ to Escape",
+                        "description": "Map Control + [ (Press) -> Escape",
                         "manipulators": [
                             {
-                                "description": "Control + [ to Escape",
+                                "description": "control+open_bracket",
                                 "from": {
                                     "key_code": "open_bracket",
                                     "modifiers": {
@@ -123,89 +143,6 @@
                                 "to": [
                                     {
                                         "key_code": "escape"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Disable Cmd+H Hide",
-                        "manipulators": [
-                            {
-                                "description": "",
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command"
-                                        ]
-                                    }
-                                },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Disable Cmd+Opt+H Hide",
-                        "manipulators": [
-                            {
-                                "description": "",
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "option"
-                                        ]
-                                    }
-                                },
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Disable Hyper+, which triggers WiFi logging.",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "comma",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "control",
-                                            "option",
-                                            "shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f13"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Disable Hyper+. which triggers sysdiagnose.",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "period",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "command",
-                                            "control",
-                                            "option",
-                                            "shift"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "f13"
                                     }
                                 ],
                                 "type": "basic"
