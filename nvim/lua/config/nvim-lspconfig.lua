@@ -9,6 +9,7 @@ require('mason-lspconfig').setup({
     ensure_installed = {
         'bashls',
         'jdtls',
+        'kotlin_language_server',
         'lua_ls',
         'marksman',
         'rust_analyzer',
@@ -55,6 +56,17 @@ lspConfig.bashls.setup({
     on_attach = on_attach,
 })
 
+lspConfig.jdtls.setup({
+    cmd = {
+        'jdtls',
+    },
+    on_attach = on_attach,
+})
+
+lspConfig.kotlin_language_server.setup({
+    on_attach = on_attach,
+})
+
 lspConfig.lua_ls.setup({
     on_attach = on_attach,
     settings = {
@@ -82,13 +94,6 @@ lspConfig.lua_ls.setup({
             },
         },
     }
-})
-
-lspConfig.jdtls.setup({
-    cmd = {
-        'jdtls',
-    },
-    on_attach = on_attach,
 })
 
 lspConfig.marksman.setup({
