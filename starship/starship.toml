@@ -25,7 +25,7 @@ ${character}"""
 palette = 'nightfox'
 [palettes.nightfox]
 blue = '#719CD6'
-cyan = '#7ad5d6'
+cyan = '#7AD5D6'
 green = '#81B29A'
 purple = '#9D79D6'
 red = '#C94F6D'
