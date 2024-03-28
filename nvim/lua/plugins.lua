@@ -135,10 +135,6 @@ local plugins = {
     {
         'MunifTanjim/nui.nvim'
     },
-    {   -- Highlight word under cursor
-        'RRethy/vim-illuminate',
-        event = 'VeryLazy',
-    },
     {   -- Lsp config
         'neovim/nvim-lspconfig',
         init = get_config('nvim-lspconfig'),
