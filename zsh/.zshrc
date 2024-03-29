@@ -1,14 +1,3 @@
-# vim mode config {{{
-
-MODE_CURSOR_VIINS="#CDCECF blinking bar"
-MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #CDCECF"
-MODE_CURSOR_VICMD="#CDCECF blinking block"
-MODE_CURSOR_SEARCH="#CDCECF steady underline"
-MODE_CURSOR_VISUAL="$MODE_CURSOR_VICMD steady underline"
-MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #CDCECF"
-
-# }}}
-
 # Zinit {{{
 
 	# {{{ Installer/Loader
