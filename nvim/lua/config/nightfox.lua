@@ -8,6 +8,7 @@ require('nightfox').setup({
     },
     groups = {
         all = {
+            Cursor = { bg = '#81B29A' },
             CursorColumn = { bg = '#1C1C1C' },
             CursorLine = { bg = '#1C1C1C' },
             Folded = { fg='#719CD6' },
