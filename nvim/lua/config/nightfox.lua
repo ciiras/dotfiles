@@ -16,7 +16,7 @@ require('nightfox').setup({
             Search = { fg ='#393B44', bg = '#F4A261' },
             Substitute = { fg ='#FFFFFF' },
             TelescopeBorder = { fg = '#719CD6' },
-            Visual = { fg = '#9aaec9' },
+            Visual = { fg = '#6E9783' },
             WinSeparator = { fg = '#719CD6' },
         },
     },
