@@ -1,4 +1,5 @@
 nmap('<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<CR>', { desc = 'buffers' })
+nmap('<leader>fc', '<cmd>lua require("modules.telescope.nightfox").get_palette()<CR>', { desc = 'nightfox palette' })
 nmap('<leader>fd', '<cmd>lua require("telescope.builtin").diagnostics()<CR>', { desc = 'diagnostics' })
 nmap('<leader>ff', '<cmd>lua require("telescope.builtin").find_files()<CR>', { desc = 'find files' })
 nmap('<leader>fg', '<cmd>lua require("modules.telescope.git_status").git_status()<CR>', { desc = 'git status' })
@@ -8,3 +9,4 @@ nmap('<leader>fn', '<cmd>:Telescope node_modules list<CR>', { desc = 'node modul
 nmap('<leader>fr', '<cmd>lua require("telescope.builtin").live_grep()<CR>', { desc  = 'ripgrep'})
 nmap('<leader>fu', '<cmd>:Telescope undo<CR>', { desc  = 'undo'})
 nmap('<leader>.', '<cmd>:Telescope file_browser path=%:p:h select_buffer=true<CR>', { desc = 'file browser' })
+
