@@ -2,7 +2,7 @@ nmap('<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<CR>', { desc
 nmap('<leader>fc', '<cmd>lua require("modules.telescope.nightfox").get_palette()<CR>', { desc = 'nightfox palette' })
 nmap('<leader>fd', '<cmd>lua require("telescope.builtin").diagnostics()<CR>', { desc = 'diagnostics' })
 nmap('<leader>ff', '<cmd>lua require("telescope.builtin").find_files()<CR>', { desc = 'find files' })
-nmap('<leader>fg', '<cmd>lua require("modules.telescope.git_status").git_status()<CR>', { desc = 'git status' })
+nmap('<leader>fg', '<cmd>lua require("modules.telescope.git").git_status()<CR>', { desc = 'git status' })
 nmap('<leader>fi', '<cmd>:Telescope import<CR>', { desc = 'js import' })
 nmap('<leader>fm', '<cmd>:Telescope notify<CR>', { desc = 'messages', })
 nmap('<leader>fn', '<cmd>:Telescope node_modules list<CR>', { desc = 'node modules' })

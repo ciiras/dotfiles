@@ -1,7 +1,7 @@
 local previewers = require('telescope.previewers')
 local builtin = require('telescope.builtin')
 local conf = require('telescope.config')
-local E = {}
+local M = {}
 
 local delta = previewers.new_termopen_previewer {
   get_command = function(entry)
@@ -9,11 +9,11 @@ local delta = previewers.new_termopen_previewer {
   end
 }
 
-E.git_status = function(opts)
+M.git_status = function(opts)
   opts = opts or {}
   opts.previewer = delta
 
   builtin.git_status(opts)
 end
 
-return E
+return M
