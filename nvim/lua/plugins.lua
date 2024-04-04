@@ -135,6 +135,15 @@ local plugins = {
     {
         'MunifTanjim/nui.nvim'
     },
+    {   -- Git tooling
+        'NeogitOrg/neogit',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            'sindrets/diffview.nvim',
+        },
+        config = true,
+        init = get_config('neogit'),
+    },
     {   -- Lsp config
         'neovim/nvim-lspconfig',
         init = get_config('nvim-lspconfig'),
@@ -205,7 +214,7 @@ local plugins = {
         },
         event = 'VeryLazy',
     },
-    {   -- Git commands
+    {   -- Git tooling
         'tpope/vim-fugitive',
         event = 'VeryLazy',
     },
