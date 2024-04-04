@@ -142,6 +142,7 @@ local plugins = {
             'sindrets/diffview.nvim',
         },
         config = true,
+        event = 'VeryLazy',
         init = get_config('neogit'),
     },
     {   -- Lsp config
