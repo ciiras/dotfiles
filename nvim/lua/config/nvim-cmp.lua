@@ -3,30 +3,30 @@ local lspkind = require('lspkind')
 
 lspkind.init({
     symbol_map = {
-        Text = '',
-        Method = '',
-        Function = '',
+        Text = '',
+        Method = '',
+        Function = '󰊕',
         Constructor = '',
         Field = 'ﰠ',
-        Variable = '',
+        Variable = '󰫧',
         Class = 'ﴯ',
         Interface = '',
         Module = '',
         Property = 'ﰠ',
         Unit = '塞',
-        Value = '',
+        Value = '#',
         Enum = '',
         Keyword = '',
         Snippet = '',
-        Color = '',
+        Color = '',
         File = '',
         Reference = '',
-        Folder = '',
+        Folder = '',
         EnumMember = '',
         Constant = '',
         Struct = 'פּ',
         Event = '',
-        Operator = '',
+        Operator = '±',
         TypeParameter = ''
     }
 })
