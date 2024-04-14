@@ -87,6 +87,7 @@ brew "vim"
 brew "watch"
 brew "watchman"
 brew "wget"
+brew "xdg-ninja"
 brew "facebook/fb/idb-companion"
 brew "felixkratz/formulae/borders"
 brew "koekeishiya/formulae/skhd"
@@ -108,5 +109,4 @@ cask "zulu17"
 mas "Forecast Bar", id: 982710545
 mas "GarageBand", id: 682658836
 mas "Microsoft Remote Desktop", id: 1295203466
-mas "Numbers", id: 409203825
 mas "Xcode", id: 497799835
