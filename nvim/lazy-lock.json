@@ -8,6 +8,7 @@
   "cmp-nvim-lsp-document-symbol": { "branch": "main", "commit": "f0f53f704c08ea501f9d222b23491b0d354644b0" },
   "cmp-nvim-lua": { "branch": "main", "commit": "f12408bdb54c39c23e67cab726264c10db33ada8" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
+  "conform.nvim": { "branch": "master", "commit": "a6965ac128eba75537ec2bc5ddd5d5e357062bdc" },
   "fuzzy.nvim": { "branch": "master", "commit": "67a42ad2fa6d5ff41f0ef3cf69bb247410da5d7a" },
   "gitsigns.nvim": { "branch": "main", "commit": "035da036e68e509ed158414416c827d022d914bd" },
   "glance.nvim": { "branch": "master", "commit": "51059bcf21016387b6233c89eed220cf47fca752" },
