@@ -1,6 +1,6 @@
 require('globals')
 require('options')
-require('plugins')
+require('lazy-plugin-manager')
 require('mappings')
 require('highlights')
 require('autocmds')
