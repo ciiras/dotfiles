@@ -5,6 +5,9 @@ global.mapleader = ','
 global.session_autosave = 'no'
 global.skip_ts_context_commentstring_module = true
 global.tmux_navigator_preserve_zoom = 1
+global.vimwiki_list = {{path = '~/Library/Mobile Documents/com~apple~CloudDocs/Documents/vimwiki'}}
+global.vimwiki_listsyms = ' ✓'
+global.vimwiki_url_maxsave = 0
 
 opt.autoread = true
 opt.backspace = 'indent,eol,start'

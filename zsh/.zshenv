@@ -42,12 +42,12 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 export MANPAGER='less -X' # Don’t clear the screen after quitting a manual page
-export MODE_CURSOR_VIINS='#719CD6 blinking bar'
-export MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #719CD6"
-export MODE_CURSOR_VICMD='#719CD6 blinking block'
-export MODE_CURSOR_SEARCH='#719CD6 steady underline'
+export MODE_CURSOR_VIINS='#86ABDC blinking bar'
+export MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #86ABDC"
+export MODE_CURSOR_VICMD='#86ABDC blinking block'
+export MODE_CURSOR_SEARCH='#86ABDC steady underline'
 export MODE_CURSOR_VISUAL="$MODE_CURSOR_VICMD steady underline"
-export MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #719CD6"
+export MODE_CURSOR_VLINE="$MODE_CURSOR_VISUAL #86ABDC"
 export NODENV_ROOT="$XDG_CONFIG_HOME/nodenv"
 export ODY_ENV=true # Needs to exist for ~/projects/od-env/build-node-docker/gendockerfile.sh generate w/ nodemon
 
