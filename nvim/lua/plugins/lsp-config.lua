@@ -14,7 +14,7 @@ return {
             vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', bufOpts)
             vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufOpts)
             vim.keymap.set('n', '<space>rn', '<Cmd>Lspsaga rename<CR>', bufOpts)
-            vim.keymap.set('n', '<space>ca', '<cmd>Lspsaga code_action<CR>', bufOpts)
+            vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufOpts)
             vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufOpts)
         end
 
