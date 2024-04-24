@@ -1,3 +1,12 @@
+local function buildBufferOptions(bufNum, desc)
+    return {
+        buffer = bufNum,
+        desc = desc,
+        noremap = true,
+        silent = true,
+    }
+end
+
 return {
     'neovim/nvim-lspconfig',
     config = function()
@@ -6,16 +15,17 @@ return {
         local on_attach = function(client, bufNum) ---@diagnostic disable-line unused-local
             vim.api.nvim_buf_set_option(bufNum, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-            local bufOpts = { noremap=true, silent=true, buffer=bufNum }
             vim.keymap.set('n', '[d', '<Cmd>Lspsaga diagnostic_jump_prev<CR>', keymap_options)
             vim.keymap.set('n', ']d', '<Cmd>Lspsaga diagnostic_jump_next<CR>', keymap_options)
-            vim.keymap.set('n', 'gd', '<Cmd>Glance definitions<CR>', bufOpts)
-            vim.keymap.set('n', 'gr', '<Cmd>Glance references<CR>', bufOpts)
-            vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', bufOpts)
-            vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufOpts)
-            vim.keymap.set('n', '<space>rn', '<Cmd>Lspsaga rename<CR>', bufOpts)
-            vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufOpts)
-            vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufOpts)
+            vim.keymap.set('n', 'gd', '<Cmd>Glance definitions<CR>', buildBufferOptions(bufNum, 'LSP Definition'))
+            vim.keymap.set('n', 'gr', '<Cmd>Glance references<CR>', buildBufferOptions(bufNum, 'LSP References'))
+            vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', buildBufferOptions(bufNum, 'LSP Hover'))
+            vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition,
+                buildBufferOptions(bufNum, 'LSP Type Definition'))
+            vim.keymap.set('n', '<space>rn', '<Cmd>Lspsaga rename<CR>', buildBufferOptions(bufNum, 'LSP Rename'))
+            vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, buildBufferOptions(bufNum, 'LSP Code Actions'))
+            vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format({ async = true }) end,
+                buildBufferOptions(bufNum, 'LSP Format'))
         end
 
         local on_attach_tsserver = function(client, bufNum)
@@ -24,8 +34,8 @@ return {
             local utils = require('nvim-lsp-ts-utils')
             utils.setup({
                 filter_out_diagnostics_by_code = {
-                    7016,       -- Type definitions missing from JS package
-                    80001,      -- CommonJS module may be converted to ES module
+                    7016,  -- Type definitions missing from JS package
+                    80001, -- CommonJS module may be converted to ES module
                 },
             })
             utils.setup_client(client)
