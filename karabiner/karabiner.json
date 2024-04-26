@@ -101,7 +101,7 @@
                         ]
                     },
                     {
-                        "description": "Map Caps Lock (Hold) -> Hyper",
+                        "description": "Map Caps Lock (Hold) -> Hyper or Esc (Press/Release)",
                         "manipulators": [
                             {
                                 "from": {
@@ -120,7 +120,7 @@
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "caps_lock"
+                                        "key_code": "escape"
                                     }
                                 ],
                                 "type": "basic"
