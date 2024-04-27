@@ -21,7 +21,7 @@ return {
             wilder.popupmenu_border_theme({
                 border = 'rounded',
                 highlights = {
-                    border = 'Normal',
+                    border = 'Border',
                 },
                 left = { ' ', wilder.popupmenu_devicons() },
                 right = { ' ', wilder.popupmenu_scrollbar() },

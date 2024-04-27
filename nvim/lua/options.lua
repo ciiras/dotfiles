@@ -29,6 +29,7 @@ opt.list = true
 opt.listchars = {tab = '›⋅', eol = '↲', space = '⋅'}
 opt.mouse = 'a'
 opt.number = true
+opt.pumblend = 40
 opt.relativenumber = true
 opt.ruler = true
 opt.scl = 'yes'
