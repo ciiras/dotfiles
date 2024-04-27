@@ -25,6 +25,9 @@ return {
 
         noice.setup({
             background_color = '#000000',
+            cmdline = {
+                view = 'cmdline',
+            },
             lsp = {
                 override = {
                      ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
