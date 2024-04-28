@@ -137,6 +137,7 @@ return {
         telescope.load_extension('fzf')
         telescope.load_extension('import')
         telescope.load_extension('node_modules')
+        telescope.load_extension('noice')
         telescope.load_extension('notify')
         telescope.load_extension('undo')
     end,
