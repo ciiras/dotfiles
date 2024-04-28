@@ -13,6 +13,9 @@ return {
             },
             groups = {
                 all = {
+                    Border = {
+                        fg = '#719CD6'
+                    },
                     Cursor = {
                         bg = '#86ABDC'
                     },
