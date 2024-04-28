@@ -17,6 +17,35 @@ return {
 
         telescope.setup({
             defaults = {
+                entry_prefix = '  ',
+                initial_mode = 'insert',
+                layout_config = {
+                    width = 0.95,
+                    prompt_position = 'bottom',
+                    preview_cutoff = 20,
+                    horizontal = {
+                        preview_width = 0.5,
+                        mirror = false
+                    },
+                    vertical = {
+                        preview_height = 0.5,
+                        mirror = false
+                    },
+                },
+                layout_strategy = 'flex',
+                mappings = {
+                    i = {
+                        ['<esc>'] = actions.close,
+                        ['<Tab>'] = actions.move_selection_next,
+                        ['<S-Tab>'] = actions.move_selection_previous,
+                    },
+                },
+                path_display = {
+                    'filename_first',
+                },
+                prompt_prefix = ' ',
+                selection_caret = ' ',
+                set_env = {['COLORTERM'] = 'truecolor'},
                 vimgrep_arguments = { -- live_grep()
                     'rg', '--follow', '--color=never', '--no-heading', '--with-filename',
                     '--line-number', '--column', '--smart-case', '--hidden', '--no-ignore',
@@ -55,32 +84,6 @@ return {
                     '--glob', '!Session.vim',
                     '--glob', '!vendor',
                 },
-                mappings = {
-                    i = {
-                        ['<esc>'] = actions.close,
-                        ['<Tab>'] = actions.move_selection_next,
-                        ['<S-Tab>'] = actions.move_selection_previous,
-                    },
-                },
-                prompt_prefix = ' ',
-                selection_caret = ' ',
-                entry_prefix = '  ',
-                initial_mode = 'insert',
-                layout_strategy = 'flex',
-                layout_config = {
-                    width = 0.95,
-                    prompt_position = 'bottom',
-                    preview_cutoff = 20,
-                    horizontal = {
-                        preview_width = 0.5,
-                        mirror = false
-                    },
-                    vertical = {
-                        preview_height = 0.5,
-                        mirror = false
-                    },
-                },
-                set_env = {['COLORTERM'] = 'truecolor'},
             },
             extensions = {
                 file_browser = {
