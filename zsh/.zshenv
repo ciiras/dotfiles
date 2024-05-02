@@ -3,6 +3,7 @@ export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_SDK_EMULATOR="$ANDROID_SDK_ROOT/emulator"
 export ANDROID_SDK_TOOLS=$ANDROID_SDK_ROOT/platform-tools
 export CLICOLOR=1
+export DELTA_PAGER='less -+X -+F --mouse'
 export DOT_FILES_DIR="$HOME/projects/dotfiles"
 export EDITOR='nvim'
 
@@ -41,7 +42,7 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
-export MANPAGER='less -X' # Don’t clear the screen after quitting a manual page
+export MANPAGER='less -X'
 export MODE_CURSOR_VIINS='#86ABDC blinking bar'
 export MODE_CURSOR_REPLACE="$MODE_CURSOR_VIINS #86ABDC"
 export MODE_CURSOR_VICMD='#86ABDC blinking block'

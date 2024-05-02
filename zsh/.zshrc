@@ -67,7 +67,6 @@
 
 # }}}
 
-
 # Options {{{
 
 setopt CORRECT                   # Spelling correction

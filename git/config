@@ -1,39 +1,26 @@
 [core]
     excludesfile = ~/.config/git/ignore
-    pager = diffr | less -+X -+F --mouse
-[difftool "sourcetree"]
-    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    path =
-[mergetool "sourcetree"]
-    cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-    trustExitCode = true
+    pager = delta
+[delta]
+    line-numbers = true
+    navigate = true
+    side-by-side = true
+[diff]
+    colorMoved = default
+[fetch]
+    prune = true
+[init]
+    templatedir = ~/projects/od-env/projects/git-templates
+[interactive]
+    diffFilter = delta --color-only
+[merge]
+    conflictstyle = diff3
+[pull]
+    rebase = true
+[push]
+	autoSetupRemote = true
+[rerere]
+	enabled = true
 [user]
     name = Christopher Griffith
     email = christopher.griffith@taillight.com
-[init]
-    templatedir = ~/projects/od-env/projects/git-templates
-[fetch]
-    prune = true
-[alias]
-[merge]
-    conflictstyle = diff3
-[color]
-    ui = always
-[color "diff-highlight"]
-    oldNormal = red bold
-    oldHighlight = red bold 52
-    newNormal = green bold
-    newHighlight = green bold 22
-[color "diff"]
-    commit = green
-    meta = yellow
-    frag = cyan
-    old = red
-    new = green
-    whitespace = red reverse
-[pull]
-    rebase = true
-[rerere]
-	enabled = true
-[push]
-	autoSetupRemote = true
