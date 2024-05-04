@@ -1,5 +1,8 @@
 return {
     'nvim-treesitter/nvim-treesitter-textobjects',
+    dependecies = {
+        'nvim-treesitter/nvim-treesitter',
+    },
     config = function()
         require('nvim-treesitter.configs').setup({ ---@diagnostic disable-line missing-fields
             textobjects = {
