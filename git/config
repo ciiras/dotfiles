@@ -1,10 +1,26 @@
 [core]
     excludesfile = ~/.config/git/ignore
-    pager = delta --diff-so-fancy
+    pager = delta
 [delta]
+    features = diff-so-fancy-evolution
     line-numbers = true
     navigate = true
     side-by-side = true
+[delta "diff-so-fancy-evolution"]
+    commit-style = raw
+    file-decoration-style = bright-yellow ul ol
+    file-style = bright-yellow
+    file-style = bright-yellow
+    hunk-header-style = file line-number syntax
+    hunk-header-file-style = orange
+    minus-style                   = syntax "#6C0002"
+    minus-non-emph-style          = syntax "#6C0002"
+    minus-emph-style              = syntax bold red
+    minus-empty-line-marker-style = normal "#6C0002"
+    plus-style                    = syntax "#005700"
+    plus-non-emph-style           = syntax "#005700"
+    plus-emph-style               = syntax bold green
+    plus-empty-line-marker-style  = normal "#005700"
 [diff]
     colorMoved = default
 [fetch]
