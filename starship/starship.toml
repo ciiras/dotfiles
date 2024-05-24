@@ -27,6 +27,7 @@ palette = 'nightfox'
 blue = '#719CD6'
 cyan = '#7AD5D6'
 green = '#81B29A'
+orange = '#F4A261'
 purple = '#9D79D6'
 red = '#C94F6D'
 white = '#AEAFB0'
@@ -74,6 +75,7 @@ format = '[${symbol}${version}](${style}) '
 [jobs]
 format = '[${symbol}${number}](${style}) '
 number_threshold = 1
+style = 'fg:orange'
 symbol_threshold = 1
 
 [lua]
