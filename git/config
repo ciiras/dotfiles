@@ -1,6 +1,5 @@
 [core]
     excludesfile = ~/.config/git/ignore
-    pager = delta
 [delta]
     features = diff-so-fancy-evolution
     line-numbers = true
@@ -31,6 +30,10 @@
     diffFilter = delta --color-only
 [merge]
     conflictstyle = diff3
+[pager]
+    diff = delta
+    log = delta
+    show = delta
 [pull]
     rebase = true
 [push]
