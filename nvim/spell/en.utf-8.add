@@ -227,3 +227,8 @@ mapViewRef
 Esc
 popup
 dotdrop
+didTapAtCoordinate
+tappable
+nativeEvent
+BNC
+didTapOverlay
