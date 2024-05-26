@@ -50,6 +50,10 @@ return {
             on_attach = on_attach,
         })
 
+        lspConfig.biome.setup({
+            on_attach = on_attach,
+        })
+
         lspConfig.eslint.setup({
             on_attach = on_attach,
         })
