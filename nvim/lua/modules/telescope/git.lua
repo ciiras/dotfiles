@@ -1,9 +1,12 @@
 local previewers = require('telescope.previewers')
 local builtin = require('telescope.builtin')
 
+local function trim(str)
+    return str:match("^%s*(.-)%s*$")
+end
 
-local function trim(s)
-    return s:match("^%s*(.-)%s*$")
+local function git_status_includes_rename(status)
+  return status:sub(1, 1) == 'R'
 end
 
 local function parse_new_path_from_git_rename(str)
@@ -23,7 +26,7 @@ end
 local delta = previewers.new_termopen_previewer {
     get_command = function(entry)
         local path = entry.path
-        if entry.status == 'RM' then -- Renamed file format: old path -> new path
+        if git_status_includes_rename(entry.status) then -- Renamed file format: old path -> new path
             path = parse_new_path_from_git_rename(entry.path)
         end
 
