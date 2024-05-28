@@ -232,3 +232,4 @@ tappable
 nativeEvent
 BNC
 didTapOverlay
+useMemo
