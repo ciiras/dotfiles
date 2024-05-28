@@ -23,29 +23,44 @@ local function parse_new_path_from_git_rename(str)
   return trim(result[#result])
 end
 
-local delta = previewers.new_termopen_previewer {
-    get_command = function(entry)
-        local path = entry.path
-        if git_status_includes_rename(entry.status) then -- Renamed file format: old path -> new path
-            path = parse_new_path_from_git_rename(entry.path)
-        end
+local function buildDiff(diffOptions)
+    return previewers.new_termopen_previewer({
+        get_command = function(entry)
+            local path = entry.path
+            if git_status_includes_rename(entry.status) then -- Renamed file format: old path -> new path
+                path = parse_new_path_from_git_rename(entry.path)
+            end
 
-        return {
-            'git',
-            '-c', 'core.pager=delta',
-            '-c', 'delta.side-by-side=false',
-            '-c', 'delta.features=diff-so-fancy-evolution',
-            'diff',
-            path,
-        }
-    end
-}
+            local cmd = {
+                'git',
+                '-c', 'core.pager=delta',
+                '-c', 'delta.side-by-side=false',
+                '-c', 'delta.features=diff-so-fancy-evolution',
+                'diff',
+            }
+
+            if (diffOptions) then
+                table.insert(cmd, diffOptions)
+            end
+            table.insert(cmd, path)
+
+            return cmd;
+        end
+    })
+end
 
 local M = {}
 
 M.git_status = function(opts)
     opts = opts or {}
-    opts.previewer = delta
+    opts.previewer = buildDiff()
+
+    builtin.git_status(opts)
+end
+
+M.git_status_staged = function(opts)
+    opts = opts or {}
+    opts.previewer = buildDiff('--staged')
 
     builtin.git_status(opts)
 end

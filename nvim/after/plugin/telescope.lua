@@ -7,6 +7,7 @@ nmap('<leader>fi', '<cmd>:Telescope import<CR>', { desc = 'js import' })
 nmap('<leader>fm', '<cmd>:Telescope notify<CR>', { desc = 'messages', })
 nmap('<leader>fn', '<cmd>:Telescope node_modules list<CR>', { desc = 'node modules' })
 nmap('<leader>fr', '<cmd>lua require("telescope.builtin").live_grep()<CR>', { desc  = 'ripgrep'})
+nmap('<leader>fs', '<cmd>lua require("modules.telescope.git").git_status_staged()<CR>', { desc = 'git status' })
 nmap('<leader>fu', '<cmd>:Telescope undo<CR>', { desc  = 'undo'})
 nmap('<leader>.', '<cmd>:Telescope file_browser path=%:p:h select_buffer=true<CR>', { desc = 'file browser' })
 
