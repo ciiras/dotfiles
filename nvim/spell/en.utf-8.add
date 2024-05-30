@@ -233,3 +233,5 @@ nativeEvent
 BNC
 didTapOverlay
 useMemo
+linter
+createElement
