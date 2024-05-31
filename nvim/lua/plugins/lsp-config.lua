@@ -26,6 +26,8 @@ return {
             vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, buildBufferOptions(bufNum, 'LSP Code Actions'))
             vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format({ async = true }) end,
                 buildBufferOptions(bufNum, 'LSP Format'))
+
+            vim.keymap.set('n', '<space>q', '<cmd>TroubleToggle<cr>', buildBufferOptions(bufNum, 'Trouble List Toggle'))
         end
 
         local on_attach_tsserver = function(client, bufNum)
