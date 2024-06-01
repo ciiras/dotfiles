@@ -3,8 +3,7 @@ return {
     config = function()
         local trouble = require('trouble')
         trouble.setup({
-            cycle_results = false,
-            padding = false,
+            open_no_results = true,
         })
     end,
     event = 'VeryLazy',
