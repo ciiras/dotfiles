@@ -236,3 +236,8 @@ useMemo
 linter
 createElement
 geo
+mapContext
+clustererRef
+clusterer
+rabbitmq
+filteredVehicles
