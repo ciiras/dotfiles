@@ -1,17 +1,21 @@
-nmap('<esc>', '<cmd>nohlsearch<CR>')
+nmap('<esc>', '<cmd>nohlsearch<CR>', { desc = 'escape w/ clear highlights' })
 
-nmap('<leader>%', '<C-W>s')
-nmap('<leader>"', '<C-W>v')
+nmap('<leader>%', '<C-W>s', { desc = 'split horizontal' })
+nmap('<leader>"', '<C-W>v', { desc = 'split vertical' })
 
-nmap('<M-h>', '<C-W>>')
-nmap('<M-l>', '<C-W><')
-nmap('<M-j>', '<C-W>-')
-nmap('<M-k>', '<C-W>+')
-nmap('<M-=>', '<C-W>=')
+nmap('<M-h>', '<C-W>>', { desc = 'tmux resize left' })
+nmap('<M-l>', '<C-W><', { desc = 'tmux resize right' })
+nmap('<M-j>', '<C-W>-', { desc = 'tmux resize down' })
+nmap('<M-k>', '<C-W>+', { desc = 'tmux resize up' })
+nmap('<M-=>', '<C-W>=', { desc = 'reset splits' })
 
-nmap('q:', '<Nop>')
-xmap('p', 'pgvy')
+nmap('q:', '<Nop>', { desc = 'prevent entering command history' })
 
-nmap('<leader>da', 'ggVGd')
-nmap('<leader>va', 'ggVGg_')
-nmap('<leader>ya', 'gg0vGg_y')
+nmap('qq', ':q<Enter>', { desc = 'buffer quit' })
+nmap('QQ', ':q!<Enter>', { desc = 'buffer quit w/o save' })
+
+xmap('p', 'pgvy', { desc = 'always keep current value in yank buffer' })
+
+nmap('<leader>da', 'ggVGd', { desc = 'buffer delete all' })
+nmap('<leader>va', 'ggVGg_', { desc = 'buffer visually select all' })
+nmap('<leader>ya', 'gg0vGg_y', { desc = 'buffer yank all' })
