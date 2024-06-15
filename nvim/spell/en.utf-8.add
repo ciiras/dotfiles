@@ -242,3 +242,5 @@ clusterer
 rabbitmq
 filteredVehicles
 imei
+resize
+TRAPWINCH

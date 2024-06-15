@@ -12,6 +12,7 @@
     file-style = bright-yellow
     hunk-header-style = file line-number syntax
     hunk-header-file-style = orange
+    map-styles = bold purple => bold blue, bold cyan => syntax blue
     minus-style                   = syntax "#6C0002"
     minus-non-emph-style          = syntax "#6C0002"
     minus-emph-style              = syntax bold red
