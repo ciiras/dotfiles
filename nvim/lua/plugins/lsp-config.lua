@@ -86,6 +86,7 @@ return {
                             'keymap',
                             'keymap_options',
                             'nmap',
+                            'nvmap',
                             'nxmap',
                             'opt',
                             'vim',

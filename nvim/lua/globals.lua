@@ -51,5 +51,10 @@ end
 
 function nxmap(keymap, cmd, opts)
     opts = opts or {}
-    map({"n","x"}, keymap, cmd, opts)
+    map({'n','x'}, keymap, cmd, opts)
+end
+
+function nvmap(keymap, cmd, opts)
+    opts = opts or {}
+    map({'n','v'}, keymap, cmd, opts)
 end
