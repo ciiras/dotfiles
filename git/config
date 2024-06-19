@@ -23,6 +23,7 @@
     plus-non-emph-style           = syntax "#005700"
     plus-emph-style               = syntax bold green
     plus-empty-line-marker-style  = normal "#005700"
+    zero-style = dim syntax
 [diff]
     colorMoved = default
 [fetch]
