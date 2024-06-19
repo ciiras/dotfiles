@@ -13,6 +13,7 @@ nmap('q:', '<Nop>', { desc = 'prevent entering command history' })
 
 nmap('qq', ':q<Enter>', { desc = 'buffer quit' })
 nmap('QQ', ':q!<Enter>', { desc = 'buffer quit w/o save' })
+nmap('XX', ':xa<Enter>', { desc = 'buffer save and quit' })
 
 nvmap('E', 'g_', { desc = 'end of line motion' })
 nvmap('B', '^', { desc = 'beginning of line motion' })
