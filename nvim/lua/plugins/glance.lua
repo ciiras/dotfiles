@@ -7,6 +7,7 @@ return {
             border = {
                 enable = true,
             },
+            height = 40,
         })
     end,
     event = {
