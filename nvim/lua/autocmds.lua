@@ -33,9 +33,6 @@ local turn_off_relative_number = function()
 end
 create_autocmd({ 'BufLeave', 'FocusLost', 'InsertEnter' }, { callback = turn_off_relative_number })
 
-create_autocmd({ 'WinEnter', 'BufReadPre' }, { command = 'setlocal cursorline' })
-create_autocmd({ 'WinLeave' }, { command = 'setlocal nocursorline' })
-
 create_autocmd({ 'BufRead' }, { command = 'setlocal foldmethod=marker' })
 
 local strip_trailing_white_space = function()
