@@ -44,7 +44,10 @@ return {
                         fg = '#FFFFFF'
                     },
                     TelescopeBorder = {
-                        fg = '#719CD6'
+                        fg = '#AAC4E6'
+                    },
+                    TelescopeSelection = {
+                        bg = '#212121'
                     },
                     Visual = {
                         fg = '#86ABDC'
