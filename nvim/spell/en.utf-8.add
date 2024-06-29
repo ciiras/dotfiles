@@ -253,3 +253,6 @@ HOC
 polylines
 WebSocket
 base64
+useEffect
+useCallback
+useRouter
