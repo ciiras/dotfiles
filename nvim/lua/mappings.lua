@@ -12,6 +12,7 @@ nmap('<M-=>', '<C-W>=', { desc = 'reset splits' })
 nmap('q:', '<Nop>', { desc = 'prevent entering command history' })
 
 nmap('qq', ':q<Enter>', { desc = 'buffer quit' })
+nmap('QQ', ':q!<Enter>', { desc = 'buffer quit w/o saving' })
 nmap('WW', ':wa<Enter>', { desc = 'buffer save all' })
 nmap('XX', ':xa<Enter>', { desc = 'buffer save and quit' })
 
