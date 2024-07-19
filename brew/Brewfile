@@ -114,7 +114,7 @@ cask "ngrok"
 cask "notunes"
 cask "react-native-debugger"
 cask "temurin"
-cask "zulu17"
+cask "zulu@17"
 mas "Forecast Bar", id: 982710545
 mas "GarageBand", id: 682658836
 mas "Microsoft Remote Desktop", id: 1295203466
