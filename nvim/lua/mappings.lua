@@ -9,12 +9,8 @@ nmap('<M-j>', '<C-W>-', { desc = 'tmux resize down' })
 nmap('<M-k>', '<C-W>+', { desc = 'tmux resize up' })
 nmap('<M-=>', '<C-W>=', { desc = 'reset splits' })
 
-nmap('q:', '<Nop>', { desc = 'prevent entering command history' })
-
-nmap('qq', ':q<Enter>', { desc = 'buffer quit' })
-nmap('QQ', ':q!<Enter>', { desc = 'buffer quit w/o saving' })
 nmap('WW', ':wa<Enter>', { desc = 'buffer save all' })
-nmap('XX', ':xa<Enter>', { desc = 'buffer save and quit' })
+nmap('XX', ':xa<Enter>', { desc = 'buffer save all and quit' })
 
 nvmap('E', 'g_', { desc = 'end of line motion' })
 nvmap('B', '^', { desc = 'beginning of line motion' })
