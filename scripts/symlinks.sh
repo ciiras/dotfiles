@@ -52,6 +52,8 @@ create_symlink() {
 create_symlink "$DOT_FILES_DIR/borders/bordersrc" "$XDG_CONFIG_HOME/borders/bordersrc"
 create_symlink "$DOT_FILES_DIR/git/config" "$XDG_CONFIG_HOME/git/config"
 create_symlink "$DOT_FILES_DIR/git/ignore" "$XDG_CONFIG_HOME/git/ignore"
+create_symlink "$DOT_FILES_DIR/helix/config.toml" "$XDG_CONFIG_HOME/helix/config.toml"
+create_symlink "$DOT_FILES_DIR/helix/themes/nightfox_custom.toml" "$XDG_CONFIG_HOME/helix/themes/nightfox_custom.toml"
 create_symlink "$DOT_FILES_DIR/karabiner" "$XDG_CONFIG_HOME/karabiner"
 create_symlink "$DOT_FILES_DIR/kitty/kitty.conf" "$XDG_CONFIG_HOME/kitty/kitty.conf"
 create_symlink "$DOT_FILES_DIR/nodenv/default-packages" "$XDG_CONFIG_HOME/nodenv/default-packages"
