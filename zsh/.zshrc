@@ -44,6 +44,19 @@
 
     # zsh-users/zsh-autosuggestions config {{{
 
+
+    # Tab/STab cycle through completions w/o selecting one
+    bindkey              '^I'         menu-complete
+    # shellcheck disable=SC2154
+    bindkey "${terminfo}[kcbt]" reverse-menu-complete
+
+    # Enter submits command
+    bindkey -M menuselect '\r' .accept-line
+
+    # }}}
+
+    # marlonrichert/zsh-autocomplete config {{{
+
     export ZSH_AUTOSUGGEST_USE_ASYNC=1
     export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
     bindkey '^ ' autosuggest-accept
