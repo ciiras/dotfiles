@@ -44,7 +44,6 @@
 
     # zsh-users/zsh-autosuggestions config {{{
 
-
     # Tab/STab cycle through completions w/o selecting one
     bindkey              '^I'         menu-complete
     # shellcheck disable=SC2154
