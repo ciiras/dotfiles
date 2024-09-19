@@ -150,6 +150,7 @@ alias r='resource'
 alias rc=~/projects/od-env/build-node-docker/render-consul-template.sh
 alias rd=~/projects/od-env/build-node-docker/gendockerfile.sh
 alias rm=trash
+alias rms='trash Session.vim'
 alias t=tmux
 alias top=btop
 alias v='nvim "+silent! :source Session.vim"'
