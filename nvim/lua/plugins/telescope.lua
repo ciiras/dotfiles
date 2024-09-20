@@ -38,6 +38,8 @@ return {
                         ['<esc>'] = actions.close,
                         ['<Tab>'] = actions.move_selection_next,
                         ['<S-Tab>'] = actions.move_selection_previous,
+                        ['<C-N>'] = actions.cycle_history_next,
+                        ['<C-P>'] = actions.cycle_history_prev,
                     },
                 },
                 path_display = {
