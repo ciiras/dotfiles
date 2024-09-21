@@ -36,10 +36,12 @@ return {
                 mappings = {
                     i = {
                         ['<esc>'] = actions.close,
-                        ['<Tab>'] = actions.move_selection_next,
-                        ['<S-Tab>'] = actions.move_selection_previous,
-                        ['<C-N>'] = actions.cycle_history_next,
-                        ['<C-P>'] = actions.cycle_history_prev,
+                        ['<C-N>'] = actions.move_selection_next,
+                        ['<C-P>'] = actions.move_selection_previous,
+                        ['<C-J>'] = actions.preview_scrolling_up,
+                        ['<C-K>'] = actions.preview_scrolling_down,
+                        ['<C-D>'] = actions.cycle_history_next,
+                        ['<C-U>'] = actions.cycle_history_prev,
                     },
                 },
                 path_display = {
