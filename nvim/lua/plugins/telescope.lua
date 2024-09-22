@@ -38,8 +38,12 @@ return {
                         ['<esc>'] = actions.close,
                         ['<C-N>'] = actions.move_selection_next,
                         ['<C-P>'] = actions.move_selection_previous,
+
+                        ['<C-H>'] = actions.preview_scrolling_left,
                         ['<C-J>'] = actions.preview_scrolling_up,
                         ['<C-K>'] = actions.preview_scrolling_down,
+                        ['<C-L>'] = actions.preview_scrolling_right,
+
                         ['<C-D>'] = actions.cycle_history_next,
                         ['<C-U>'] = actions.cycle_history_prev,
                     },
