@@ -35,7 +35,7 @@ return {
                 layout_strategy = 'flex',
                 mappings = {
                     i = {
-                        ['<esc>'] = actions.close,
+                        ['<ESC>'] = actions.close,
 
                         ['<C-N>'] = actions.move_selection_next,
                         ['<C-P>'] = actions.move_selection_previous,
