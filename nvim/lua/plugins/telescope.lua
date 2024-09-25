@@ -59,8 +59,8 @@ return {
                         ['<C-P>'] = actions.move_selection_previous,
 
                         ['<C-H>'] = actions.preview_scrolling_left,
-                        ['<C-J>'] = actions.preview_scrolling_up,
-                        ['<C-K>'] = actions.preview_scrolling_down,
+                        ['<C-J>'] = actions.preview_scrolling_down,
+                        ['<C-K>'] = actions.preview_scrolling_up,
                         ['<C-L>'] = actions.preview_scrolling_right,
 
                         ['<C-D>'] = actions.cycle_history_next,
