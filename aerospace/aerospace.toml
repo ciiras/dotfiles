@@ -13,6 +13,7 @@ start-at-login = true
 A = 'Built-in Retina Display'
 B = 'Built-in Retina Display'
 C = 'Built-in Retina Display'
+D = 'Built-in Retina Display'
 
 [gaps]
 inner.horizontal = 2
