@@ -9,7 +9,6 @@
     commit-style = raw
     file-decoration-style = bright-yellow ul ol
     file-style = bright-yellow
-    file-style = bright-yellow
     hunk-header-style = file line-number syntax
     hunk-header-file-style = orange
     line-numbers-left-format = "┊{nm:>4}│"
