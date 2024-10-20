@@ -62,10 +62,8 @@ create_symlink "$DOT_FILES_DIR/nvim/lazy-lock.json" "$XDG_CONFIG_HOME/nvim/lazy-
 create_symlink "$DOT_FILES_DIR/nvim/lua" "$XDG_CONFIG_HOME/nvim/lua"
 create_symlink "$DOT_FILES_DIR/nvim/spell/en.utf-8.add" "$XDG_CONFIG_HOME/nvim/spell/en.utf-8.add"
 create_symlink "$DOT_FILES_DIR/python/pip.conf" "$XDG_CONFIG_HOME/pip/pip.conf"
-create_symlink "$DOT_FILES_DIR/skhd/skhdrc" "$XDG_CONFIG_HOME/skhd/skhdrc"
 create_symlink "$DOT_FILES_DIR/starship/starship.toml" "$XDG_CONFIG_HOME/starship/starship.toml"
 create_symlink "$DOT_FILES_DIR/tmux/tmux.conf" "$XDG_CONFIG_HOME/tmux/tmux.conf"
-create_symlink "$DOT_FILES_DIR/yabai/yabairc" "$XDG_CONFIG_HOME/yabai/yabairc"
 create_symlink "$DOT_FILES_DIR/zsh/.zshenv" "$XDG_CONFIG_HOME/zsh/.zshenv"
 create_symlink "$DOT_FILES_DIR/zsh/.zshrc" "$XDG_CONFIG_HOME/zsh/.zshrc"
 create_symlink "$DOT_FILES_DIR/zsh/zshenv" /etc/zshenv
