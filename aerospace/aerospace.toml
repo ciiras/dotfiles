@@ -15,6 +15,9 @@ A = 'Built-in Retina Display'
 B = 'Built-in Retina Display'
 C = 'Built-in Retina Display'
 D = 'Built-in Retina Display'
+E = 'Built-in Retina Display'
+F = 'Built-in Retina Display'
+G = 'Built-in Retina Display'
 
 [gaps]
 inner.horizontal = 2
@@ -50,6 +53,7 @@ alt-6 = 'workspace 6'
 alt-7 = 'workspace 7'
 alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
+
 alt-a = 'workspace A'
 alt-b = 'workspace B'
 alt-c = 'workspace C'
@@ -67,6 +71,7 @@ alt-shift-6 = 'move-node-to-workspace 6'
 alt-shift-7 = 'move-node-to-workspace 7'
 alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
+
 alt-shift-a = 'move-node-to-workspace A'
 alt-shift-b = 'move-node-to-workspace B'
 alt-shift-c = 'move-node-to-workspace C'
