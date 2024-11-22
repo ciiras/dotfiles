@@ -115,6 +115,10 @@ unset LSCOLORS
 # }}}
 
 # Functions {{{
+function gbDa () {
+    git branch --no-color | command grep -vE "^([+*]|\s*($(git_main_branch)|$(git_develop_branch))\s*$)" | command xargs git branch -D 2> /dev/null
+}
+
 function resource() {
     source "$ZDOTDIR/.zshenv"
     source "$ZDOTDIR/.zshrc"
