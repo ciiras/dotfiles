@@ -31,10 +31,10 @@ outer.right =      2
 alt-shift-ctrl-cmd-t = 'layout tiles vertical horizontal'
 alt-shift-ctrl-cmd-a = 'layout accordion horizontal vertical'
 
-alt-shift-ctrl-cmd-h = 'focus left'
-alt-shift-ctrl-cmd-j = 'focus down'
-alt-shift-ctrl-cmd-k = 'focus up'
-alt-shift-ctrl-cmd-l = 'focus right'
+alt-shift-ctrl-cmd-h = 'focus left --boundaries-action wrap-around-the-workspace'
+alt-shift-ctrl-cmd-j = 'focus down --boundaries-action wrap-around-the-workspace'
+alt-shift-ctrl-cmd-k = 'focus up --boundaries-action wrap-around-the-workspace'
+alt-shift-ctrl-cmd-l = 'focus right --boundaries-action wrap-around-the-workspace'
 
 alt-shift-h = 'move left'
 alt-shift-j = 'move down'
