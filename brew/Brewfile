@@ -131,6 +131,7 @@ cask "mos"
 cask "ngrok"
 cask "notunes"
 cask "react-native-debugger"
+cask "stats"
 cask "temurin"
 cask "zulu@17"
 mas "Forecast Bar", id: 982710545
