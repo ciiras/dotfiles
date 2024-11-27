@@ -43,6 +43,7 @@ alt-shift-l = 'move right'
 
 alt-shift-ctrl-cmd-minus = 'resize smart -100'
 alt-shift-ctrl-cmd-equal = 'resize smart +100'
+alt-shift-ctrl-cmd-b = 'balance-sizes'
 
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
