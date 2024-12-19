@@ -119,6 +119,12 @@ function gbDa () {
     git branch --no-color | command grep -vE "^([+*]|\s*($(git_main_branch)|$(git_develop_branch))\s*$)" | command xargs git branch -D 2> /dev/null
 }
 
+function rms() {
+    if test -f "./Session.vim"; then
+        trash ./Session.vim
+    fi
+}
+
 function resource() {
     source "$ZDOTDIR/.zshenv"
     source "$ZDOTDIR/.zshrc"
@@ -154,7 +160,6 @@ alias r='resource'
 alias rc=~/projects/od-env/build-node-docker/render-consul-template.sh
 alias rd=~/projects/od-env/build-node-docker/gendockerfile.sh
 alias rm=trash
-alias rms='trash Session.vim'
 alias t=tmux
 alias top=btop
 alias v='nvim "+silent! :source Session.vim"'
