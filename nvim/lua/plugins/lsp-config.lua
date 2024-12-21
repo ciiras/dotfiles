@@ -17,17 +17,14 @@ return {
 
             vim.keymap.set('n', '[d', '<Cmd>Lspsaga diagnostic_jump_prev<CR>', keymap_options)
             vim.keymap.set('n', ']d', '<Cmd>Lspsaga diagnostic_jump_next<CR>', keymap_options)
-            vim.keymap.set('n', 'gd', '<Cmd>Glance definitions<CR>', buildBufferOptions(bufNum, 'LSP Definition'))
-            vim.keymap.set('n', 'gr', '<Cmd>Glance references<CR>', buildBufferOptions(bufNum, 'LSP References'))
-            vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', buildBufferOptions(bufNum, 'LSP Hover'))
-            vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition,
-                buildBufferOptions(bufNum, 'LSP Type Definition'))
-            vim.keymap.set('n', '<space>rn', '<Cmd>Lspsaga rename<CR>', buildBufferOptions(bufNum, 'LSP Rename'))
-            vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, buildBufferOptions(bufNum, 'LSP Code Actions'))
-            vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format({ async = true }) end,
-                buildBufferOptions(bufNum, 'LSP Format'))
-
+            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, buildBufferOptions(bufNum, 'LSP Definition'))
+            vim.keymap.set('n', '<space>a', vim.lsp.buf.code_action, buildBufferOptions(bufNum, 'LSP Code Actions'))
+            vim.keymap.set('n', '<space>d', '<Cmd>Glance definitions<CR>', buildBufferOptions(bufNum, 'Glance Definition'))
+            vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format({ async = true }) end, buildBufferOptions(bufNum, 'LSP Format'))
+            vim.keymap.set('n', '<space>h', '<Cmd>Lspsaga hover_doc<CR>', buildBufferOptions(bufNum, 'LSP Hover'))
+            vim.keymap.set('n', '<space>n', '<Cmd>Lspsaga rename<CR>', buildBufferOptions(bufNum, 'LSP Rename'))
             vim.keymap.set('n', '<space>q', '<cmd>Trouble diagnostics toggle<cr>', buildBufferOptions(bufNum, 'Trouble Diagnostics Toggle'))
+            vim.keymap.set('n', '<space>r', '<Cmd>Glance references<CR>', buildBufferOptions(bufNum, 'Glance References'))
         end
 
         local on_attach_tsserver = function(client, bufNum)
