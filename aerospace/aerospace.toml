@@ -27,6 +27,10 @@ outer.top =        2
 outer.right =      2
 
 [mode.main.binding]
+alt-shift-ctrl-cmd-minus = 'resize smart -100'
+alt-shift-ctrl-cmd-backspace = 'close-all-windows-but-current'
+alt-shift-ctrl-cmd-equal = 'resize smart +100'
+
 alt-shift-ctrl-cmd-h = 'focus left --boundaries-action wrap-around-the-workspace'
 alt-shift-ctrl-cmd-j = 'focus down --boundaries-action wrap-around-the-workspace'
 alt-shift-ctrl-cmd-k = 'focus up --boundaries-action wrap-around-the-workspace'
@@ -88,11 +92,8 @@ alt-shift-ctrl-cmd-l = 'focus right --boundaries-action wrap-around-the-workspac
 
 0 = 'balance-sizes'
 a = 'layout accordion horizontal vertical'
-backspace = 'close-all-windows-but-current'
-equal = 'resize smart +200'
 esc = ['reload-config', 'mode main']
 f = 'layout floating tiling'
-minus = 'resize smart -200'
 r = 'flatten-workspace-tree'
 t = 'layout tiles vertical horizontal'
 
