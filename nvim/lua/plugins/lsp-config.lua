@@ -27,7 +27,7 @@ return {
             vim.keymap.set('n', '<space>r', '<Cmd>Glance references<CR>', buildBufferOptions(bufNum, 'Glance References'))
         end
 
-        local on_attach_tsserver = function(client, bufNum)
+        local on_attach_ts_ls = function(client, bufNum)
             on_attach(client, bufNum)
 
             local utils = require('nvim-lsp-ts-utils')
@@ -106,7 +106,7 @@ return {
             on_attach = on_attach,
         })
 
-        lspConfig.tsserver.setup({
+        lspConfig.ts_ls.setup({
             filetypes = {
                 'javascript',
                 'json',
@@ -119,7 +119,7 @@ return {
                     disableSuggestions = false,
                 },
             },
-            on_attach = on_attach_tsserver,
+            on_attach = on_attach_ts_ls,
         })
     end,
     event = {

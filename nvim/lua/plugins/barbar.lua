@@ -1,5 +1,6 @@
 return {
     'romgrk/barbar.nvim',
+    commit = 'd181f2cfd4b828f9c6f1e10e69c68241de59f54f', -- file name display is broken in latest commit
     config = function()
         require('barbar').setup({
             icons = {
