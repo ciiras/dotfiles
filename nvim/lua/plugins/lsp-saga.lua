@@ -7,9 +7,6 @@ return {
             diagnostic = {
                 show_code_action = false,
             },
-            lightbulb = {
-                enable = false,
-            },
             rename = {
                 whole_project = true,
             },
