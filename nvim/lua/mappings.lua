@@ -1,13 +1,7 @@
 nmap('<esc>', '<cmd>nohlsearch<CR>', { desc = 'escape w/ clear highlights' })
 
-nmap('<leader>%', '<C-W>s', { desc = 'split horizontal' })
-nmap('<leader>"', '<C-W>v', { desc = 'split vertical' })
-
-nmap('<M-h>', '<C-W>>', { desc = 'tmux resize left' })
-nmap('<M-l>', '<C-W><', { desc = 'tmux resize right' })
-nmap('<M-j>', '<C-W>-', { desc = 'tmux resize down' })
-nmap('<M-k>', '<C-W>+', { desc = 'tmux resize up' })
-nmap('<M-=>', '<C-W>=', { desc = 'reset splits' })
+nmap('<leader>%', '<C-w>s', { desc = 'split horizontal' })
+nmap('<leader>"', '<C-w>v', { desc = 'split vertical' })
 
 nmap('WW', ':wa<Enter>', { desc = 'buffer save all' })
 nmap('XX', ':xa<Enter>', { desc = 'buffer save all and quit' })
