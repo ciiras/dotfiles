@@ -162,8 +162,8 @@ alias rd=~/projects/od-env/build-node-docker/gendockerfile.sh
 alias rm=trash
 alias t=tmux
 alias top=btop
-alias v='nvim "+silent! :source Session.vim"'
-alias vi='nvim "+silent! :source Session.vim"'
+alias v=nvim
+alias vi=nvim
 
 # }}}
 
