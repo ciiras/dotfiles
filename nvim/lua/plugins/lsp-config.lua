@@ -27,19 +27,6 @@ return {
             vim.keymap.set('n', '<space>r', '<Cmd>Glance references<CR>', buildBufferOptions(bufNum, 'Glance References'))
         end
 
-        local on_attach_tsserver = function(client, bufNum)
-            on_attach(client, bufNum)
-
-            local utils = require('nvim-lsp-ts-utils')
-            utils.setup({
-                filter_out_diagnostics_by_code = {
-                    7016,  -- Type definitions missing from JS package
-                    80001, -- CommonJS module may be converted to ES module
-                },
-            })
-            utils.setup_client(client)
-        end
-
         lspConfig.bashls.setup({
             filetypes = {
                 'sh',
@@ -50,7 +37,10 @@ return {
         })
 
         lspConfig.eslint.setup({
-            on_attach = on_attach,
+            on_attach = function(client, bufNum)
+                on_attach(client, bufNum)
+                client.resolved_capabilities.document_formatting = true
+            end,
         })
 
         lspConfig.jdtls.setup({
@@ -115,7 +105,18 @@ return {
                     disableSuggestions = false,
                 },
             },
-            on_attach = on_attach_tsserver,
+            on_attach = function(client, bufNum)
+                on_attach(client, bufNum)
+
+                local utils = require('nvim-lsp-ts-utils')
+                utils.setup({
+                    filter_out_diagnostics_by_code = {
+                        7016,  -- Type definitions missing from JS package
+                        80001, -- CommonJS module may be converted to ES module
+                    },
+                })
+                utils.setup_client(client)
+            end,
         })
     end,
     event = {
