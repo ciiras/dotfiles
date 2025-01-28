@@ -11,7 +11,7 @@ return {
             automatic_installation = true,
             ensure_installed = {
                 'bashls',
-                'eslint',
+                'eslint@4.8.0',
                 'jdtls',
                 'kotlin_language_server',
                 'lua_ls',

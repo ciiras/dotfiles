@@ -37,10 +37,7 @@ return {
         })
 
         lspConfig.eslint.setup({
-            on_attach = function(client, bufNum)
-                on_attach(client, bufNum)
-                client.resolved_capabilities.document_formatting = true
-            end,
+            on_attach = on_attach,
         })
 
         lspConfig.jdtls.setup({
