@@ -47,6 +47,10 @@
 
     # zsh-users/zsh-autosuggestions config {{{
 
+    export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+    export ZSH_AUTOSUGGEST_USE_ASYNC=1
+    export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
+
     # Tab/STab cycle through completions w/o selecting one
     bindkey              '^I'         menu-complete
     # shellcheck disable=SC2154
@@ -58,10 +62,6 @@
     # }}}
 
     # marlonrichert/zsh-autocomplete config {{{
-
-    export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-    export ZSH_AUTOSUGGEST_USE_ASYNC=1
-    export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 
     bindkey '^ ' autosuggest-accept
     bindkey '^P' up-line-or-search
