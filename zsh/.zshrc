@@ -19,8 +19,11 @@
 
     export ZSH_CACHE_DIR="${XDG_DATA_HOME}/zinit" # not sure why i have to do this to make OMZP::docker work
 
+
+    zinit ice at='adfade3'
+    zinit light marlonrichert/zsh-autocomplete
+
 	zinit for \
-	    marlonrichert/zsh-autocomplete as"completions" \
         OMZP::docker/completions/_docker \
 	    OMZP::docker \
 	    OMZP::docker-compose \
@@ -56,10 +59,11 @@
 
     # marlonrichert/zsh-autocomplete config {{{
 
+    export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
     export ZSH_AUTOSUGGEST_USE_ASYNC=1
     export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
-    bindkey '^ ' autosuggest-accept
 
+    bindkey '^ ' autosuggest-accept
     bindkey '^P' up-line-or-search
     bindkey '^N' down-line-or-search
 
