@@ -1,3 +1,4 @@
+
 export _ZO_DATA_DIR="$XDG_DATA_HOME/zoxide"
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_SDK_EMULATOR="$ANDROID_SDK_ROOT/emulator"
@@ -28,7 +29,7 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse-list --border'
 export GREP_COLOR='1;32'
 export GREP_OPTIONS='--color=auto'
-export HISTSIZE=10000
+export HIST_LENGTH=10000
 
 HOMEBREW_GITHUB_API_TOKEN="$(security find-generic-password -a "$USER" -s "HOMEBREW_GITHUB_API_TOKEN" -w)"
 export HOMEBREW_GITHUB_API_TOKEN
@@ -60,7 +61,6 @@ export PATH="$ANDROID_SDK_TOOLS:$PATH"
 
 export RBENV_ROOT="$XDG_CONFIG_HOME/rbenv"
 export REDISCLI_HISTFILE="$XDG_DATA_HOME/redis/history"
-export SAVEHIST=10000
 export SHELL_SESSIONS_DISABLE=1
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 export STARSHIP_LOG='error'
