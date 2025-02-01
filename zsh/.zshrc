@@ -87,6 +87,7 @@
 
 setopt CORRECT                   # Spelling correction
 setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.
+setopt GLOB_STAR_SHORT           # Enable ** and *** as shortcuts for **/* and ***/*, respectively.
 setopt HIST_EXPIRE_DUPS_FIRST    # Expire a duplicate event first when trimming history.
 setopt HIST_FIND_NO_DUPS         # Do not display a previously found event.
 setopt HIST_IGNORE_ALL_DUPS      # Delete an old recorded event if a new event is a duplicate.
@@ -96,6 +97,8 @@ setopt HIST_REDUCE_BLANKS        # Remove unnecessary spaces
 setopt HIST_SAVE_NO_DUPS         # Do not write a duplicate event to the history file.
 setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
 setopt INC_APPEND_HISTORY        # Append to the end of the history file.
+setopt NO_CLOBBER                # > won't overwrite existing files. Use >!
+setopt NUMERIC_GLOB_SORT         # Display file names in numerical, not lexicographical order
 setopt SHARE_HISTORY             # Share history between all sessions.
 
 # }}}
