@@ -85,6 +85,7 @@
 
 # Options {{{
 
+setopt AUTO_CD                   # cd used when arguments entered w/ no prefixed command
 setopt CORRECT                   # Spelling correction
 setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.
 setopt GLOB_STAR_SHORT           # Enable ** and *** as shortcuts for **/* and ***/*, respectively.
@@ -128,6 +129,10 @@ function gbDa () {
     git branch --no-color | command grep -vE "^([+*]|\s*($(git_main_branch)|$(git_develop_branch))\s*$)" | command xargs git branch -D 2> /dev/null
 }
 
+function previous_dir() {
+  c -
+}
+
 function resource() {
     source "$ZDOTDIR/.zshenv"
     source "$ZDOTDIR/.zshrc"
@@ -137,7 +142,9 @@ function resource() {
 
 # Aliases {{{
 
+alias -- -='previous_dir'
 alias cat=bat
+alias cd=c
 alias cl=clear
 alias d=docker
 alias dc=docker-compose
