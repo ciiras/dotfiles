@@ -13,7 +13,7 @@ return {
         local lspConfig = require('lspconfig')
 
         local on_attach = function(client, bufNum) ---@diagnostic disable-line unused-local
-            vim.api.nvim_buf_set_option(bufNum, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+            vim.bo[bufNum].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
             vim.keymap.set('n', '[d', '<Cmd>Lspsaga diagnostic_jump_prev<CR>', keymap_options)
             vim.keymap.set('n', ']d', '<Cmd>Lspsaga diagnostic_jump_next<CR>', keymap_options)
@@ -108,6 +108,7 @@ return {
                 local utils = require('nvim-lsp-ts-utils')
                 utils.setup({
                     filter_out_diagnostics_by_code = {
+                        6133,  -- No unused local variables
                         7016,  -- Type definitions missing from JS package
                         80001, -- CommonJS module may be converted to ES module
                     },
