@@ -109,6 +109,7 @@ return {
                 utils.setup({
                     filter_out_diagnostics_by_code = {
                         6133,  -- No unused local variables
+                        6198,  -- No all destructured values unused
                         7016,  -- Type definitions missing from JS package
                         80001, -- CommonJS module may be converted to ES module
                     },
