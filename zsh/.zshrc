@@ -1,4 +1,4 @@
-# Zinit {{{
+# Plugin Manager {{{
 
 	# {{{ Zinit
 
@@ -20,14 +20,10 @@
     export ZSH_CACHE_DIR="${XDG_DATA_HOME}/zinit" # not sure why i have to do this to make OMZP::docker work
 
 
-    zinit ice at='adfade3'
-    zinit light marlonrichert/zsh-autocomplete
+    zinit ice at='adfade3'; zinit light marlonrichert/zsh-autocomplete
 
 	zinit for \
         OMZP::docker/completions/_docker \
-	    OMZP::docker \
-	    OMZP::docker-compose \
-	    OMZP::git \
 	    softmoth/zsh-vim-mode \
 	    zsh-users/zsh-autosuggestions
 
@@ -38,12 +34,18 @@
 	    zsh-users/zsh-syntax-highlighting
 
     # shellcheck disable=SC2016
-    zinit ice from"gh-r" as"program" atload'eval "$(starship init zsh)"'
-    zinit light starship/starship
+    zinit ice from"gh-r" as"program" atload'eval "$(starship init zsh)"'; zinit light starship/starship
 
     # shellcheck disable=SC2016
-    zinit ice from"gh-r" as"program" atload'eval "$(zoxide init --cmd c zsh)"'
-    zinit light ajeetdsouza/zoxide
+    zinit ice from"gh-r" as"program" atload'eval "$(zoxide init --cmd c zsh)"'; zinit light ajeetdsouza/zoxide
+
+    zinit snippet OMZL::git.zsh
+    zinit snippet OMZP::git
+    zinit snippet OMZP::sudo
+    zinit snippet OMZP::aws
+    zinit snippet OMZP::kubectl
+    zinit snippet OMZP::kubectx
+    zinit snippet OMZP::command-not-found
 
     # zsh-users/zsh-autosuggestions config {{{
 
@@ -54,7 +56,6 @@
     # shellcheck disable=SC2154
     bindkey "${terminfo}[kcbt]" reverse-menu-complete
     bindkey '^I' menu-complete # Tab/STab cycle through completions w/o selecting one
-    bindkey -M menuselect '\r' .accept-line # Enter submits command
     bindkey '^ ' autosuggest-accept
 
     # }}}
@@ -63,10 +64,11 @@
 
     bindkey '^P' up-line-or-search
     bindkey '^N' down-line-or-search
+    bindkey -M menuselect '\r' .accept-line # Enter submits command
 
     # }}}
 
-    # Auto Complete Fuzzy {{{
+    # zstyle {{{
 
     # 0 -- vanilla completion (abc => abc)
     # 1 -- smart case completion (abc => Abc)
@@ -82,6 +84,7 @@
 
 # Options {{{
 
+setopt APPENDHISTORY             # Append, not overwrite history
 setopt AUTO_CD                   # cd used when arguments entered w/ no prefixed command
 setopt CORRECT                   # Spelling correction
 setopt EXTENDED_HISTORY          # Write the history file in the ':start:elapsed;command' format.

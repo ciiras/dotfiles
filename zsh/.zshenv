@@ -29,6 +29,7 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse-list --border'
 export GREP_COLOR='1;32'
 export GREP_OPTIONS='--color=auto'
+export HISTDUP=erase
 
 HOMEBREW_GITHUB_API_TOKEN="$(security find-generic-password -a "$USER" -s "HOMEBREW_GITHUB_API_TOKEN" -w)"
 export HOMEBREW_GITHUB_API_TOKEN
