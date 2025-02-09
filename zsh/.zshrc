@@ -1,6 +1,6 @@
 # Zinit {{{
 
-	# {{{ Installer/Loader
+	# {{{ Zinit
 
 	ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit"
 	[ ! -d "$ZINIT_HOME" ] && mkdir -p "$(dirname "$ZINIT_HOME")"
@@ -51,19 +51,16 @@
     export ZSH_AUTOSUGGEST_USE_ASYNC=1
     export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 
-    # Tab/STab cycle through completions w/o selecting one
-    bindkey              '^I'         menu-complete
     # shellcheck disable=SC2154
     bindkey "${terminfo}[kcbt]" reverse-menu-complete
-
-    # Enter submits command
-    bindkey -M menuselect '\r' .accept-line
+    bindkey '^I' menu-complete # Tab/STab cycle through completions w/o selecting one
+    bindkey -M menuselect '\r' .accept-line # Enter submits command
+    bindkey '^ ' autosuggest-accept
 
     # }}}
 
     # marlonrichert/zsh-autocomplete config {{{
 
-    bindkey '^ ' autosuggest-accept
     bindkey '^P' up-line-or-search
     bindkey '^N' down-line-or-search
 
