@@ -183,7 +183,3 @@ eval "$(rbenv init - zsh)"
 eval "$(starship init zsh)"
 
 # }}}
-
-# being overwritten when loaded from .zshenv
-export HISTSIZE=$HIST_LENGTH
-export SAVEHIST=$HIST_LENGTH
