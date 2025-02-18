@@ -14,9 +14,6 @@ return {
             },
             highlight = {
                 enable = true,
-                disable = {
-                    'json',
-                },
             },
             ignore_install = {},
             query_linter = {
