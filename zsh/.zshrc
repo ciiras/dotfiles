@@ -40,6 +40,8 @@
     zinit ice from"gh-r" as"program" atload'eval "$(zoxide init --cmd c zsh)"'; zinit light ajeetdsouza/zoxide
 
     zinit snippet OMZL::git.zsh
+    zinit snippet OMZP::docker
+    zinit snippet OMZP::docker-compose
     zinit snippet OMZP::git
     zinit snippet OMZP::sudo
     zinit snippet OMZP::aws
