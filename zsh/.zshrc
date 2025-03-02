@@ -17,21 +17,10 @@
 
 	# Plugins {{{
 
-    export ZSH_CACHE_DIR="${XDG_DATA_HOME}/zinit" # not sure why i have to do this to make OMZP::docker work
-
-
-    zinit ice at='adfade3'; zinit light marlonrichert/zsh-autocomplete
-
-	zinit for \
-        OMZP::docker/completions/_docker \
-	    softmoth/zsh-vim-mode \
-	    zsh-users/zsh-autosuggestions
-
-	zinit wait lucid for \
-	    kutsan/zsh-system-clipboard \
-	    MichaelAquilina/zsh-you-should-use \
-	    zsh-users/zsh-completions \
-	    zsh-users/zsh-syntax-highlighting
+	zinit light kutsan/zsh-system-clipboard
+    zinit light MichaelAquilina/zsh-you-should-use
+    zinit light softmoth/zsh-vim-mode
+    zinit light zsh-users/zsh-completions
 
     # shellcheck disable=SC2016
     zinit ice from"gh-r" as"program" atload'eval "$(starship init zsh)"'; zinit light starship/starship
@@ -49,8 +38,12 @@
     zinit snippet OMZP::kubectx
     zinit snippet OMZP::command-not-found
 
-    # zsh-users/zsh-autosuggestions config {{{
+    autoload -Uz compinit && compinit
+    zinit ice silent as"plugin" wait atload='enable-fzf-tab'; zinit light Aloxaf/fzf-tab
+    zinit light zsh-users/zsh-syntax-highlighting
+    zinit light zsh-users/zsh-autosuggestions
 
+    # zsh-users/zsh-autosuggestions config
     export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
     export ZSH_AUTOSUGGEST_USE_ASYNC=1
     export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
@@ -60,25 +53,17 @@
     bindkey '^I' menu-complete # Tab/STab cycle through completions w/o selecting one
     bindkey '^ ' autosuggest-accept
 
-    # }}}
-
-    # marlonrichert/zsh-autocomplete config {{{
-
-    bindkey '^P' up-line-or-search
-    bindkey '^N' down-line-or-search
-    bindkey -M menuselect '\r' .accept-line # Enter submits command
-
-    # }}}
-
-    # zstyle {{{
-
     # 0 -- vanilla completion (abc => abc)
     # 1 -- smart case completion (abc => Abc)
     # 2 -- word flex completion (abc => A-big-Car)
     # 3 -- full flex completion (abc => ABraCadabra)
     zstyle ':completion:*' matcher-list '' 'r:|?=** m:{a-z\-}={A-Z\_}'
 
-    # }}}
+    zstyle ':completion:*:git-checkout:*' sort false # disable sort when completing `git checkout`
+    zstyle ':completion:*:descriptions' format '[%d]' # set descriptions format to enable group support
+    zstyle ':completion:*' menu no # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
+    zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept # custom fzf flags NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
+    zstyle ':fzf-tab:*' switch-group '<' '>' # switch group using `<` and `>`
 
 	# }}}
 
@@ -131,6 +116,14 @@ function gbDa () {
     git branch --no-color | command grep -vE "^([+*]|\s*($(git_main_branch)|$(git_develop_branch))\s*$)" | command xargs git branch -D 2> /dev/null
 }
 
+fzf_history_widget() {
+  local selected
+  selected=$(fc -rl 1 | fzf --height 40% --reverse --query "$LBUFFER") && LBUFFER=$(echo "$selected" | sed 's/^[0-9]\+\s*//')
+  zle reset-prompt
+}
+zle -N fzf_history_widget
+bindkey '^P' fzf_history_widget
+
 function previous_dir() {
   c -
 }
@@ -140,6 +133,7 @@ function resource() {
     source "$ZDOTDIR/.zshrc"
     echo "zsh config reloaded"
 }
+
 # }}}
 
 # Aliases {{{
@@ -188,3 +182,4 @@ eval "$(rbenv init - zsh)"
 eval "$(starship init zsh)"
 
 # }}}
+
