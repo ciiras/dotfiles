@@ -17,6 +17,11 @@
 
 	# Plugins {{{
 
+    # zsh-users/zsh-autosuggestions config
+    export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+    export ZSH_AUTOSUGGEST_USE_ASYNC=1
+    export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
+
 	zinit light kutsan/zsh-system-clipboard
     zinit light MichaelAquilina/zsh-you-should-use
     zinit light softmoth/zsh-vim-mode
@@ -43,11 +48,6 @@
     zinit light zsh-users/zsh-syntax-highlighting
     zinit light zsh-users/zsh-autosuggestions
 
-    # zsh-users/zsh-autosuggestions config
-    export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-    export ZSH_AUTOSUGGEST_USE_ASYNC=1
-    export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
-
     # shellcheck disable=SC2154
     bindkey "${terminfo}[kcbt]" reverse-menu-complete
     bindkey '^I' menu-complete # Tab/STab cycle through completions w/o selecting one
@@ -64,6 +64,7 @@
     zstyle ':completion:*' menu no # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
     zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept # custom fzf flags NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
     zstyle ':fzf-tab:*' switch-group '<' '>' # switch group using `<` and `>`
+    zstyle ':fzf-tab:complete:c:*' fzf-preview 'eza --tree --level=1 --color=always "$realpath"'
 
 	# }}}
 
@@ -117,9 +118,10 @@ function gbDa () {
 }
 
 fzf_history_widget() {
-  local selected
-  selected=$(fc -rl 1 | fzf --height 40% --reverse --query "$LBUFFER") && LBUFFER=$(echo "$selected" | sed 's/^[0-9]\+\s*//')
-  zle reset-prompt
+  local output
+  output=$(HISTTIMEFORMAT= history | sed 's/^[ ]*[0-9]*[ ]*//')
+  LBUFFER=$(echo "$output" | fzf --tac +s --tiebreak=index)
+  zle redisplay
 }
 zle -N fzf_history_widget
 bindkey '^P' fzf_history_widget
