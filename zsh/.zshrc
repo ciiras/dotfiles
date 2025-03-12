@@ -48,10 +48,8 @@
     zinit light zsh-users/zsh-syntax-highlighting
     zinit light zsh-users/zsh-autosuggestions
 
-    # shellcheck disable=SC2154
-    bindkey "${terminfo}[kcbt]" reverse-menu-complete
-    bindkey '^I' menu-complete # Tab/STab cycle through completions w/o selecting one
     bindkey '^ ' autosuggest-accept
+    bindkey '^P' fzf-history-widget
 
     # 0 -- vanilla completion (abc => abc)
     # 1 -- smart case completion (abc => Abc)
@@ -117,14 +115,6 @@ function gbDa () {
     git branch --no-color | command grep -vE "^([+*]|\s*($(git_main_branch)|$(git_develop_branch))\s*$)" | command xargs git branch -D 2> /dev/null
 }
 
-fzf_history_widget() {
-  local output
-  output=$(HISTTIMEFORMAT= history | sed 's/^[ ]*[0-9]*[ ]*//')
-  LBUFFER=$(echo "$output" | fzf --tac +s --tiebreak=index)
-  zle redisplay
-}
-zle -N fzf_history_widget
-bindkey '^P' fzf_history_widget
 
 function previous_dir() {
   c -
@@ -175,13 +165,14 @@ alias vi=nvim
 
 # }}}
 
-# eval {{{
+# applications {{{
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(jenv init -)"
 eval "$(nodenv init -)"
 eval "$(rbenv init - zsh)"
 eval "$(starship init zsh)"
+source <(fzf --zsh)
 
 # }}}
 
