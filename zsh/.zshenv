@@ -3,6 +3,7 @@ export _ZO_DATA_DIR="$XDG_DATA_HOME/zoxide"
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_SDK_EMULATOR="$ANDROID_SDK_ROOT/emulator"
 export ANDROID_SDK_TOOLS=$ANDROID_SDK_ROOT/platform-tools
+export BAT_THEME=nightfox
 export CLICOLOR=1
 export DELTA_PAGER=$PAGER
 export DOT_FILES_DIR="$HOME/projects/dotfiles"

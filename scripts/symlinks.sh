@@ -50,6 +50,7 @@ create_symlink() {
 }
 
 create_symlink "$DOT_FILES_DIR/aerospace/aerospace.toml" "$XDG_CONFIG_HOME/aerospace/aerospace.toml"
+create_symlink "$DOT_FILES_DIR/bat/themes/nightfox.tmTheme" "$XDG_CONFIG_HOME/bat/themes/nightfox.tmTheme"
 create_symlink "$DOT_FILES_DIR/borders/bordersrc" "$XDG_CONFIG_HOME/borders/bordersrc"
 create_symlink "$DOT_FILES_DIR/git/config" "$XDG_CONFIG_HOME/git/config"
 create_symlink "$DOT_FILES_DIR/git/ignore" "$XDG_CONFIG_HOME/git/ignore"
