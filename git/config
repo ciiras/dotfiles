@@ -16,11 +16,11 @@
     map-styles = bold purple => bold blue, bold cyan => syntax blue
     minus-style                   = syntax "#6C0002"
     minus-non-emph-style          = syntax "#6C0002"
-    minus-emph-style              = syntax bold red
+    minus-emph-style              = yellow red
     minus-empty-line-marker-style = normal "#6C0002"
     plus-style                    = syntax "#005700"
     plus-non-emph-style           = syntax "#005700"
-    plus-emph-style               = syntax bold green
+    plus-emph-style               = blue green
     plus-empty-line-marker-style  = normal "#005700"
     zero-style = dim syntax
 [diff]
