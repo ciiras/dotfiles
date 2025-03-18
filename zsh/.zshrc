@@ -41,12 +41,6 @@
     zinit snippet OMZP::sudo
 
     autoload -Uz compinit && compinit
-    zinit ice silent as='plugin' wait atload='enable-fzf-tab'; zinit light Aloxaf/fzf-tab
-    zinit light zsh-users/zsh-syntax-highlighting
-    zinit light zsh-users/zsh-autosuggestions
-
-    bindkey '^ ' autosuggest-accept
-    bindkey '^P' fzf-history-widget
 
     # 0 -- vanilla completion (abc => abc)
     # 1 -- smart case completion (abc => Abc)
@@ -61,20 +55,16 @@
     zstyle ':fzf-tab:*' switch-group '<' '>' # switch group using `<` and `>`
     zstyle ':fzf-tab:complete:c:*' fzf-preview 'eza --tree --level=1 --color=always "$realpath"'
 
-    git_fzf_widget_check() {
-        zle self-insert
+    function zvm_after_init() {
+        bindkey "^P" fzf-history-widget
+        bindkey "^N" fzf-history-widget
+        bindkey '^ ' autosuggest-accept
 
-        if [[ "$BUFFER" == "ga " ]]; then
-            zle fzf-git-files-widget
-        elif [[ "$BUFFER" == "gco " ]]; then
-            zle fzf-git-branches-widget
-        elif [[ "$BUFFER" == "gstd " ]]; then
-            zle fzf-git-stashes-widget
-        fi
+        bindkey -r '^G'
+        zinit ice silent as='plugin' wait atload='enable-fzf-tab'; zinit light Aloxaf/fzf-tab
+        zinit light zsh-users/zsh-syntax-highlighting
+        zinit light zsh-users/zsh-autosuggestions
     }
-
-    zle -N git_fzf_widget_check
-    bindkey ' ' git_fzf_widget_check
 
 	# }}}
 
