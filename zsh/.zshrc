@@ -17,21 +17,18 @@
 
 	# Plugins {{{
 
-    # zsh-users/zsh-autosuggestions config
     export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
     export ZSH_AUTOSUGGEST_USE_ASYNC=1
     export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 
 	zinit light kutsan/zsh-system-clipboard
+    zinit ice from='gh-r' as='program' atload='eval "$(zoxide init --cmd c zsh)"'; zinit light ajeetdsouza/zoxide
+    zinit ice from='gh-r' as='program' atload='source <(fzf --zsh)'; zinit light junegunn/fzf
+    zinit light junegunn/fzf-git.sh
     zinit light MichaelAquilina/zsh-you-should-use
     zinit light softmoth/zsh-vim-mode
+    zinit light starship/starship
     zinit light zsh-users/zsh-completions
-
-    # shellcheck disable=SC2016
-    zinit ice from"gh-r" as"program" atload'eval "$(starship init zsh)"'; zinit light starship/starship
-
-    # shellcheck disable=SC2016
-    zinit ice from"gh-r" as"program" atload'eval "$(zoxide init --cmd c zsh)"'; zinit light ajeetdsouza/zoxide
 
     zinit snippet OMZL::git.zsh
     zinit snippet OMZP::docker
@@ -44,7 +41,7 @@
     zinit snippet OMZP::command-not-found
 
     autoload -Uz compinit && compinit
-    zinit ice silent as"plugin" wait atload='enable-fzf-tab'; zinit light Aloxaf/fzf-tab
+    zinit ice silent as='plugin' wait atload='enable-fzf-tab'; zinit light Aloxaf/fzf-tab
     zinit light zsh-users/zsh-syntax-highlighting
     zinit light zsh-users/zsh-autosuggestions
 
@@ -63,6 +60,21 @@
     zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept # custom fzf flags NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
     zstyle ':fzf-tab:*' switch-group '<' '>' # switch group using `<` and `>`
     zstyle ':fzf-tab:complete:c:*' fzf-preview 'eza --tree --level=1 --color=always "$realpath"'
+
+    git_fzf_widget_check() {
+        zle self-insert
+
+        if [[ "$BUFFER" == "ga " ]]; then
+            zle fzf-git-files-widget
+        elif [[ "$BUFFER" == "gco " ]]; then
+            zle fzf-git-branches-widget
+        elif [[ "$BUFFER" == "gstd " ]]; then
+            zle fzf-git-stashes-widget
+        fi
+    }
+
+    zle -N git_fzf_widget_check
+    bindkey ' ' git_fzf_widget_check
 
 	# }}}
 
@@ -172,7 +184,5 @@ eval "$(jenv init -)"
 eval "$(nodenv init -)"
 eval "$(rbenv init - zsh)"
 eval "$(starship init zsh)"
-source <(fzf --zsh)
 
 # }}}
-
