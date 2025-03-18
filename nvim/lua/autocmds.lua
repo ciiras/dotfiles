@@ -45,3 +45,6 @@ create_autocmd({ 'FileType' }, { command = 'setlocal formatoptions-=c formatopti
 create_autocmd({ 'VimResized' }, { command = 'wincmd =' })
 
 create_autocmd({ 'BufEnter' }, { command = 'set ft=.gitconfig', pattern = '*/git/config' })
+
+create_autocmd("FileType", { pattern = "checkhealth", callback = function() vim.opt_local.spell = false end })
+

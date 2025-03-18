@@ -89,7 +89,7 @@ return {
             on_attach = on_attach,
         })
 
-        lspConfig.tsserver.setup({
+        lspConfig.ts_ls.setup({
             filetypes = {
                 'javascript',
                 'json',
