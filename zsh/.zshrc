@@ -22,23 +22,23 @@
     export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 
 	zinit light kutsan/zsh-system-clipboard
+    zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
     zinit ice from='gh-r' as='program' atload='eval "$(zoxide init --cmd c zsh)"'; zinit light ajeetdsouza/zoxide
     zinit ice from='gh-r' as='program' atload='source <(fzf --zsh)'; zinit light junegunn/fzf
     zinit light junegunn/fzf-git.sh
     zinit light MichaelAquilina/zsh-you-should-use
-    zinit light softmoth/zsh-vim-mode
     zinit light starship/starship
     zinit light zsh-users/zsh-completions
 
     zinit snippet OMZL::git.zsh
+    zinit snippet OMZP::aws
+    zinit snippet OMZP::command-not-found
     zinit snippet OMZP::docker
     zinit snippet OMZP::docker-compose
     zinit snippet OMZP::git
-    zinit snippet OMZP::sudo
-    zinit snippet OMZP::aws
     zinit snippet OMZP::kubectl
     zinit snippet OMZP::kubectx
-    zinit snippet OMZP::command-not-found
+    zinit snippet OMZP::sudo
 
     autoload -Uz compinit && compinit
     zinit ice silent as='plugin' wait atload='enable-fzf-tab'; zinit light Aloxaf/fzf-tab
