@@ -27,7 +27,7 @@
     zinit ice from='gh-r' as='program' atload='source <(fzf --zsh)'; zinit light junegunn/fzf
     zinit light junegunn/fzf-git.sh
     zinit light MichaelAquilina/zsh-you-should-use
-    zinit light starship/starship
+    zinit ice from='gh-r' as='program' pick='starship'; zinit light starship/starship
     zinit light zsh-users/zsh-completions
 
     zinit snippet OMZL::git.zsh

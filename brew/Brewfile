@@ -99,6 +99,7 @@ brew "rbenv"
 brew "redis"
 brew "ripgrep"
 brew "scrcpy"
+brew "starship"
 brew "tmux"
 brew "tproxy"
 brew "trash", link: true
