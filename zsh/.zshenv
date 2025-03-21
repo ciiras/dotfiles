@@ -27,7 +27,7 @@ EZA_USER="uu=38;5;${nf_purple}"
 export EZA_COLORS="reset:${EZA_HEADER}:${EZA_RIGHTS_USER}:${EZA_RIGHTS_GROUP}:${EZA_RIGHTS_OTHER}:${EZA_SIZE}:${EZA_USER}:${EZA_DATE}:${EZA_DIR}:${EZA_FILES}"
 
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse-list --border'
+export FZF_DEFAULT_OPTS='--height 50% --tmux 70% --border'
 export GREP_COLOR='1;32'
 export GREP_OPTIONS='--color=auto'
 export HISTDUP=erase
