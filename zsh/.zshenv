@@ -1,4 +1,3 @@
-
 export _ZO_DATA_DIR="$XDG_DATA_HOME/zoxide"
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_SDK_EMULATOR="$ANDROID_SDK_ROOT/emulator"
@@ -26,8 +25,9 @@ EZA_SIZE="sn=38;5;${nf_green}"
 EZA_USER="uu=38;5;${nf_purple}"
 export EZA_COLORS="reset:${EZA_HEADER}:${EZA_RIGHTS_USER}:${EZA_RIGHTS_GROUP}:${EZA_RIGHTS_OTHER}:${EZA_SIZE}:${EZA_USER}:${EZA_DATE}:${EZA_DIR}:${EZA_FILES}"
 
+export FZF_ALT_C_OPTS="--preview 'eza --tree --level=1 --color=always {}'"
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
-export FZF_DEFAULT_OPTS='--height 50% --tmux 70% --border'
+export FZF_DEFAULT_OPTS='--layout default --height 50% --tmux 70% --border'
 export GREP_COLOR='1;32'
 export GREP_OPTIONS='--color=auto'
 export HISTDUP=erase
