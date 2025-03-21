@@ -68,3 +68,4 @@ export STARSHIP_LOG='error'
 export TERM='xterm-kitty'
 export TMUX_PLUGIN_MANAGER_PATH="$XDG_DATA_HOME/tmux/plugins"
 export VISUAL='nvim'
+export ZVM_KEYTIMEOUT=0.1
