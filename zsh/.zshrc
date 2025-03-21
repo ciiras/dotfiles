@@ -17,10 +17,6 @@
 
 	# Plugins {{{
 
-    export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-    export ZSH_AUTOSUGGEST_USE_ASYNC=1
-    export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
-
 	zinit light kutsan/zsh-system-clipboard
     zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
     zinit ice from='gh-r' as='program' atload='eval "$(zoxide init --cmd c zsh)"'; zinit light ajeetdsouza/zoxide

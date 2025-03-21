@@ -68,4 +68,7 @@ export STARSHIP_LOG='error'
 export TERM='xterm-kitty'
 export TMUX_PLUGIN_MANAGER_PATH="$XDG_DATA_HOME/tmux/plugins"
 export VISUAL='nvim'
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export ZSH_AUTOSUGGEST_USE_ASYNC=1
 export ZVM_KEYTIMEOUT=0.1
