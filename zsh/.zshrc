@@ -123,6 +123,9 @@ function resource() {
 }
 
 function zvm_after_init() {
+    bindkey -r '^R'
+    bindkey -r '^S'
+
     bindkey "^P" fzf-history-widget
     bindkey "^N" fzf-history-widget
     bindkey '^ ' autosuggest-accept
