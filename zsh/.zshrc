@@ -50,27 +50,6 @@
     zstyle ':fzf-tab:*' switch-group '<' '>' # switch group using `<` and `>`
     zstyle ':fzf-tab:complete:c:*' fzf-preview 'eza --tree --level=1 --color=always "$realpath"'
 
-    function zvm_after_init() {
-        bindkey "^P" fzf-history-widget
-        bindkey "^N" fzf-history-widget
-        bindkey '^ ' autosuggest-accept
-
-        bindkey -r '^G'
-        zinit ice silent as='plugin' wait atload='enable-fzf-tab'; zinit light Aloxaf/fzf-tab
-        zinit light zsh-users/zsh-syntax-highlighting
-        zinit light zsh-users/zsh-autosuggestions
-    }
-
-    function _fzf_git_fzf() {
-        fzf --height 50% --tmux 90%,70% \
-            --multi --min-height 20+ --border \
-            --no-separator --header-border horizontal \
-            --border-label-pos 2 \
-            --color 'label:blue' \
-            --preview-window 'right,50%' --preview-border line \
-            --bind 'ctrl-/:change-preview-window(down,50%|hidden|)' "$@"
-    }
-
 	# }}}
 
 # }}}
@@ -118,10 +97,20 @@ unset LSCOLORS
 # }}}
 
 # Functions {{{
+
+function _fzf_git_fzf() {
+    fzf --height 50% --tmux 90%,70% \
+        --multi --min-height 20+ --border \
+        --no-separator --header-border horizontal \
+        --border-label-pos 2 \
+        --color 'label:blue' \
+        --preview-window 'right,50%' --preview-border line \
+        --bind 'ctrl-/:change-preview-window(down,50%|hidden|)' "$@"
+}
+
 function gbDa () {
     git branch --no-color | command grep -vE "^([+*]|\s*($(git_main_branch)|$(git_develop_branch))\s*$)" | command xargs git branch -D 2> /dev/null
 }
-
 
 function previous_dir() {
   c -
@@ -131,6 +120,17 @@ function resource() {
     source "$ZDOTDIR/.zshenv"
     source "$ZDOTDIR/.zshrc"
     echo "zsh config reloaded"
+}
+
+function zvm_after_init() {
+    bindkey "^P" fzf-history-widget
+    bindkey "^N" fzf-history-widget
+    bindkey '^ ' autosuggest-accept
+
+    bindkey -r '^G'
+    zinit ice silent as='plugin' wait atload='enable-fzf-tab'; zinit light Aloxaf/fzf-tab
+    zinit light zsh-users/zsh-syntax-highlighting
+    zinit light zsh-users/zsh-autosuggestions
 }
 
 # }}}
