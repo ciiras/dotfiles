@@ -47,7 +47,6 @@
     zstyle ':completion:*:git-checkout:*' sort false # disable sort when completing `git checkout`
     zstyle ':completion:*:descriptions' format '[%d]' # set descriptions format to enable group support
     zstyle ':completion:*' menu no # force zsh not to show completion menu, which allows fzf-tab to capture the unambiguous prefix
-    zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept # custom fzf flags NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
     zstyle ':fzf-tab:*' switch-group '<' '>' # switch group using `<` and `>`
     zstyle ':fzf-tab:complete:c:*' fzf-preview 'eza --tree --level=1 --color=always "$realpath"'
 
