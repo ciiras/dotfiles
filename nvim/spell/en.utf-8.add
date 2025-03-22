@@ -280,3 +280,4 @@ bindkey
 menuselect
 len
 Plugin
+rg
