@@ -178,11 +178,11 @@ alias vi=nvim
 # Init {{{
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(fzf --zsh)"
 eval "$(jenv init -)"
 eval "$(nodenv init -)"
 eval "$(rbenv init - zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd c zsh)"
-source <(fzf --zsh)
 
 # }}}
