@@ -37,6 +37,9 @@
     zinit snippet OMZP::sudo
 
     autoload -Uz compinit && compinit
+    zinit ice silent as='plugin' wait atload='enable-fzf-tab'; zinit light Aloxaf/fzf-tab
+    zinit light zsh-users/zsh-syntax-highlighting
+    zinit light zsh-users/zsh-autosuggestions
 
     # 0 -- vanilla completion (abc => abc)
     # 1 -- smart case completion (abc => Abc)
@@ -123,6 +126,7 @@ function resource() {
 }
 
 function zvm_after_init() {
+    bindkey -r '^G'
     bindkey -r '^R'
     bindkey -r '^S'
 
@@ -130,10 +134,6 @@ function zvm_after_init() {
     bindkey "^N" fzf-history-widget
     bindkey '^ ' autosuggest-accept
 
-    bindkey -r '^G'
-    zinit ice silent as='plugin' wait atload='enable-fzf-tab'; zinit light Aloxaf/fzf-tab
-    zinit light zsh-users/zsh-syntax-highlighting
-    zinit light zsh-users/zsh-autosuggestions
 }
 
 # }}}
