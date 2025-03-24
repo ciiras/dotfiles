@@ -20,7 +20,6 @@
 	zinit light kutsan/zsh-system-clipboard
     zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
     zinit ice from='gh-r' as='program'; zinit light ajeetdsouza/zoxide
-    zinit ice from='gh-r' as='program'; zinit light junegunn/fzf
     zinit light junegunn/fzf-git.sh
     zinit light MichaelAquilina/zsh-you-should-use
     zinit ice from='gh-r' as='program' pick='starship'; zinit light starship/starship
