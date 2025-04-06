@@ -1,4 +1,5 @@
 nmap('<leader>tb', '<cmd>lua require("telescope.builtin").buffers()<CR>', { desc = 'buffers' })
+nmap('<leader>tc', '<cmd>lua require("telescope.builtin").commands()<CR>', { desc = 'commands' })
 nmap('<leader>td', '<cmd>lua require("telescope.builtin").diagnostics()<CR>', { desc = 'diagnostics' })
 nmap('<leader>tf', '<cmd>lua require("telescope.builtin").find_files()<CR>', { desc = 'find files' })
 nmap('<leader>tg', '<cmd>lua require("modules.telescope.git").git_status()<CR>', { desc = 'git status' })
