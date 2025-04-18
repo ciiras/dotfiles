@@ -145,6 +145,7 @@ alias cd=c
 alias cl=clear
 alias d=docker
 alias dc=docker-compose
+alias dps='dcps --format "table {{.Service}}\t{{.Status}}\t{{.State}}\t{{.Ports}}"'
 alias g='nocorrect git'
 alias gcps="git cherry-pick --skip"
 alias gdsw='git diff --staged --word-diff'
