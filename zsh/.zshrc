@@ -185,4 +185,7 @@ eval "$(rbenv init - zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd c zsh)"
 
+[[ -s "$SDKMAN_INIT_FILE" ]] && source "$SDKMAN_INIT_FILE"
+
 # }}}
+
