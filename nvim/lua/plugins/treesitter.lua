@@ -8,10 +8,10 @@ return {
             auto_install = true,
             ensure_installed = {
                 'bash', 'c', 'c_sharp', 'diff', 'dockerfile', 'git_config',
-                'git_rebase', 'gitcommit', 'gitignore', 'html', 'javascript',
-                'kotlin', 'lua', 'make', 'markdown', 'markdown_inline',
-                'query', 'rust', 'scss', 'tmux', 'toml', 'tsx', 'typescript',
-                'vim', 'vimdoc', 'xml', 'yaml'
+                'git_rebase', 'gitattributes', 'gitcommit', 'gitignore',
+                'html', 'javascript', 'kotlin', 'lua', 'make', 'markdown',
+                'markdown_inline', 'query', 'rust', 'scss', 'tmux', 'toml',
+                'tsx', 'typescript', 'vim', 'vimdoc', 'xml', 'yaml'
             },
             highlight = {
                 enable = true,
