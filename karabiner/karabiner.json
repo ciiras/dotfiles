@@ -36,6 +36,27 @@
                         ]
                     },
                     {
+                        "description": "Disable MacOS Hide Application Key Bindings",
+                        "manipulators": [
+                            {
+                                "description": "command+h",
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": { "mandatory": ["command"] }
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "command+option+h",
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": { "mandatory": ["command", "option"] }
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Map Caps Lock (Hold) -> Meh or Esc (Press/Release)",
                         "manipulators": [
                             {
