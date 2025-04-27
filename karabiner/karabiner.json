@@ -88,6 +88,20 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "Map F -> Left Control (Hold) or F (Press/Release)",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "f",
+                                    "modifiers": {}
+                                },
+                                "to": [{ "key_code": "left_control" }],
+                                "to_if_alone": [{ "key_code": "f" }],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
