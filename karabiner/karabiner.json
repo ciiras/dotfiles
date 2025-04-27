@@ -10,7 +10,7 @@
                                 "description": "command+shift+option+control+comma",
                                 "from": {
                                     "key_code": "comma",
-                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "left_control"] }
                                 },
                                 "to": [],
                                 "type": "basic"
@@ -19,7 +19,7 @@
                                 "description": "command+shift+option+control+period",
                                 "from": {
                                     "key_code": "period",
-                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "left_control"] }
                                 },
                                 "to": [],
                                 "type": "basic"
@@ -28,7 +28,7 @@
                                 "from": {
                                     "description": "command+shift+option+control+slash",
                                     "key_code": "slash",
-                                    "modifiers": { "mandatory": ["command", "shift", "option", "control"] }
+                                    "modifiers": { "mandatory": ["command", "shift", "option", "left_control"] }
                                 },
                                 "to": [],
                                 "type": "basic"
@@ -82,7 +82,7 @@
                                 "description": "control+open_bracket",
                                 "from": {
                                     "key_code": "open_bracket",
-                                    "modifiers": { "mandatory": ["control"] }
+                                    "modifiers": { "mandatory": ["left_control"] }
                                 },
                                 "to": [{ "key_code": "escape" }],
                                 "type": "basic"
