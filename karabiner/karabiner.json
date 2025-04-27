@@ -7,7 +7,6 @@
                         "description": "Disable Creating sysdiagnose file",
                         "manipulators": [
                             {
-                                "description": "command+shift+option+control+comma",
                                 "from": {
                                     "key_code": "comma",
                                     "modifiers": { "mandatory": ["command", "shift", "option", "left_control"] }
@@ -16,7 +15,6 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "command+shift+option+control+period",
                                 "from": {
                                     "key_code": "period",
                                     "modifiers": { "mandatory": ["command", "shift", "option", "left_control"] }
@@ -26,7 +24,6 @@
                             },
                             {
                                 "from": {
-                                    "description": "command+shift+option+control+slash",
                                     "key_code": "slash",
                                     "modifiers": { "mandatory": ["command", "shift", "option", "left_control"] }
                                 },
@@ -57,7 +54,7 @@
                         ]
                     },
                     {
-                        "description": "Map Caps Lock (Hold) -> Meh or Esc (Press/Release)",
+                        "description": "Map Caps Lock -> Meh (Hold) or Esc (Press/Release)",
                         "manipulators": [
                             {
                                 "from": {
@@ -76,10 +73,9 @@
                         ]
                     },
                     {
-                        "description": "Map Control + [ (Press) -> Escape",
+                        "description": "Map Left Control + [ -> Escape (Press)",
                         "manipulators": [
                             {
-                                "description": "control+open_bracket",
                                 "from": {
                                     "key_code": "open_bracket",
                                     "modifiers": { "mandatory": ["left_control"] }
