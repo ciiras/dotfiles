@@ -1,3 +1,4 @@
+nmap('<leader>ta', '<cmd>:Telescope ascii<CR>', { desc = 'ascii art' })
 nmap('<leader>tb', '<cmd>lua require("telescope.builtin").buffers()<CR>', { desc = 'buffers' })
 nmap('<leader>tc', '<cmd>lua require("telescope.builtin").commands()<CR>', { desc = 'commands' })
 nmap('<leader>td', '<cmd>lua require("telescope.builtin").diagnostics()<CR>', { desc = 'diagnostics' })
