@@ -1,3 +1,12 @@
+# Profiling {{{
+
+export PROFILING_MODE=0
+if [ $PROFILING_MODE -ne 0 ]; then
+    zmodload zsh/zprof
+fi
+
+# }}}
+
 # Plugin Manager {{{
 
 	# {{{ Zinit
@@ -189,3 +198,10 @@ eval "$(zoxide init --cmd c zsh)"
 
 # }}}
 
+# Profiling {{{
+
+if [ $PROFILING_MODE -ne 0 ]; then
+    zprof
+fi
+
+# }}}
