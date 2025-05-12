@@ -188,9 +188,9 @@ alias vi=nvim
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(fzf --zsh)"
-eval "$(jenv init -)"
-eval "$(nodenv init -)"
-eval "$(rbenv init - zsh)"
+eval "$(jenv init --no-rehash -)"; (jenv rehash &) 2> /dev/null
+eval "$(nodenv init --no-rehash -)"; (nodenv rehash &) 2> /dev/null
+eval "$(rbenv init --no-rehash - zsh)"; (rbenv rehash &) 2> /dev/null
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd c zsh)"
 
