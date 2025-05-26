@@ -115,6 +115,7 @@ brew "samtay/tui/tetris"
 brew "xcodesorg/made/xcodes"
 cask "aerospace"
 cask "android-commandlinetools"
+cask "confluent-cli"
 cask "flipper"
 cask "font-fira-code-nerd-font"
 cask "karabiner-elements"
@@ -128,8 +129,3 @@ cask "react-native-debugger"
 cask "stats"
 cask "temurin"
 cask "zulu@17"
-mas "Forecast Bar", id: 982710545
-mas "GarageBand", id: 682658836
-mas "Microsoft Remote Desktop", id: 1295203466
-mas "Numbers", id: 409203825
-mas "Xcode", id: 497799835
