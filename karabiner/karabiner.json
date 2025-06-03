@@ -33,7 +33,7 @@
                         ]
                     },
                     {
-                        "description": "Disable MacOS Hide Application Key Bindings",
+                        "description": "Disable MacOS Hide/Mimimize Application Key Bindings",
                         "manipulators": [
                             {
                                 "description": "command+h",
@@ -48,6 +48,14 @@
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": { "mandatory": ["command", "option"] }
+                                },
+                                "type": "basic"
+                            },
+                            {
+                                "description": "command+m",
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": { "mandatory": ["command"] }
                                 },
                                 "type": "basic"
                             }
