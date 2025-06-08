@@ -65,10 +65,7 @@
                         "description": "Map Caps Lock -> Meh (Hold) or Esc (Press/Release)",
                         "manipulators": [
                             {
-                                "from": {
-                                    "key_code": "caps_lock",
-                                    "modifiers": {}
-                                },
+                                "from": { "key_code": "caps_lock" },
                                 "to": [
                                     {
                                         "key_code": "left_shift",
