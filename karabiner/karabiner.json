@@ -2,7 +2,6 @@
     "profiles": [
         {
             "complex_modifications": {
-                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 150 },
                 "rules": [
                     {
                         "description": "Disable Creating sysdiagnose file",
@@ -87,17 +86,6 @@
                                     "modifiers": { "mandatory": ["left_control"] }
                                 },
                                 "to": [{ "key_code": "escape" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Map F -> Left Control (Hold) or F (Press/Release)",
-                        "manipulators": [
-                            {
-                                "from": { "key_code": "f" },
-                                "to": [{ "key_code": "left_control" }],
-                                "to_if_alone": [{ "key_code": "f" }],
                                 "type": "basic"
                             }
                         ]
