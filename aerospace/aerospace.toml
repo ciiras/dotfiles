@@ -11,13 +11,23 @@ on-focused-monitor-changed = 'move-mouse monitor-lazy-center'
 start-at-login = true
 
 [workspace-to-monitor-force-assignment]
-A = 'Built-in Retina Display'
-B = 'Built-in Retina Display'
-C = 'Built-in Retina Display'
-D = 'Built-in Retina Display'
-E = 'Built-in Retina Display'
-F = 'Built-in Retina Display'
-G = 'Built-in Retina Display'
+1 = ['main', 'secondary']
+2 = ['main', 'secondary']
+3 = ['main', 'secondary']
+4 = ['main', 'secondary']
+5 = ['main', 'secondary']
+6 = ['main', 'secondary']
+7 = ['main', 'secondary']
+8 = ['main', 'secondary']
+9 = ['main', 'secondary']
+
+A = ['secondary', 'main']
+B = ['secondary', 'main']
+C = ['secondary', 'main']
+D = ['secondary', 'main']
+E = ['secondary', 'main']
+F = ['secondary', 'main']
+G = ['secondary', 'main']
 
 [gaps]
 inner.horizontal = 2
