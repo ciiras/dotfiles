@@ -2,6 +2,14 @@ export _ZO_DATA_DIR="$XDG_DATA_HOME/zoxide"
 export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_SDK_EMULATOR="$ANDROID_SDK_ROOT/emulator"
 export ANDROID_SDK_TOOLS=$ANDROID_SDK_ROOT/platform-tools
+
+
+AVANTE_OPENAI_API_KEY="$(security find-generic-password -a "$USER" -s "AVANTE_OPENAI_API_KEY" -w)"
+export AVANTE_OPENAI_API_KEY
+
+AVANTE_ANTHROPIC_API_KEY="$(security find-generic-password -a "$USER" -s "AVANTE_ANTHROPIC_API_KEY" -w)"
+export AVANTE_ANTHROPIC_API_KEY
+
 export BAT_THEME=nightfox
 export CLICOLOR=1
 export DELTA_PAGER=$PAGER
