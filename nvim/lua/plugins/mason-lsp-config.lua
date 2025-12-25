@@ -1,24 +1,23 @@
 return {
     'williamboman/mason-lspconfig.nvim',
     dependencies = {
-        {
-            'williamboman/mason.nvim',
-        },
+        'williamboman/mason.nvim',
     },
     config = function()
-        local mason_lspconfig = require('mason-lspconfig')
-        mason_lspconfig.setup({
-            automatic_installation = true,
+        require('mason').setup()
+
+        require('mason-lspconfig').setup({
             ensure_installed = {
                 'bashls',
-                'eslint@4.8.0',
+                'eslint',
                 'jdtls',
                 'kotlin_language_server',
                 'lua_ls',
                 'marksman',
                 'rust_analyzer',
                 'ts_ls',
-            }
+            },
+            automatic_installation = true,
         })
     end,
     lazy = false,
