@@ -1,3 +1,5 @@
+local tb = require('telescope.builtin')
+
 local function buildBufferOptions(bufNum, desc)
     return {
         buffer = bufNum,
@@ -7,27 +9,31 @@ local function buildBufferOptions(bufNum, desc)
     }
 end
 
+local function format()
+    vim.lsp.buf.format({ async = true })
+end
+
 return {
     'neovim/nvim-lspconfig',
     config = function()
         local on_attach = function(client, bufNum) ---@diagnostic disable-line unused-local
-            -- Neovim already sets omnifunc/tagfunc/etc on attach by default in newer versions,
-            -- but keeping this is harmless if you like it.
+            -- Neovim already sets omnifunc/tagfunc/etc on attach by default in newer versions, but keeping this is harmless if you like it.
             vim.bo[bufNum].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
             vim.keymap.set('n', '[d', '<Cmd>Lspsaga diagnostic_jump_prev<CR>', buildBufferOptions(bufNum, 'Diag Prev'))
             vim.keymap.set('n', ']d', '<Cmd>Lspsaga diagnostic_jump_next<CR>', buildBufferOptions(bufNum, 'Diag Next'))
 
-            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, buildBufferOptions(bufNum, 'LSP Definition'))
-            vim.keymap.set('n', 'gr', '<Cmd>Glance references<CR>', buildBufferOptions(bufNum, 'Glance References'))
-            vim.keymap.set('n', '<space>a', vim.lsp.buf.code_action, buildBufferOptions(bufNum, 'LSP Code Actions'))
-            vim.keymap.set('n', '<space>d', '<Cmd>Glance definitions<CR>', buildBufferOptions(bufNum, 'Glance Definition'))
-            vim.keymap.set('n', '<space>f', function()
-                vim.lsp.buf.format({ async = true })
-            end, buildBufferOptions(bufNum, 'LSP Format'))
-            vim.keymap.set('n', '<space>h', '<Cmd>Lspsaga hover_doc<CR>', buildBufferOptions(bufNum, 'LSP Hover'))
-            vim.keymap.set('n', '<space>n', '<Cmd>Lspsaga rename<CR>', buildBufferOptions(bufNum, 'LSP Rename'))
-            vim.keymap.set('n', '<space>q', '<cmd>Trouble diagnostics toggle<cr>', buildBufferOptions(bufNum, 'Trouble Diagnostics Toggle'))
+            vim.keymap.set('n', 'K',      '<Cmd>Lspsaga hover_doc<CR>', buildBufferOptions(bufNum, 'Hover'))
+
+            vim.keymap.set('n', 'gd', '<Cmd>Glance definitions<CR>', buildBufferOptions(bufNum, 'Definition'))
+            vim.keymap.set('n', 'gr', '<Cmd>Glance references<CR>', buildBufferOptions(bufNum, 'References'))
+
+            vim.keymap.set('n', '<leader>ls', tb.lsp_document_symbols,  buildBufferOptions(bufNum, 'Symbols in File'))
+            vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, buildBufferOptions(bufNum, 'LSP Code Actions'))
+            vim.keymap.set('n', '<leader>lf', format, buildBufferOptions(bufNum, 'LSP Format'))
+            vim.keymap.set('n', '<leader>lr', '<Cmd>Lspsaga rename<CR>', buildBufferOptions(bufNum, 'LSP Rename'))
+            vim.keymap.set('n', '<leader>lq', tb.diagnostics, buildBufferOptions(bufNum, 'Telescope Diagnostics Toggle'))
+            vim.keymap.set('n', '<leader>lQ', '<cmd>Trouble diagnostics toggle<cr>', buildBufferOptions(bufNum, 'Trouble Diagnostics Toggle'))
         end
 
         vim.lsp.config('bashls', {
@@ -72,7 +78,7 @@ return {
                         },
                     },
                     workspace = {
-                        library = vim.api.nvim_get_runtime_file("", true),
+                        library = vim.api.nvim_get_runtime_file('', true),
                     },
                 },
             },
