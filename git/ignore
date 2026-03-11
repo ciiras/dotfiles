@@ -16,3 +16,5 @@
 .zcomp*
 karabiner/automatic_backups
 Session.vim
+
+**/.claude/settings.local.json
