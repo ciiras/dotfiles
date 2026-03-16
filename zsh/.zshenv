@@ -3,12 +3,14 @@ export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_SDK_EMULATOR="$ANDROID_SDK_ROOT/emulator"
 export ANDROID_SDK_TOOLS=$ANDROID_SDK_ROOT/platform-tools
 
+BITBUCKET_HTTP_KEY="$(security find-generic-password -a "$USER" -s "BITBUCKET_HTTP_KEY" -w)"
+export BITBUCKET_HTTP_KEY
 
-AVANTE_OPENAI_API_KEY="$(security find-generic-password -a "$USER" -s "AVANTE_OPENAI_API_KEY" -w)"
-export AVANTE_OPENAI_API_KEY
+JIRA_HTTP_KEY="$(security find-generic-password -a "$USER" -s "JIRA_HTTP_KEY" -w)"
+export JIRA_HTTP_KEY
 
-AVANTE_ANTHROPIC_API_KEY="$(security find-generic-password -a "$USER" -s "AVANTE_ANTHROPIC_API_KEY" -w)"
-export AVANTE_ANTHROPIC_API_KEY
+ANTHROPIC_API_KEY="$(security find-generic-password -a "$USER" -s "ANTHROPIC_API_KEY" -w)"
+export ANTHROPIC_API_KEY
 
 export BAT_THEME=nightfox
 export CLICOLOR=1
