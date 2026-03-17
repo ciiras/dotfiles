@@ -134,14 +134,18 @@ function resource() {
 }
 
 function zvm_after_init() {
+    bindkey -r '^F'
     bindkey -r '^G'
+    bindkey -r '^H'
+    bindkey -r '^J'
+    bindkey -r '^K'
+    bindkey -r '^L'
     bindkey -r '^R'
     bindkey -r '^S'
 
-    bindkey "^P" fzf-history-widget
-    bindkey "^N" fzf-history-widget
-    bindkey '^F' autosuggest-accept
-
+    bindkey '^P' fzf-history-widget
+    bindkey '^N' fzf-history-widget
+    bindkey '^K' autosuggest-accept
 }
 
 # }}}
