@@ -3,11 +3,11 @@ export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_SDK_EMULATOR="$ANDROID_SDK_ROOT/emulator"
 export ANDROID_SDK_TOOLS=$ANDROID_SDK_ROOT/platform-tools
 
-BITBUCKET_HTTP_KEY="$(security find-generic-password -a "$USER" -s "BITBUCKET_HTTP_KEY" -w)"
-export BITBUCKET_HTTP_KEY
+BITBUCKET_ACCESS_TOKEN="$(security find-generic-password -a "$USER" -s "BITBUCKET_ACCESS_TOKEN" -w)"
+export BITBUCKET_ACCESS_TOKEN
 
-JIRA_HTTP_KEY="$(security find-generic-password -a "$USER" -s "JIRA_HTTP_KEY" -w)"
-export JIRA_HTTP_KEY
+JIRA_ACCESS_TOKEN="$(security find-generic-password -a "$USER" -s "JIRA_ACCESS_TOKEN" -w)"
+export JIRA_ACCESS_TOKEN
 
 ANTHROPIC_API_KEY="$(security find-generic-password -a "$USER" -s "ANTHROPIC_API_KEY" -w)"
 export ANTHROPIC_API_KEY
