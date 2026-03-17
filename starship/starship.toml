@@ -79,6 +79,9 @@ Macos = ' '
 [package]
 disabled = true
 
+[dotnet]
+disabled = true
+
 [ruby]
 disabled = false
 format = '[${symbol}${version}](${style}) '
