@@ -32,8 +32,8 @@ return {
             vim.keymap.set('n', '<leader>la', vim.lsp.buf.code_action, buildBufferOptions(bufNum, 'LSP Code Actions'))
             vim.keymap.set('n', '<leader>lf', format, buildBufferOptions(bufNum, 'LSP Format'))
             vim.keymap.set('n', '<leader>lr', '<Cmd>Lspsaga rename<CR>', buildBufferOptions(bufNum, 'LSP Rename'))
-            vim.keymap.set('n', '<leader>lq', tb.diagnostics, buildBufferOptions(bufNum, 'Telescope Diagnostics Toggle'))
-            vim.keymap.set('n', '<leader>lQ', '<cmd>Trouble diagnostics toggle<cr>', buildBufferOptions(bufNum, 'Trouble Diagnostics Toggle'))
+            vim.keymap.set('n', '<leader>ld', tb.diagnostics, buildBufferOptions(bufNum, 'Telescope Diagnostics Toggle'))
+            vim.keymap.set('n', '<leader>lD', '<cmd>Trouble diagnostics toggle<cr>', buildBufferOptions(bufNum, 'Trouble Diagnostics Toggle'))
         end
 
         vim.lsp.config('bashls', {
