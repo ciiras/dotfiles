@@ -19,6 +19,48 @@
     export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
   '';
 
+  homebrew = {
+    enable = true;
+    onActivation.cleanup = "none"; # switch to "zap" after full validation
+    taps = [
+      "facebook/fb"
+      "felixkratz/formulae"
+      "nikitabobko/tap"
+      "osx-cross/arm"
+      "osx-cross/avr"
+      "qmk/qmk"
+      "xcodesorg/made"
+      "samtay/tui"
+    ];
+    brews = [
+      "felixkratz/formulae/borders"
+      "facebook/fb/idb-companion"
+      "osx-cross/arm/arm-gcc-bin@10"
+      "osx-cross/avr/avr-gcc@9"
+      "qmk/qmk/qmk"
+      "grip"
+      "jenv"
+      "samtay/tui/tetris"
+      "xcodesorg/made/xcodes"
+    ];
+    casks = [
+      "nikitabobko/tap/aerospace"
+      "android-commandlinetools"
+      "betterdisplay"
+      "confluent-cli"
+      "flipper"
+      "karabiner-elements"
+      "kitty"
+      "meteorologist"
+      "mos"
+      "notunes"
+      "react-native-debugger"
+      "stats"
+      "temurin"
+      "zulu@17"
+    ];
+  };
+
   nix.enable = false;
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = 5;

@@ -22,14 +22,46 @@
     starship
     zoxide
 
-    # Dev
-    python312
-    awscli2
+    # File management
+    trash-cli
+    xdg-ninja
+    glow
+
+    # Network / HTTP
+    httpie
+    mitmproxy
+    ngrok
+
+    # Media
+    ffmpeg
+    imagemagick
+    ghostscript
+    scrcpy
+
+    # Dev tools
+    gitflow
+
+    watchman
+    docker-compose
+    redis
+    nginx
     graphviz
     maven
-    imagemagick
+
+    # Version managers
+    nodenv
+    rbenv
+
+    # Languages
+    python312
+    awscli2
+
+    # Fonts
+    nerd-fonts.fira-code
 
     # Fun
+    fastfetch
     cmatrix
+    asciiquarium
   ];
 }
