@@ -1,7 +1,10 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     # Core tools
-    neovim
+    (neovim.override {
+      withPython3 = true;
+      extraPython3Packages = ps: [ ps.pynvim ];
+    })
     tmux
     git
     delta
