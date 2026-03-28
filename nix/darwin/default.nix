@@ -10,6 +10,8 @@
 
   system.primaryUser = "christopher.griffith";
 
+  environment.systemPath = [ "/opt/homebrew/bin" "/opt/homebrew/sbin" ];
+
   environment.etc."zshenv.local".text = ''
     export XDG_CACHE_HOME="$HOME/.cache"
     export XDG_CONFIG_HOME="$HOME/.config"
