@@ -190,7 +190,7 @@ alias vi=nvim
 
 # Init {{{
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+
 eval "$(fzf --zsh)"
 eval "$(jenv init --no-rehash -)"; (jenv rehash &) 2> /dev/null
 eval "$(nodenv init --no-rehash -)"; (nodenv rehash &) 2> /dev/null
