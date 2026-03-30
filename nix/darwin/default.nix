@@ -52,6 +52,7 @@
       "confluent-cli"
       "flipper"
       "karabiner-elements"
+      "ghostty"
       "kitty"
       "meteorologist"
       "mos"

@@ -11,6 +11,7 @@ in
     "git/config"                  = { source = link "git/config";                  force = true; };
     "git/ignore"                  = { source = link "git/ignore";                  force = true; };
     "karabiner"                   = { source = link "karabiner";                   force = true; };
+    "ghostty/config"              = { source = link "ghostty/config";              force = true; };
     "kitty/kitty.conf"            = { source = link "kitty/kitty.conf";            force = true; };
     "nodenv/default-packages"     = { source = link "nodenv/default-packages";     force = true; };
     "nvim/after"                  = { source = link "nvim/after";                  force = true; };

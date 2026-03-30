@@ -1,0 +1,8 @@
+background = #000000
+font-family = FiraCode Nerd Font Mono Light
+font-size = 20
+background-opacity = 0.9
+macos-option-as-alt = true
+quit-after-last-window-closed = true
+confirm-close-surface = false
+keybind = ctrl+shift+k=text:\x0b

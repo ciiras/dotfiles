@@ -78,7 +78,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 export SDKMAN_INIT_FILE="$SDKMAN_DIR/bin/sdkman-init.sh"
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship/starship.toml"
 export STARSHIP_LOG='error'
-export TERM='xterm-kitty'
 export TMUX_PLUGIN_MANAGER_PATH="$XDG_DATA_HOME/tmux/plugins"
 export VISUAL='nvim'
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
