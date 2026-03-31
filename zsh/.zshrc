@@ -146,6 +146,7 @@ function zvm_after_init() {
     bindkey '^P' fzf-history-widget
     bindkey '^N' fzf-history-widget
     bindkey '^K' autosuggest-accept
+    bindkey '\e[107;6u' autosuggest-accept
 }
 
 # }}}

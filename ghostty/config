@@ -5,4 +5,4 @@ background-opacity = 0.9
 macos-option-as-alt = true
 quit-after-last-window-closed = true
 confirm-close-surface = false
-keybind = ctrl+shift+k=text:\x0b
+keybind = ctrl+shift+k=text:\x1b[107;6u
