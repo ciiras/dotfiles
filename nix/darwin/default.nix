@@ -27,7 +27,6 @@
     taps = [
       "facebook/fb"
       "felixkratz/formulae"
-      "nikitabobko/tap"
       "osx-cross/arm"
       "osx-cross/avr"
       "qmk/qmk"
@@ -46,14 +45,12 @@
       "xcodesorg/made/xcodes"
     ];
     casks = [
-      "nikitabobko/tap/aerospace"
       "android-commandlinetools"
       "betterdisplay"
       "confluent-cli"
       "flipper"
       "karabiner-elements"
       "ghostty"
-      "kitty"
       "meteorologist"
       "mos"
       "notunes"

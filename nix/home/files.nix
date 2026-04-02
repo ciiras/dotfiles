@@ -5,14 +5,12 @@ let
 in
 {
   xdg.configFile = {
-    "aerospace/aerospace.toml"    = { source = link "aerospace/aerospace.toml";    force = true; };
     "bat/themes/nightfox.tmTheme" = { source = link "bat/themes/nightfox.tmTheme"; force = true; };
     "borders/bordersrc"           = { source = link "borders/bordersrc";           force = true; };
     "git/config"                  = { source = link "git/config";                  force = true; };
     "git/ignore"                  = { source = link "git/ignore";                  force = true; };
     "karabiner"                   = { source = link "karabiner";                   force = true; };
     "ghostty/config"              = { source = link "ghostty/config";              force = true; };
-    "kitty/kitty.conf"            = { source = link "kitty/kitty.conf";            force = true; };
     "nodenv/default-packages"     = { source = link "nodenv/default-packages";     force = true; };
     "nvim/after"                  = { source = link "nvim/after";                  force = true; };
     "nvim/ftplugin"               = { source = link "nvim/ftplugin";               force = true; };

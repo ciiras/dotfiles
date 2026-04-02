@@ -1,4 +1,4 @@
-{ ... }: {
+{ config, ... }: {
   system.defaults = {
     NSGlobalDomain = {
       InitialKeyRepeat = 15;
@@ -16,6 +16,9 @@
       launchanim = false;
     };
     screencapture.location = "~/Pictures";
-    universalaccess.reduceMotion = true;
   };
+
+  system.activationScripts.reduceMotion.text = ''
+    sudo -u ${config.system.primaryUser} defaults write com.apple.universalaccess reduceMotion -bool true
+  '';
 }
