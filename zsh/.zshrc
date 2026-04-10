@@ -179,8 +179,8 @@ alias l='eza --long -all --git --icons=always -h'
 alias ne=nodenv
 alias nrl='npm run lint'
 alias r='resource'
-alias rc=~/projects/od-env/build-node-docker/render-consul-template.sh
-alias rd=~/projects/od-env/build-node-docker/gendockerfile.sh
+alias rc=~/projects/od-env/projects/build-node-docker/render-consul-template.sh
+alias rd=~/projects/od-env/projects/build-node-docker/gendockerfile.sh
 alias rm=trash
 alias t=tmux
 alias top=btop
