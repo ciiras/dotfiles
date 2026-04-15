@@ -3,9 +3,6 @@ export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
 export ANDROID_SDK_EMULATOR="$ANDROID_SDK_ROOT/emulator"
 export ANDROID_SDK_TOOLS=$ANDROID_SDK_ROOT/platform-tools
 
-JIRA_ACCESS_TOKEN="$(security find-generic-password -a "$USER" -s "JIRA_ACCESS_TOKEN" -w)"
-export JIRA_ACCESS_TOKEN
-
 ANTHROPIC_API_KEY="$(security find-generic-password -a "$USER" -s "ANTHROPIC_API_KEY" -w)"
 export ANTHROPIC_API_KEY
 
