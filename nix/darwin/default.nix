@@ -21,6 +21,15 @@
     export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
   '';
 
+  # Create XDG_RUNTIME_DIR for the user — required by tools like the 1Password CLI
+  # that write runtime files (op-daemon.pid) there. nix-darwin creates /run but not
+  # the per-user subdirectory, so we do it here.
+  system.activationScripts.xdgRuntime.text = ''
+    uid=$(id -u christopher.griffith)
+    install -d -m 700 /run/user/$uid
+    chown christopher.griffith /run/user/$uid
+  '';
+
   homebrew = {
     enable = true;
     onActivation.cleanup = "none"; # switch to "zap" after full validation
