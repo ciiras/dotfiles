@@ -21,6 +21,7 @@ in
     "pip/pip.conf"                = { source = link "python/pip.conf";             force = true; };
     "starship/starship.toml"      = { source = link "starship/starship.toml";      force = true; };
     "tmux/tmux.conf"              = { source = link "tmux/tmux.conf";              force = true; };
+    "zsh/.zprofile"               = { source = link "zsh/.zprofile";               force = true; };
     "zsh/.zshenv"                 = { source = link "zsh/.zshenv";                 force = true; };
     "zsh/.zshrc"                  = { source = link "zsh/.zshrc";                  force = true; };
   };
