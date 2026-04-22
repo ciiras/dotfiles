@@ -4,5 +4,7 @@
 export XDG_RUNTIME_DIR="${HOME}/.local/run"
 mkdir -p "$XDG_RUNTIME_DIR"
 
-export BITBUCKET_ACCESS_TOKEN=$(op read 'op://Employee/Bitbucket Access Token/credential')
-export JIRA_ACCESS_TOKEN=$(op read 'op://Employee/Jira Access Token/credential')
+if [[ $- == *i* ]]; then
+  export BITBUCKET_ACCESS_TOKEN=$(op read 'op://Employee/Bitbucket Access Token/credential')
+  export JIRA_ACCESS_TOKEN=$(op read 'op://Employee/Jira Access Token/credential')
+fi
