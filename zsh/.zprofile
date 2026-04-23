@@ -5,6 +5,7 @@ export XDG_RUNTIME_DIR="${HOME}/.local/run"
 mkdir -p "$XDG_RUNTIME_DIR"
 
 if [[ $- == *i* ]]; then
+  export ANTHROPIC_API_KEY=$(op read 'op://Employee/Anthropic Api Key/credential')
   export BITBUCKET_ACCESS_TOKEN=$(op read 'op://Employee/Bitbucket Access Token/credential')
   export JIRA_ACCESS_TOKEN=$(op read 'op://Employee/Jira Access Token/credential')
 fi
