@@ -33,9 +33,6 @@ export GREP_COLOR='1;32'
 export GREP_OPTIONS='--color=auto'
 export HISTDUP=erase
 
-HOMEBREW_GITHUB_API_TOKEN="$(security find-generic-password -a "$USER" -s "HOMEBREW_GITHUB_API_TOKEN" -w)"
-export HOMEBREW_GITHUB_API_TOKEN
-
 export KEYTIMEOUT=20
 export LESSHISTFILE="$XDG_STATE_HOME/less/history"
 export LESSHISTSIZE=0
