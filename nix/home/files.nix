@@ -4,6 +4,11 @@ let
   link = path: config.lib.file.mkOutOfStoreSymlink "${dotfiles}/${path}";
 in
 {
+  home.file = {
+    ".ssh/id_ed25519_taillight.pub" = { source = link "ssh/id_ed25519_taillight.pub"; force = true; };
+    ".ssh/id_rsa_github.pub"        = { source = link "ssh/id_rsa_github.pub";        force = true; };
+  };
+
   xdg.configFile = {
     "bat/themes/nightfox.tmTheme" = { source = link "bat/themes/nightfox.tmTheme"; force = true; };
     "borders/bordersrc"           = { source = link "borders/bordersrc";           force = true; };
