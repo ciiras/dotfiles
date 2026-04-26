@@ -64,6 +64,19 @@
     ];
   };
 
+  launchd.user.agents.colima = {
+    serviceConfig = {
+      Label = "com.github.colima";
+      ProgramArguments = [
+        "/bin/sh" "-c"
+        "PATH=/etc/profiles/per-user/christopher.griffith/bin:/usr/bin:/bin colima start"
+      ];
+      RunAtLoad = true;
+      StandardOutPath = "/Users/christopher.griffith/.local/share/colima/colima.log";
+      StandardErrorPath = "/Users/christopher.griffith/.local/share/colima/colima.log";
+    };
+  };
+
   nix.enable = false;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;

@@ -55,6 +55,10 @@
     nodenv
     rbenv
 
+    # Containers
+    colima
+    docker
+
     # Languages
     python312
     awscli2

@@ -28,7 +28,7 @@
 [fetch]
     prune = true
 [init]
-    templateDir = ~/projects/od-env/projects/git-templates
+	templatedir = ~/.git-templates
 [interactive]
     diffFilter = delta --color-only
 [merge]
