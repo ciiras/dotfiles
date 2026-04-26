@@ -36,18 +36,12 @@
     taps = [
       "facebook/fb"
       "felixkratz/formulae"
-      "osx-cross/arm"
-      "osx-cross/avr"
-      "qmk/qmk"
       "xcodesorg/made"
       "samtay/tui"
     ];
     brews = [
       "felixkratz/formulae/borders"
       "facebook/fb/idb-companion"
-      "osx-cross/arm/arm-gcc-bin@10"
-      "osx-cross/avr/avr-gcc@9"
-      "qmk/qmk/qmk"
       "grip"
       "jenv"
       "samtay/tui/tetris"
