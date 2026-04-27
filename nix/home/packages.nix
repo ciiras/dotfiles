@@ -58,6 +58,7 @@
     # Containers
     colima
     docker
+    docker-buildx
 
     # Languages
     python312

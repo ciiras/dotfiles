@@ -11,6 +11,7 @@ in
 
   xdg.configFile = {
     "bat/config"                  = { source = link "bat/config";                  force = true; };
+    "colima/default/colima.yaml"  = { source = link "colima/default/colima.yaml";  force = true; };
     "bat/themes/nightfox.tmTheme" = { source = link "bat/themes/nightfox.tmTheme"; force = true; };
     "borders/bordersrc"           = { source = link "borders/bordersrc";           force = true; };
     "git/config"                  = { source = link "git/config";                  force = true; };

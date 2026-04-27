@@ -6,6 +6,7 @@ export ANDROID_SDK_TOOLS=$ANDROID_SDK_ROOT/platform-tools
 export BAT_THEME=nightfox
 export CLICOLOR=1
 export DELTA_PAGER=$PAGER
+export DOCKER_BUILDKIT=1
 export DOT_FILES_DIR="$HOME/projects/dotfiles"
 export EDITOR='nvim'
 
