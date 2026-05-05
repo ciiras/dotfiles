@@ -38,6 +38,7 @@ opt.shortmess:append('c')
 opt.shortmess:append('I')
 opt.showcmd = true
 opt.showmatch = true
+opt.signcolumn = 'yes'
 opt.smartcase = true
 opt.smartindent = true
 opt.spell = true
