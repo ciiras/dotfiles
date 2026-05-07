@@ -6,7 +6,9 @@ export ANDROID_SDK_TOOLS=$ANDROID_SDK_ROOT/platform-tools
 export BAT_THEME=nightfox
 export CLICOLOR=1
 export DELTA_PAGER=$PAGER
+export COLIMA_HOME="$XDG_CONFIG_HOME/colima"
 export DOCKER_BUILDKIT=1
+export DOCKER_HOST="unix://$COLIMA_HOME/default/docker.sock"
 export DOT_FILES_DIR="$HOME/projects/dotfiles"
 export EDITOR='nvim'
 

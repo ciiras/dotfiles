@@ -72,8 +72,11 @@
         "PATH=/etc/profiles/per-user/christopher.griffith/bin:/usr/bin:/bin colima start"
       ];
       RunAtLoad = true;
-      StandardOutPath = "/Users/christopher.griffith/.local/share/colima/colima.log";
-      StandardErrorPath = "/Users/christopher.griffith/.local/share/colima/colima.log";
+      EnvironmentVariables = {
+        COLIMA_HOME = "/Users/christopher.griffith/.config/colima";
+      };
+      StandardOutPath = "/Users/christopher.griffith/.config/colima/colima.log";
+      StandardErrorPath = "/Users/christopher.griffith/.config/colima/colima.log";
     };
   };
 
