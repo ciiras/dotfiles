@@ -5,6 +5,7 @@ let
 in
 {
   home.file = {
+    ".ssh/config"                   = { source = link "ssh/config";                   force = true; };
     ".ssh/id_ed25519_taillight.pub" = { source = link "ssh/id_ed25519_taillight.pub"; force = true; };
     ".ssh/id_rsa_github.pub"        = { source = link "ssh/id_rsa_github.pub";        force = true; };
   };

@@ -1,0 +1,21 @@
+Include ~/.colima/ssh_config
+Include ~/.config/colima/ssh_config
+
+Host bitbucket.internal.taillight.cloud
+    HostName bitbucket.internal.taillight.cloud
+    IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+    IdentityFile ~/.ssh/id_ed25519_taillight.pub
+    IdentitiesOnly yes
+    Port 7999
+
+Host github.com
+    HostName github.com
+    IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+    IdentityFile ~/.ssh/id_ed25519_taillight.pub
+    IdentitiesOnly yes
+
+Host github-personal
+    HostName github.com
+    IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+    IdentityFile ~/.ssh/id_rsa_github.pub
+    IdentitiesOnly yes
