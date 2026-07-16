@@ -28,6 +28,7 @@ opt.incsearch = true
 opt.list = true
 opt.listchars = {tab = '›⋅', eol = '↲', space = '⋅'}
 opt.mouse = 'a'
+opt.nrformats = { "bin", "hex", "alpha" }
 opt.number = true
 opt.pumblend = 40
 opt.relativenumber = true
