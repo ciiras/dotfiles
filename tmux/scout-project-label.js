@@ -8,8 +8,11 @@
 // Label resolution: @scout-project (pane or window option) -> tmux window name -> cwd.
 // Only worth registering for SessionStart and UserPromptSubmit — the only events where
 // tmux-scout stores workingDirectory.
+//
+// The hook runs in this process, not a child — see the note in main().
 
-const { spawn, execFileSync } = require('child_process')
+const { execFileSync } = require('child_process')
+const { Readable } = require('stream')
 
 const HOOK = process.argv[2]
 
@@ -59,11 +62,20 @@ async function main() {
     // A bad label must never break the hook chain.
   }
 
-  const child = spawn(process.execPath, [HOOK], { stdio: ['pipe', 'inherit', 'inherit'] })
-  child.on('error', () => process.exit(0))
-  child.on('exit', code => process.exit(code === null ? 0 : code))
-  child.stdin.on('error', () => {})
-  child.stdin.end(payload)
+  // Run the hook in *this* process rather than spawning it. tmux-scout records
+  // `process.ppid` as the agent's pid and its picker hides any session whose pid is dead,
+  // so a wrapper process between claude and the hook gets the session marked crashed the
+  // moment the wrapper exits. Requiring keeps ppid pointing at claude itself.
+  Object.defineProperty(process, 'stdin', {
+    value: Readable.from([payload]),
+    configurable: true
+  })
+
+  try {
+    require(HOOK)
+  } catch (e) {
+    process.exit(0)
+  }
 }
 
 main().catch(() => process.exit(0))
