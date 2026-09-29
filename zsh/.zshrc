@@ -26,7 +26,6 @@ fi
 
 	# Plugins {{{
 
-	zinit light kutsan/zsh-system-clipboard
     zinit ice depth=1; zinit light jeffreytse/zsh-vi-mode
     zinit ice from='gh-r' as='program'; zinit light ajeetdsouza/zoxide
     zinit light junegunn/fzf-git.sh
@@ -147,6 +146,16 @@ function zvm_after_init() {
     bindkey '^N' fzf-history-widget
     bindkey '^K' autosuggest-accept
     bindkey '\e[107;6u' autosuggest-accept
+}
+
+# vicmd keys are bound lazily on first entry to normal mode, so this is the
+# earliest point p/P can be pointed at the system clipboard without being
+# clobbered. yanks already copy out via ZVM_SYSTEM_CLIPBOARD_ENABLED.
+function zvm_after_lazy_keybindings() {
+    zvm_bindkey vicmd 'p' zvm_paste_clipboard_after
+    zvm_bindkey vicmd 'P' zvm_paste_clipboard_before
+    zvm_bindkey visual 'p' zvm_visual_paste_clipboard
+    zvm_bindkey visual 'P' zvm_visual_paste_clipboard
 }
 
 # }}}
